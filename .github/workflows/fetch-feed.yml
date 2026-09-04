@@ -1,0 +1,42 @@
+name: Fetch Threat Intel Feed
+
+on:
+  schedule:
+    # Runs every 30 minutes. GitHub may delay this slightly under load.
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+  push:
+    branches: [main]      # also run once when you push, so you can verify it works
+
+permissions:
+  contents: write         # needed so the workflow can commit data/threats.json back
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Pull latest feed entries
+        run: python scripts/fetch_feed.py
+
+      - name: Commit updated feed data
+        run: |
+          git config user.name "cti-feed-bot"
+          git config user.email "actions@github.com"
+          git add data/threats.json
+          if git diff --cached --quiet; then
+            echo "No new entries, nothing to commit."
+          else
+            git commit -m "Update threat feed data [skip ci]"
+            git push
+          fi

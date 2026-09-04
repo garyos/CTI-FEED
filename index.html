@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL — Threat Feed Console</title>
+<style>
+  :root {
+    --ink: #0a0e14;
+    --ink-raised: #10151d;
+    --line: #1e2733;
+    --text: #d7dde5;
+    --text-dim: #7d8998;
+    --amber: #ffb020;
+    --red: #ff5c5c;
+    --blue: #5ac8ff;
+    --green: #4fd58a;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  .frame {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .masthead h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0 0 4px;
+  }
+
+  .masthead .sub {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+
+  .status {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .status .pulse-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: flex-end;
+  }
+
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(79, 213, 138, 0.6);
+    animation: pulse 2.4s ease-out infinite;
+  }
+
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(79, 213, 138, 0.5); }
+    70%  { box-shadow: 0 0 0 8px rgba(79, 213, 138, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(79, 213, 138, 0); }
+  }
+
+  .legend {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 22px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+  }
+
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 8px; height: 8px; display: inline-block; }
+
+  .feed { display: flex; flex-direction: column; }
+
+  .entry {
+    border-left: 3px solid var(--line);
+    padding: 14px 0 14px 16px;
+    border-bottom: 1px solid var(--line);
+    transition: border-left-color 0.2s ease;
+  }
+
+  .entry[data-severity="critical"] { border-left-color: var(--red); }
+  .entry[data-severity="high"]     { border-left-color: var(--amber); }
+  .entry[data-severity="medium"]   { border-left-color: var(--blue); }
+  .entry[data-severity="info"]     { border-left-color: var(--line); }
+
+  .entry .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .entry[data-severity="critical"] .tag { color: var(--red); }
+  .entry[data-severity="high"] .tag     { color: var(--amber); }
+  .entry[data-severity="medium"] .tag   { color: var(--blue); }
+  .entry[data-severity="info"] .tag     { color: var(--text-dim); }
+
+  .entry h2 {
+    font-size: 15.5px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .entry h2 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .entry h2 a:hover,
+  .entry h2 a:focus-visible {
+    color: var(--amber);
+    text-decoration: underline;
+  }
+
+  .entry p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .entry.new {
+    animation: reveal 0.6s ease;
+  }
+  @keyframes reveal {
+    from { background: rgba(255, 176, 32, 0.08); }
+    to   { background: transparent; }
+  }
+
+  .empty-state {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    padding: 40px 0;
+    text-align: center;
+    border: 1px dashed var(--line);
+  }
+
+  footer {
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  a.footer-link { color: var(--text-dim); }
+  a.footer-link:hover { color: var(--amber); }
+
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="masthead">
+      <div>
+        <h1>SIGNAL</h1>
+        <div class="sub" id="source-line">source: —</div>
+      </div>
+      <div class="status">
+        <div class="pulse-row"><span class="pulse-dot"></span> LIVE — polling every 30s</div>
+        <div id="updated-line">last update: —</div>
+      </div>
+    </header>
+
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--red)"></span> critical</span>
+      <span><span class="swatch" style="background:var(--amber)"></span> high</span>
+      <span><span class="swatch" style="background:var(--blue)"></span> medium</span>
+      <span><span class="swatch" style="background:var(--line)"></span> info</span>
+    </div>
+
+    <div class="feed" id="feed">
+      <div class="empty-state">Waiting for first data pull…</div>
+    </div>
+
+    <footer>
+      Data refreshed by a scheduled GitHub Action · Front end is a static page polling
+      <code>data/threats.json</code> · <a class="footer-link" href="data/threats.json">view raw feed</a>
+    </footer>
+  </div>
+
+  <script>
+    const FEED_PATH = "data/threats.json";
+    const POLL_INTERVAL_MS = 30000;
+    let knownIds = new Set();
+
+    async function loadFeed() {
+      try {
+        const res = await fetch(`${FEED_PATH}?t=${Date.now()}`); // cache-bust
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        render(data);
+      } catch (err) {
+        console.error("Failed to load feed:", err);
+      }
+    }
+
+    function render(data) {
+      document.getElementById("source-line").textContent = `source: ${data.source || "unknown"}`;
+      document.getElementById("updated-line").textContent = data.fetched_at
+        ? `last update: ${new Date(data.fetched_at).toLocaleString()}`
+        : "last update: —";
+
+      const feedEl = document.getElementById("feed");
+      const entries = data.entries || [];
+
+      if (entries.length === 0) {
+        feedEl.innerHTML = `<div class="empty-state">No entries yet. The scheduled Action hasn't run, or the feed returned nothing.</div>`;
+        return;
+      }
+
+      feedEl.innerHTML = "";
+      for (const entry of entries) {
+        const isNew = !knownIds.has(entry.id);
+        const el = document.createElement("article");
+        el.className = "entry" + (isNew && knownIds.size > 0 ? " new" : "");
+        el.dataset.severity = entry.severity || "info";
+        el.innerHTML = `
+          <div class="meta">
+            <span class="tag">${entry.severity || "info"}</span>
+            <span>${entry.published || ""}</span>
+          </div>
+          <h2><a href="${entry.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(entry.title)}</a></h2>
+          <p>${escapeHtml(entry.summary || "")}</p>
+        `;
+        feedEl.appendChild(el);
+      }
+
+      knownIds = new Set(entries.map(e => e.id));
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    loadFeed();
+    setInterval(loadFeed, POLL_INTERVAL_MS);
+  </script>
+</body>
+</html>
