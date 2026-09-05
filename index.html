@@ -80,17 +80,44 @@
     justify-content: flex-end;
   }
 
-  .status nav a {
+  .explorer-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--amber);
+    color: var(--ink);
+    text-decoration: none;
+    padding: 14px 18px;
+    margin-bottom: 26px;
+    border: 1px solid var(--amber);
+    transition: filter 0.15s ease;
+  }
+  .explorer-cta:hover, .explorer-cta:focus-visible { filter: brightness(1.08); }
+  .explorer-cta .cta-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex: 0 0 auto;
+  }
+  .explorer-cta .cta-text { display: flex; flex-direction: column; gap: 2px; flex: 1 1 auto; }
+  .explorer-cta .cta-title {
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  .explorer-cta .cta-desc {
     font-family: var(--font-mono);
     font-size: 11.5px;
-    color: var(--text-dim);
-    text-decoration: none;
-    border: 1px solid var(--line);
-    padding: 4px 9px;
-    display: inline-block;
-    margin-top: 8px;
+    opacity: 0.82;
   }
-  .status nav a:hover { color: var(--amber); border-color: var(--amber); }
+  .explorer-cta .cta-arrow {
+    font-size: 20px;
+    font-weight: 600;
+    flex: 0 0 auto;
+  }
+  @media (max-width: 560px) {
+    .explorer-cta .cta-desc { display: none; }
+  }
 
   .pulse-dot {
     width: 7px;
@@ -341,9 +368,17 @@
       <div class="status">
         <div class="pulse-row"><span class="pulse-dot"></span> LIVE — polling every 30s</div>
         <div id="updated-line">last update: —</div>
-        <nav><a href="attack.html">ATT&amp;CK explorer ›</a></nav>
       </div>
     </header>
+
+    <a class="explorer-cta" href="attack.html">
+      <span class="cta-icon">⌁</span>
+      <span class="cta-text">
+        <span class="cta-title">ATT&amp;CK Explorer</span>
+        <span class="cta-desc">Browse MITRE ATT&amp;CK groups, techniques &amp; campaigns — with cinematic Spotlight dossiers</span>
+      </span>
+      <span class="cta-arrow">›</span>
+    </a>
 
     <div class="analytics">
       <div class="analytics-panel">

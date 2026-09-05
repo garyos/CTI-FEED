@@ -251,14 +251,28 @@
   /* purely a visual/documentation region — pointer-events:none so it never
      shadows interactive elements inside the active slide underneath it;
      navigation is decided by tap x-position in the #stage pointer handler */
-  .tap-zone { position: absolute; top: 88px; bottom: 40px; z-index: 15; pointer-events: none; }
+  .tap-zone { position: absolute; top: 88px; bottom: 96px; z-index: 15; pointer-events: none; }
   .tap-left { left: 0; width: 30%; }
   .tap-right { right: 0; width: 70%; }
   .hint {
-    position: absolute; bottom: max(12px, env(safe-area-inset-bottom)); left: 0; right: 0; z-index: 22;
+    position: absolute; bottom: calc(max(12px, env(safe-area-inset-bottom)) + 56px); left: 0; right: 0; z-index: 22;
     text-align: center; font-size: 10px; color: var(--text-dim); opacity: 0.7; pointer-events: none;
     letter-spacing: 0.04em;
   }
+
+  /* Explicit, persistent pause/resume control — takes precedence over every
+     touch/tap gesture (see manualPauseLock in the script). A big, unambiguous
+     target for readers who don't want to rely on landing a double-tap. */
+  .pause-btn {
+    position: absolute; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 24;
+    transform: translateX(-50%);
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(16,21,29,0.92); border: 2px solid var(--amber); color: var(--amber);
+    font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 0 16px rgba(255,176,32,0.25);
+  }
+  .pause-btn:hover { filter: brightness(1.15); }
+  .pause-btn.active { border-color: var(--red); color: var(--red); box-shadow: 0 0 16px rgba(255,92,92,0.35); }
 
   .empty-target {
     position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -284,6 +298,7 @@
     <div class="tap-zone tap-left" id="tap-left"></div>
     <div class="tap-zone tap-right" id="tap-right"></div>
     <div class="hint" id="hint">tap right to advance · left to go back · tap an item to inspect</div>
+    <button class="pause-btn no-nav" id="pause-btn" aria-label="Pause auto-advance">‖</button>
   </div>
 
 <script>
@@ -718,9 +733,35 @@
   let pauseBegan = 0;
   let interactionPaused = false;
   let pendingNavTimer = null;
+  // manualPauseLock is the explicit pause/resume button's state. It takes
+  // precedence over every touch/tap control: while engaged, resumeTimer()
+  // refuses to run (so double-tap and swipe can't silently undo it), and a
+  // freshly-entered slide starts paused instead of auto-running. Only the
+  // button itself (toggleManualPause) can clear it. Built for readers who
+  // can't reliably land a double-tap and need a deliberate, persistent control.
+  let manualPauseLock = false;
 
-  function setPausedFlag(on) {
-    document.getElementById("paused-flag").classList.toggle("on", on);
+  function updateStatusUI() {
+    const flag = document.getElementById("paused-flag");
+    const btn = document.getElementById("pause-btn");
+    flag.classList.toggle("on", manualPauseLock || interactionPaused);
+    flag.textContent = manualPauseLock ? "‖ PAUSED — TAP ▶ TO RESUME" : "‖ PAUSED — DOUBLE-TAP TO RESUME";
+    btn.textContent = manualPauseLock ? "▶" : "‖";
+    btn.setAttribute("aria-label", manualPauseLock ? "Resume auto-advance" : "Pause auto-advance");
+    btn.classList.toggle("active", manualPauseLock);
+  }
+
+  function toggleManualPause() {
+    if (manualPauseLock) {
+      manualPauseLock = false;
+      resumeTimer();
+    } else {
+      manualPauseLock = true;
+      interactionPaused = false;
+      if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
+      pauseTimer();
+    }
+    updateStatusUI();
   }
 
   function renderChrome() {
@@ -759,11 +800,14 @@
 
   function startTimer(duration) {
     cancelTimer();
-    isPaused = false;
-    setPausedFlag(false);
     timerDuration = duration;
     timerStart = performance.now();
-    if (REDUCED_MOTION) { setSegProgress(idx, 100); return; }
+    // A manual pause persists across navigation — a slide reached while paused
+    // starts paused too, rather than silently resuming autoplay behind the reader.
+    isPaused = manualPauseLock;
+    if (isPaused) pauseBegan = timerStart;
+    updateStatusUI();
+    if (REDUCED_MOTION) { setSegProgress(idx, manualPauseLock ? 0 : 100); return; }
     setSegProgress(idx, 0);
     tick();
   }
@@ -778,8 +822,12 @@
     timerRAF = requestAnimationFrame(tick);
   }
 
-  function pauseTimer() { if (!isPaused) { isPaused = true; pauseBegan = performance.now(); } }
-  function resumeTimer() { if (isPaused) { isPaused = false; timerStart += performance.now() - pauseBegan; } setPausedFlag(false); }
+  function pauseTimer() { if (!isPaused) { isPaused = true; pauseBegan = performance.now(); } updateStatusUI(); }
+  function resumeTimer() {
+    if (manualPauseLock) return; // locked — only the pause/resume button can clear this
+    if (isPaused) { isPaused = false; timerStart += performance.now() - pauseBegan; }
+    updateStatusUI();
+  }
 
   function goTo(i) {
     if (i < 0 || i >= slides.length) return;
@@ -804,6 +852,11 @@
     let downAt = null, downX = 0, downY = 0, moved = false, downOnNoNav = false;
     let lastTapAt = 0;
     const DOUBLE_TAP_MS = 340;
+
+    document.getElementById("pause-btn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleManualPause();
+    });
 
     function performNav(clientX) {
       const w = window.innerWidth;
@@ -857,7 +910,6 @@
         if (wasOnNoNav) {
           interactionPaused = true;
           pauseTimer();
-          setPausedFlag(true);
           return;
         }
 
