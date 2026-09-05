@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-09-05T21:47:19.102620+00:00",
+  "generated_at": "2026-09-05T22:17:28.460017+00:00",
   "victims": [
+    {
+      "id": "3d680b9965648712",
+      "victim": "Mission Pet Health",
+      "group": "direwolf",
+      "published": "2026-09-05T21:44:49.338000+00:00",
+      "discovered": "2026-09-05T21:54:20.573912+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "missionpethealth.com",
+      "description": "Healthcare Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/122"
+    },
     {
       "id": "45438316e48581af",
       "victim": "Spirit Cultural Exchange - US",
@@ -166,7 +178,7 @@
       "country": "US",
       "sector": "Transportation",
       "website": "Metrea LLC/Commuter Air Technology, Inc.",
-      "description": "[defence] Metrea LLC (formerly Meta Special Aerospace, LLC) and its subsidiary Commuter Air Technology, Inc. (CAT) are US defense contractors providing Contractor Owned, Contractor Operated (COCO) ISR aircraft services to US Special Operations Command. They operate modified King Air 350 surveillance aircraft in Niger, East Africa, the Philippines, and other theaters. <redacted> 339 MB of Harris PRC-117G military tactical radio firmware including compiled waveform binaries for SINCGARS,\u2026",
+      "description": "[defence] Metrea LLC (formerly Meta Special Aerospace, LLC) and its subsidiary Commuter Air Technology, Inc. (CAT) are US defense contractors providing Contractor Owned, Contractor Operated (COCO) ISR aircraft services to US Special Operations Command. They operate modified King Air 350 surveillance aircraft in Niger, East Africa, the Philippines, and other theaters. 339 MB of Harris PRC-117G military tactical radio firmware including compiled waveform binaries for SINCGARS,\u2026",
       "post_url": "http://u6lieui2dakbctcjea2bz4r4q32r7t36nwljovqbv7mxs6o2smgxixid.onion/blog/metrea-llc-77f4beea"
     },
     {
@@ -468,18 +480,6 @@
       "website": null,
       "description": "Worrell Corporation is a family-owned business based in Indianapolis that specializes in promot ional products, marketing, and print services. They assist clients in finding impactful promoti onal items while offering tailored marketing strategies and webstore solutions. We will upload 45gb of corporate data soon. Employee and client information, contacts and agree ments, financials, projects and so on.",
       "post_url": null
-    },
-    {
-      "id": "8ae15e99eae607ca",
-      "victim": "Studio Oculistico Ciraci",
-      "group": "spacebears",
-      "published": "2026-09-03T22:59:22.512544+00:00",
-      "discovered": "2026-09-03T22:59:43.262661+00:00",
-      "country": "IT",
-      "sector": "Healthcare",
-      "website": "www.oculisticaciraci.it",
-      "description": "Studio Oculistico Ciraci - ophthalmology clinic based in Bari, Italy, that opened in 1989 as a center accredited with the Italian National Health Service (SSN). With more than two decades of experience, it focuses on the prevention and treatment of major eye conditions using modern diagnostic technologies. Its main areas of expertise include glaucoma, vitreoretinal diseases (especially maculopathies), correction of refractive errors (Excimer laser PRK and cataract surgery), strabismus,\u2026",
-      "post_url": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/73/studio-oculistico-ciraci"
     }
   ]
 }

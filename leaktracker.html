@@ -47,7 +47,7 @@
   .view-toggle button.active { background: var(--ink); color: var(--green); font-weight: 600; }
 
   .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
-  select#group-filter, select#sector-filter, select#month-select {
+  select#group-filter, select#sector-filter, select#country-filter, select#month-select {
     font-family: var(--font-mono); font-size: 11.5px; padding: 6px 10px;
     background: var(--ink-input); color: var(--text); border: 1px solid var(--line); max-width: 200px;
   }
@@ -131,7 +131,12 @@
     color: var(--text-dim); margin: 20px 0 10px; padding-top: 14px; border-top: 1px solid var(--line);
   }
   .ref-list { display: flex; flex-direction: column; gap: 6px; }
-  .ref-list a { color: var(--blue); font-size: 12px; word-break: break-all; }
+  /* Deliberately not clickable — a leak-site/victim link could point at a live
+     .onion or malicious domain, and this page should never risk an accidental
+     click-through. Shown as plain read-only text, monospace so it still reads
+     clearly as a URL. */
+  .ref-list .ref-text { color: var(--text-dim); font-family: var(--font-mono); font-size: 11.5px; word-break: break-all; }
+  .ref-list .ref-note { color: var(--text-dim); font-size: 9.5px; letter-spacing: 0.04em; text-transform: uppercase; margin-top: -4px; }
   .group-link {
     display: inline-block; margin-top: 4px; font-size: 11px; color: var(--green); text-decoration: none; cursor: pointer;
   }
@@ -164,6 +169,7 @@
     <div class="toolbar">
       <select id="group-filter"><option value="all">all groups</option></select>
       <select id="sector-filter"><option value="all">all sectors</option></select>
+      <select id="country-filter"><option value="all">all countries</option></select>
       <div class="search-wrap"><input id="search-input" type="text" placeholder="search…" /></div>
       <button class="reset-btn" id="reset-btn">reset</button>
     </div>
@@ -197,7 +203,7 @@
   let currentView = "victims";
   let currentVictims = [];
   let currentMonth = "latest";
-  let filters = { group: "all", sector: "all", search: "" };
+  let filters = { group: "all", sector: "all", country: "all", search: "" };
 
   function escapeHtml(str) {
     const div = document.createElement("div");
@@ -238,6 +244,7 @@
 
     document.getElementById("group-filter").addEventListener("change", (e) => { filters.group = e.target.value; render(); });
     document.getElementById("sector-filter").addEventListener("change", (e) => { filters.sector = e.target.value; render(); });
+    document.getElementById("country-filter").addEventListener("change", (e) => { filters.country = e.target.value; render(); });
     document.getElementById("search-input").addEventListener("input", (e) => { filters.search = e.target.value; render(); });
     monthSelect.addEventListener("change", (e) => switchMonth(e.target.value));
     document.getElementById("reset-btn").addEventListener("click", resetFilters);
@@ -245,12 +252,28 @@
     document.getElementById("flyout-backdrop").addEventListener("click", closeFlyout);
 
     await switchMonth("latest");
+
+    // Deep-link support: leaktracker.html?group=<name> (used by the Spotlight
+    // digest's "focus in on the ransomware group" link) jumps straight to that
+    // group's profile in the Groups view instead of the default victim feed.
+    const requestedGroup = new URLSearchParams(location.search).get("group");
+    if (requestedGroup) applyGroupFocus(requestedGroup);
+  }
+
+  function applyGroupFocus(name) {
+    const match = groupsData.groups.find(g => g.name.toLowerCase() === name.toLowerCase());
+    if (!match) return;
+    switchView("groups");
+    filters.group = match.name;
+    document.getElementById("group-filter").value = match.name;
+    render();
   }
 
   function resetFilters() {
-    filters = { group: "all", sector: "all", search: "" };
+    filters = { group: "all", sector: "all", country: "all", search: "" };
     document.getElementById("group-filter").value = "all";
     document.getElementById("sector-filter").value = "all";
+    document.getElementById("country-filter").value = "all";
     document.getElementById("search-input").value = "";
     render();
   }
@@ -260,7 +283,9 @@
     document.querySelectorAll("#view-toggle button").forEach(b => b.classList.toggle("active", b.dataset.view === view));
     document.getElementById("archive-row").style.display = view === "victims" ? "flex" : "none";
     document.getElementById("sector-filter").style.display = view === "victims" ? "" : "none";
-    document.getElementById("month-select").parentElement;
+    // Ransomware groups carry no nationality/origin field in the source data —
+    // only victims do — so the country filter only applies to the Victims view.
+    document.getElementById("country-filter").style.display = view === "victims" ? "" : "none";
     resetFilters();
     if (view === "groups") renderGroupFilterOptions();
     render();
@@ -280,6 +305,7 @@
     }
     renderGroupFilterOptions();
     renderSectorFilterOptions();
+    renderCountryFilterOptions();
     render();
   }
 
@@ -310,6 +336,17 @@
     filters.sector = select.value;
   }
 
+  function renderCountryFilterOptions() {
+    const select = document.getElementById("country-filter");
+    const prev = filters.country;
+    const counts = new Map();
+    currentVictims.forEach(v => { if (v.country) counts.set(v.country, (counts.get(v.country) || 0) + 1); });
+    const countries = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([n]) => n);
+    select.innerHTML = `<option value="all">all countries</option>` + countries.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)} (${counts.get(c)})</option>`).join("");
+    select.value = countries.includes(prev) ? prev : "all";
+    filters.country = select.value;
+  }
+
   function render() {
     if (currentView === "groups") renderGroups(); else renderVictims();
   }
@@ -319,6 +356,7 @@
     const filtered = currentVictims.filter(v => {
       if (filters.group !== "all" && v.group !== filters.group) return false;
       if (filters.sector !== "all" && v.sector !== filters.sector) return false;
+      if (filters.country !== "all" && v.country !== filters.country) return false;
       if (term && !`${v.victim} ${v.description}`.toLowerCase().includes(term)) return false;
       return true;
     });
@@ -370,6 +408,7 @@
           <span class="tag">GROUP</span>
           ${g.raas ? `<span class="raas-badge">RaaS</span>` : ""}
           <span>${g.active_sites}/${g.total_sites} leak sites active</span>
+          ${g.total_victims != null ? `<span>${g.total_victims} victims all-time</span>` : ""}
         </div>
         <h2>${escapeHtml(g.name)}${g.altname ? ` <span style="color:var(--text-dim); font-weight:400;">(${escapeHtml(g.altname)})</span>` : ""}</h2>
         <p>${escapeHtml(g.description || "No description on file.")}</p>
@@ -392,10 +431,10 @@
         <div class="meta-cell"><span>Group</span><b>${escapeHtml(v.group)}</b></div>
       </div>
       ${group ? `<a class="group-link" id="view-group-link">view ${escapeHtml(group.name)} group profile ›</a>` : ""}
-      <div class="section-title">Links</div>
+      <div class="section-title">Links (read-only — not clickable)</div>
       <div class="ref-list">
-        ${v.website ? `<a href="https://${escapeHtml(v.website.replace(/^https?:\/\//, ""))}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.website)}</a>` : ""}
-        ${v.post_url ? `<a href="${escapeHtml(v.post_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.post_url)}</a>` : ""}
+        ${v.website ? `<div class="ref-text">${escapeHtml(v.website)}</div>` : ""}
+        ${v.post_url ? `<div class="ref-text">${escapeHtml(v.post_url)}</div>` : ""}
         ${!v.website && !v.post_url ? `<span style="color:var(--text-dim); font-size:12px;">none recorded</span>` : ""}
       </div>
     `;
@@ -412,6 +451,7 @@
         <div class="meta-cell"><span>Leak sites tracked</span><b>${g.total_sites}</b></div>
         <div class="meta-cell"><span>Currently active</span><b>${g.active_sites}</b></div>
         <div class="meta-cell"><span>First seen</span><b>${escapeHtml(g.first_seen || "Unknown")}</b></div>
+        <div class="meta-cell"><span>Victims all-time</span><b>${g.total_victims != null ? g.total_victims : "Unknown"}</b></div>
       </div>
     `;
     openFlyout();

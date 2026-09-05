@@ -2,6 +2,18 @@
   "month": "2026-09",
   "victims": [
     {
+      "id": "3d680b9965648712",
+      "victim": "Mission Pet Health",
+      "group": "direwolf",
+      "published": "2026-09-05T21:44:49.338000+00:00",
+      "discovered": "2026-09-05T21:54:20.573912+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "missionpethealth.com",
+      "description": "Healthcare Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/122"
+    },
+    {
       "id": "45438316e48581af",
       "victim": "Spirit Cultural Exchange - US",
       "group": "kazu",
@@ -166,7 +178,7 @@
       "country": "US",
       "sector": "Transportation",
       "website": "Metrea LLC/Commuter Air Technology, Inc.",
-      "description": "[defence] Metrea LLC (formerly Meta Special Aerospace, LLC) and its subsidiary Commuter Air Technology, Inc. (CAT) are US defense contractors providing Contractor Owned, Contractor Operated (COCO) ISR aircraft services to US Special Operations Command. They operate modified King Air 350 surveillance aircraft in Niger, East Africa, the Philippines, and other theaters. <redacted> 339 MB of Harris PRC-117G military tactical radio firmware including compiled waveform binaries for SINCGARS,\u2026",
+      "description": "[defence] Metrea LLC (formerly Meta Special Aerospace, LLC) and its subsidiary Commuter Air Technology, Inc. (CAT) are US defense contractors providing Contractor Owned, Contractor Operated (COCO) ISR aircraft services to US Special Operations Command. They operate modified King Air 350 surveillance aircraft in Niger, East Africa, the Philippines, and other theaters. 339 MB of Harris PRC-117G military tactical radio firmware including compiled waveform binaries for SINCGARS,\u2026",
       "post_url": "http://u6lieui2dakbctcjea2bz4r4q32r7t36nwljovqbv7mxs6o2smgxixid.onion/blog/metrea-llc-77f4beea"
     },
     {
@@ -862,7 +874,7 @@
       "country": "US",
       "sector": "Technology",
       "website": "chip1.com",
-      "description": "[distributor] Chip 1 Exchange \u2014 a global independent electronics distributor headquartered in Neu-Isenburg, Germany, with primary US operations in Laguna Hills, California. The dataset spans 13 years (2013-2026) of corporate operations and encompasses: 40+ passport photographs, I-9 forms with SSNs, W-4 tax forms, payroll registers. <redacted> Complete 2026 financial intelligence \u2014 P&L through July, executive financial health assessment, AR/AP aging, chart of accounts revealing all bank account\u2026",
+      "description": "[distributor] Chip 1 Exchange \u2014 a global independent electronics distributor headquartered in Neu-Isenburg, Germany, with primary US operations in Laguna Hills, California. The dataset spans 13 years (2013-2026) of corporate operations and encompasses: 40+ passport photographs, I-9 forms with SSNs, W-4 tax forms, payroll registers. Complete 2026 financial intelligence \u2014 P&L through July, executive financial health assessment, AR/AP aging, chart of accounts revealing all bank account\u2026",
       "post_url": "http://u6lieui2dakbctcjea2bz4r4q32r7t36nwljovqbv7mxs6o2smgxixid.onion/blog/chip-1-exchange-13b819b4"
     },
     {
@@ -982,7 +994,7 @@
       "country": "ID",
       "sector": "Manufacturing",
       "website": "intracopenta.com",
-      "description": "Industrial Machinery &amp; Equipment",
+      "description": "Industrial Machinery & Equipment",
       "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/117"
     },
     {
@@ -1418,5 +1430,5 @@
       "post_url": "http://everestndkvzcibcje2cqxhre2hmmybl3rn2gwzwsblz7gx6uryn5rad.onion/news/rise-up"
     }
   ],
-  "updated_at": "2026-09-05T21:34:19.861238+00:00"
+  "updated_at": "2026-09-05T22:15:51.601489+00:00"
 }

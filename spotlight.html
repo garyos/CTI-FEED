@@ -403,6 +403,12 @@
     return res.json();
   }
 
+  async function loadLeaktrackerLatest() {
+    const res = await fetch(`data/leaktracker/latest.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
   function percentile(arr, p) {
     const s = [...arr].sort((a, b) => a - b);
     if (!s.length) return 0;
@@ -728,6 +734,45 @@
     };
   }
 
+  // A condensed one-slide teaser for the digest's random-groups section — name,
+  // origin, description only. The full multi-slide dossier (coverage, arsenal,
+  // connections, etc.) is one tap away via the Focused Spotlight link instead
+  // of being unpacked inline, which is what made the old 2-group digest run to
+  // ~14 extra slides on its own.
+  function groupTeaserSlide(g) {
+    return {
+      key: "group-teaser", duration: 7000,
+      html: `
+        <div class="case-number">CASE FILE // ${g.id} // ${escapeHtml(domain.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(g.name)}</h1>
+        <div class="chip-row">
+          ${g.countries.length
+            ? g.countries.map(c => `<span class="tag-chip flag-chip">${flagEmoji(c.code)} ${escapeHtml(c.name)}</span>`).join("")
+            : `<span class="tag-chip">Origin unattributed</span>`}
+        </div>
+        <p class="dossier-text">${escapeHtml(g.description) || "No description on file."}</p>
+        <a class="zoom-link no-nav" href="${zoomHref("groups", g.id, "Digest")}">⌁ focused spotlight: ${escapeHtml(g.name)} ›</a>
+      `,
+    };
+  }
+
+  function victimTeaserSlide(v) {
+    return {
+      key: "leak-victim", duration: 7000,
+      html: `
+        <div class="case-number">LEAK-SITE POSTING // ${escapeHtml(v.group.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(v.victim)}</h1>
+        <div class="chip-row">
+          ${v.sector ? `<span class="tag-chip">${escapeHtml(v.sector)}</span>` : ""}
+          ${v.country ? `<span class="tag-chip">${escapeHtml(v.country)}</span>` : ""}
+          <span class="tag-chip">${escapeHtml((v.published || "").slice(0, 10))}</span>
+        </div>
+        <p class="dossier-text">${escapeHtml(v.description) || "No description available."}</p>
+        <a class="zoom-link no-nav" href="leaktracker.html?group=${encodeURIComponent(v.group)}">focus on ${escapeHtml(v.group)} ›</a>
+      `,
+    };
+  }
+
   // ---------- per-type title/profile slides ----------
 
   function techniqueTitleSlide(t, data) {
@@ -807,14 +852,15 @@
     return list;
   }
 
-  function buildDigestSlides(threats, cves, attackData, groupIds) {
+  function buildDigestSlides(threats, cves, attackData, groupIds, leaktracker) {
     const feedSlides = (threats.entries || []).slice(0, 5).map(feedItemSlide);
     const cveSlides = (cves.cves || []).slice(0, 10).map(cveDetailSlide);
-    const groupSlides = groupIds.flatMap(gid => {
-      const g = attackData.byId.groups[gid];
-      return g ? buildGroupSlides(g, attackData, g.name) : [];
-    });
-    return [...feedSlides, ...cveSlides, ...groupSlides];
+    const groupSlides = groupIds
+      .map(gid => attackData.byId.groups[gid])
+      .filter(Boolean)
+      .map(groupTeaserSlide);
+    const victimSlides = (leaktracker.victims || []).slice(0, 5).map(victimTeaserSlide);
+    return [...feedSlides, ...cveSlides, ...groupSlides, ...victimSlides];
   }
 
   // ---------- engine ----------
@@ -1097,31 +1143,38 @@
     else { el.href = "attack.html"; el.textContent = "‹ EXIT"; }
   }
 
+  const DIGEST_GROUP_COUNT = 3;
+
   async function loadDigestData() {
-    const [attackR, threatsR, cveR] = await Promise.allSettled([loadDomain(), loadThreats(), loadCveLatest()]);
+    const [attackR, threatsR, cveR, leaktrackerR] = await Promise.allSettled(
+      [loadDomain(), loadThreats(), loadCveLatest(), loadLeaktrackerLatest()]
+    );
     if (attackR.status === "rejected") console.error("digest: ATT&CK data failed to load", attackR.reason);
     if (threatsR.status === "rejected") console.error("digest: feed data failed to load", threatsR.reason);
     if (cveR.status === "rejected") console.error("digest: CVE data failed to load", cveR.reason);
+    if (leaktrackerR.status === "rejected") console.error("digest: leak-tracker data failed to load", leaktrackerR.reason);
     return {
       attackData: attackR.status === "fulfilled" ? attackR.value : null,
       threats: threatsR.status === "fulfilled" ? threatsR.value : { entries: [] },
       cves: cveR.status === "fulfilled" ? cveR.value : { cves: [] },
+      leaktracker: leaktrackerR.status === "fulfilled" ? leaktrackerR.value : { victims: [] },
     };
   }
 
   async function initDigest() {
-    const { attackData, threats, cves } = await loadDigestData();
+    const { attackData, threats, cves, leaktracker } = await loadDigestData();
 
     const validGroupIds = attackData ? attackData.groups.map(g => g.id) : [];
     let groupIds = (params.get("groups") || "").split(",").map(s => s.trim()).filter(gid => validGroupIds.includes(gid));
 
-    // No (valid) group pair pinned in the URL yet — pick two at random and bake
-    // them into the URL via replaceState, so reloading or backing out of a
-    // zoomed-in sub-entity returns to this *same* pair rather than a fresh roll.
-    if (groupIds.length < 2 && validGroupIds.length >= 2) {
+    // No (valid) group set pinned in the URL yet — pick DIGEST_GROUP_COUNT at
+    // random and bake them into the URL via replaceState, so reloading or
+    // backing out of a zoomed-in sub-entity returns to this *same* set rather
+    // than a fresh roll.
+    if (groupIds.length < DIGEST_GROUP_COUNT && validGroupIds.length >= DIGEST_GROUP_COUNT) {
       const pool = [...validGroupIds];
       groupIds = [];
-      while (groupIds.length < 2 && pool.length) {
+      while (groupIds.length < DIGEST_GROUP_COUNT && pool.length) {
         groupIds.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
       }
       const p = new URLSearchParams(location.search);
@@ -1131,9 +1184,9 @@
       history.replaceState(null, "", `spotlight.html?${p.toString()}`);
     }
 
-    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds);
+    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds, leaktracker);
     if (slides.length === 0) {
-      showEmptyTarget("No feed, CVE, or ATT&CK data available yet — have the fetch scripts been run?");
+      showEmptyTarget("No feed, CVE, ATT&CK, or leak-tracker data available yet — have the fetch scripts been run?");
       return;
     }
 

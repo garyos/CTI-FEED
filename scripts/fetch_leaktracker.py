@@ -28,6 +28,7 @@ import re
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
+from html import unescape
 from pathlib import Path
 
 GROUPS_URL = "https://data.ransomware.live/groups.json"
@@ -51,8 +52,13 @@ def fetch_json(url: str, timeout: int = 120) -> object:
 
 
 def clean_text(text: str, max_len: int = DESCRIPTION_MAX_LEN) -> str:
+    """Some group/victim descriptions in the source have raw HTML in them
+    (<br> tags, entities) — strip it the same way fetch_feed.py does for
+    RSS summaries, so it never leaks into the UI as literal tag text."""
     if not text:
         return ""
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
     if len(text) > max_len:
         text = text[:max_len].rsplit(" ", 1)[0] + "…"
@@ -88,6 +94,7 @@ def refresh_groups():
             "first_seen": g.get("date"),
             "active_sites": active,
             "total_sites": len(locations),
+            "total_victims": g.get("_victim_count"),
         })
     groups.sort(key=lambda g: g["name"].lower())
 
