@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write         # needed so the workflow can commit data/threats.json back
 
+concurrency:
+  group: fetch-feed
+  cancel-in-progress: false   # let a running fetch finish rather than killing it mid-write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -38,5 +42,8 @@ jobs:
             echo "No new entries, nothing to commit."
           else
             git commit -m "Update threat feed data [skip ci]"
+            # Rebase onto whatever's newest on the remote before pushing, in
+            # case another run (or a manual push) landed while this job ran.
+            git pull --rebase origin main
             git push
           fi
