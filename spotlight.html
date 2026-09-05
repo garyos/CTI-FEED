@@ -127,7 +127,7 @@
 
   /* --- title slide --- */
   .case-number { font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 10px; }
-  .slide-title h1 {
+  .slide-inner h1 {
     font-family: var(--font-sans); font-size: clamp(28px, 8vw, 44px); margin: 0 0 12px; line-height: 1.1;
     letter-spacing: 0.01em;
   }
@@ -247,6 +247,12 @@
   .cname { font-family: var(--font-sans); font-size: 14px; font-weight: 600; margin-bottom: 3px; }
   .cdesc { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; max-width: 56ch; }
 
+  /* --- CVE digest slide --- */
+  .kev-box { border: 1px solid var(--red); padding: 10px 12px; font-size: 12px; line-height: 1.55; color: var(--text); margin: 14px 0; }
+  .kev-box .kb-label { color: var(--red); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .ref-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .ref-list a { color: var(--blue); font-size: 11.5px; word-break: break-all; }
+
   /* --- nav --- */
   /* purely a visual/documentation region — pointer-events:none so it never
      shadows interactive elements inside the active slide underneath it;
@@ -310,6 +316,10 @@
   const id = params.get("id") || params.get("group");
   const fromUrl = params.get("from");
   const fromName = params.get("fromName");
+  // Digest mode: no specific entity requested (e.g. the plain "Spotlight" button on
+  // index.html) — a mixed carousel of recent feed items, severe CVEs, and two full
+  // group dossiers, built once in init() and assembled by buildDigestSlides().
+  const isDigest = params.get("mode") === "digest" || !id;
 
   const TYPE_META = {
     groups: { caseLabel: "CASE FILE", pageLabel: "ACTOR" },
@@ -365,6 +375,18 @@
 
   function groupsUsingSoftware(s, data) {
     return data.groups.filter(g => g.software.includes(s.id));
+  }
+
+  async function loadThreats() {
+    const res = await fetch(`data/threats.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  async function loadCveLatest() {
+    const res = await fetch(`data/cve/latest.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
   }
 
   function percentile(arr, p) {
@@ -643,6 +665,55 @@
     };
   }
 
+  // ---------- digest slides (feed items / CVEs, for the mixed Spotlight digest) ----------
+
+  function feedItemSlide(entry) {
+    return {
+      key: "feed", duration: 6000,
+      html: `
+        <div class="case-number">SIGNAL FEED // ${escapeHtml(entry.source || "unknown source")} // ${escapeHtml((entry.severity || "info").toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(entry.title)}</h1>
+        <p class="dossier-text">${escapeHtml(entry.summary) || "No summary available."}</p>
+        <a class="zoom-link no-nav" href="${escapeHtml(entry.link)}" target="_blank" rel="noopener noreferrer">read full article ↗</a>
+      `,
+    };
+  }
+
+  function cveDetailSlide(cve) {
+    const sev = (cve.cvss && cve.cvss.severity) || "UNRATED";
+    const score = cve.cvss ? `${cve.cvss.score.toFixed(1)} (v${cve.cvss.version})` : "unrated";
+    return {
+      key: "cve", duration: 8000,
+      html: `
+        <div class="case-number">CVE RECORD // ${sev} // CVSS ${score}</div>
+        <h1 class="redact">${escapeHtml(cve.id)}</h1>
+        <p class="dossier-text">${escapeHtml(cve.description)}</p>
+        ${cve.kev && cve.kev.in_kev ? `
+          <div class="kev-box">
+            <div class="kb-label">⚠ CISA KNOWN EXPLOITED VULNERABILITY — added ${escapeHtml(cve.kev.date_added)}</div>
+            ${escapeHtml(cve.kev.required_action || "")}
+          </div>` : ""}
+        <div class="meta-grid">
+          <div class="meta-cell"><span>Published</span><b>${(cve.published || "—").slice(0, 10)}</b></div>
+          <div class="meta-cell"><span>Last modified</span><b>${(cve.lastModified || "—").slice(0, 10)}</b></div>
+        </div>
+        ${(cve.cwes || []).length ? `
+          <div class="section-title">Weakness categories</div>
+          <div class="chip-row">${cve.cwes.map(w => `<span class="tag-chip">${escapeHtml(w.id)} · ${escapeHtml(w.name)}</span>`).join("")}</div>
+        ` : ""}
+        ${(cve.vendors || []).length ? `
+          <div class="section-title">Affected vendors / products</div>
+          <div class="chip-row">${cve.vendors.map(v => `<span class="tag-chip">${escapeHtml(v)}</span>`).join("")}</div>
+        ` : ""}
+        <div class="section-title">References</div>
+        <div class="ref-list">
+          <a class="no-nav" href="https://nvd.nist.gov/vuln/detail/${encodeURIComponent(cve.id)}" target="_blank" rel="noopener noreferrer">nvd.nist.gov/vuln/detail/${escapeHtml(cve.id)}</a>
+          ${(cve.references || []).map(r => `<a class="no-nav" href="${escapeHtml(r)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r)}</a>`).join("")}
+        </div>
+      `,
+    };
+  }
+
   // ---------- per-type title/profile slides ----------
 
   function techniqueTitleSlide(t, data) {
@@ -722,6 +793,16 @@
     return list;
   }
 
+  function buildDigestSlides(threats, cves, attackData, groupIds) {
+    const feedSlides = (threats.entries || []).slice(0, 5).map(feedItemSlide);
+    const cveSlides = (cves.cves || []).slice(0, 10).map(cveDetailSlide);
+    const groupSlides = groupIds.flatMap(gid => {
+      const g = attackData.byId.groups[gid];
+      return g ? buildGroupSlides(g, attackData, g.name) : [];
+    });
+    return [...feedSlides, ...cveSlides, ...groupSlides];
+  }
+
   // ---------- engine ----------
 
   let slides = [];
@@ -765,7 +846,9 @@
   }
 
   function renderChrome() {
-    document.getElementById("case-id").textContent = `SIGNAL // SPOTLIGHT // ${TYPE_META[type].pageLabel} // ${domain.toUpperCase()}`;
+    document.getElementById("case-id").textContent = isDigest
+      ? "SIGNAL // SPOTLIGHT // DIGEST"
+      : `SIGNAL // SPOTLIGHT // ${TYPE_META[type].pageLabel} // ${domain.toUpperCase()}`;
     document.getElementById("progress-bar").innerHTML = slides.map(() => `<div class="seg"><div class="seg-fill"></div></div>`).join("");
   }
 
@@ -841,22 +924,34 @@
     startTimer(slides[i].duration);
   }
 
-  function next(fromTimer) {
-    if (idx < slides.length - 1) { goTo(idx + 1); }
-    else if (!fromTimer) { /* already at the end, tapping right does nothing further */ }
+  function next() {
+    // The carousel loops indefinitely — past the last slide it wraps back to the first,
+    // whether that's a single-entity dossier or the mixed digest.
+    goTo(idx < slides.length - 1 ? idx + 1 : 0);
   }
-  function prev() { if (idx > 0) goTo(idx - 1); }
+  function prev() { goTo(idx > 0 ? idx - 1 : slides.length - 1); }
 
   function setupInput() {
     const stage = document.getElementById("stage");
     let downAt = null, downX = 0, downY = 0, moved = false, downOnNoNav = false;
     let lastTapAt = 0;
+    let suppressNextClick = false;
     const DOUBLE_TAP_MS = 340;
 
     document.getElementById("pause-btn").addEventListener("click", (e) => {
       e.stopPropagation();
       toggleManualPause();
     });
+
+    // Capture phase so this runs before a link's own navigation (or an
+    // asset-card's own click-to-expand handler) fires.
+    stage.addEventListener("click", (e) => {
+      if (suppressNextClick) {
+        e.preventDefault();
+        e.stopPropagation();
+        suppressNextClick = false;
+      }
+    }, true);
 
     function performNav(clientX) {
       const w = window.innerWidth;
@@ -872,6 +967,12 @@
     // background tap while paused this way is held for one double-tap window before
     // falling through to normal prev/next, so the two gestures don't collide.
     stage.addEventListener("pointerdown", (e) => {
+      // Starting a drag on top of a real <a> would otherwise trigger the browser's
+      // native "drag this link" gesture instead of our pointermove tracking, which
+      // silently swallows a swipe that happens to start on a link-heavy slide (e.g.
+      // Connections). preventDefault here suppresses only that native drag — the
+      // link's own click-driven navigation on release is unaffected.
+      if (e.target.closest("a")) e.preventDefault();
       downAt = performance.now(); downX = e.clientX; downY = e.clientY; moved = false;
       downOnNoNav = !!e.target.closest(".no-nav");
       pauseTimer();
@@ -888,6 +989,12 @@
       downAt = null;
 
       if (moved && Math.abs(dx) > 60) {
+        // A drag that starts AND ends over the same <a> (a wide row like an
+        // associate-row spans most of the slide width) still fires a native
+        // click on release regardless of distance traveled — unlike touch,
+        // mouse click-detection doesn't care how far you moved in between.
+        // Since we've already treated this as a swipe, suppress that click.
+        suppressNextClick = true;
         interactionPaused = false;
         if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
         resumeTimer();
@@ -937,11 +1044,60 @@
   function setupBackLink() {
     const el = document.getElementById("exit-link");
     if (fromUrl) { el.href = fromUrl; el.textContent = `‹ ${fromName || "back"}`; }
+    else if (isDigest) { el.href = "index.html"; el.textContent = "‹ EXIT"; }
     else { el.href = "attack.html"; el.textContent = "‹ EXIT"; }
   }
 
+  async function loadDigestData() {
+    const [attackR, threatsR, cveR] = await Promise.allSettled([loadDomain(), loadThreats(), loadCveLatest()]);
+    if (attackR.status === "rejected") console.error("digest: ATT&CK data failed to load", attackR.reason);
+    if (threatsR.status === "rejected") console.error("digest: feed data failed to load", threatsR.reason);
+    if (cveR.status === "rejected") console.error("digest: CVE data failed to load", cveR.reason);
+    return {
+      attackData: attackR.status === "fulfilled" ? attackR.value : null,
+      threats: threatsR.status === "fulfilled" ? threatsR.value : { entries: [] },
+      cves: cveR.status === "fulfilled" ? cveR.value : { cves: [] },
+    };
+  }
+
+  async function initDigest() {
+    const { attackData, threats, cves } = await loadDigestData();
+
+    const validGroupIds = attackData ? attackData.groups.map(g => g.id) : [];
+    let groupIds = (params.get("groups") || "").split(",").map(s => s.trim()).filter(gid => validGroupIds.includes(gid));
+
+    // No (valid) group pair pinned in the URL yet — pick two at random and bake
+    // them into the URL via replaceState, so reloading or backing out of a
+    // zoomed-in sub-entity returns to this *same* pair rather than a fresh roll.
+    if (groupIds.length < 2 && validGroupIds.length >= 2) {
+      const pool = [...validGroupIds];
+      groupIds = [];
+      while (groupIds.length < 2 && pool.length) {
+        groupIds.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+      }
+      const p = new URLSearchParams(location.search);
+      p.set("mode", "digest");
+      p.set("domain", domain);
+      p.set("groups", groupIds.join(","));
+      history.replaceState(null, "", `spotlight.html?${p.toString()}`);
+    }
+
+    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds);
+    if (slides.length === 0) {
+      showEmptyTarget("No feed, CVE, or ATT&CK data available yet — have the fetch scripts been run?");
+      return;
+    }
+
+    setupBackLink();
+    renderChrome();
+    renderSlides();
+    setupInput();
+    goTo(0);
+  }
+
   async function init() {
-    if (!id) { showEmptyTarget("No target was specified. Open a dossier from the ATT&CK Explorer."); return; }
+    if (isDigest) { await initDigest(); return; }
+
     let data;
     try { data = await loadDomain(); }
     catch (err) { showEmptyTarget(`Couldn't load ${domain} data. Has scripts/fetch_attack.py been run yet?`); console.error(err); return; }

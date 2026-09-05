@@ -16,6 +16,7 @@
     --red: #ff5c5c;
     --blue: #5ac8ff;
     --green: #4fd58a;
+    --purple: #c792ea;
     --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
   }
@@ -95,6 +96,10 @@
   .explorer-cta.cve {
     background: var(--red);
     border-color: var(--red);
+  }
+  .explorer-cta.spotlight {
+    background: var(--purple);
+    border-color: var(--purple);
     margin-bottom: 26px;
   }
   .explorer-cta:hover, .explorer-cta:focus-visible { filter: brightness(1.08); }
@@ -390,6 +395,15 @@
       <span class="cta-text">
         <span class="cta-title">CVE Explorer</span>
         <span class="cta-desc">Critical &amp; High severity CVEs, cross-referenced against CISA's actively-exploited catalog</span>
+      </span>
+      <span class="cta-arrow">›</span>
+    </a>
+
+    <a class="explorer-cta spotlight" href="spotlight.html">
+      <span class="cta-icon">✦</span>
+      <span class="cta-text">
+        <span class="cta-title">Spotlight</span>
+        <span class="cta-desc">A looping digest — recent feed items, severe CVEs, and two random APT dossiers</span>
       </span>
       <span class="cta-arrow">›</span>
     </a>
