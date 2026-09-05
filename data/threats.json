@@ -7,8 +7,42 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T11:56:56.856857+00:00",
+  "fetched_at": "2026-09-05T15:00:12.883633+00:00",
   "entries": [
+    {
+      "id": "b0588f2d7af5",
+      "source": "BleepingComputer",
+      "title": "Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain",
+      "summary": "A massive cybercriminal operation is leveraging thousands of compromised small-business websites to deliver ClickFix payloads stored in smart contracts on the BNB Smart Chain (BSC). [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/",
+      "published": "Sat, 05 Sep 2026 10:29:13 -0400",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        14,
+        29,
+        13
+      ],
+      "severity": "info"
+    },
+    {
+      "id": "7353763f53df",
+      "source": "SecurityWeek",
+      "title": "Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites",
+      "summary": "<p>Tracked as CVE-2026-32475 (CVSS score of 9.8), the bug described as an arbitrary file upload issue in the function that handles form submissions.</p>\n<p>The post <a href=\"https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/\">Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites</a> appeared first on <a href=\"https://www.securityweek.c",
+      "link": "https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/",
+      "published": "Sat, 05 Sep 2026 13:00:28 +0000",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        13,
+        0,
+        28
+      ],
+      "severity": "high"
+    },
     {
       "id": "99654aef2752",
       "source": "BleepingComputer",
@@ -639,23 +673,6 @@
       "severity": "critical"
     },
     {
-      "id": "0abc57e61012",
-      "source": "SecurityWeek",
-      "title": "Manchester Airports Group Data on 8.8 Million People Leaked After Ransom Refusal",
-      "summary": "<p>Hacker group published roughly 550GB of data after MAG reportedly refused to pay a ransom demand; the group says it gained access via exposed admin keys.</p>\n<p>The post <a href=\"https://www.securityweek.com/manchester-airports-group-data-on-8-8-million-people-leaked-after-ransom-refusal/\">Manchester Airports Group Data on 8.8 Million People Leaked After Ransom Refusal</a> appeared first on <a ",
-      "link": "https://www.securityweek.com/manchester-airports-group-data-on-8-8-million-people-leaked-after-ransom-refusal/",
-      "published": "Thu, 03 Sep 2026 15:35:19 +0000",
-      "published_sort": [
-        2026,
-        9,
-        3,
-        15,
-        35,
-        19
-      ],
-      "severity": "info"
-    },
-    {
       "id": "78a351450324",
       "source": "The Hacker News",
       "title": "BraZetsu Malware Turns Compromised Windows Hosts Into Criminal Marketplace Inventory",
@@ -722,23 +739,6 @@
         52
       ],
       "severity": "info"
-    },
-    {
-      "id": "7e67bf78de99",
-      "source": "BleepingComputer",
-      "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
-      "summary": "A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
-      "published": "Thu, 03 Sep 2026 10:52:20 -0400",
-      "published_sort": [
-        2026,
-        9,
-        3,
-        14,
-        52,
-        20
-      ],
-      "severity": "critical"
     },
     {
       "id": "77c79351428d",
