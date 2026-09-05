@@ -1,0 +1,6793 @@
+{
+  "domain": "mobile",
+  "name": "Mobile ATT&CK",
+  "fetched_at": "2026-09-05T14:53:10.546027+00:00",
+  "tactics": [
+    {
+      "id": "TA0027",
+      "name": "Initial Access",
+      "shortname": "initial-access"
+    },
+    {
+      "id": "TA0041",
+      "name": "Execution",
+      "shortname": "execution"
+    },
+    {
+      "id": "TA0028",
+      "name": "Persistence",
+      "shortname": "persistence"
+    },
+    {
+      "id": "TA0029",
+      "name": "Privilege Escalation",
+      "shortname": "privilege-escalation"
+    },
+    {
+      "id": "TA0030",
+      "name": "Defense Evasion",
+      "shortname": "defense-evasion"
+    },
+    {
+      "id": "TA0031",
+      "name": "Credential Access",
+      "shortname": "credential-access"
+    },
+    {
+      "id": "TA0032",
+      "name": "Discovery",
+      "shortname": "discovery"
+    },
+    {
+      "id": "TA0033",
+      "name": "Lateral Movement",
+      "shortname": "lateral-movement"
+    },
+    {
+      "id": "TA0035",
+      "name": "Collection",
+      "shortname": "collection"
+    },
+    {
+      "id": "TA0037",
+      "name": "Command and Control",
+      "shortname": "command-and-control"
+    },
+    {
+      "id": "TA0036",
+      "name": "Exfiltration",
+      "shortname": "exfiltration"
+    },
+    {
+      "id": "TA0034",
+      "name": "Impact",
+      "shortname": "impact"
+    }
+  ],
+  "techniques": [
+    {
+      "id": "T1398",
+      "name": "Boot or Logon Initialization Scripts",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0285",
+        "S1079",
+        "S1095",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1404",
+      "name": "Exploitation for Privilege Escalation",
+      "tactics": [
+        "TA0029"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0182",
+        "S0289",
+        "S0290",
+        "S0293",
+        "S0294",
+        "S0316",
+        "S0322",
+        "S0324",
+        "S0327",
+        "S0405",
+        "S0420",
+        "S0440",
+        "S0463",
+        "S0494",
+        "S0550",
+        "S1061",
+        "S1126",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1406",
+      "name": "Obfuscated Files or Information",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0286",
+        "S0293",
+        "S0312",
+        "S0318",
+        "S0323",
+        "S0399",
+        "S0406",
+        "S0407",
+        "S0408",
+        "S0411",
+        "S0420",
+        "S0421",
+        "S0423",
+        "S0427",
+        "S0432",
+        "S0463",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0494",
+        "S0509",
+        "S0524",
+        "S0525",
+        "S0529",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0544",
+        "S0545",
+        "S0549",
+        "S0550",
+        "S0555",
+        "S1054",
+        "S1055",
+        "S1056",
+        "S1061",
+        "S1067",
+        "S1094",
+        "S1095",
+        "S1185",
+        "S1195",
+        "S1214",
+        "S1231",
+        "S9004",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1406.001",
+      "name": "Steganography",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1406",
+      "groups": [],
+      "software": [
+        "S0440"
+      ]
+    },
+    {
+      "id": "T1406.002",
+      "name": "Software Packing",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1406",
+      "groups": [],
+      "software": [
+        "S0406",
+        "S0432",
+        "S1062",
+        "S1094",
+        "S1225",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1407",
+      "name": "Download New Code at Runtime",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0287",
+        "S0293",
+        "S0295",
+        "S0311",
+        "S0324",
+        "S0325",
+        "S0327",
+        "S0405",
+        "S0420",
+        "S0422",
+        "S0424",
+        "S0432",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0494",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0539",
+        "S0544",
+        "S0545",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0555",
+        "S0577",
+        "S0655",
+        "S1055",
+        "S1061",
+        "S1079",
+        "S1083",
+        "S1094",
+        "S1241",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1409",
+      "name": "Stored Application Data",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034"
+      ],
+      "software": [
+        "S0289",
+        "S0295",
+        "S0311",
+        "S0316",
+        "S0324",
+        "S0327",
+        "S0329",
+        "S0399",
+        "S0405",
+        "S0408",
+        "S0485",
+        "S0505",
+        "S0509",
+        "S0529",
+        "S0550",
+        "S0551",
+        "S0577",
+        "S0655",
+        "S1062",
+        "S1067",
+        "S1077",
+        "S1079",
+        "S1082",
+        "S1092",
+        "S1093",
+        "S1103",
+        "S1128",
+        "S1185",
+        "S1243",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1414",
+      "name": "Clipboard Data",
+      "tactics": [
+        "TA0035",
+        "TA0031"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0295",
+        "S0297",
+        "S0421",
+        "S1079",
+        "S1241"
+      ]
+    },
+    {
+      "id": "T1417",
+      "name": "Input Capture",
+      "tactics": [
+        "TA0035",
+        "TA0031"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1126",
+        "S1225",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1417.001",
+      "name": "Keylogging",
+      "tactics": [
+        "TA0035",
+        "TA0031"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1417",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0406",
+        "S0407",
+        "S0408",
+        "S0422",
+        "S0478",
+        "S0480",
+        "S0522",
+        "S0655",
+        "S1054",
+        "S1055",
+        "S1062",
+        "S1079",
+        "S1083",
+        "S1092",
+        "S1094",
+        "S1231",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1417.002",
+      "name": "GUI Input Capture",
+      "tactics": [
+        "TA0031",
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1417",
+      "groups": [],
+      "software": [
+        "S0297",
+        "S0298",
+        "S0301",
+        "S0399",
+        "S0403",
+        "S0406",
+        "S0411",
+        "S0422",
+        "S0423",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0522",
+        "S0536",
+        "S0539",
+        "S0545",
+        "S0558",
+        "S1054",
+        "S1055",
+        "S1056",
+        "S1062",
+        "S1067",
+        "S1069",
+        "S1083",
+        "S1092",
+        "S1093",
+        "S1094",
+        "S1103",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1418",
+      "name": "Software Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0311",
+        "S0316",
+        "S0328",
+        "S0399",
+        "S0403",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0411",
+        "S0418",
+        "S0421",
+        "S0422",
+        "S0423",
+        "S0424",
+        "S0427",
+        "S0440",
+        "S0463",
+        "S0478",
+        "S0479",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0505",
+        "S0509",
+        "S0525",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0539",
+        "S0544",
+        "S0545",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S1061",
+        "S1062",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1082",
+        "S1083",
+        "S1185",
+        "S1215",
+        "S1216",
+        "S1225",
+        "S1231",
+        "S1241",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1418.001",
+      "name": "Security Software Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1418",
+      "groups": [],
+      "software": [
+        "S0406",
+        "S0522",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1420",
+      "name": "File and Directory Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0505",
+        "S0529",
+        "S0535",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S0577",
+        "S1077",
+        "S1092",
+        "S1095",
+        "S1216",
+        "S1225",
+        "S1241",
+        "S9005",
+        "S9006",
+        "S9030"
+      ]
+    },
+    {
+      "id": "T1421",
+      "name": "System Network Connections Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S0399",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0506",
+        "S0509",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1422",
+      "name": "System Network Configuration Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G1028"
+      ],
+      "software": [
+        "S0291",
+        "S0292",
+        "S0310",
+        "S0311",
+        "S0313",
+        "S0315",
+        "S0316",
+        "S0318",
+        "S0324",
+        "S0326",
+        "S0328",
+        "S0329",
+        "S0403",
+        "S0405",
+        "S0406",
+        "S0407",
+        "S0411",
+        "S0425",
+        "S0427",
+        "S0432",
+        "S0463",
+        "S0478",
+        "S0489",
+        "S0490",
+        "S0506",
+        "S0509",
+        "S0522",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0540",
+        "S0545",
+        "S0577",
+        "S1056",
+        "S1061",
+        "S1077",
+        "S1079",
+        "S1082",
+        "S1093",
+        "S1185",
+        "S1214",
+        "S1215",
+        "S1216",
+        "S1231",
+        "S1241",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1422.001",
+      "name": "Internet Connection Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1422",
+      "groups": [],
+      "software": [
+        "S0316",
+        "S0326",
+        "S0405",
+        "S0407",
+        "S0425",
+        "S0427",
+        "S0463",
+        "S0478",
+        "S0506",
+        "S0509",
+        "S0522",
+        "S0529",
+        "S0540",
+        "S0545",
+        "S1056",
+        "S1061",
+        "S1077",
+        "S1079",
+        "S1093"
+      ]
+    },
+    {
+      "id": "T1422.002",
+      "name": "Wi-Fi Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1422",
+      "groups": [],
+      "software": [
+        "S0316",
+        "S0326",
+        "S0407",
+        "S0425",
+        "S0427",
+        "S0463",
+        "S1056",
+        "S1077",
+        "S1079",
+        "S1185",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1423",
+      "name": "Network Service Scanning",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1424",
+      "name": "Process Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0311",
+        "S0411",
+        "S0421",
+        "S0422",
+        "S0440",
+        "S0489",
+        "S0544",
+        "S1055",
+        "S1185",
+        "S1215",
+        "S1216",
+        "S1225"
+      ]
+    },
+    {
+      "id": "T1426",
+      "name": "System Information Discovery",
+      "tactics": [
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0288",
+        "S0289",
+        "S0304",
+        "S0310",
+        "S0311",
+        "S0313",
+        "S0318",
+        "S0326",
+        "S0399",
+        "S0403",
+        "S0406",
+        "S0407",
+        "S0411",
+        "S0418",
+        "S0420",
+        "S0421",
+        "S0422",
+        "S0425",
+        "S0427",
+        "S0463",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0490",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0509",
+        "S0522",
+        "S0525",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0540",
+        "S0544",
+        "S0550",
+        "S0551",
+        "S0555",
+        "S0558",
+        "S0577",
+        "S1056",
+        "S1061",
+        "S1062",
+        "S1077",
+        "S1079",
+        "S1082",
+        "S1083",
+        "S1094",
+        "S1095",
+        "S1126",
+        "S1185",
+        "S1231",
+        "S1241",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1428",
+      "name": "Exploitation of Remote Services",
+      "tactics": [
+        "TA0033"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0299",
+        "S0300"
+      ]
+    },
+    {
+      "id": "T1429",
+      "name": "Audio Capture",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0182",
+        "S0289",
+        "S0292",
+        "S0295",
+        "S0301",
+        "S0305",
+        "S0316",
+        "S0318",
+        "S0320",
+        "S0324",
+        "S0326",
+        "S0327",
+        "S0328",
+        "S0329",
+        "S0399",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0418",
+        "S0421",
+        "S0422",
+        "S0425",
+        "S0489",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0529",
+        "S0535",
+        "S0544",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S0577",
+        "S0655",
+        "S1061",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1092",
+        "S1095",
+        "S1126",
+        "S1128",
+        "S1185",
+        "S1195",
+        "S1231",
+        "S1241",
+        "S1243",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1430",
+      "name": "Location Tracking",
+      "tactics": [
+        "TA0035",
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0182",
+        "S0289",
+        "S0291",
+        "S0292",
+        "S0295",
+        "S0304",
+        "S0305",
+        "S0309",
+        "S0314",
+        "S0323",
+        "S0324",
+        "S0327",
+        "S0328",
+        "S0329",
+        "S0399",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0418",
+        "S0421",
+        "S0422",
+        "S0425",
+        "S0463",
+        "S0480",
+        "S0485",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0544",
+        "S0549",
+        "S0551",
+        "S0555",
+        "S0558",
+        "S0577",
+        "S0655",
+        "S1061",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1083",
+        "S1092",
+        "S1093",
+        "S1094",
+        "S1095",
+        "S1128",
+        "S1185",
+        "S1195",
+        "S1216",
+        "S1241",
+        "S1243",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1430.001",
+      "name": "Remote Device Management Services",
+      "tactics": [
+        "TA0035",
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1430",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1430.002",
+      "name": "Impersonate SS7 Nodes",
+      "tactics": [
+        "TA0035",
+        "TA0032"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1430",
+      "groups": [],
+      "software": [
+        "S0602"
+      ]
+    },
+    {
+      "id": "T1437",
+      "name": "Application Layer Protocol",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0550",
+        "S1054",
+        "S1083",
+        "S1243"
+      ]
+    },
+    {
+      "id": "T1437.001",
+      "name": "Web Protocols",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1437",
+      "groups": [
+        "G0070"
+      ],
+      "software": [
+        "S0304",
+        "S0306",
+        "S0307",
+        "S0308",
+        "S0311",
+        "S0313",
+        "S0326",
+        "S0327",
+        "S0403",
+        "S0405",
+        "S0406",
+        "S0411",
+        "S0418",
+        "S0425",
+        "S0426",
+        "S0427",
+        "S0432",
+        "S0463",
+        "S0478",
+        "S0479",
+        "S0480",
+        "S0509",
+        "S0522",
+        "S0525",
+        "S0535",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0549",
+        "S0551",
+        "S0555",
+        "S1055",
+        "S1061",
+        "S1062",
+        "S1067",
+        "S1077",
+        "S1079",
+        "S1083",
+        "S1093",
+        "S1094",
+        "S1095",
+        "S1185",
+        "S1195",
+        "S1225",
+        "S1231",
+        "S1241",
+        "S9004",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1451",
+      "name": "SIM Card Swap",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G1004",
+        "G1015"
+      ],
+      "software": []
+    },
+    {
+      "id": "T1453",
+      "name": "Abuse Accessibility Features",
+      "tactics": [
+        "TA0035",
+        "TA0031"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0422",
+        "S1067",
+        "S1083",
+        "S1225",
+        "S1231",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1456",
+      "name": "Drive-By Compromise",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S0311",
+        "S0328",
+        "S0463",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1458",
+      "name": "Replication Through Removable Media",
+      "tactics": [
+        "TA0027",
+        "TA0033"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0312",
+        "S0315"
+      ]
+    },
+    {
+      "id": "T1461",
+      "name": "Lockscreen Bypass",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1083",
+        "S1092",
+        "S1094",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1464",
+      "name": "Network Denial of Service",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1062"
+      ]
+    },
+    {
+      "id": "T1471",
+      "name": "Data Encrypted for Impact",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0298",
+        "S0422",
+        "S1062"
+      ]
+    },
+    {
+      "id": "T1474",
+      "name": "Supply Chain Compromise",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1474.001",
+      "name": "Compromise Software Dependencies and Development Tools",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1474",
+      "groups": [],
+      "software": [
+        "S0297"
+      ]
+    },
+    {
+      "id": "T1474.002",
+      "name": "Compromise Hardware Supply Chain",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1474",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1474.003",
+      "name": "Compromise Software Supply Chain",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1474",
+      "groups": [],
+      "software": [
+        "S0309",
+        "S0319",
+        "S0328",
+        "S0424",
+        "S0555"
+      ]
+    },
+    {
+      "id": "T1481",
+      "name": "Web Service",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1214"
+      ]
+    },
+    {
+      "id": "T1481.001",
+      "name": "Dead Drop Resolver",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1481",
+      "groups": [],
+      "software": [
+        "S0310",
+        "S0318",
+        "S0422",
+        "S0539",
+        "S1214"
+      ]
+    },
+    {
+      "id": "T1481.002",
+      "name": "Bidirectional Communication",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1481",
+      "groups": [],
+      "software": [
+        "S0485",
+        "S0545",
+        "S0655",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1481.003",
+      "name": "One-Way Communication",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1481",
+      "groups": [],
+      "software": [
+        "S0302"
+      ]
+    },
+    {
+      "id": "T1509",
+      "name": "Non-Standard Port",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0405",
+        "S0408",
+        "S0463",
+        "S0480",
+        "S0485",
+        "S0539",
+        "S1083",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1512",
+      "name": "Video Capture",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0292",
+        "S0295",
+        "S0301",
+        "S0316",
+        "S0320",
+        "S0324",
+        "S0327",
+        "S0328",
+        "S0399",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0418",
+        "S0421",
+        "S0425",
+        "S0426",
+        "S0489",
+        "S0505",
+        "S0506",
+        "S0535",
+        "S0544",
+        "S0549",
+        "S0551",
+        "S0558",
+        "S0655",
+        "S1061",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1092",
+        "S1126",
+        "S1128",
+        "S1185",
+        "S1195",
+        "S1241",
+        "S1243",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1513",
+      "name": "Screen Capture",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0324",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S0421",
+        "S0422",
+        "S0423",
+        "S0427",
+        "S0478",
+        "S0479",
+        "S0485",
+        "S0489",
+        "S0551",
+        "S0558",
+        "S0655",
+        "S1054",
+        "S1062",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1082",
+        "S1083",
+        "S1094",
+        "S1095",
+        "S1185",
+        "S1195",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1516",
+      "name": "Input Injection",
+      "tactics": [
+        "TA0030",
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0403",
+        "S0406",
+        "S0423",
+        "S0427",
+        "S0479",
+        "S0480",
+        "S0485",
+        "S0494",
+        "S0545",
+        "S1055",
+        "S1062",
+        "S1094",
+        "S1231",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1517",
+      "name": "Access Notifications",
+      "tactics": [
+        "TA0035",
+        "TA0031"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0425",
+        "S0432",
+        "S0485",
+        "S0489",
+        "S1055",
+        "S1061",
+        "S1062",
+        "S1067",
+        "S1077",
+        "S1083",
+        "S1092",
+        "S1103",
+        "S1195",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1521",
+      "name": "Encrypted Channel",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0302",
+        "S1095"
+      ]
+    },
+    {
+      "id": "T1521.001",
+      "name": "Symmetric Cryptography",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1521",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0411",
+        "S0478",
+        "S1055",
+        "S1216"
+      ]
+    },
+    {
+      "id": "T1521.002",
+      "name": "Asymmetric Cryptography",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1521",
+      "groups": [],
+      "software": [
+        "S0507",
+        "S0529",
+        "S0549",
+        "S0555",
+        "S1055",
+        "S1067",
+        "S1216"
+      ]
+    },
+    {
+      "id": "T1521.003",
+      "name": "SSL Pinning",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1521",
+      "groups": [],
+      "software": [
+        "S0507"
+      ]
+    },
+    {
+      "id": "T1532",
+      "name": "Archive Collected Data",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0405",
+        "S0421",
+        "S0422",
+        "S0424",
+        "S0505",
+        "S0535",
+        "S0540",
+        "S0577",
+        "S1079",
+        "S1082",
+        "S1094",
+        "S1185",
+        "S1243"
+      ]
+    },
+    {
+      "id": "T1533",
+      "name": "Data from Local System",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0290",
+        "S0295",
+        "S0301",
+        "S0305",
+        "S0328",
+        "S0329",
+        "S0405",
+        "S0406",
+        "S0407",
+        "S0408",
+        "S0418",
+        "S0421",
+        "S0422",
+        "S0423",
+        "S0425",
+        "S0426",
+        "S0427",
+        "S0463",
+        "S0489",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0535",
+        "S0536",
+        "S0544",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0555",
+        "S0558",
+        "S0577",
+        "S0655",
+        "S1054",
+        "S1061",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1083",
+        "S1092",
+        "S1094",
+        "S1095",
+        "S1126",
+        "S1185",
+        "S1195",
+        "S1215",
+        "S1216",
+        "S1241",
+        "S1243",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1541",
+      "name": "Foreground Persistence",
+      "tactics": [
+        "TA0030",
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0485",
+        "S0545",
+        "S0558",
+        "S1054",
+        "S1225",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1544",
+      "name": "Ingress Tool Transfer",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0326",
+        "S0407",
+        "S0418",
+        "S0485",
+        "S1055",
+        "S1061",
+        "S1082",
+        "S1083",
+        "S1126",
+        "S1185",
+        "S1195",
+        "S1216",
+        "S1225",
+        "S1231",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1575",
+      "name": "Native API",
+      "tactics": [
+        "TA0030",
+        "TA0041"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0432",
+        "S0529",
+        "S0540",
+        "S0544",
+        "S0545",
+        "S0555",
+        "S1083",
+        "S1185",
+        "S1231",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1577",
+      "name": "Compromise Application Executable",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0311",
+        "S0440",
+        "S1079"
+      ]
+    },
+    {
+      "id": "T1582",
+      "name": "SMS Control",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0292",
+        "S0301",
+        "S0328",
+        "S0411",
+        "S0422",
+        "S0423",
+        "S0425",
+        "S0427",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0505",
+        "S0509",
+        "S0522",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0545",
+        "S0549",
+        "S0551",
+        "S0558",
+        "S0655",
+        "S1054",
+        "S1055",
+        "S1062",
+        "S1067",
+        "S1069",
+        "S1092",
+        "S1095",
+        "S1185",
+        "S1195",
+        "S1231",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1603",
+      "name": "Scheduled Task/Job",
+      "tactics": [
+        "TA0041",
+        "TA0028"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0536",
+        "S0545",
+        "S0558",
+        "S1083",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1604",
+      "name": "Proxy Through Victim",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0522",
+        "S1067"
+      ]
+    },
+    {
+      "id": "T1616",
+      "name": "Call Control",
+      "tactics": [
+        "TA0035",
+        "TA0034",
+        "TA0037"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0292",
+        "S0407",
+        "S0422",
+        "S0529",
+        "S0655",
+        "S1054",
+        "S1069",
+        "S1080",
+        "S1083",
+        "S1092",
+        "S1094",
+        "S1195",
+        "S1214",
+        "S1231",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1617",
+      "name": "Hooking",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0407",
+        "S1208",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1623",
+      "name": "Command and Scripting Interpreter",
+      "tactics": [
+        "TA0041"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1056",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1623.001",
+      "name": "Unix Shell",
+      "tactics": [
+        "TA0041"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1623",
+      "groups": [],
+      "software": [
+        "S0544",
+        "S0550",
+        "S0555",
+        "S0558",
+        "S0655",
+        "S1061",
+        "S1082"
+      ]
+    },
+    {
+      "id": "T1624",
+      "name": "Event Triggered Execution",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1079",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1624.001",
+      "name": "Broadcast Receivers",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1624",
+      "groups": [],
+      "software": [
+        "S0305",
+        "S0316",
+        "S0324",
+        "S0408",
+        "S0419",
+        "S0421",
+        "S0427",
+        "S0478",
+        "S0479",
+        "S0509",
+        "S0522",
+        "S0524",
+        "S0525",
+        "S0536",
+        "S0544",
+        "S0545",
+        "S0558",
+        "S1095",
+        "S1103",
+        "S1195",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1625",
+      "name": "Hijack Execution Flow",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0311"
+      ]
+    },
+    {
+      "id": "T1625.001",
+      "name": "System Runtime API Hijacking",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1625",
+      "groups": [],
+      "software": [
+        "S0408",
+        "S0420",
+        "S0494"
+      ]
+    },
+    {
+      "id": "T1626",
+      "name": "Abuse Elevation Control Mechanism",
+      "tactics": [
+        "TA0029"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1626.001",
+      "name": "Device Administrator Permissions",
+      "tactics": [
+        "TA0029"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1626",
+      "groups": [],
+      "software": [
+        "S0318",
+        "S0522",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S1061",
+        "S1077",
+        "S1082",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1627",
+      "name": "Execution Guardrails",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1215",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1627.001",
+      "name": "Geofencing",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1627",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0507",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1628",
+      "name": "Hide Artifacts",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1628.001",
+      "name": "Suppress Application Icon",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1628",
+      "groups": [],
+      "software": [
+        "S0302",
+        "S0311",
+        "S0406",
+        "S0408",
+        "S0411",
+        "S0418",
+        "S0419",
+        "S0423",
+        "S0440",
+        "S0480",
+        "S0485",
+        "S0505",
+        "S0509",
+        "S0525",
+        "S0550",
+        "S0558",
+        "S0655",
+        "S1054",
+        "S1062",
+        "S1103",
+        "S1195"
+      ]
+    },
+    {
+      "id": "T1628.002",
+      "name": "User Evasion",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1628",
+      "groups": [],
+      "software": [
+        "S0655",
+        "S1067",
+        "S1077",
+        "S1094",
+        "S1195",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1628.003",
+      "name": "Conceal Multimedia Files",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1628",
+      "groups": [
+        "G0112"
+      ],
+      "software": []
+    },
+    {
+      "id": "T1629",
+      "name": "Impair Defenses",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1225",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1629.001",
+      "name": "Prevent Application Removal",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1629",
+      "groups": [],
+      "software": [
+        "S0286",
+        "S0406",
+        "S0422",
+        "S0485",
+        "S1062",
+        "S1067",
+        "S1083",
+        "S1231",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1629.002",
+      "name": "Device Lockout",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1629",
+      "groups": [],
+      "software": [
+        "S0411",
+        "S0427",
+        "S0524"
+      ]
+    },
+    {
+      "id": "T1629.003",
+      "name": "Disable or Modify Tools",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1629",
+      "groups": [],
+      "software": [
+        "S0420",
+        "S0422",
+        "S0480",
+        "S0485",
+        "S0494",
+        "S1054",
+        "S1061",
+        "S1067",
+        "S1083",
+        "S1094",
+        "S1195",
+        "S1214"
+      ]
+    },
+    {
+      "id": "T1630",
+      "name": "Indicator Removal on Host",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1083",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1630.001",
+      "name": "Uninstall Malicious Application",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1630",
+      "groups": [],
+      "software": [
+        "S0427",
+        "S0480",
+        "S1055",
+        "S1062",
+        "S1092",
+        "S1094",
+        "S9004"
+      ]
+    },
+    {
+      "id": "T1630.002",
+      "name": "File Deletion",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1630",
+      "groups": [],
+      "software": [
+        "S0399",
+        "S0407",
+        "S0408",
+        "S0418",
+        "S0421",
+        "S0440",
+        "S0485",
+        "S0489",
+        "S0505",
+        "S0529",
+        "S0536",
+        "S0549",
+        "S0550",
+        "S0558",
+        "S1077",
+        "S1080",
+        "S1215",
+        "S1216",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1630.003",
+      "name": "Disguise Root/Jailbreak Indicators",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1630",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1631",
+      "name": "Process Injection",
+      "tactics": [
+        "TA0030",
+        "TA0029"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1185",
+        "S1208"
+      ]
+    },
+    {
+      "id": "T1631.001",
+      "name": "Ptrace System Calls",
+      "tactics": [
+        "TA0030",
+        "TA0029"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1631",
+      "groups": [],
+      "software": [
+        "S0424",
+        "S0463",
+        "S0494"
+      ]
+    },
+    {
+      "id": "T1632",
+      "name": "Subvert Trust Controls",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1632.001",
+      "name": "Code Signing Policy Modification",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1632",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0311",
+        "S0420",
+        "S0485",
+        "S0490",
+        "S0505",
+        "S0549",
+        "S0551",
+        "S1056"
+      ]
+    },
+    {
+      "id": "T1633",
+      "name": "Virtualization/Sandbox Evasion",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1061",
+        "S1195"
+      ]
+    },
+    {
+      "id": "T1633.001",
+      "name": "System Checks",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1633",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0301",
+        "S0411",
+        "S0422",
+        "S0423",
+        "S0427",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0509",
+        "S0525",
+        "S0544",
+        "S0545",
+        "S1061",
+        "S1083",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1634",
+      "name": "Credentials from Password Store",
+      "tactics": [
+        "TA0031"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1634.001",
+      "name": "Keychain",
+      "tactics": [
+        "TA0031"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1634",
+      "groups": [],
+      "software": [
+        "S0463",
+        "S1185",
+        "S1216"
+      ]
+    },
+    {
+      "id": "T1635",
+      "name": "Steal Application Access Token",
+      "tactics": [
+        "TA0031"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1635.001",
+      "name": "URI Hijacking",
+      "tactics": [
+        "TA0031"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1635",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1636",
+      "name": "Protected User Data",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1636.001",
+      "name": "Calendar Entries",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1636",
+      "groups": [],
+      "software": [
+        "S0316",
+        "S0328",
+        "S0405",
+        "S0407",
+        "S0408",
+        "S1082"
+      ]
+    },
+    {
+      "id": "T1636.002",
+      "name": "Call Log",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1636",
+      "groups": [],
+      "software": [
+        "S0182",
+        "S0289",
+        "S0292",
+        "S0304",
+        "S0309",
+        "S0316",
+        "S0320",
+        "S0324",
+        "S0328",
+        "S0329",
+        "S0399",
+        "S0405",
+        "S0407",
+        "S0418",
+        "S0421",
+        "S0425",
+        "S0463",
+        "S0489",
+        "S0506",
+        "S0539",
+        "S0544",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S1054",
+        "S1061",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1092",
+        "S1095",
+        "S1185",
+        "S1195",
+        "S1241",
+        "S1243",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1636.003",
+      "name": "Contact List",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1636",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0289",
+        "S0292",
+        "S0304",
+        "S0305",
+        "S0309",
+        "S0316",
+        "S0323",
+        "S0324",
+        "S0328",
+        "S0399",
+        "S0403",
+        "S0405",
+        "S0406",
+        "S0407",
+        "S0408",
+        "S0411",
+        "S0421",
+        "S0422",
+        "S0423",
+        "S0425",
+        "S0463",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0505",
+        "S0506",
+        "S0507",
+        "S0509",
+        "S0522",
+        "S0535",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0544",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S1061",
+        "S1067",
+        "S1069",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1095",
+        "S1126",
+        "S1128",
+        "S1185",
+        "S1195",
+        "S1231",
+        "S1241",
+        "S1243",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1636.004",
+      "name": "SMS Messages",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1636",
+      "groups": [
+        "G0112"
+      ],
+      "software": [
+        "S0182",
+        "S0289",
+        "S0292",
+        "S0295",
+        "S0298",
+        "S0301",
+        "S0303",
+        "S0304",
+        "S0305",
+        "S0309",
+        "S0313",
+        "S0318",
+        "S0320",
+        "S0324",
+        "S0328",
+        "S0329",
+        "S0399",
+        "S0403",
+        "S0405",
+        "S0406",
+        "S0408",
+        "S0411",
+        "S0418",
+        "S0421",
+        "S0423",
+        "S0424",
+        "S0425",
+        "S0427",
+        "S0432",
+        "S0463",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0505",
+        "S0506",
+        "S0509",
+        "S0522",
+        "S0529",
+        "S0535",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0544",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0558",
+        "S0577",
+        "S0655",
+        "S1054",
+        "S1055",
+        "S1061",
+        "S1062",
+        "S1067",
+        "S1069",
+        "S1079",
+        "S1080",
+        "S1083",
+        "S1092",
+        "S1126",
+        "S1128",
+        "S1185",
+        "S1195",
+        "S1214",
+        "S1231",
+        "S1241",
+        "S1243",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1636.005",
+      "name": "Accounts",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1636",
+      "groups": [],
+      "software": [
+        "S1241",
+        "S1243",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1637",
+      "name": "Dynamic Resolution",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1637.001",
+      "name": "Domain Generation Algorithms",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1637",
+      "groups": [],
+      "software": [
+        "S0411",
+        "S0485",
+        "S1055",
+        "S1067"
+      ]
+    },
+    {
+      "id": "T1638",
+      "name": "Adversary-in-the-Middle",
+      "tactics": [
+        "TA0035"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0288",
+        "S0407",
+        "S1062"
+      ]
+    },
+    {
+      "id": "T1639",
+      "name": "Exfiltration Over Alternative Protocol",
+      "tactics": [
+        "TA0036"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1056"
+      ]
+    },
+    {
+      "id": "T1639.001",
+      "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+      "tactics": [
+        "TA0036"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1639",
+      "groups": [],
+      "software": [
+        "S0425",
+        "S0655",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1640",
+      "name": "Account Access Removal",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0407"
+      ]
+    },
+    {
+      "id": "T1641",
+      "name": "Data Manipulation",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1641.001",
+      "name": "Transmitted Data Manipulation",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1641",
+      "groups": [],
+      "software": [
+        "S1062",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1642",
+      "name": "Endpoint Denial of Service",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0298",
+        "S0323",
+        "S0522",
+        "S0536",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1643",
+      "name": "Generate Traffic from Victim",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0290",
+        "S0291",
+        "S0293",
+        "S0303",
+        "S0321",
+        "S0322",
+        "S0325",
+        "S0326",
+        "S0419",
+        "S0424",
+        "S0432",
+        "S0440",
+        "S0494",
+        "S0525",
+        "S0545",
+        "S1103"
+      ]
+    },
+    {
+      "id": "T1644",
+      "name": "Out of Band Data",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S0295",
+        "S0304",
+        "S0316",
+        "S0324",
+        "S0327",
+        "S0328",
+        "S0406",
+        "S0407",
+        "S0411",
+        "S0427",
+        "S0505",
+        "S0529",
+        "S0655",
+        "S1055",
+        "S1079",
+        "S1195",
+        "S1216"
+      ]
+    },
+    {
+      "id": "T1645",
+      "name": "Compromise Client Software Binary",
+      "tactics": [
+        "TA0028"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S0293",
+        "S0294",
+        "S0316",
+        "S0324",
+        "S0407",
+        "S0550",
+        "S0655"
+      ]
+    },
+    {
+      "id": "T1646",
+      "name": "Exfiltration Over C2 Channel",
+      "tactics": [
+        "TA0036"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0326",
+        "S0399",
+        "S0418",
+        "S0421",
+        "S0424",
+        "S0490",
+        "S0507",
+        "S0551",
+        "S1054",
+        "S1055",
+        "S1061",
+        "S1067",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1082",
+        "S1083",
+        "S1093",
+        "S1094",
+        "S1095",
+        "S1185",
+        "S1215",
+        "S1225",
+        "S1231",
+        "S1241",
+        "S9004",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1655",
+      "name": "Masquerading",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1185",
+        "S1208",
+        "S1225",
+        "S9004",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1655.001",
+      "name": "Match Legitimate Name or Location",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": true,
+      "parent": "T1655",
+      "groups": [
+        "G0097",
+        "G1019",
+        "G1028"
+      ],
+      "software": [
+        "S0292",
+        "S0301",
+        "S0314",
+        "S0318",
+        "S0320",
+        "S0418",
+        "S0419",
+        "S0422",
+        "S0423",
+        "S0440",
+        "S0478",
+        "S0480",
+        "S0485",
+        "S0489",
+        "S0506",
+        "S0509",
+        "S0522",
+        "S0524",
+        "S0525",
+        "S0529",
+        "S0536",
+        "S0539",
+        "S0540",
+        "S0544",
+        "S0549",
+        "S0550",
+        "S0551",
+        "S0555",
+        "S0558",
+        "S0577",
+        "S1077",
+        "S1079",
+        "S1080",
+        "S1083",
+        "S1094",
+        "S1126",
+        "S1195",
+        "S1214",
+        "S1231",
+        "S1243",
+        "S9005"
+      ]
+    },
+    {
+      "id": "T1658",
+      "name": "Exploitation for Client Execution",
+      "tactics": [
+        "TA0041"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S1185"
+      ]
+    },
+    {
+      "id": "T1660",
+      "name": "Phishing",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034",
+        "G0094",
+        "G1002",
+        "G1015",
+        "G1028",
+        "G1029"
+      ],
+      "software": [
+        "S0289",
+        "S1067",
+        "S1083",
+        "S1094",
+        "S1185",
+        "S1208",
+        "S1225",
+        "S1231",
+        "S1241",
+        "S9005",
+        "S9006"
+      ]
+    },
+    {
+      "id": "T1661",
+      "name": "Application Versioning",
+      "tactics": [
+        "TA0027",
+        "TA0030"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1055"
+      ]
+    },
+    {
+      "id": "T1662",
+      "name": "Data Destruction",
+      "tactics": [
+        "TA0034"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1094",
+        "S1185",
+        "S1241",
+        "S9030"
+      ]
+    },
+    {
+      "id": "T1663",
+      "name": "Remote Access Software",
+      "tactics": [
+        "TA0037"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1092",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1664",
+      "name": "Exploitation for Initial Access",
+      "tactics": [
+        "TA0027"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0289",
+        "S1094"
+      ]
+    },
+    {
+      "id": "T1670",
+      "name": "Virtualization Solution",
+      "tactics": [
+        "TA0030"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1208",
+        "S1231"
+      ]
+    },
+    {
+      "id": "T1676",
+      "name": "Linked Devices",
+      "tactics": [
+        "TA0035",
+        "TA0028"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034",
+        "G1033"
+      ],
+      "software": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "G1028",
+      "name": "APT-C-23",
+      "aliases": [
+        "APT-C-23",
+        "Mantis",
+        "Arid Viper",
+        "Desert Falcon",
+        "TAG-63",
+        "Grey Karkadann",
+        "Big Bang APT",
+        "Two-tailed Scorpion"
+      ],
+      "summary": "APT-C-23 is a threat group that has been active since at least 2014. APT-C-23 has primarily focused its operations on the Middle East, including Israeli military assets. APT-C-23 has developed mobile spyware targeting Android and iOS devices since 2017.",
+      "techniques": [
+        "T1422",
+        "T1655.001",
+        "T1660"
+      ],
+      "software": [
+        "S0505",
+        "S0577",
+        "S1126",
+        "S1195"
+      ]
+    },
+    {
+      "id": "G0007",
+      "name": "APT28",
+      "aliases": [
+        "APT28",
+        "IRON TWILIGHT",
+        "SNAKEMACKEREL",
+        "Swallowtail",
+        "Group 74",
+        "Sednit",
+        "Sofacy",
+        "Pawn Storm",
+        "Fancy Bear",
+        "STRONTIUM",
+        "Tsar Team",
+        "Threat Group-4127",
+        "TG-4127",
+        "Forest Blizzard",
+        "FROZENLAKE",
+        "GruesomeLarch"
+      ],
+      "summary": "APT28 is a threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS) military unit 26165. This group has been active since at least 2004.",
+      "techniques": [],
+      "software": [
+        "S0314"
+      ]
+    },
+    {
+      "id": "G0096",
+      "name": "APT41",
+      "aliases": [
+        "APT41",
+        "Wicked Panda",
+        "Brass Typhoon",
+        "BARIUM"
+      ],
+      "summary": "APT41 is a threat group that researchers have assessed as Chinese state-sponsored espionage group that also conducts financially-motivated operations. Active since at least 2012, APT41 has been observed targeting various industries, including but not limited to healthcare, telecom, technology, finance, education, retail and video game industries in 14 countries. Notable behaviors include using a wide range of\u2026",
+      "techniques": [],
+      "software": [
+        "S1185"
+      ]
+    },
+    {
+      "id": "G1002",
+      "name": "BITTER",
+      "aliases": [
+        "BITTER",
+        "T-APT-17"
+      ],
+      "summary": "BITTER is a suspected South Asian cyber espionage threat group that has been active since at least 2013. BITTER has targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.",
+      "techniques": [
+        "T1660"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0097",
+      "name": "Bouncing Golf",
+      "aliases": [
+        "Bouncing Golf"
+      ],
+      "summary": "Bouncing Golf is a cyberespionage campaign targeting Middle Eastern countries.",
+      "techniques": [
+        "T1655.001"
+      ],
+      "software": [
+        "S0421"
+      ]
+    },
+    {
+      "id": "G0142",
+      "name": "Confucius",
+      "aliases": [
+        "Confucius",
+        "Confucius APT"
+      ],
+      "summary": "Confucius is a cyber espionage group that has primarily targeted military personnel, high-profile personalities, business persons, and government organizations in South Asia since at least 2013. Security researchers have noted similarities between Confucius and Patchwork, particularly in their respective custom malware code and targets.",
+      "techniques": [],
+      "software": [
+        "S1077",
+        "S1082"
+      ]
+    },
+    {
+      "id": "G0070",
+      "name": "Dark Caracal",
+      "aliases": [
+        "Dark Caracal"
+      ],
+      "summary": "Dark Caracal is threat group that has been attributed to the Lebanese General Directorate of General Security (GDGS) and has operated since at least 2012.",
+      "techniques": [
+        "T1437.001"
+      ],
+      "software": [
+        "S0182",
+        "S0399"
+      ]
+    },
+    {
+      "id": "G1006",
+      "name": "Earth Lusca",
+      "aliases": [
+        "Earth Lusca",
+        "TAG-22",
+        "Charcoal Typhoon",
+        "CHROMIUM",
+        "ControlX"
+      ],
+      "summary": "Earth Lusca is a suspected China-based cyber espionage group that has been active since at least April 2019. Earth Lusca has targeted organizations in Australia, China, Hong Kong, Mongolia, Nepal, the Philippines, Taiwan, Thailand, Vietnam, the United Arab Emirates, Nigeria, Germany, France, and the United States. Targets included government institutions, news media outlets, gambling companies, educational\u2026",
+      "techniques": [],
+      "software": []
+    },
+    {
+      "id": "G0094",
+      "name": "Kimsuky",
+      "aliases": [
+        "Kimsuky",
+        "Black Banshee",
+        "Velvet Chollima",
+        "Emerald Sleet",
+        "THALLIUM",
+        "APT43",
+        "TA427",
+        "Springtail",
+        "Earth Kumiho",
+        "PatheticSlug"
+      ],
+      "summary": "Kimsuky is a Democratic People's Republic of Korea (DPRK)-based cyber espionage group that has been active since at least 2012. The group initially targeted South Korean government agencies, think tanks, and subject-matter experts in various fields. Its operations expanded to include the United Nations and organizations in the government, education, business services, and manufacturing sectors across the United\u2026",
+      "techniques": [
+        "T1660"
+      ],
+      "software": []
+    },
+    {
+      "id": "G1004",
+      "name": "LAPSUS$",
+      "aliases": [
+        "LAPSUS$",
+        "DEV-0537",
+        "Strawberry Tempest"
+      ],
+      "summary": "LAPSUS$ is cyber criminal threat group that has been active since at least mid-2021. LAPSUS$ specializes in large-scale social engineering and extortion operations, including destructive attacks without the use of ransomware. The group has targeted organizations globally, including in the government, manufacturing, higher education, energy, healthcare, technology, telecommunications, and media sectors.",
+      "techniques": [
+        "T1451"
+      ],
+      "software": []
+    },
+    {
+      "id": "G1019",
+      "name": "MoustachedBouncer",
+      "aliases": [
+        "MoustachedBouncer"
+      ],
+      "summary": "MoustachedBouncer is a cyberespionage group that has been active since at least 2014 targeting foreign embassies in Belarus.",
+      "techniques": [
+        "T1655.001"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0069",
+      "name": "MuddyWater",
+      "aliases": [
+        "MuddyWater",
+        "Earth Vetala",
+        "MERCURY",
+        "Static Kitten",
+        "Seedworm",
+        "TEMP.Zagros",
+        "Mango Sandstorm",
+        "TA450",
+        "MuddyKrill"
+      ],
+      "summary": "MuddyWater is a cyber espionage group assessed to be a subordinate element within Iran's Ministry of Intelligence and Security (MOIS). Since at least 2017, MuddyWater has targeted a range of government and private organizations across sectors, including telecommunications, local government, finance, defense, and oil and natural gas organizations, in the Middle East (specifically the UAE and Saudi Arabia), Asia,\u2026",
+      "techniques": [],
+      "software": [
+        "S1243"
+      ]
+    },
+    {
+      "id": "G0040",
+      "name": "Patchwork",
+      "aliases": [
+        "Patchwork",
+        "Hangover Group",
+        "Dropping Elephant",
+        "Chinastrats",
+        "MONSOON",
+        "Operation Hangover"
+      ],
+      "summary": "Patchwork is a cyber espionage group that was first observed in December 2015. While the group has not been definitively attributed, circumstantial evidence suggests the group may be a pro-Indian or Indian entity. Patchwork has been seen targeting industries related to diplomatic and government agencies. Much of the code used by this group was copied and pasted from online forums. Patchwork was also seen operating\u2026",
+      "techniques": [],
+      "software": [
+        "S9006"
+      ]
+    },
+    {
+      "id": "G0056",
+      "name": "PROMETHIUM",
+      "aliases": [
+        "PROMETHIUM",
+        "StrongPity"
+      ],
+      "summary": "PROMETHIUM is an activity group focused on espionage that has been active since at least 2012. The group has conducted operations globally with a heavy emphasis on Turkish targets. PROMETHIUM has demonstrated similarity to another activity group called NEODYMIUM due to overlapping victim and campaign characteristics.",
+      "techniques": [],
+      "software": []
+    },
+    {
+      "id": "G0034",
+      "name": "Sandworm Team",
+      "aliases": [
+        "Sandworm Team",
+        "ELECTRUM",
+        "Telebots",
+        "IRON VIKING",
+        "BlackEnergy (Group)",
+        "Quedagh",
+        "Voodoo Bear",
+        "IRIDIUM",
+        "Seashell Blizzard",
+        "FROZENBARENTS",
+        "APT44"
+      ],
+      "summary": "Sandworm Team is a destructive threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) Main Center for Special Technologies (GTsST) military unit 74455. This group has been active since at least 2009.",
+      "techniques": [
+        "T1409",
+        "T1660",
+        "T1676"
+      ],
+      "software": [
+        "S0555"
+      ]
+    },
+    {
+      "id": "G1015",
+      "name": "Scattered Spider",
+      "aliases": [
+        "Scattered Spider",
+        "Roasted 0ktapus",
+        "Octo Tempest",
+        "Storm-0875",
+        "UNC3944"
+      ],
+      "summary": "Scattered Spider is a native English-speaking cybercriminal group active since at least 2022.   The group initially targeted customer relationship management (CRM) providers, business process outsourcing (BPO) firms, and telecommunications and technology companies before expanding in 2023 to gaming, hospitality, retail, managed service provider (MSP), manufacturing, and financial sectors. \nScattered Spider relies\u2026",
+      "techniques": [
+        "T1451",
+        "T1660"
+      ],
+      "software": []
+    },
+    {
+      "id": "G1033",
+      "name": "Star Blizzard",
+      "aliases": [
+        "Star Blizzard",
+        "SEABORGIUM",
+        "Callisto Group",
+        "TA446",
+        "COLDRIVER"
+      ],
+      "summary": "Star Blizzard is a cyber espionage and influence group originating in Russia that has been active since at least 2019. Star Blizzard campaigns align closely with Russian state interests and have included persistent phishing and credential theft against academic, defense, government, NGO, and think tank organizations in NATO countries, particularly the US and the UK.",
+      "techniques": [
+        "T1676"
+      ],
+      "software": []
+    },
+    {
+      "id": "G1029",
+      "name": "UNC788",
+      "aliases": [
+        "UNC788"
+      ],
+      "summary": "UNC788 is a group of hackers from Iran that has targeted people in the Middle East.",
+      "techniques": [
+        "T1660"
+      ],
+      "software": [
+        "S1128"
+      ]
+    },
+    {
+      "id": "G0112",
+      "name": "Windshift",
+      "aliases": [
+        "Windshift",
+        "Bahamut"
+      ],
+      "summary": "Windshift is a threat group that has been active since at least 2017, targeting specific individuals for surveillance in government departments and critical infrastructure across the Middle East.",
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.001",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1521.001",
+        "T1533",
+        "T1627.001",
+        "T1628.003",
+        "T1632.001",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0090",
+      "name": "WIRTE",
+      "aliases": [
+        "WIRTE",
+        "Ashen Lepus"
+      ],
+      "summary": "WIRTE is a cyberespionage actor, believed to be a subgroup of the Hamas-affiliated Gaza Cybergang, that has been active since at least August 2018. WIRTE has targeted diplomatic, financial, military, legal, and technology organizations across the Middle East, North Africa, and in Europe to gather intelligence. WIRTE has remained persistently active despite the ongoing Israel-Hamas conflict and has expanded their\u2026",
+      "techniques": [],
+      "software": [
+        "S9030"
+      ]
+    }
+  ],
+  "software": [
+    {
+      "id": "S1061",
+      "name": "AbstractEmu",
+      "type": "malware",
+      "aliases": [
+        "AbstractEmu"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1407",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1517",
+        "T1533",
+        "T1544",
+        "T1623.001",
+        "T1626.001",
+        "T1629.003",
+        "T1633",
+        "T1633.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0309",
+      "name": "Adups",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1430",
+        "T1474.003",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0440",
+      "name": "Agent Smith",
+      "type": "malware",
+      "aliases": [
+        "Agent Smith"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406.001",
+        "T1418",
+        "T1424",
+        "T1577",
+        "T1628.001",
+        "T1630.002",
+        "T1643",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1095",
+      "name": "AhRat",
+      "type": "malware",
+      "aliases": [
+        "AhRat"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1398",
+        "T1406",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1513",
+        "T1521",
+        "T1533",
+        "T1582",
+        "T1624.001",
+        "T1636.002",
+        "T1636.003",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0319",
+      "name": "Allwinner",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1474.003"
+      ]
+    },
+    {
+      "id": "S0525",
+      "name": "Android/AdDisplay.Ashas",
+      "type": "malware",
+      "aliases": [
+        "Android/AdDisplay.Ashas"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1418",
+        "T1426",
+        "T1437.001",
+        "T1624.001",
+        "T1628.001",
+        "T1633.001",
+        "T1643",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0304",
+      "name": "Android/Chuli.A",
+      "type": "malware",
+      "aliases": [
+        "Android/Chuli.A"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S1214",
+      "name": "Android/SpyAgent",
+      "type": "malware",
+      "aliases": [
+        "Android/SpyAgent"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1422",
+        "T1481",
+        "T1481.001",
+        "T1616",
+        "T1629.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0524",
+      "name": "AndroidOS/MalLocker.B",
+      "type": "malware",
+      "aliases": [
+        "AndroidOS/MalLocker.B"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1624.001",
+        "T1629.002",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0310",
+      "name": "ANDROIDOS_ANSERVER.A",
+      "type": "malware",
+      "aliases": [
+        "ANDROIDOS_ANSERVER.A"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1422",
+        "T1426",
+        "T1481.001"
+      ]
+    },
+    {
+      "id": "S0292",
+      "name": "AndroRAT",
+      "type": "malware",
+      "aliases": [
+        "AndroRAT"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1422",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1582",
+        "T1616",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0422",
+      "name": "Anubis",
+      "type": "malware",
+      "aliases": [
+        "Anubis"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1424",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1453",
+        "T1471",
+        "T1481.001",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1582",
+        "T1616",
+        "T1629.001",
+        "T1629.003",
+        "T1633.001",
+        "T1636.003",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0540",
+      "name": "Asacub",
+      "type": "malware",
+      "aliases": [
+        "Asacub",
+        "Trojan-SMS.AndroidOS.Smaps"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1437.001",
+        "T1532",
+        "T1575",
+        "T1582",
+        "T1626.001",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1215",
+      "name": "Binary Validator",
+      "type": "malware",
+      "aliases": [
+        "Binary Validator"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1418",
+        "T1422",
+        "T1424",
+        "T1533",
+        "T1627",
+        "T1630.002",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S1079",
+      "name": "BOULDSPY",
+      "type": "malware",
+      "aliases": [
+        "BOULDSPY"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1398",
+        "T1407",
+        "T1409",
+        "T1414",
+        "T1417.001",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1577",
+        "T1624",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644",
+        "T1646",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0293",
+      "name": "BrainTest",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1407",
+        "T1643",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S1094",
+      "name": "BRATA",
+      "type": "malware",
+      "aliases": [
+        "BRATA"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1406.002",
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418.001",
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1461",
+        "T1513",
+        "T1516",
+        "T1532",
+        "T1533",
+        "T1616",
+        "T1627.001",
+        "T1628.002",
+        "T1629.003",
+        "T1630.001",
+        "T1633.001",
+        "T1641.001",
+        "T1646",
+        "T1655.001",
+        "T1660",
+        "T1662",
+        "T1663",
+        "T1664"
+      ]
+    },
+    {
+      "id": "S0432",
+      "name": "Bread",
+      "type": "malware",
+      "aliases": [
+        "Bread",
+        "Joker"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1406.002",
+        "T1407",
+        "T1422",
+        "T1437.001",
+        "T1517",
+        "T1575",
+        "T1636.004",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0655",
+      "name": "BusyGasper",
+      "type": "malware",
+      "aliases": [
+        "BusyGasper"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1417.001",
+        "T1429",
+        "T1430",
+        "T1481.002",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1582",
+        "T1616",
+        "T1623.001",
+        "T1628.001",
+        "T1628.002",
+        "T1636.004",
+        "T1639.001",
+        "T1644",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S0529",
+      "name": "CarbonSteal",
+      "type": "malware",
+      "aliases": [
+        "CarbonSteal"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1521.002",
+        "T1575",
+        "T1616",
+        "T1630.002",
+        "T1636.004",
+        "T1644",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0480",
+      "name": "Cerberus",
+      "type": "malware",
+      "aliases": [
+        "Cerberus"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1509",
+        "T1516",
+        "T1582",
+        "T1628.001",
+        "T1629.003",
+        "T1630.001",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1083",
+      "name": "Chameleon",
+      "type": "malware",
+      "aliases": [
+        "Chameleon"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1426",
+        "T1430",
+        "T1437",
+        "T1437.001",
+        "T1453",
+        "T1461",
+        "T1509",
+        "T1513",
+        "T1517",
+        "T1533",
+        "T1544",
+        "T1575",
+        "T1603",
+        "T1616",
+        "T1629.001",
+        "T1629.003",
+        "T1630",
+        "T1633.001",
+        "T1636.004",
+        "T1646",
+        "T1655.001",
+        "T1660"
+      ]
+    },
+    {
+      "id": "S0323",
+      "name": "Charger",
+      "type": "malware",
+      "aliases": [
+        "Charger"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1430",
+        "T1636.003",
+        "T1642"
+      ]
+    },
+    {
+      "id": "S0555",
+      "name": "CHEMISTGAMES",
+      "type": "malware",
+      "aliases": [
+        "CHEMISTGAMES"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1474.003",
+        "T1521.002",
+        "T1533",
+        "T1575",
+        "T1623.001",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1225",
+      "name": "CherryBlos",
+      "type": "malware",
+      "aliases": [
+        "CherryBlos"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406.002",
+        "T1417",
+        "T1418",
+        "T1420",
+        "T1424",
+        "T1437.001",
+        "T1453",
+        "T1541",
+        "T1544",
+        "T1629",
+        "T1646",
+        "T1655",
+        "T1660"
+      ]
+    },
+    {
+      "id": "S0602",
+      "name": "Circles",
+      "type": "malware",
+      "aliases": [
+        "Circles"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T1430.002"
+      ]
+    },
+    {
+      "id": "S0426",
+      "name": "Concipit1248",
+      "type": "malware",
+      "aliases": [
+        "Concipit1248",
+        "Corona Updates"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1437.001",
+        "T1512",
+        "T1533"
+      ]
+    },
+    {
+      "id": "S0425",
+      "name": "Corona Updates",
+      "type": "malware",
+      "aliases": [
+        "Corona Updates",
+        "Wabi Music",
+        "Concipit1248"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1517",
+        "T1533",
+        "T1582",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1639.001"
+      ]
+    },
+    {
+      "id": "S9004",
+      "name": "Crocodilus",
+      "type": "malware",
+      "aliases": [
+        "Crocodilus"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1406.002",
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1437.001",
+        "T1453",
+        "T1512",
+        "T1513",
+        "T1516",
+        "T1582",
+        "T1616",
+        "T1626.001",
+        "T1628.002",
+        "T1629.001",
+        "T1630.001",
+        "T1636.003",
+        "T1636.004",
+        "T1646",
+        "T1655"
+      ]
+    },
+    {
+      "id": "S1243",
+      "name": "DCHSpy",
+      "type": "malware",
+      "aliases": [
+        "DCHSpy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1429",
+        "T1430",
+        "T1437",
+        "T1512",
+        "T1532",
+        "T1533",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1636.005",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0479",
+      "name": "DEFENSOR ID",
+      "type": "malware",
+      "aliases": [
+        "DEFENSOR ID"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1418",
+        "T1437.001",
+        "T1513",
+        "T1516",
+        "T1624.001"
+      ]
+    },
+    {
+      "id": "S0301",
+      "name": "Dendroid",
+      "type": "malware",
+      "aliases": [
+        "Dendroid"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1417.002",
+        "T1429",
+        "T1512",
+        "T1533",
+        "T1582",
+        "T1633.001",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0505",
+      "name": "Desert Scorpion",
+      "type": "malware",
+      "aliases": [
+        "Desert Scorpion"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1532",
+        "T1533",
+        "T1582",
+        "T1628.001",
+        "T1630.002",
+        "T1632.001",
+        "T1636.003",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S9005",
+      "name": "DocSwap",
+      "type": "malware",
+      "aliases": [
+        "DocSwap"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.001",
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1453",
+        "T1512",
+        "T1533",
+        "T1541",
+        "T1544",
+        "T1575",
+        "T1616",
+        "T1624.001",
+        "T1627",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1636.005",
+        "T1646",
+        "T1655.001",
+        "T1660"
+      ]
+    },
+    {
+      "id": "S0550",
+      "name": "DoubleAgent",
+      "type": "malware",
+      "aliases": [
+        "DoubleAgent"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1437",
+        "T1533",
+        "T1623.001",
+        "T1628.001",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1645",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0300",
+      "name": "DressCode",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1428"
+      ]
+    },
+    {
+      "id": "S1054",
+      "name": "Drinik",
+      "type": "malware",
+      "aliases": [
+        "Drinik"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.001",
+        "T1417.002",
+        "T1437",
+        "T1513",
+        "T1533",
+        "T1541",
+        "T1582",
+        "T1616",
+        "T1628.001",
+        "T1629.003",
+        "T1636.002",
+        "T1636.004",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0320",
+      "name": "DroidJack",
+      "type": "malware",
+      "aliases": [
+        "DroidJack"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1429",
+        "T1512",
+        "T1636.002",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0315",
+      "name": "DualToy",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1422",
+        "T1458"
+      ]
+    },
+    {
+      "id": "S0420",
+      "name": "Dvmap",
+      "type": "malware",
+      "aliases": [
+        "Dvmap"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1407",
+        "T1426",
+        "T1625.001",
+        "T1629.003",
+        "T1632.001"
+      ]
+    },
+    {
+      "id": "S1092",
+      "name": "Escobar",
+      "type": "malware",
+      "aliases": [
+        "Escobar"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1417.001",
+        "T1417.002",
+        "T1420",
+        "T1429",
+        "T1430",
+        "T1461",
+        "T1512",
+        "T1517",
+        "T1533",
+        "T1582",
+        "T1616",
+        "T1630.001",
+        "T1636.002",
+        "T1636.004",
+        "T1663"
+      ]
+    },
+    {
+      "id": "S0507",
+      "name": "eSurv",
+      "type": "malware",
+      "aliases": [
+        "eSurv"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "techniques": [
+        "T1407",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1521.002",
+        "T1521.003",
+        "T1533",
+        "T1627.001",
+        "T1636.003",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0478",
+      "name": "EventBot",
+      "type": "malware",
+      "aliases": [
+        "EventBot"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1437.001",
+        "T1513",
+        "T1521.001",
+        "T1624.001",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0522",
+      "name": "Exobot",
+      "type": "malware",
+      "aliases": [
+        "Exobot"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1417.001",
+        "T1417.002",
+        "T1418.001",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1437.001",
+        "T1582",
+        "T1604",
+        "T1624.001",
+        "T1626.001",
+        "T1636.003",
+        "T1636.004",
+        "T1642",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0405",
+      "name": "Exodus",
+      "type": "malware",
+      "aliases": [
+        "Exodus",
+        "Exodus One",
+        "Exodus Two"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1421",
+        "T1422",
+        "T1422.001",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1509",
+        "T1512",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1636.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1080",
+      "name": "Fakecalls",
+      "type": "malware",
+      "aliases": [
+        "Fakecalls"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1533",
+        "T1616",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1646",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0509",
+      "name": "FakeSpy",
+      "type": "malware",
+      "aliases": [
+        "FakeSpy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1409",
+        "T1418",
+        "T1421",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1437.001",
+        "T1582",
+        "T1624.001",
+        "T1628.001",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0182",
+      "name": "FinFisher",
+      "type": "malware",
+      "aliases": [
+        "FinFisher",
+        "FinSpy"
+      ],
+      "platforms": [
+        "Windows",
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1429",
+        "T1430",
+        "T1636.002",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1208",
+      "name": "FjordPhantom",
+      "type": "malware",
+      "aliases": [
+        "FjordPhantom"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1617",
+        "T1631",
+        "T1655",
+        "T1660",
+        "T1670"
+      ]
+    },
+    {
+      "id": "S0408",
+      "name": "FlexiSpy",
+      "type": "tool",
+      "aliases": [
+        "FlexiSpy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1409",
+        "T1417.001",
+        "T1418",
+        "T1421",
+        "T1429",
+        "T1430",
+        "T1509",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1624.001",
+        "T1625.001",
+        "T1628.001",
+        "T1630.002",
+        "T1636.001",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1103",
+      "name": "FlixOnline",
+      "type": "malware",
+      "aliases": [
+        "FlixOnline"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1417.002",
+        "T1517",
+        "T1624.001",
+        "T1628.001",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S1067",
+      "name": "FluBot",
+      "type": "malware",
+      "aliases": [
+        "FluBot"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1409",
+        "T1417.002",
+        "T1437.001",
+        "T1453",
+        "T1517",
+        "T1521.002",
+        "T1582",
+        "T1604",
+        "T1628.002",
+        "T1629.001",
+        "T1629.003",
+        "T1636.003",
+        "T1636.004",
+        "T1637.001",
+        "T1646",
+        "T1660"
+      ]
+    },
+    {
+      "id": "S1093",
+      "name": "FlyTrap",
+      "type": "malware",
+      "aliases": [
+        "FlyTrap"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1417.002",
+        "T1422",
+        "T1422.001",
+        "T1430",
+        "T1437.001",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0577",
+      "name": "FrozenCell",
+      "type": "malware",
+      "aliases": [
+        "FrozenCell"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1420",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1532",
+        "T1533",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0423",
+      "name": "Ginp",
+      "type": "malware",
+      "aliases": [
+        "Ginp"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.002",
+        "T1418",
+        "T1513",
+        "T1516",
+        "T1533",
+        "T1582",
+        "T1628.001",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1231",
+      "name": "GodFather",
+      "type": "malware",
+      "aliases": [
+        "GodFather"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417",
+        "T1417.001",
+        "T1418",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1437.001",
+        "T1453",
+        "T1516",
+        "T1544",
+        "T1575",
+        "T1582",
+        "T1603",
+        "T1616",
+        "T1617",
+        "T1624",
+        "T1629",
+        "T1629.001",
+        "T1630",
+        "T1636.003",
+        "T1636.004",
+        "T1646",
+        "T1655.001",
+        "T1660",
+        "T1670"
+      ]
+    },
+    {
+      "id": "S0535",
+      "name": "Golden Cup",
+      "type": "malware",
+      "aliases": [
+        "Golden Cup"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1532",
+        "T1533",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0551",
+      "name": "GoldenEagle",
+      "type": "malware",
+      "aliases": [
+        "GoldenEagle"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1582",
+        "T1632.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1646",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0421",
+      "name": "GolfSpy",
+      "type": "malware",
+      "aliases": [
+        "GolfSpy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1414",
+        "T1418",
+        "T1424",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1624.001",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0290",
+      "name": "Gooligan",
+      "type": "malware",
+      "aliases": [
+        "Gooligan",
+        "Ghost Push"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1533",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0536",
+      "name": "GPlayed",
+      "type": "malware",
+      "aliases": [
+        "GPlayed"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.002",
+        "T1418",
+        "T1422",
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1533",
+        "T1582",
+        "T1603",
+        "T1624.001",
+        "T1626.001",
+        "T1630.002",
+        "T1636.003",
+        "T1636.004",
+        "T1642",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0406",
+      "name": "Gustuff",
+      "type": "malware",
+      "aliases": [
+        "Gustuff"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1406.002",
+        "T1417.001",
+        "T1417.002",
+        "T1418.001",
+        "T1422",
+        "T1426",
+        "T1437.001",
+        "T1516",
+        "T1533",
+        "T1628.001",
+        "T1629.001",
+        "T1636.003",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S0544",
+      "name": "HenBox",
+      "type": "malware",
+      "aliases": [
+        "HenBox"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1418",
+        "T1424",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1533",
+        "T1575",
+        "T1623.001",
+        "T1624.001",
+        "T1633.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S1128",
+      "name": "HilalRAT",
+      "type": "malware",
+      "aliases": [
+        "HilalRAT"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1077",
+      "name": "Hornbill",
+      "type": "malware",
+      "aliases": [
+        "Hornbill"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1513",
+        "T1517",
+        "T1533",
+        "T1626.001",
+        "T1628.002",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1646",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0322",
+      "name": "HummingBad",
+      "type": "malware",
+      "aliases": [
+        "HummingBad"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T1404",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0321",
+      "name": "HummingWhale",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0463",
+      "name": "INSOMNIA",
+      "type": "malware",
+      "aliases": [
+        "INSOMNIA"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1430",
+        "T1437.001",
+        "T1456",
+        "T1509",
+        "T1533",
+        "T1631.001",
+        "T1634.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0325",
+      "name": "Judy",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1407",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0288",
+      "name": "KeyRaider",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1426",
+        "T1638"
+      ]
+    },
+    {
+      "id": "S1185",
+      "name": "LightSpy",
+      "type": "malware",
+      "aliases": [
+        "LightSpy"
+      ],
+      "platforms": [
+        "Android",
+        "Windows",
+        "iOS",
+        "macOS"
+      ],
+      "techniques": [
+        "T1398",
+        "T1404",
+        "T1406",
+        "T1409",
+        "T1418",
+        "T1421",
+        "T1422",
+        "T1422.002",
+        "T1423",
+        "T1424",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1456",
+        "T1509",
+        "T1512",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1544",
+        "T1575",
+        "T1582",
+        "T1623",
+        "T1631",
+        "T1634.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1642",
+        "T1646",
+        "T1655",
+        "T1658",
+        "T1660",
+        "T1662"
+      ]
+    },
+    {
+      "id": "S0485",
+      "name": "Mandrake",
+      "type": "malware",
+      "aliases": [
+        "Mandrake",
+        "oxide",
+        "briar",
+        "ricinus",
+        "darkmatter"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1409",
+        "T1417.002",
+        "T1418",
+        "T1426",
+        "T1430",
+        "T1481.002",
+        "T1509",
+        "T1513",
+        "T1516",
+        "T1517",
+        "T1541",
+        "T1544",
+        "T1582",
+        "T1628.001",
+        "T1629.001",
+        "T1629.003",
+        "T1630.002",
+        "T1632.001",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004",
+        "T1637.001",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0303",
+      "name": "MazarBOT",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1636.004",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0407",
+      "name": "Monokle",
+      "type": "malware",
+      "aliases": [
+        "Monokle"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.001",
+        "T1418",
+        "T1421",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1544",
+        "T1616",
+        "T1617",
+        "T1630.002",
+        "T1636.001",
+        "T1636.002",
+        "T1636.003",
+        "T1638",
+        "T1640",
+        "T1644",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S0299",
+      "name": "NotCompatible",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1428"
+      ]
+    },
+    {
+      "id": "S0286",
+      "name": "OBAD",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1406",
+        "T1629.001"
+      ]
+    },
+    {
+      "id": "S0285",
+      "name": "OldBoot",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1398"
+      ]
+    },
+    {
+      "id": "S0399",
+      "name": "Pallas",
+      "type": "malware",
+      "aliases": [
+        "Pallas"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1409",
+        "T1417.002",
+        "T1418",
+        "T1421",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0316",
+      "name": "Pegasus for Android",
+      "type": "malware",
+      "aliases": [
+        "Pegasus for Android",
+        "Chrysaor"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1409",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1429",
+        "T1512",
+        "T1624.001",
+        "T1636.001",
+        "T1636.002",
+        "T1636.003",
+        "T1644",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S0289",
+      "name": "Pegasus for iOS",
+      "type": "malware",
+      "aliases": [
+        "Pegasus for iOS"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1404",
+        "T1409",
+        "T1421",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1456",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644",
+        "T1645",
+        "T1658",
+        "T1660",
+        "T1664"
+      ]
+    },
+    {
+      "id": "S1126",
+      "name": "Phenakite",
+      "type": "malware",
+      "aliases": [
+        "Phenakite"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1404",
+        "T1417",
+        "T1426",
+        "T1429",
+        "T1512",
+        "T1533",
+        "T1544",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0291",
+      "name": "PJApps",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1422",
+        "T1430",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S1241",
+      "name": "RatMilad",
+      "type": "malware",
+      "aliases": [
+        "RatMilad"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1414",
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1533",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1636.005",
+        "T1646",
+        "T1660",
+        "T1662"
+      ]
+    },
+    {
+      "id": "S0295",
+      "name": "RCSAndroid",
+      "type": "malware",
+      "aliases": [
+        "RCSAndroid"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1414",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1533",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S0539",
+      "name": "Red Alert 2.0",
+      "type": "malware",
+      "aliases": [
+        "Red Alert 2.0"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.002",
+        "T1418",
+        "T1437.001",
+        "T1481.001",
+        "T1509",
+        "T1582",
+        "T1626.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0326",
+      "name": "RedDrop",
+      "type": "malware",
+      "aliases": [
+        "RedDrop"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1437.001",
+        "T1544",
+        "T1643",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0403",
+      "name": "Riltok",
+      "type": "malware",
+      "aliases": [
+        "Riltok"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1417.002",
+        "T1418",
+        "T1422",
+        "T1426",
+        "T1437.001",
+        "T1516",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0411",
+      "name": "Rotexy",
+      "type": "malware",
+      "aliases": [
+        "Rotexy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.002",
+        "T1418",
+        "T1422",
+        "T1424",
+        "T1426",
+        "T1437.001",
+        "T1521.001",
+        "T1582",
+        "T1628.001",
+        "T1629.002",
+        "T1633.001",
+        "T1636.003",
+        "T1636.004",
+        "T1637.001",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S0313",
+      "name": "RuMMS",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1422",
+        "T1426",
+        "T1437.001",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1062",
+      "name": "S.O.V.A.",
+      "type": "malware",
+      "aliases": [
+        "S.O.V.A."
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406.002",
+        "T1409",
+        "T1417.001",
+        "T1417.002",
+        "T1418",
+        "T1426",
+        "T1437.001",
+        "T1464",
+        "T1471",
+        "T1513",
+        "T1516",
+        "T1517",
+        "T1582",
+        "T1628.001",
+        "T1629.001",
+        "T1630.001",
+        "T1636.004",
+        "T1638",
+        "T1641.001"
+      ]
+    },
+    {
+      "id": "S9030",
+      "name": "SameCoin",
+      "type": "malware",
+      "aliases": [
+        "SameCoin"
+      ],
+      "platforms": [
+        "Windows",
+        "Android"
+      ],
+      "techniques": [
+        "T1420",
+        "T1662"
+      ]
+    },
+    {
+      "id": "S1055",
+      "name": "SharkBot",
+      "type": "malware",
+      "aliases": [
+        "SharkBot"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.001",
+        "T1417.002",
+        "T1424",
+        "T1437.001",
+        "T1516",
+        "T1517",
+        "T1521.001",
+        "T1521.002",
+        "T1544",
+        "T1582",
+        "T1630.001",
+        "T1636.004",
+        "T1637.001",
+        "T1644",
+        "T1646",
+        "T1661"
+      ]
+    },
+    {
+      "id": "S0294",
+      "name": "ShiftyBug",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1404",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S0549",
+      "name": "SilkBean",
+      "type": "malware",
+      "aliases": [
+        "SilkBean"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1420",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1521.002",
+        "T1533",
+        "T1582",
+        "T1630.002",
+        "T1632.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0419",
+      "name": "SimBad",
+      "type": "malware",
+      "aliases": [
+        "SimBad"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1624.001",
+        "T1628.001",
+        "T1643",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0327",
+      "name": "Skygofree",
+      "type": "malware",
+      "aliases": [
+        "Skygofree"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1407",
+        "T1409",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S1195",
+      "name": "SpyC23",
+      "type": "malware",
+      "aliases": [
+        "SpyC23"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1513",
+        "T1517",
+        "T1533",
+        "T1544",
+        "T1582",
+        "T1616",
+        "T1624.001",
+        "T1628.001",
+        "T1628.002",
+        "T1629.003",
+        "T1633",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0324",
+      "name": "SpyDealer",
+      "type": "malware",
+      "aliases": [
+        "SpyDealer"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1407",
+        "T1409",
+        "T1422",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1624.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644",
+        "T1645"
+      ]
+    },
+    {
+      "id": "S0305",
+      "name": "SpyNote RAT",
+      "type": "malware",
+      "aliases": [
+        "SpyNote RAT"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1429",
+        "T1430",
+        "T1533",
+        "T1624.001",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0328",
+      "name": "Stealth Mango",
+      "type": "malware",
+      "aliases": [
+        "Stealth Mango"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1418",
+        "T1422",
+        "T1429",
+        "T1430",
+        "T1456",
+        "T1474.003",
+        "T1512",
+        "T1533",
+        "T1582",
+        "T1636.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S1082",
+      "name": "Sunbird",
+      "type": "malware",
+      "aliases": [
+        "Sunbird"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1418",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1532",
+        "T1533",
+        "T1544",
+        "T1623.001",
+        "T1626.001",
+        "T1636.001",
+        "T1636.002",
+        "T1636.003",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0329",
+      "name": "Tangelo",
+      "type": "malware",
+      "aliases": [
+        "Tangelo"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1409",
+        "T1422",
+        "T1429",
+        "T1430",
+        "T1533",
+        "T1636.002",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S1069",
+      "name": "TangleBot",
+      "type": "malware",
+      "aliases": [
+        "TangleBot"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1417.002",
+        "T1418",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1582",
+        "T1616",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004"
+      ]
+    },
+    {
+      "id": "S0545",
+      "name": "TERRACOTTA",
+      "type": "malware",
+      "aliases": [
+        "TERRACOTTA"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1417.002",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1481.002",
+        "T1516",
+        "T1541",
+        "T1575",
+        "T1582",
+        "T1603",
+        "T1624.001",
+        "T1633.001",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S1056",
+      "name": "TianySpy",
+      "type": "malware",
+      "aliases": [
+        "TianySpy"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "techniques": [
+        "T1406",
+        "T1417.002",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1623",
+        "T1632.001",
+        "T1639"
+      ]
+    },
+    {
+      "id": "S0558",
+      "name": "Tiktok Pro",
+      "type": "malware",
+      "aliases": [
+        "Tiktok Pro"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1417.002",
+        "T1418",
+        "T1420",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1513",
+        "T1533",
+        "T1541",
+        "T1582",
+        "T1603",
+        "T1623.001",
+        "T1624.001",
+        "T1628.001",
+        "T1630.002",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0424",
+      "name": "Triada",
+      "type": "malware",
+      "aliases": [
+        "Triada"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1418",
+        "T1474.003",
+        "T1532",
+        "T1631.001",
+        "T1636.004",
+        "T1643",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S1216",
+      "name": "TriangleDB",
+      "type": "malware",
+      "aliases": [
+        "TriangleDB"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1418",
+        "T1420",
+        "T1422",
+        "T1424",
+        "T1430",
+        "T1521.001",
+        "T1521.002",
+        "T1533",
+        "T1544",
+        "T1630.002",
+        "T1634.001",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S0427",
+      "name": "TrickMo",
+      "type": "malware",
+      "aliases": [
+        "TrickMo"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1418",
+        "T1422",
+        "T1422.001",
+        "T1422.002",
+        "T1426",
+        "T1437.001",
+        "T1513",
+        "T1516",
+        "T1533",
+        "T1582",
+        "T1624.001",
+        "T1629.002",
+        "T1630.001",
+        "T1633.001",
+        "T1636.004",
+        "T1644"
+      ]
+    },
+    {
+      "id": "S0307",
+      "name": "Trojan-SMS.AndroidOS.Agent.ao",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1437.001"
+      ]
+    },
+    {
+      "id": "S0306",
+      "name": "Trojan-SMS.AndroidOS.FakeInst.a",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1437.001"
+      ]
+    },
+    {
+      "id": "S0308",
+      "name": "Trojan-SMS.AndroidOS.OpFake.a",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1437.001"
+      ]
+    },
+    {
+      "id": "S0302",
+      "name": "Twitoor",
+      "type": "malware",
+      "aliases": [
+        "Twitoor"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1481.003",
+        "T1521",
+        "T1628.001"
+      ]
+    },
+    {
+      "id": "S9006",
+      "name": "VajraSpy",
+      "type": "malware",
+      "aliases": [
+        "VajraSpy"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1409",
+        "T1417.001",
+        "T1418",
+        "T1420",
+        "T1422.002",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1453",
+        "T1461",
+        "T1481.002",
+        "T1512",
+        "T1517",
+        "T1533",
+        "T1616",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1636.005",
+        "T1639.001",
+        "T1646",
+        "T1655",
+        "T1660"
+      ]
+    },
+    {
+      "id": "S0418",
+      "name": "ViceLeaker",
+      "type": "malware",
+      "aliases": [
+        "ViceLeaker",
+        "Triout"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1418",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1437.001",
+        "T1512",
+        "T1533",
+        "T1544",
+        "T1628.001",
+        "T1630.002",
+        "T1636.002",
+        "T1636.004",
+        "T1646",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0506",
+      "name": "ViperRAT",
+      "type": "malware",
+      "aliases": [
+        "ViperRAT"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1407",
+        "T1421",
+        "T1422",
+        "T1422.001",
+        "T1426",
+        "T1429",
+        "T1430",
+        "T1512",
+        "T1533",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0312",
+      "name": "WireLurker",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1406",
+        "T1458"
+      ]
+    },
+    {
+      "id": "S0489",
+      "name": "WolfRAT",
+      "type": "malware",
+      "aliases": [
+        "WolfRAT"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1407",
+        "T1418",
+        "T1422",
+        "T1424",
+        "T1429",
+        "T1512",
+        "T1513",
+        "T1517",
+        "T1533",
+        "T1582",
+        "T1630.002",
+        "T1633.001",
+        "T1636.002",
+        "T1636.003",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0314",
+      "name": "X-Agent for Android",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1430",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0298",
+      "name": "Xbot",
+      "type": "tool",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1417.002",
+        "T1471",
+        "T1636.004",
+        "T1642"
+      ]
+    },
+    {
+      "id": "S0297",
+      "name": "XcodeGhost",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1414",
+        "T1417.002",
+        "T1474.001"
+      ]
+    },
+    {
+      "id": "S0318",
+      "name": "XLoader for Android",
+      "type": "malware",
+      "aliases": [
+        "XLoader for Android"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1406",
+        "T1422",
+        "T1426",
+        "T1429",
+        "T1481.001",
+        "T1626.001",
+        "T1636.004",
+        "T1655.001"
+      ]
+    },
+    {
+      "id": "S0490",
+      "name": "XLoader for iOS",
+      "type": "malware",
+      "aliases": [
+        "XLoader for iOS"
+      ],
+      "platforms": [
+        "iOS"
+      ],
+      "techniques": [
+        "T1422",
+        "T1426",
+        "T1632.001",
+        "T1646"
+      ]
+    },
+    {
+      "id": "S0311",
+      "name": "YiSpecter",
+      "type": "malware",
+      "aliases": [
+        "YiSpecter"
+      ],
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "techniques": [
+        "T1407",
+        "T1409",
+        "T1418",
+        "T1422",
+        "T1424",
+        "T1426",
+        "T1437.001",
+        "T1456",
+        "T1577",
+        "T1625",
+        "T1628.001",
+        "T1632.001"
+      ]
+    },
+    {
+      "id": "S0494",
+      "name": "Zen",
+      "type": "malware",
+      "aliases": [
+        "Zen"
+      ],
+      "platforms": [
+        "Android"
+      ],
+      "techniques": [
+        "T1404",
+        "T1406",
+        "T1407",
+        "T1516",
+        "T1625.001",
+        "T1629.003",
+        "T1631.001",
+        "T1643"
+      ]
+    },
+    {
+      "id": "S0287",
+      "name": "ZergHelper",
+      "type": "malware",
+      "aliases": [],
+      "platforms": [],
+      "techniques": [
+        "T1407"
+      ]
+    }
+  ]
+}

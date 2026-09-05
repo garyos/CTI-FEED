@@ -1,0 +1,2439 @@
+{
+  "domain": "ics",
+  "name": "ATT&CK for ICS",
+  "fetched_at": "2026-09-05T14:53:10.762930+00:00",
+  "tactics": [
+    {
+      "id": "TA0108",
+      "name": "Initial Access",
+      "shortname": "initial-access"
+    },
+    {
+      "id": "TA0104",
+      "name": "Execution",
+      "shortname": "execution"
+    },
+    {
+      "id": "TA0110",
+      "name": "Persistence",
+      "shortname": "persistence"
+    },
+    {
+      "id": "TA0111",
+      "name": "Privilege Escalation",
+      "shortname": "privilege-escalation"
+    },
+    {
+      "id": "TA0103",
+      "name": "Evasion",
+      "shortname": "evasion"
+    },
+    {
+      "id": "TA0102",
+      "name": "Discovery",
+      "shortname": "discovery"
+    },
+    {
+      "id": "TA0109",
+      "name": "Lateral Movement",
+      "shortname": "lateral-movement"
+    },
+    {
+      "id": "TA0100",
+      "name": "Collection",
+      "shortname": "collection"
+    },
+    {
+      "id": "TA0101",
+      "name": "Command and Control",
+      "shortname": "command-and-control"
+    },
+    {
+      "id": "TA0107",
+      "name": "Inhibit Response Function",
+      "shortname": "inhibit-response-function"
+    },
+    {
+      "id": "TA0106",
+      "name": "Impair Process Control",
+      "shortname": "impair-process-control"
+    },
+    {
+      "id": "TA0105",
+      "name": "Impact",
+      "shortname": "impact"
+    }
+  ],
+  "techniques": [
+    {
+      "id": "T0800",
+      "name": "Activate Firmware Update Mode",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0801",
+      "name": "Monitor Process State",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S0604",
+        "S1072",
+        "S1165"
+      ]
+    },
+    {
+      "id": "T0802",
+      "name": "Automated Collection",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S0604",
+        "S1072"
+      ]
+    },
+    {
+      "id": "T0806",
+      "name": "Brute Force I/O",
+      "tactics": [
+        "TA0106"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604",
+        "S1072",
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0807",
+      "name": "Command-Line Interface",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034"
+      ],
+      "software": [
+        "S0603",
+        "S0604",
+        "S1165"
+      ]
+    },
+    {
+      "id": "T0809",
+      "name": "Data Destruction",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604",
+        "S0607",
+        "S1045",
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0811",
+      "name": "Data from Information Repositories",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0038"
+      ]
+    },
+    {
+      "id": "T0813",
+      "name": "Denial of Control",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0814",
+      "name": "Denial of Service",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S0604",
+        "S1006",
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0815",
+      "name": "Denial of View",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0816",
+      "name": "Device Restart/Shutdown",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0817",
+      "name": "Drive-by Compromise",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0035",
+        "G0049",
+        "G0088",
+        "G1000"
+      ],
+      "software": [
+        "S0606"
+      ]
+    },
+    {
+      "id": "T0819",
+      "name": "Exploit Public-Facing Application",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034"
+      ],
+      "software": []
+    },
+    {
+      "id": "T0820",
+      "name": "Exploitation for Evasion",
+      "tactics": [
+        "TA0103"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0821",
+      "name": "Modify Controller Tasking",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1006",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0822",
+      "name": "External Remote Services",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0823",
+      "name": "Graphical User Interface",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0826",
+      "name": "Loss of Availability",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0608"
+      ]
+    },
+    {
+      "id": "T0827",
+      "name": "Loss of Control",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0372",
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0828",
+      "name": "Loss of Productivity and Revenue",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0368",
+        "S0372",
+        "S0446",
+        "S0496",
+        "S0605",
+        "S0606",
+        "S0608"
+      ]
+    },
+    {
+      "id": "T0829",
+      "name": "Loss of View",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0372",
+        "S0604",
+        "S0607",
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0830",
+      "name": "Adversary-in-the-Middle",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1010"
+      ]
+    },
+    {
+      "id": "T0831",
+      "name": "Manipulation of Control",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0832",
+      "name": "Manipulation of View",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0834",
+      "name": "Native API",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1006",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0835",
+      "name": "Manipulate I/O Image",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1006"
+      ]
+    },
+    {
+      "id": "T0836",
+      "name": "Modify Parameter",
+      "tactics": [
+        "TA0106"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1045",
+        "S1072",
+        "S1165"
+      ]
+    },
+    {
+      "id": "T0837",
+      "name": "Loss of Protection",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T0838",
+      "name": "Modify Alarm Settings",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0840",
+      "name": "Network Connection Enumeration",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0604",
+        "S0605"
+      ]
+    },
+    {
+      "id": "T0842",
+      "name": "Network Sniffing",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1010",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0843",
+      "name": "Program Download",
+      "tactics": [
+        "TA0109"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1006",
+        "S1009",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0843.001",
+      "name": "Download All",
+      "tactics": [
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0843",
+      "groups": [],
+      "software": [
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0843.002",
+      "name": "Online Edit",
+      "tactics": [
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0843",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0843.003",
+      "name": "Program Append",
+      "tactics": [
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0843",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0845",
+      "name": "Program Upload",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0846",
+      "name": "Remote System Discovery",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S0604",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0846.001",
+      "name": "Port Scan",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0846",
+      "groups": [],
+      "software": [
+        "S0604",
+        "S1006",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0846.002",
+      "name": "Broadcast Discovery",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0846",
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0846.003",
+      "name": "Multicast Discovery",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0846",
+      "groups": [],
+      "software": [
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0847",
+      "name": "Replication Through Removable Media",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S0608"
+      ]
+    },
+    {
+      "id": "T0848",
+      "name": "Rogue Master",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0849",
+      "name": "Masquerading",
+      "tactics": [
+        "TA0103"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0496",
+        "S0603",
+        "S0605",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0851",
+      "name": "Rootkit",
+      "tactics": [
+        "TA0103",
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603"
+      ]
+    },
+    {
+      "id": "T0852",
+      "name": "Screen Capture",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0064",
+        "G1000"
+      ],
+      "software": []
+    },
+    {
+      "id": "T0853",
+      "name": "Scripting",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0049",
+        "G0064"
+      ],
+      "software": [
+        "S0496",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0858",
+      "name": "Change Operating Mode",
+      "tactics": [
+        "TA0104",
+        "TA0103"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1006",
+        "S1009",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0859",
+      "name": "Valid Accounts",
+      "tactics": [
+        "TA0110",
+        "TA0109"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0049",
+        "G1000"
+      ],
+      "software": [
+        "S0089",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0860",
+      "name": "Wireless Compromise",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0861",
+      "name": "Point & Tag Identification",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0862",
+      "name": "Supply Chain Compromise",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0035",
+        "G0088"
+      ],
+      "software": [
+        "S0093"
+      ]
+    },
+    {
+      "id": "T0863",
+      "name": "User Execution",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S0496",
+        "S0603",
+        "S0606"
+      ]
+    },
+    {
+      "id": "T0864",
+      "name": "Transient Cyber Asset",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0865",
+      "name": "Spearphishing Attachment",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0032",
+        "G0049",
+        "G0064",
+        "G1000"
+      ],
+      "software": [
+        "S0089",
+        "S0093"
+      ]
+    },
+    {
+      "id": "T0866",
+      "name": "Exploitation of Remote Services",
+      "tactics": [
+        "TA0108",
+        "TA0109"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0366",
+        "S0368",
+        "S0603",
+        "S0606"
+      ]
+    },
+    {
+      "id": "T0867",
+      "name": "Lateral Tool Transfer",
+      "tactics": [
+        "TA0109"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0366",
+        "S0368",
+        "S0603",
+        "S0606",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0868",
+      "name": "Detect Operating Mode",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0869",
+      "name": "Standard Application Layer Protocol",
+      "tactics": [
+        "TA0101"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0049"
+      ],
+      "software": [
+        "S0089",
+        "S0496",
+        "S0603",
+        "S1009",
+        "S1045",
+        "S1165"
+      ]
+    },
+    {
+      "id": "T0871",
+      "name": "Execution through API",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0872",
+      "name": "Indicator Removal on Host",
+      "tactics": [
+        "TA0103"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0607",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0873",
+      "name": "Project File Infection",
+      "tactics": [
+        "TA0110"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0873.001",
+      "name": "Siemens Project File Format",
+      "tactics": [
+        "TA0110"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T0873",
+      "groups": [],
+      "software": [
+        "S0603"
+      ]
+    },
+    {
+      "id": "T0874",
+      "name": "Hooking",
+      "tactics": [
+        "TA0104",
+        "TA0111"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0877",
+      "name": "I/O Image",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603"
+      ]
+    },
+    {
+      "id": "T0878",
+      "name": "Alarm Suppression",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0879",
+      "name": "Damage to Property",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0880",
+      "name": "Loss of Safety",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T0881",
+      "name": "Service Stop",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0496",
+        "S0604",
+        "S0605",
+        "S0607",
+        "S1072"
+      ]
+    },
+    {
+      "id": "T0882",
+      "name": "Theft of Operational Information",
+      "tactics": [
+        "TA0105"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0038",
+        "S0143",
+        "S0496",
+        "S1000"
+      ]
+    },
+    {
+      "id": "T0883",
+      "name": "Internet Accessible Device",
+      "tactics": [
+        "TA0108"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1157"
+      ]
+    },
+    {
+      "id": "T0884",
+      "name": "Connection Proxy",
+      "tactics": [
+        "TA0101"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [
+        "G0034"
+      ],
+      "software": [
+        "S0604",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0885",
+      "name": "Commonly Used Port",
+      "tactics": [
+        "TA0101"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1009",
+        "S1165"
+      ]
+    },
+    {
+      "id": "T0886",
+      "name": "Remote Services",
+      "tactics": [
+        "TA0108",
+        "TA0109"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0496",
+        "S0603",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0887",
+      "name": "Wireless Sniffing",
+      "tactics": [
+        "TA0102",
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0888",
+      "name": "Remote System Information Discovery",
+      "tactics": [
+        "TA0102"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0093",
+        "S0603",
+        "S0604",
+        "S1045",
+        "S1072"
+      ]
+    },
+    {
+      "id": "T0889",
+      "name": "Modify Program",
+      "tactics": [
+        "TA0110"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1006"
+      ]
+    },
+    {
+      "id": "T0890",
+      "name": "Exploitation for Privilege Escalation",
+      "tactics": [
+        "TA0111"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S1009",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T0892",
+      "name": "Change Credential",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0893",
+      "name": "Data from Local System",
+      "tactics": [
+        "TA0100"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": [
+        "S0038",
+        "S0143",
+        "S1000"
+      ]
+    },
+    {
+      "id": "T0894",
+      "name": "System Binary Proxy Execution",
+      "tactics": [
+        "TA0103"
+      ],
+      "platforms": [
+        "None"
+      ],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T0895",
+      "name": "Autorun Image",
+      "tactics": [
+        "TA0104"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1691",
+      "name": "Block Operational Technology Message",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1691.001",
+      "name": "Command Message",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1691",
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T1691.002",
+      "name": "Reporting Message",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1691",
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T1692",
+      "name": "Unauthorized Message",
+      "tactics": [
+        "TA0103",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1692.001",
+      "name": "Command Message",
+      "tactics": [
+        "TA0103",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1692",
+      "groups": [],
+      "software": [
+        "S0604",
+        "S1045",
+        "S1072"
+      ]
+    },
+    {
+      "id": "T1692.002",
+      "name": "Reporting Message",
+      "tactics": [
+        "TA0103",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1692",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1693",
+      "name": "Modify Firmware",
+      "tactics": [
+        "TA0110",
+        "TA0107",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1693.001",
+      "name": "System Firmware",
+      "tactics": [
+        "TA0110",
+        "TA0107",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1693",
+      "groups": [],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "T1693.002",
+      "name": "Module Firmware",
+      "tactics": [
+        "TA0110",
+        "TA0107",
+        "TA0106"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1693",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1694",
+      "name": "Insecure Credentials",
+      "tactics": [
+        "TA0110",
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1694.001",
+      "name": "Default Credentials",
+      "tactics": [
+        "TA0110",
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1694",
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1694.002",
+      "name": "Hardcoded Credentials",
+      "tactics": [
+        "TA0110",
+        "TA0109"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1694",
+      "groups": [],
+      "software": [
+        "S0603",
+        "S1045"
+      ]
+    },
+    {
+      "id": "T1695",
+      "name": "Block Communications",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": false,
+      "parent": null,
+      "groups": [],
+      "software": []
+    },
+    {
+      "id": "T1695.001",
+      "name": "Serial COM",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1695",
+      "groups": [],
+      "software": [
+        "S0604"
+      ]
+    },
+    {
+      "id": "T1695.002",
+      "name": "Ethernet",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1695",
+      "groups": [],
+      "software": [
+        "S0372"
+      ]
+    },
+    {
+      "id": "T1695.003",
+      "name": "Wi-Fi",
+      "tactics": [
+        "TA0107"
+      ],
+      "platforms": [],
+      "is_subtechnique": true,
+      "parent": "T1695",
+      "groups": [],
+      "software": [
+        "S0372"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "G1000",
+      "name": "ALLANITE",
+      "aliases": [
+        "ALLANITE",
+        "Palmetto Fusion"
+      ],
+      "summary": "ALLANITE is a suspected Russian cyber espionage group, that has primarily targeted the electric utility sector within the United States and United Kingdom. The group's tactics and techniques are reportedly similar to Dragonfly, although ALLANITEs technical capabilities have not exhibited disruptive or destructive abilities. It has been suggested that the group maintains a presence in ICS for the purpose of gaining\u2026",
+      "techniques": [
+        "T0817",
+        "T0852",
+        "T0859",
+        "T0865"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0064",
+      "name": "APT33",
+      "aliases": [
+        "APT33",
+        "HOLMIUM",
+        "Elfin",
+        "Peach Sandstorm"
+      ],
+      "summary": "APT33 is a suspected Iranian threat group that has carried out operations since at least 2013. The group has targeted organizations across multiple industries in the United States, Saudi Arabia, and South Korea, with a particular interest in the aviation and energy sectors.",
+      "techniques": [
+        "T0852",
+        "T0853",
+        "T0865"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0082",
+      "name": "APT38",
+      "aliases": [
+        "APT38",
+        "NICKEL GLADSTONE",
+        "BeagleBoyz",
+        "Bluenoroff",
+        "Stardust Chollima",
+        "Sapphire Sleet",
+        "COPERNICIUM"
+      ],
+      "summary": "APT38 is a North Korean state-sponsored threat group that specializes in financial cyber operations; it has been attributed to the Reconnaissance General Bureau. Active since at least 2014, APT38 has targeted banks, financial institutions, casinos, cryptocurrency exchanges, SWIFT system endpoints, and ATMs in at least 38 countries worldwide. Significant operations include the 2016 Bank of Bangladesh heist, during\u2026",
+      "techniques": [],
+      "software": [
+        "S0607"
+      ]
+    },
+    {
+      "id": "G1027",
+      "name": "CyberAv3ngers",
+      "aliases": [
+        "CyberAv3ngers",
+        "Soldiers of Soloman"
+      ],
+      "summary": "The CyberAv3ngers are a suspected Iranian Government Islamic Revolutionary Guard Corps (IRGC)-affiliated APT group. The CyberAv3ngers have been known to be active since at least 2020, with disputed and false claims of critical infrastructure compromises in Israel.",
+      "techniques": [],
+      "software": []
+    },
+    {
+      "id": "G0035",
+      "name": "Dragonfly",
+      "aliases": [
+        "Dragonfly",
+        "TEMP.Isotope",
+        "DYMALLOY",
+        "Berserk Bear",
+        "TG-4192",
+        "Crouching Yeti",
+        "IRON LIBERTY",
+        "Energetic Bear",
+        "Ghost Blizzard",
+        "BROMINE"
+      ],
+      "summary": "Dragonfly is a cyber espionage group that has been attributed to Russia's Federal Security Service (FSB) Center 16. Active since at least 2010, Dragonfly has targeted defense and aviation companies, government entities, companies related to industrial control systems, and critical infrastructure sectors worldwide through supply chain, spearphishing, and drive-by compromise attacks.",
+      "techniques": [
+        "T0817",
+        "T0862"
+      ],
+      "software": [
+        "S0093"
+      ]
+    },
+    {
+      "id": "G0037",
+      "name": "FIN6",
+      "aliases": [
+        "FIN6",
+        "Magecart Group 6",
+        "ITG08",
+        "Skeleton Spider",
+        "TAAL",
+        "Camouflage Tempest"
+      ],
+      "summary": "FIN6 is a cyber crime group that has stolen payment card data and sold it for profit on underground marketplaces. This group has aggressively targeted and compromised point of sale (PoS) systems in the hospitality and retail sectors.",
+      "techniques": [],
+      "software": [
+        "S0372",
+        "S0446"
+      ]
+    },
+    {
+      "id": "G0046",
+      "name": "FIN7",
+      "aliases": [
+        "FIN7",
+        "GOLD NIAGARA",
+        "ITG14",
+        "Carbon Spider",
+        "ELBRUS",
+        "Sangria Tempest"
+      ],
+      "summary": "FIN7 is a financially-motivated threat group that has been active since 2013. FIN7 has targeted the retail, restaurant, hospitality, software, consulting, financial services, medical equipment, cloud services, media, food and beverage, transportation, pharmaceutical, and utilities industries in the United States. A portion of FIN7 was operated out of a front company called Combi Security and often used point-of-sale\u2026",
+      "techniques": [],
+      "software": [
+        "S0496"
+      ]
+    },
+    {
+      "id": "G0115",
+      "name": "GOLD SOUTHFIELD",
+      "aliases": [
+        "GOLD SOUTHFIELD",
+        "Pinchy Spider"
+      ],
+      "summary": "GOLD SOUTHFIELD is a financially motivated threat group active since at least 2018 that operates the REvil Ransomware-as-a Service (RaaS). GOLD SOUTHFIELD provides backend infrastructure for affiliates recruited on underground forums to perpetrate high value deployments. By early 2020, GOLD SOUTHFIELD started capitalizing on the new trend of stealing data and further extorting the victim to pay for their data to not\u2026",
+      "techniques": [],
+      "software": [
+        "S0496"
+      ]
+    },
+    {
+      "id": "G1001",
+      "name": "HEXANE",
+      "aliases": [
+        "HEXANE",
+        "Lyceum",
+        "Siamesekitten",
+        "Spirlin"
+      ],
+      "summary": "HEXANE is a cyber espionage threat group that has targeted oil & gas, telecommunications, aviation, and internet service provider organizations since at least 2017. Targeted companies have been located in the Middle East and Africa, including Israel, Saudi Arabia, Kuwait, Morocco, and Tunisia. HEXANE's TTPs appear similar to APT33 and OilRig but due to differences in victims and tools it is tracked as a separate\u2026",
+      "techniques": [],
+      "software": []
+    },
+    {
+      "id": "G0032",
+      "name": "Lazarus Group",
+      "aliases": [
+        "Lazarus Group",
+        "Labyrinth Chollima",
+        "HIDDEN COBRA",
+        "Guardians of Peace",
+        "ZINC",
+        "NICKEL ACADEMY",
+        "Diamond Sleet"
+      ],
+      "summary": "Lazarus Group is a North Korean state-sponsored cyber threat group attributed to the Reconnaissance General Bureau (RGB).   Lazarus Group has been active since at least 2009 and is reportedly responsible for the November 2014 destructive wiper attack on Sony Pictures Entertainment, identified by Novetta as part of Operation Blockbuster. Malware used by Lazarus Group correlates to other reported campaigns, including\u2026",
+      "techniques": [
+        "T0865"
+      ],
+      "software": [
+        "S0366"
+      ]
+    },
+    {
+      "id": "G0049",
+      "name": "OilRig",
+      "aliases": [
+        "OilRig",
+        "COBALT GYPSY",
+        "IRN2",
+        "APT34",
+        "Helix Kitten",
+        "Evasive Serpens",
+        "Hazel Sandstorm",
+        "EUROPIUM",
+        "ITG13",
+        "Earth Simnavaz",
+        "Crambus",
+        "TA452"
+      ],
+      "summary": "OilRig is a suspected Iranian threat group that has targeted Middle Eastern and international victims since at least 2014. The group has targeted a variety of sectors, including financial, government, energy, chemical, and telecommunications. It appears the group carries out supply chain attacks, leveraging the trust relationship between organizations to attack their primary targets. The group works on behalf of the\u2026",
+      "techniques": [
+        "T0817",
+        "T0853",
+        "T0859",
+        "T0865",
+        "T0869"
+      ],
+      "software": []
+    },
+    {
+      "id": "G0034",
+      "name": "Sandworm Team",
+      "aliases": [
+        "Sandworm Team",
+        "ELECTRUM",
+        "Telebots",
+        "IRON VIKING",
+        "BlackEnergy (Group)",
+        "Quedagh",
+        "Voodoo Bear",
+        "IRIDIUM",
+        "Seashell Blizzard",
+        "FROZENBARENTS",
+        "APT44"
+      ],
+      "summary": "Sandworm Team is a destructive threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) Main Center for Special Technologies (GTsST) military unit 74455. This group has been active since at least 2009.",
+      "techniques": [
+        "T0807",
+        "T0819",
+        "T0884"
+      ],
+      "software": [
+        "S0089",
+        "S0368",
+        "S0604",
+        "S0606",
+        "S0607",
+        "S1010",
+        "S1072"
+      ]
+    },
+    {
+      "id": "G0088",
+      "name": "TEMP.Veles",
+      "aliases": [
+        "TEMP.Veles",
+        "XENOTIME"
+      ],
+      "summary": "TEMP.Veles is a Russia-based threat group that has targeted critical infrastructure. The group has been observed utilizing TRITON, a malware framework designed to manipulate industrial safety systems.",
+      "techniques": [
+        "T0817",
+        "T0862"
+      ],
+      "software": [
+        "S1009"
+      ]
+    },
+    {
+      "id": "G0102",
+      "name": "Wizard Spider",
+      "aliases": [
+        "Wizard Spider",
+        "UNC1878",
+        "TEMP.MixMaster",
+        "Grim Spider",
+        "FIN12",
+        "GOLD BLACKBURN",
+        "ITG23",
+        "Periwinkle Tempest",
+        "DEV-0193",
+        "Pistachio Tempest",
+        "DEV-0237"
+      ],
+      "summary": "Wizard Spider is a Russia-based financially motivated threat group originally known for the creation and deployment of TrickBot since at least 2016. Wizard Spider possesses a diverse arsenal of tools and has conducted ransomware campaigns against a variety of organizations, ranging from major corporations to hospitals.",
+      "techniques": [],
+      "software": [
+        "S0446"
+      ]
+    }
+  ],
+  "software": [
+    {
+      "id": "S1000",
+      "name": "ACAD/Medre.A",
+      "type": "malware",
+      "aliases": [
+        "ACAD/Medre.A"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T0882",
+        "T0893"
+      ]
+    },
+    {
+      "id": "S0093",
+      "name": "Backdoor.Oldrea",
+      "type": "malware",
+      "aliases": [
+        "Backdoor.Oldrea",
+        "Havex"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0802",
+        "T0814",
+        "T0846",
+        "T0861",
+        "T0862",
+        "T0863",
+        "T0865",
+        "T0888"
+      ]
+    },
+    {
+      "id": "S0606",
+      "name": "Bad Rabbit",
+      "type": "malware",
+      "aliases": [
+        "Bad Rabbit",
+        "Win32/Diskcoder.D"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0817",
+        "T0828",
+        "T0863",
+        "T0866",
+        "T0867"
+      ]
+    },
+    {
+      "id": "S0089",
+      "name": "BlackEnergy",
+      "type": "malware",
+      "aliases": [
+        "BlackEnergy",
+        "Black Energy"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0859",
+        "T0865",
+        "T0869"
+      ]
+    },
+    {
+      "id": "S0608",
+      "name": "Conficker",
+      "type": "malware",
+      "aliases": [
+        "Conficker",
+        "Kido",
+        "Downadup"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0826",
+        "T0828",
+        "T0847"
+      ]
+    },
+    {
+      "id": "S0038",
+      "name": "Duqu",
+      "type": "malware",
+      "aliases": [
+        "Duqu"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0811",
+        "T0882",
+        "T0893"
+      ]
+    },
+    {
+      "id": "S0605",
+      "name": "EKANS",
+      "type": "malware",
+      "aliases": [
+        "EKANS",
+        "SNAKEHOSE"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0828",
+        "T0840",
+        "T0849",
+        "T0881"
+      ]
+    },
+    {
+      "id": "S0143",
+      "name": "Flame",
+      "type": "malware",
+      "aliases": [
+        "Flame",
+        "Flamer",
+        "sKyWIper"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0882",
+        "T0893"
+      ]
+    },
+    {
+      "id": "S1165",
+      "name": "FrostyGoop",
+      "type": "malware",
+      "aliases": [
+        "FrostyGoop",
+        "BUSTLEBERM"
+      ],
+      "platforms": [
+        "Control Server",
+        "Field Controller/RTU/PLC/IED"
+      ],
+      "techniques": [
+        "T0801",
+        "T0807",
+        "T0836",
+        "T0869",
+        "T0885"
+      ]
+    },
+    {
+      "id": "S1157",
+      "name": "Fuxnet",
+      "type": "malware",
+      "aliases": [
+        "Fuxnet"
+      ],
+      "platforms": [
+        "Input/Output Server",
+        "Control Server"
+      ],
+      "techniques": [
+        "T0806",
+        "T0809",
+        "T0814",
+        "T0822",
+        "T0829",
+        "T0883"
+      ]
+    },
+    {
+      "id": "S1045",
+      "name": "INCONTROLLER",
+      "type": "malware",
+      "aliases": [
+        "INCONTROLLER",
+        "PIPEDREAM"
+      ],
+      "platforms": [
+        "Engineering Workstation",
+        "Field Controller/RTU/PLC/IED",
+        "Safety Instrumented System/Protection Relay",
+        "Windows"
+      ],
+      "techniques": [
+        "T0809",
+        "T0836",
+        "T0842",
+        "T0843",
+        "T0843.001",
+        "T0845",
+        "T0846",
+        "T0846.001",
+        "T0846.003",
+        "T0858",
+        "T0859",
+        "T0861",
+        "T0867",
+        "T0869",
+        "T0884",
+        "T0886",
+        "T0888",
+        "T0890",
+        "T1692.001",
+        "T1694.002"
+      ]
+    },
+    {
+      "id": "S0604",
+      "name": "Industroyer",
+      "type": "malware",
+      "aliases": [
+        "Industroyer",
+        "CRASHOVERRIDE",
+        "Win32/Industroyer"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0800",
+        "T0801",
+        "T0802",
+        "T0806",
+        "T0807",
+        "T0809",
+        "T0813",
+        "T0814",
+        "T0815",
+        "T0816",
+        "T0827",
+        "T0829",
+        "T0831",
+        "T0832",
+        "T0837",
+        "T0840",
+        "T0846",
+        "T0846.001",
+        "T0881",
+        "T0884",
+        "T0888",
+        "T1691.001",
+        "T1691.002",
+        "T1692.001",
+        "T1695.001"
+      ]
+    },
+    {
+      "id": "S1072",
+      "name": "Industroyer2",
+      "type": "malware",
+      "aliases": [
+        "Industroyer2"
+      ],
+      "platforms": [
+        "Field Controller/RTU/PLC/IED",
+        "Engineering Workstation"
+      ],
+      "techniques": [
+        "T0801",
+        "T0802",
+        "T0806",
+        "T0836",
+        "T0881",
+        "T0888",
+        "T1692.001"
+      ]
+    },
+    {
+      "id": "S0607",
+      "name": "KillDisk",
+      "type": "malware",
+      "aliases": [
+        "KillDisk",
+        "Win32/KillDisk.NBI",
+        "Win32/KillDisk.NBH",
+        "Win32/KillDisk.NBD",
+        "Win32/KillDisk.NBC",
+        "Win32/KillDisk.NBB"
+      ],
+      "platforms": [
+        "Linux",
+        "Windows"
+      ],
+      "techniques": [
+        "T0809",
+        "T0829",
+        "T0872",
+        "T0881"
+      ]
+    },
+    {
+      "id": "S0372",
+      "name": "LockerGoga",
+      "type": "malware",
+      "aliases": [
+        "LockerGoga"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0827",
+        "T0828",
+        "T0829",
+        "T1695.002",
+        "T1695.003"
+      ]
+    },
+    {
+      "id": "S0368",
+      "name": "NotPetya",
+      "type": "malware",
+      "aliases": [
+        "NotPetya",
+        "ExPetr",
+        "Diskcoder.C",
+        "GoldenEye",
+        "Petrwrap",
+        "Nyetya"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0828",
+        "T0866",
+        "T0867"
+      ]
+    },
+    {
+      "id": "S1006",
+      "name": "PLC-Blaster",
+      "type": "malware",
+      "aliases": [
+        "PLC-Blaster"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T0814",
+        "T0821",
+        "T0834",
+        "T0835",
+        "T0843",
+        "T0846.001",
+        "T0858",
+        "T0889"
+      ]
+    },
+    {
+      "id": "S0496",
+      "name": "REvil",
+      "type": "malware",
+      "aliases": [
+        "REvil",
+        "Sodin",
+        "Sodinokibi"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0828",
+        "T0849",
+        "T0853",
+        "T0863",
+        "T0869",
+        "T0881",
+        "T0882",
+        "T0886"
+      ]
+    },
+    {
+      "id": "S0446",
+      "name": "Ryuk",
+      "type": "malware",
+      "aliases": [
+        "Ryuk"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0828"
+      ]
+    },
+    {
+      "id": "S0603",
+      "name": "Stuxnet",
+      "type": "malware",
+      "aliases": [
+        "Stuxnet",
+        "W32.Stuxnet"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0801",
+        "T0807",
+        "T0821",
+        "T0831",
+        "T0832",
+        "T0834",
+        "T0835",
+        "T0836",
+        "T0842",
+        "T0843",
+        "T0847",
+        "T0849",
+        "T0851",
+        "T0863",
+        "T0866",
+        "T0867",
+        "T0869",
+        "T0873.001",
+        "T0874",
+        "T0877",
+        "T0885",
+        "T0886",
+        "T0888",
+        "T0889",
+        "T1694.002"
+      ]
+    },
+    {
+      "id": "S1009",
+      "name": "Triton",
+      "type": "malware",
+      "aliases": [
+        "Triton",
+        "TRISIS",
+        "HatMan"
+      ],
+      "platforms": [],
+      "techniques": [
+        "T0820",
+        "T0821",
+        "T0834",
+        "T0843",
+        "T0845",
+        "T0846.002",
+        "T0849",
+        "T0853",
+        "T0858",
+        "T0868",
+        "T0869",
+        "T0871",
+        "T0872",
+        "T0874",
+        "T0880",
+        "T0885",
+        "T0890",
+        "T1693.001"
+      ]
+    },
+    {
+      "id": "S1010",
+      "name": "VPNFilter",
+      "type": "malware",
+      "aliases": [
+        "VPNFilter"
+      ],
+      "platforms": [
+        "Network Devices",
+        "Linux"
+      ],
+      "techniques": [
+        "T0830",
+        "T0842"
+      ]
+    },
+    {
+      "id": "S0366",
+      "name": "WannaCry",
+      "type": "malware",
+      "aliases": [
+        "WannaCry",
+        "WanaCry",
+        "WanaCrypt",
+        "WanaCrypt0r",
+        "WCry"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "techniques": [
+        "T0866",
+        "T0867"
+      ]
+    }
+  ]
+}
