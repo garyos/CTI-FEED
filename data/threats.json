@@ -7,8 +7,25 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T03:33:25.601237+00:00",
+  "fetched_at": "2026-09-05T08:01:52.812892+00:00",
   "entries": [
+    {
+      "id": "85374d969843",
+      "source": "The Hacker News",
+      "title": "Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities",
+      "summary": "Threat actors are exploiting the newly disclosed PaperCut flaws to facilitate credential theft in attacks targeting the education sector in the U.S. and Europe.\n\nThe Arctic Wolf Adversary Research Team said it observed attackers exploiting CVE-2026-81578 and CVE-2026-82078 \u2013 an authentication bypass and remote code execution chain \u2013 to conduct command execution and reconnaissance, as well as",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html",
+      "published": "Sat, 05 Sep 2026 13:01:53 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        7,
+        31,
+        53
+      ],
+      "severity": "high"
+    },
     {
       "id": "44430bc7419f",
       "source": "BleepingComputer",
@@ -1045,23 +1062,6 @@
         0
       ],
       "severity": "info"
-    },
-    {
-      "id": "348588b41dbd",
-      "source": "The Hacker News",
-      "title": "Attackers Exploit Two SonicWall SMA 1000 Zero-Days That May Form an Attack Chain",
-      "summary": "SonicWall has released security updates to address two security flaws impacting its Secure Mobile Access (SMA) 1000 series VPN appliances that have been exploited in zero-day attacks.\n\nThe vulnerabilities, discovered internally by SonicWall's William Perry and Adam Babis, are listed below -\n\n\n  CVE-2026-83548 (CVSS score: 10.0) -&nbsp; A pre-authentication SSRF vulnerability in the Appliance",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-two-sonicwall-sma.html",
-      "published": "Wed, 02 Sep 2026 16:23:49 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        10,
-        53,
-        49
-      ],
-      "severity": "critical"
     },
     {
       "id": "47af0e0edff9",
