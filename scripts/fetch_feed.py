@@ -17,10 +17,20 @@ for their current subscription options and add a feed here if one exists.
 
 import json
 import hashlib
+import re
 from datetime import datetime, timezone
+from html import unescape
 from pathlib import Path
 
 import feedparser
+
+# WordPress-style RSS footer some feeds (e.g. SecurityWeek) append to every
+# description: '<p>The post <a href="...">Title</a> appeared first on
+# <a href="...">Site</a>.</p>'. Matched against the raw HTML before tags are
+# stripped, since afterward it's indistinguishable from ordinary text.
+WP_APPEARED_FIRST_RE = re.compile(r"<p>\s*The post .*?appeared first on .*?</p>", re.IGNORECASE | re.DOTALL)
+HTML_TAG_RE = re.compile(r"<[^>]+>")
+WHITESPACE_RE = re.compile(r"\s+")
 
 FEEDS = [
     {"name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews"},
@@ -53,6 +63,19 @@ def guess_severity(title: str, summary: str) -> str:
     return "info"
 
 
+def clean_summary(raw: str, max_len: int = 400) -> str:
+    """Some feeds (e.g. SecurityWeek) put raw HTML in the description — strip
+    it down to plain text before truncating, so tags don't get chopped off
+    mid-attribute and leak into the UI as literal '<p>'/'<a href=...' text."""
+    if not raw:
+        return ""
+    text = WP_APPEARED_FIRST_RE.sub("", raw)
+    text = HTML_TAG_RE.sub(" ", text)
+    text = unescape(text)
+    text = WHITESPACE_RE.sub(" ", text).strip()
+    return text[:max_len]
+
+
 def sort_key(entry):
     # feedparser gives a time.struct_time in published_parsed when it can
     # figure out the date; entries without one sort to the back.
@@ -78,12 +101,12 @@ def main():
 
         for entry in raw_entries[:MAX_ENTRIES_PER_FEED]:
             title = entry.get("title", "Untitled")
-            summary = entry.get("summary", "")
+            summary = clean_summary(entry.get("summary", ""))
             all_entries.append({
                 "id": entry_id(entry),
                 "source": name,
                 "title": title,
-                "summary": summary[:400],
+                "summary": summary,
                 "link": entry.get("link", ""),
                 "published": entry.get("published", ""),
                 "published_sort": list(sort_key(entry))[:6],  # for client-side sorting

@@ -81,7 +81,7 @@
       "id": "7353763f53df",
       "source": "SecurityWeek",
       "title": "Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites",
-      "summary": "<p>Tracked as CVE-2026-32475 (CVSS score of 9.8), the bug described as an arbitrary file upload issue in the function that handles form submissions.</p>\n<p>The post <a href=\"https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/\">Elementor Pro WordPress Plugin Vulnerability Exploited to Hack Sites</a> appeared first on <a href=\"https://www.securityweek.c",
+      "summary": "Tracked as CVE-2026-32475 (CVSS score of 9.8), the bug described as an arbitrary file upload issue in the function that handles form submissions.",
       "link": "https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/",
       "published": "Sat, 05 Sep 2026 13:00:28 +0000",
       "published_sort": [
@@ -166,7 +166,7 @@
       "id": "af889339aa44",
       "source": "SecurityWeek",
       "title": "In Other News: Microsoft\u2019s Cloud Patches, Hacked Dropbox Accounts, Guardio\u2019s $1.1B Valuation",
-      "summary": "<p>Noteworthy stories that might have slipped under the radar: Microsoft rolled out patches for cloud services, hackers compromised 5,000 Dropbox accounts, and Guardio is now valued at $1.1 billion. </p>\n<p>The post <a href=\"https://www.securityweek.com/in-other-news-microsofts-cloud-patches-hacked-dropbox-accounts-guardios-1-1b-valuation/\">In Other News: Microsoft\u2019s Cloud Patches, Hacked Dropbox ",
+      "summary": "Noteworthy stories that might have slipped under the radar: Microsoft rolled out patches for cloud services, hackers compromised 5,000 Dropbox accounts, and Guardio is now valued at $1.1 billion.",
       "link": "https://www.securityweek.com/in-other-news-microsofts-cloud-patches-hacked-dropbox-accounts-guardios-1-1b-valuation/",
       "published": "Fri, 04 Sep 2026 16:18:30 +0000",
       "published_sort": [
@@ -183,7 +183,7 @@
       "id": "27859ab383d0",
       "source": "SecurityWeek",
       "title": "HPE Patches Critical RCE Vulnerabilities in AOS-CX",
-      "summary": "<p>Nearly two dozen issues, tracked collectively as CVE-2026-73749 (CVSS score of 9.8), were addressed with the updates.</p>\n<p>The post <a href=\"https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/\">HPE Patches Critical RCE Vulnerabilities in AOS-CX</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "Nearly two dozen issues, tracked collectively as CVE-2026-73749 (CVSS score of 9.8), were addressed with the updates.",
       "link": "https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/",
       "published": "Fri, 04 Sep 2026 16:11:06 +0000",
       "published_sort": [
@@ -200,7 +200,7 @@
       "id": "9a579fc82177",
       "source": "SecurityWeek",
       "title": "OpenAI Pledges $1 Billion to Bring Frontier AI to Critical Infrastructure Defenders",
-      "summary": "<p>The Daybreak initiative will provide subsidized AI cyber capabilities, training and technical assistance, though OpenAI has disclosed few details about costs and eligibility.</p>\n<p>The post <a href=\"https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/\">OpenAI Pledges $1 Billion to Bring Frontier AI to Critical Infrastructure Defenders",
+      "summary": "The Daybreak initiative will provide subsidized AI cyber capabilities, training and technical assistance, though OpenAI has disclosed few details about costs and eligibility.",
       "link": "https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/",
       "published": "Fri, 04 Sep 2026 16:07:22 +0000",
       "published_sort": [
@@ -336,7 +336,7 @@
       "id": "86912c9e54a9",
       "source": "SecurityWeek",
       "title": "Sangoma Switchvox Vulnerabilities Exploited in the Wild",
-      "summary": "<p>Tracked as CVE-2026-9586, the unauthenticated SQL injection flaw can be exploited remotely for arbitrary code execution.</p>\n<p>The post <a href=\"https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/\">Sangoma Switchvox Vulnerabilities Exploited in the Wild</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "Tracked as CVE-2026-9586, the unauthenticated SQL injection flaw can be exploited remotely for arbitrary code execution.",
       "link": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
       "published": "Fri, 04 Sep 2026 13:23:12 +0000",
       "published_sort": [
@@ -421,7 +421,7 @@
       "id": "ff8cc3c1c650",
       "source": "SecurityWeek",
       "title": "12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover",
-      "summary": "<p>Dubbed PostGREShell, CVE-2026-6471 turns low-level replication access into code execution, permanent superuser privileges and a persistent database backdoor.</p>\n<p>The post <a href=\"https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/\">12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover</a> appeared first on <a href=\"https://www",
+      "summary": "Dubbed PostGREShell, CVE-2026-6471 turns low-level replication access into code execution, permanent superuser privileges and a persistent database backdoor.",
       "link": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
       "published": "Fri, 04 Sep 2026 12:06:13 +0000",
       "published_sort": [
@@ -438,7 +438,7 @@
       "id": "d089b39aedd6",
       "source": "SecurityWeek",
       "title": "Catch Raises $5 Million for AI Executive Assistant With Guardrails",
-      "summary": "<p>Catch promises the capabilities of a trusted executive assistant, with built-in controls governing what data and systems it can access.</p>\n<p>The post <a href=\"https://www.securityweek.com/catch-raises-5-million-for-ai-executive-assistant-with-guardrails/\">Catch Raises $5 Million for AI Executive Assistant With Guardrails</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWee",
+      "summary": "Catch promises the capabilities of a trusted executive assistant, with built-in controls governing what data and systems it can access.",
       "link": "https://www.securityweek.com/catch-raises-5-million-for-ai-executive-assistant-with-guardrails/",
       "published": "Fri, 04 Sep 2026 11:55:17 +0000",
       "published_sort": [
@@ -472,7 +472,7 @@
       "id": "a62dede8f722",
       "source": "SecurityWeek",
       "title": "VMware Workstation and Fusion Updates Patch Critical Vulnerability",
-      "summary": "<p>The flaws could allow attackers with administrative access to a virtual machine to execute code on the host system.</p>\n<p>The post <a href=\"https://www.securityweek.com/vmware-workstation-and-fusion-updates-patch-critical-vulnerability/\">VMware Workstation and Fusion Updates Patch Critical Vulnerability</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "The flaws could allow attackers with administrative access to a virtual machine to execute code on the host system.",
       "link": "https://www.securityweek.com/vmware-workstation-and-fusion-updates-patch-critical-vulnerability/",
       "published": "Fri, 04 Sep 2026 11:42:55 +0000",
       "published_sort": [
@@ -489,7 +489,7 @@
       "id": "e65ffb908bc8",
       "source": "SecurityWeek",
       "title": "Google Patches 6th Chrome Zero-Day of 2026",
-      "summary": "<p>Google\u2019s Chrome 152 security update resolves 12 vulnerabilities, including a high-severity type confusion flaw in the V8 engine.</p>\n<p>The post <a href=\"https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/\">Google Patches 6th Chrome Zero-Day of 2026</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "Google\u2019s Chrome 152 security update resolves 12 vulnerabilities, including a high-severity type confusion flaw in the V8 engine.",
       "link": "https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/",
       "published": "Fri, 04 Sep 2026 11:31:52 +0000",
       "published_sort": [
@@ -506,7 +506,7 @@
       "id": "c37280306287",
       "source": "SecurityWeek",
       "title": "Nvidia Is Buying AI Platform Hugging Face for $13 Billion",
-      "summary": "<p>The deal highlights Nvidia\u2019s push to champion increasingly popular open-source AI models.</p>\n<p>The post <a href=\"https://www.securityweek.com/nvidia-is-buying-ai-platform-hugging-face-for-13-billion/\">Nvidia Is Buying AI Platform Hugging Face for $13 Billion</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "The deal highlights Nvidia\u2019s push to champion increasingly popular open-source AI models.",
       "link": "https://www.securityweek.com/nvidia-is-buying-ai-platform-hugging-face-for-13-billion/",
       "published": "Fri, 04 Sep 2026 10:00:00 +0000",
       "published_sort": [
