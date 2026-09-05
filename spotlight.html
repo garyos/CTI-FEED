@@ -280,6 +280,19 @@
   .pause-btn:hover { filter: brightness(1.15); }
   .pause-btn.active { border-color: var(--red); color: var(--red); box-shadow: 0 0 16px rgba(255,92,92,0.35); }
 
+  /* Reading-speed control — cycles Normal / Slow / Slowest, adding 5s per
+     step to every slide's auto-advance duration. Persisted per-device so a
+     reader's chosen pace sticks across visits. */
+  .speed-btn {
+    position: absolute; right: 14px; bottom: max(18px, calc(env(safe-area-inset-bottom) + 6px)); z-index: 24;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--text-dim);
+    background: rgba(16,21,29,0.92); border: 1px solid var(--line); padding: 7px 10px; cursor: pointer;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .speed-btn:hover { color: var(--text); border-color: var(--text-dim); }
+  .speed-btn.slow { color: var(--blue); border-color: var(--blue); }
+  .speed-btn.slowest { color: var(--teal); border-color: var(--teal); }
+
   .empty-target {
     position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 14px; text-align: center; padding: 24px; z-index: 20;
@@ -304,7 +317,8 @@
     <div class="tap-zone tap-left" id="tap-left"></div>
     <div class="tap-zone tap-right" id="tap-right"></div>
     <div class="hint" id="hint">tap right to advance · left to go back · tap an item to inspect</div>
-    <button class="pause-btn no-nav" id="pause-btn" aria-label="Pause auto-advance">‖</button>
+    <button class="pause-btn no-nav control-btn" id="pause-btn" aria-label="Pause auto-advance">‖</button>
+    <button class="speed-btn no-nav control-btn" id="speed-btn" aria-label="Reading speed">◷ NORMAL</button>
   </div>
 
 <script>
@@ -822,6 +836,30 @@
   // can't reliably land a double-tap and need a deliberate, persistent control.
   let manualPauseLock = false;
 
+  const SPEED_KEY = "signal-spotlight-speed";
+  const SPEED_ORDER = ["normal", "slow", "slowest"];
+  const SPEED_OFFSET_MS = { normal: 0, slow: 5000, slowest: 10000 };
+  const SPEED_LABEL = { normal: "NORMAL", slow: "SLOW", slowest: "SLOWEST" };
+  let speedMode = SPEED_ORDER.includes(localStorage.getItem(SPEED_KEY)) ? localStorage.getItem(SPEED_KEY) : "normal";
+
+  function speedOffset() { return SPEED_OFFSET_MS[speedMode] || 0; }
+
+  function updateSpeedButton() {
+    const btn = document.getElementById("speed-btn");
+    btn.textContent = `◷ ${SPEED_LABEL[speedMode]}`;
+    btn.className = `speed-btn no-nav control-btn ${speedMode !== "normal" ? speedMode : ""}`;
+  }
+
+  function cycleSpeed() {
+    speedMode = SPEED_ORDER[(SPEED_ORDER.indexOf(speedMode) + 1) % SPEED_ORDER.length];
+    localStorage.setItem(SPEED_KEY, speedMode);
+    updateSpeedButton();
+    // Apply immediately to the slide already on screen, not just future ones —
+    // extending timerDuration just makes the current countdown take longer to
+    // fill, since it's still measured from the same timerStart.
+    if (slides[idx]) timerDuration = slides[idx].duration + speedOffset();
+  }
+
   function updateStatusUI() {
     const flag = document.getElementById("paused-flag");
     const btn = document.getElementById("pause-btn");
@@ -921,7 +959,7 @@
     syncSegsForIndex(i);
     interactionPaused = false;
     if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
-    startTimer(slides[i].duration);
+    startTimer(slides[i].duration + speedOffset());
   }
 
   function next() {
@@ -942,6 +980,12 @@
       e.stopPropagation();
       toggleManualPause();
     });
+
+    document.getElementById("speed-btn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      cycleSpeed();
+    });
+    updateSpeedButton();
 
     // Capture phase so this runs before a link's own navigation (or an
     // asset-card's own click-to-expand handler) fires.
@@ -967,6 +1011,11 @@
     // background tap while paused this way is held for one double-tap window before
     // falling through to normal prev/next, so the two gestures don't collide.
     stage.addEventListener("pointerdown", (e) => {
+      // The pause and speed buttons fully own their own click behavior (including
+      // managing pause state themselves) — they must never enter the generic
+      // swipe/tap tracking below, or a tap on them would also trip the "tapped a
+      // .no-nav element" pause-until-double-tap path as an unrelated side effect.
+      if (e.target.closest(".control-btn")) return;
       // Starting a drag on top of a real <a> would otherwise trigger the browser's
       // native "drag this link" gesture instead of our pointermove tracking, which
       // silently swallows a swipe that happens to start on a link-heavy slide (e.g.
