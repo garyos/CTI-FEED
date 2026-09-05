@@ -1,0 +1,113 @@
+{
+  "month": "2026-02",
+  "cves": [
+    {
+      "id": "CVE-2025-12107",
+      "published": "2026-02-19T10:16:09.967",
+      "lastModified": "2026-09-03T14:17:00.010",
+      "vulnStatus": "Modified",
+      "description": "The Velocity template engine, utilized by the affected product, accepts and processes template syntax without sufficient sanitization or validation of user-controlled input. This allows an authenticated administrator to inject arbitrary template syntax. Successful exploitation enables an attacker with administrative privileges to execute arbitrary template code on the server. This can lead to significant security consequences, including remote code execution, manipulation of data, and unauthoriz",
+      "cvss": {
+        "score": 7.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        }
+      ],
+      "vendors": [
+        "WSO2 Identity Server"
+      ],
+      "references": [
+        "https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2026/WSO2-2025-4517/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-23111",
+      "published": "2026-02-13T14:16:10.283",
+      "lastModified": "2026-09-03T13:04:45.447",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: netfilter: nf_tables: fix inverted genmask check in nft_map_catchall_activate() nft_map_catchall_activate() has an inverted element activity check compared to its non-catchall counterpart nft_mapelem_activate() and compared to what is logically required. nft_map_catchall_activate() is called from the abort path to re-activate catchall map elements that were deactivated during a failed transaction. It should skip elements that ar",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-672",
+          "name": "CWE-672"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Enterprise Linux 9.4 Extended Update Support"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/1444ff890b4653add12f734ffeffc173d42862dd",
+        "https://git.kernel.org/stable/c/42c574c1504aa089a0a142e4c13859327570473d",
+        "https://git.kernel.org/stable/c/8b68a45f9722f2babe9e7bad00aa74638addf081",
+        "https://git.kernel.org/stable/c/8c760ba4e36c750379d13569f23f5a6e185333f5"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-25639",
+      "published": "2026-02-09T21:15:49.010",
+      "lastModified": "2026-09-04T13:18:26.140",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to versions 0.30.3 and 1.13.5, the mergeConfig function in axios crashes with a TypeError when processing configuration objects containing __proto__ as an own property. An attacker can trigger this by providing a malicious configuration object created via JSON.parse(), causing complete denial of service. This vulnerability is fixed in versions 0.30.3 and 1.13.5.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-754",
+          "name": "CWE-754"
+        },
+        {
+          "id": "CWE-1287",
+          "name": "CWE-1287"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 9",
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.6",
+        "Red Hat multicluster engine for Kubernetes 2.7"
+      ],
+      "references": [
+        "https://github.com/axios/axios/commit/28c721588c7a77e7503d0a434e016f852c597b57",
+        "https://github.com/axios/axios/commit/d7ff1409c68168d3057fc3891f911b2b92616f9e",
+        "https://github.com/axios/axios/pull/7369",
+        "https://github.com/axios/axios/pull/7388"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.428134+00:00"
+}

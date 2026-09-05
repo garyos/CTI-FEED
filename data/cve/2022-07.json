@@ -1,0 +1,40 @@
+{
+  "month": "2022-07",
+  "cves": [
+    {
+      "id": "CVE-2022-34821",
+      "published": "2022-07-12T10:15:12.393",
+      "lastModified": "2026-09-03T01:15:22.797",
+      "vulnStatus": "Modified",
+      "description": "A vulnerability has been identified in RUGGEDCOM RM1224 LTE(4G) EU (6GK6108-4AM00-2BA2), RUGGEDCOM RM1224 LTE(4G) NAM (6GK6108-4AM00-2DA2), SCALANCE M804PB (6GK5804-0AP00-2AA2), SCALANCE M812-1 ADSL-Router (6GK5812-1AA00-2AA2), SCALANCE M812-1 ADSL-Router (6GK5812-1BA00-2AA2), SCALANCE M816-1 ADSL-Router (6GK5816-1AA00-2AA2), SCALANCE M816-1 ADSL-Router (6GK5816-1BA00-2AA2), SCALANCE M826-2 SHDSL-Router (6GK5826-2AB00-2AB2), SCALANCE M874-2 (6GK5874-2AA00-2AA2), SCALANCE M874-3 (6GK5874-3AA00-2A",
+      "cvss": {
+        "score": 7.6,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        }
+      ],
+      "vendors": [
+        "Siemens RUGGEDCOM RM1224 LTE(4G) EU",
+        "Siemens RUGGEDCOM RM1224 LTE(4G) NAM",
+        "Siemens SCALANCE M804PB",
+        "Siemens SCALANCE M812-1 ADSL-Router",
+        "Siemens SCALANCE M816-1 ADSL-Router"
+      ],
+      "references": [
+        "https://cert-portal.siemens.com/productcert/html/ssa-413565.html",
+        "https://cert-portal.siemens.com/productcert/html/ssa-517377.html",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-413565.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-517377.pdf"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.424311+00:00"
+}

@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-09-05T17:55:14.969341+00:00",
+  "last_fetched": "2026-09-05T17:55:14.113157+00:00",
+  "months": [
+    {
+      "key": "2026-09",
+      "count": 558,
+      "critical": 136,
+      "high": 422,
+      "kev": 3,
+      "latest_published": "2026-09-05T13:18:14.150"
+    },
+    {
+      "key": "2026-08",
+      "count": 329,
+      "critical": 69,
+      "high": 260,
+      "kev": 1,
+      "latest_published": "2026-08-31T22:17:34.080"
+    },
+    {
+      "key": "2026-07",
+      "count": 166,
+      "critical": 36,
+      "high": 130,
+      "kev": 2,
+      "latest_published": "2026-07-31T22:17:02.437"
+    },
+    {
+      "key": "2026-06",
+      "count": 38,
+      "critical": 5,
+      "high": 33,
+      "kev": 1,
+      "latest_published": "2026-06-29T14:16:47.967"
+    },
+    {
+      "key": "2026-05",
+      "count": 39,
+      "critical": 14,
+      "high": 24,
+      "kev": 1,
+      "latest_published": "2026-05-29T11:16:17.050"
+    },
+    {
+      "key": "2026-04",
+      "count": 21,
+      "critical": 4,
+      "high": 17,
+      "kev": 0,
+      "latest_published": "2026-04-30T18:16:30.577"
+    },
+    {
+      "key": "2026-03",
+      "count": 31,
+      "critical": 9,
+      "high": 22,
+      "kev": 1,
+      "latest_published": "2026-03-31T20:16:29.660"
+    },
+    {
+      "key": "2026-02",
+      "count": 3,
+      "critical": 0,
+      "high": 3,
+      "kev": 0,
+      "latest_published": "2026-02-19T10:16:09.967"
+    },
+    {
+      "key": "2026-01",
+      "count": 4,
+      "critical": 2,
+      "high": 2,
+      "kev": 0,
+      "latest_published": "2026-01-28T20:16:09.713"
+    },
+    {
+      "key": "2025-12",
+      "count": 14,
+      "critical": 6,
+      "high": 8,
+      "kev": 0,
+      "latest_published": "2025-12-03T19:15:54.767"
+    },
+    {
+      "key": "2025-11",
+      "count": 5,
+      "critical": 3,
+      "high": 2,
+      "kev": 0,
+      "latest_published": "2025-11-30T16:15:47.260"
+    },
+    {
+      "key": "2025-10",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2025-10-03T11:15:30.437"
+    },
+    {
+      "key": "2025-09",
+      "count": 2,
+      "critical": 0,
+      "high": 2,
+      "kev": 0,
+      "latest_published": "2025-09-02T19:15:33.010"
+    },
+    {
+      "key": "2025-07",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2025-07-10T14:15:27.877"
+    },
+    {
+      "key": "2025-06",
+      "count": 4,
+      "critical": 0,
+      "high": 4,
+      "kev": 0,
+      "latest_published": "2025-06-26T07:15:27.440"
+    },
+    {
+      "key": "2025-05",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2025-05-27T21:15:23.030"
+    },
+    {
+      "key": "2025-04",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2025-04-15T21:16:00.043"
+    },
+    {
+      "key": "2025-02",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2025-02-12T15:15:18.430"
+    },
+    {
+      "key": "2024-11",
+      "count": 3,
+      "critical": 2,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2024-11-23T13:15:04.547"
+    },
+    {
+      "key": "2024-08",
+      "count": 2,
+      "critical": 1,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2024-08-22T21:15:16.107"
+    },
+    {
+      "key": "2024-07",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2024-07-08T21:15:12.480"
+    },
+    {
+      "key": "2024-05",
+      "count": 1,
+      "critical": 0,
+      "high": 0,
+      "kev": 1,
+      "latest_published": "2024-05-03T03:16:10.833"
+    },
+    {
+      "key": "2024-04",
+      "count": 1,
+      "critical": 1,
+      "high": 0,
+      "kev": 0,
+      "latest_published": "2024-04-15T18:15:10.723"
+    },
+    {
+      "key": "2023-11",
+      "count": 2,
+      "critical": 0,
+      "high": 2,
+      "kev": 0,
+      "latest_published": "2023-11-28T09:15:07.147"
+    },
+    {
+      "key": "2022-07",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2022-07-12T10:15:12.393"
+    },
+    {
+      "key": "2020-03",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2020-03-03T19:15:15.210"
+    },
+    {
+      "key": "2019-10",
+      "count": 1,
+      "critical": 0,
+      "high": 1,
+      "kev": 0,
+      "latest_published": "2019-10-17T18:15:12.110"
+    },
+    {
+      "key": "2019-01",
+      "count": 1,
+      "critical": 1,
+      "high": 0,
+      "kev": 0,
+      "latest_published": "2019-01-18T22:29:01.020"
+    }
+  ]
+}

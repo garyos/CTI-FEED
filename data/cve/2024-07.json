@@ -1,0 +1,40 @@
+{
+  "month": "2024-07",
+  "cves": [
+    {
+      "id": "CVE-2024-5971",
+      "published": "2024-07-08T21:15:12.480",
+      "lastModified": "2026-09-04T15:17:27.827",
+      "vulnStatus": "Deferred",
+      "description": "A vulnerability was found in Undertow, where the chunked response hangs after the body was flushed. The response headers and body were sent but the client would continue waiting as Undertow does not send the expected 0\\r\\n termination of the chunked response. This results in uncontrolled resource consumption, leaving the server side to a denial of service attack. This happens only with Java 17 TLSv1.3 scenarios.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-674",
+          "name": "CWE-674"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat build of Apache Camel 3.20.7 for Spring Boot",
+        "Red Hat Red Hat build of Apache Camel 4.4.1 for Spring Boot 3.2",
+        "Red Hat Red Hat build of Apache Camel 4.4.2 for Spring Boot",
+        "Red Hat Red Hat JBoss Enterprise Application Platform",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 for RHEL 8"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2024:4392",
+        "https://access.redhat.com/errata/RHSA-2024:4884",
+        "https://access.redhat.com/errata/RHSA-2024:5143",
+        "https://access.redhat.com/errata/RHSA-2024:5144"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.424972+00:00"
+}

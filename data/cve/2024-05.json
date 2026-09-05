@@ -1,0 +1,43 @@
+{
+  "month": "2024-05",
+  "cves": [
+    {
+      "id": "CVE-2023-50224",
+      "published": "2024-05-03T03:16:10.833",
+      "lastModified": "2026-09-03T17:28:42.113",
+      "vulnStatus": "Analyzed",
+      "description": "TP-Link TL-WR841N dropbearpwd Improper Authentication Information Disclosure Vulnerability. This vulnerability allows network-adjacent attackers to disclose sensitive information on affected installations of TP-Link TL-WR841N routers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the httpd service, which listens on TCP port 80 by default. The issue results from improper authentication. An attacker can leverage this vulnerability to disclose stored ",
+      "cvss": {
+        "score": 6.5,
+        "version": "3.1",
+        "severity": "MEDIUM"
+      },
+      "cwes": [
+        {
+          "id": "CWE-290",
+          "name": "CWE-290"
+        }
+      ],
+      "vendors": [
+        "TP-Link TL-WR841N",
+        "TP-Link TL-WR841ND",
+        "TP-Link TL-MR6400",
+        "TP-Link Archer C5",
+        "TP-Link Archer C7"
+      ],
+      "references": [
+        "https://www.tp-link.com/en/support/download/tl-wr841n/v12/#Firmware",
+        "https://www.tp-link.com/us/support/faq/5058/",
+        "https://www.zerodayinitiative.com/advisories/ZDI-23-1808/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-50224"
+      ],
+      "kev": {
+        "in_kev": true,
+        "date_added": "2025-09-03",
+        "required_action": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "known_ransomware": "Unknown"
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.424822+00:00"
+}

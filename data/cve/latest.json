@@ -1,0 +1,1175 @@
+{
+  "generated_at": "2026-09-05T17:55:14.969341+00:00",
+  "cves": [
+    {
+      "id": "CVE-2026-83548",
+      "published": "2026-09-01T22:17:13.170",
+      "lastModified": "2026-09-03T13:06:16.053",
+      "vulnStatus": "Analyzed",
+      "description": "A Pre-authentication SSRF vulnerability exists in the SMA1000 Appliance Work Place interface due to an unintended alternate access path. A remote unauthenticated attacker could potentially exploit this vulnerability to gain unauthorized access to sensitive functionality and perform unauthorized operations.",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-441",
+          "name": "CWE-441"
+        },
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "SonicWall SMA1000"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-83548"
+      ],
+      "kev": {
+        "in_kev": true,
+        "date_added": "2026-09-02",
+        "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "known_ransomware": "Unknown"
+      }
+    },
+    {
+      "id": "CVE-2026-85046",
+      "published": "2026-09-03T20:17:24.210",
+      "lastModified": "2026-09-05T04:18:05.170",
+      "vulnStatus": "Analyzed",
+      "description": "Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-843",
+          "name": "Type Confusion"
+        }
+      ],
+      "vendors": [
+        "Google Chrome"
+      ],
+      "references": [
+        "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_01882797386.html",
+        "https://issues.chromium.org/issues/542403045",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-85046"
+      ],
+      "kev": {
+        "in_kev": true,
+        "date_added": "2026-09-04",
+        "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "known_ransomware": "Unknown"
+      }
+    },
+    {
+      "id": "CVE-2026-83549",
+      "published": "2026-09-01T22:17:13.290",
+      "lastModified": "2026-09-03T13:06:16.230",
+      "vulnStatus": "Analyzed",
+      "description": "Post-authentication Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability has been identified in the SMA1000 Appliance Management Console (AMC) which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "SonicWall SMA1000"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-83549"
+      ],
+      "kev": {
+        "in_kev": true,
+        "date_added": "2026-09-02",
+        "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "known_ransomware": "Unknown"
+      }
+    },
+    {
+      "id": "CVE-2026-86190",
+      "published": "2026-09-05T13:18:14.150",
+      "lastModified": "2026-09-05T13:18:14.150",
+      "vulnStatus": "Received",
+      "description": "WWBN AVideo contains a broken access control vulnerability in videoViewsInfo endpoints that returns complete user records including password hashes, recovery tokens, and live session identifiers to unauthenticated callers when a hash parameter is provided. Attackers can use the disclosed session identifier to hijack viewer sessions, including administrator accounts, and obtain sensitive personal data for all video viewers.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-200",
+          "name": "Exposure of Sensitive Information"
+        }
+      ],
+      "vendors": [
+        "WWBN AVideo"
+      ],
+      "references": [
+        "https://github.com/WWBN/AVideo/security/advisories/GHSA-82q2-88mq-p44q",
+        "https://www.vulncheck.com/advisories/wwbn-avideo-broken-access-control-via-videoviewsinfo-hash-parameter"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86189",
+      "published": "2026-09-05T13:18:14.000",
+      "lastModified": "2026-09-05T13:18:14.000",
+      "vulnStatus": "Received",
+      "description": "WWBN AVideo contains a path traversal vulnerability in notify.ffmpeg.json.php that allows unauthenticated attackers to write files to arbitrary locations by supplying a caller-chosen path in the avideoRelativePath parameter. Attackers can replay any previously issued ciphertext as a notifyCode token, which is decrypted but never validated, to bypass authentication and write files to the application root and subdirectories.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-73",
+          "name": "CWE-73"
+        }
+      ],
+      "vendors": [
+        "WWBN AVideo"
+      ],
+      "references": [
+        "https://github.com/WWBN/AVideo/security/advisories/GHSA-cprx-fggj-7vpq",
+        "https://www.vulncheck.com/advisories/wwbn-avideo-unauthenticated-path-traversal-via-notify-ffmpeg-json-php"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86184",
+      "published": "2026-09-05T12:16:49.090",
+      "lastModified": "2026-09-05T12:16:49.090",
+      "vulnStatus": "Received",
+      "description": "Lara Dashboard before 1.3.0 contains an authentication bypass vulnerability in the screenshot-login route that allows unauthenticated attackers to authenticate as any user by email when APP_ENV is not production. Attackers can request the GET /screenshot-login/{email} endpoint with a registered email address to receive a fully authenticated session, enabling access to user administration, settings, database contents, and arbitrary code execution through the module installer.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "laradashboard laradashboard"
+      ],
+      "references": [
+        "https://github.com/laradashboard/laradashboard",
+        "https://github.com/laradashboard/laradashboard/blob/v1.2.2/app/Http/Controllers/Backend/Auth/ScreenshotGeneratorLoginController.php",
+        "https://github.com/laradashboard/laradashboard/commit/50986e4ac58c883dd8f064cf32be3e2a87c11b24",
+        "https://github.com/laradashboard/laradashboard/releases/tag/v1.3.0"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-10196",
+      "published": "2026-09-05T12:16:46.790",
+      "lastModified": "2026-09-05T12:16:46.790",
+      "vulnStatus": "Received",
+      "description": "The Mail Mint \u2013 Email Marketing, Newsletter, Email Automation & WooCommerce Emails plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.31.0 via deserialization of untrusted input in the 'handle_form_submission' function. This makes it possible for unauthenticated attackers to inject a PHP Object. The additional presence of a POP chain allows attackers to execute code on the server. The vulnerability was partially patched in version 1.23.1.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-502",
+          "name": "Deserialization of Untrusted Data"
+        }
+      ],
+      "vendors": [
+        "getwpfunnels Mail Mint \u2013 Email Marketing, Newsletter, Email Automation & WooCommerce Emails"
+      ],
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/mail-mint/tags/1.21.0/app/API/Actions/Frontend/FormAction.php#L59",
+        "https://plugins.trac.wordpress.org/browser/mail-mint/tags/1.21.0/app/Database/models/ContactModel.php#L460",
+        "https://plugins.trac.wordpress.org/browser/mail-mint/tags/1.21.0/vendor/posthog/posthog-php/lib/Consumer/ForkCurl.php#L96",
+        "https://plugins.trac.wordpress.org/browser/mail-mint/trunk/app/API/Actions/Frontend/FormAction.php#L59"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86124",
+      "published": "2026-09-05T10:16:43.900",
+      "lastModified": "2026-09-05T10:16:43.900",
+      "vulnStatus": "Received",
+      "description": "AutoAgent contains an unauthenticated remote code execution vulnerability in the TCP server that binds to all interfaces and executes attacker-supplied commands as root. Attackers can connect to the exposed communication port and execute arbitrary bash commands within the container, gaining access to bind-mounted host workspace directories.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "HKUDS AutoAgent"
+      ],
+      "references": [
+        "https://github.com/HKUDS/AutoAgent",
+        "https://github.com/HKUDS/AutoAgent/blob/16c12b052ef2330a198063c62a07a7f9723031e3/autoagent/environment/docker_env.py",
+        "https://github.com/HKUDS/AutoAgent/blob/16c12b052ef2330a198063c62a07a7f9723031e3/autoagent/environment/tcp_server.py",
+        "https://github.com/HKUDS/AutoAgent/issues/96"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86121",
+      "published": "2026-09-05T10:16:43.463",
+      "lastModified": "2026-09-05T10:16:43.463",
+      "vulnStatus": "Received",
+      "description": "Cua computer-server versions before 0.3.42 skip authentication when the CONTAINER_NAME environment variable is unset and bind to all interfaces by default, allowing unauthenticated attackers to execute arbitrary commands. Attackers can reach TCP port 8000 to run shell commands via the run_command endpoint, read and write arbitrary files through file operation endpoints, and access interactive PTY shells without authentication.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "trycua cua-computer-server"
+      ],
+      "references": [
+        "https://github.com/trycua/cua",
+        "https://github.com/trycua/cua/blob/10a2e71792db/libs/python/computer-server/computer_server/cli.py",
+        "https://github.com/trycua/cua/blob/10a2e71792db/libs/python/computer-server/computer_server/main.py",
+        "https://github.com/trycua/cua/commit/59cf25c0ec54"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2024-11080",
+      "published": "2026-09-05T09:16:48.880",
+      "lastModified": "2026-09-05T09:16:48.880",
+      "vulnStatus": "Received",
+      "description": "The Post Grid and Gutenberg Blocks \u2013 ComboBlocks plugin for WordPress is vulnerable to Unauthenticated Hook Injection in versions 2.2.32 to 2.3.1 via several functions in the ~/includes/blocks/form-wrap/function.php file. This makes it possible for unauthenticated attackers to execute actions with hooks in WordPress, granted no other security controls are present in the function.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        }
+      ],
+      "vendors": [
+        "pickplugins Post Grid"
+      ],
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/post-grid/trunk/includes/blocks/form-wrap/functions.php#L116",
+        "https://plugins.trac.wordpress.org/browser/post-grid/trunk/includes/blocks/form-wrap/functions.php#L262",
+        "https://plugins.trac.wordpress.org/browser/post-grid/trunk/includes/blocks/form-wrap/functions.php#L3249",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/ec8666d4-042e-4cf4-86f5-474a69d90ff6?source=cve"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-83627",
+      "published": "2026-09-05T06:17:10.080",
+      "lastModified": "2026-09-05T06:17:10.080",
+      "vulnStatus": "Received",
+      "description": "The Hummingbird \u2013 Speed Optimization, Caching, Minify, Compress & CDN plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, 3.21.0 via the log_msg() function in core/modules/class-page-cache.php. The page-cache debug log is written to wp-content/wphb-logs/page-caching-log.php, a directly web-accessible PHP file that is supposed to be protected by a leading '<?php die(); ?>' header. That header is guarded by class_exists( 'Filesystem' ), which can never",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        }
+      ],
+      "vendors": [
+        "wpmudev Hummingbird Performance \u2013 Cache & Page Speed Optimization for Core Web Vitals | Critical CSS | Minify CSS | Defer CSS Javascript | CDN"
+      ],
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/hummingbird-performance/trunk/core/modules/class-page-cache.php#L1973",
+        "https://plugins.trac.wordpress.org/browser/hummingbird-performance/trunk/core/modules/class-page-cache.php#L1982",
+        "https://plugins.trac.wordpress.org/browser/hummingbird-performance/trunk/core/modules/class-page-cache.php#L749",
+        "https://plugins.trac.wordpress.org/browser/hummingbird-performance/trunk/core/modules/class-page-cache.php#L752"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-13447",
+      "published": "2026-09-05T06:17:09.403",
+      "lastModified": "2026-09-05T06:17:09.403",
+      "vulnStatus": "Received",
+      "description": "The Mstore Api plugin for WordPress is vulnerable to Authentication Bypass via JWT Forgery in versions up to, and including, 4.20.0 This is due to missing cryptographic signature verification in the FirebasePhoneAuthHelper::verify_id_token() function, which decodes and validates Firebase ID token claims (alg, kid, aud, iss) but never calls openssl_verify() or any equivalent to validate the JWT signature against Google's actual public key certificates. This makes it possible for unauthenticated a",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        }
+      ],
+      "vendors": [
+        "inspireui MStore API \u2013 Create Native Android & iOS Apps On The Cloud"
+      ],
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/mstore-api/tags/4.18.4/controllers/flutter-user.php#L829",
+        "https://plugins.trac.wordpress.org/browser/mstore-api/tags/4.18.4/controllers/flutter-user.php#L940",
+        "https://plugins.trac.wordpress.org/browser/mstore-api/tags/4.18.4/controllers/helpers/firebase-phone-auth-helper.php#L5",
+        "https://plugins.trac.wordpress.org/browser/mstore-api/trunk/controllers/flutter-user.php#L829"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-52766",
+      "published": "2026-09-05T00:17:19.393",
+      "lastModified": "2026-09-05T00:17:19.393",
+      "vulnStatus": "Received",
+      "description": "YesWiki is a wiki system written in PHP. Prior to version 4.6.6, the {{erasespamedcomments}} wiki action (actions/EraseSpamedCommentsAction.php) accepts a suppr[] array from POST and deletes every wiki page whose tag appears in that array, with no authorization check anywhere in the action body or in the page-deletion path it invokes. Combined with YesWiki's allow-by-default action ACL model, any user who has page write access, which is the default for everyone (default_write_acl='*') on a fresh",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-276",
+          "name": "CWE-276"
+        },
+        {
+          "id": "CWE-862",
+          "name": "Missing Authorization"
+        }
+      ],
+      "vendors": [
+        "YesWiki yeswiki"
+      ],
+      "references": [
+        "https://github.com/YesWiki/yeswiki/commit/ed5b548a705c8091ba0282aaaba73ddda976abef",
+        "https://github.com/YesWiki/yeswiki/releases/tag/v4.6.6",
+        "https://github.com/YesWiki/yeswiki/security/advisories/GHSA-6x7x-gcmf-7r8x"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-75925",
+      "published": "2026-09-04T22:17:18.017",
+      "lastModified": "2026-09-04T22:17:18.017",
+      "vulnStatus": "Received",
+      "description": "Improper neutralization of CRLF sequences in IXON VPN Client before version 1.4.7 allows an attacker to execute commands as root or SYSTEM. Configuration values accepted by the local service are written to a file later consumed by a privileged subprocess, without line-ending sequences being neutralized, which allows additional directives to be introduced into that file. The configuration interface accepts changes without authenticating or verifying the origin of the requester. The injected confi",
+      "cvss": {
+        "score": 9.6,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-93",
+          "name": "CWE-93"
+        }
+      ],
+      "vendors": [
+        "IXON IXON VPN Client"
+      ],
+      "references": [
+        "https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-246-02.json",
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-02",
+        "https://www.ixon.cloud/Advisories/ADV-2026-08-05.pdf"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-81939",
+      "published": "2026-09-04T19:17:29.237",
+      "lastModified": "2026-09-04T20:17:29.647",
+      "vulnStatus": "Received",
+      "description": "A Zip Slip vulnerability in the SonicWall Network Security Manager (NSM) On-Prem file upload and archive processing functionality allows an attacker to extract files outside the intended destination directory using a specially crafted archive.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "SonicWall Network Security Manager (NSM)"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0015"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-78328",
+      "published": "2026-09-04T19:17:27.463",
+      "lastModified": "2026-09-04T20:17:27.993",
+      "vulnStatus": "Received",
+      "description": "A missing authorization vulnerability in the SonicWall Network Security Manager (NSM) On-Prem Management interface allows a lower-privileged Admin user to escalate privileges to SuperAdmin.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-862",
+          "name": "Missing Authorization"
+        }
+      ],
+      "vendors": [
+        "SonicWall Network Security Manager (NSM)"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0015"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-78327",
+      "published": "2026-09-04T19:17:27.347",
+      "lastModified": "2026-09-04T20:17:27.827",
+      "vulnStatus": "Received",
+      "description": "An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in the SonicWall Network Security Manager (NSM) On-Prem Management interface allows an authenticated attacker with SuperAdmin privileges to inject arbitrary commands that are executed on the underlying host, resulting in remote code execution.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "SonicWall Network Security Manager (NSM)"
+      ],
+      "references": [
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0015"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-75430",
+      "published": "2026-09-04T17:16:57.767",
+      "lastModified": "2026-09-04T19:17:26.990",
+      "vulnStatus": "Received",
+      "description": "PowerJob Worker version 5.1.2 (and likely earlier versions) exposes the /worker/deployContainer HTTP endpoint without authentication on the default transport port. This allows a remote attacker to execute arbitrary code.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "n/a n/a"
+      ],
+      "references": [
+        "https://gist.github.com/unpredictable21/fcb62d394db30525412c4b5b1efd0233",
+        "https://github.com/PowerJob/PowerJob",
+        "https://github.com/PowerJob/PowerJob/blob/master/SECURITY.md",
+        "https://github.com/PowerJob/PowerJob/blob/master/powerjob-worker/src/main/java/tech/powerjob/worker/actors/WorkerActor.java"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-31020",
+      "published": "2026-09-04T17:16:56.910",
+      "lastModified": "2026-09-04T18:17:51.893",
+      "vulnStatus": "Received",
+      "description": "In DocsGPT 0.15.0 and below, the application provides a custom prompt feature that allows users to define prompt content used during chatbot interactions. This functionality renders user-supplied prompt data using Jinja templates without input sanitization or sandboxing. An unauthenticated attacker can inject malicious template expressions, leading to a server-side template injection (SSTI) vulnerability that can be exploited to achieve full remote code execution (RCE).",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        }
+      ],
+      "vendors": [
+        "n/a n/a"
+      ],
+      "references": [
+        "http://arc53.com",
+        "https://github.com/PhDg1410/CVE/tree/main/CVE-2026-31020"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-75431",
+      "published": "2026-09-04T16:17:59.413",
+      "lastModified": "2026-09-04T19:17:27.110",
+      "vulnStatus": "Received",
+      "description": "PowerJob Server version 5.1.2 (and likely earlier) uses a predictable JWT signing key for HS256-based authentication. This allows a remote attacker to execute arbitrary code.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-321",
+          "name": "CWE-321"
+        }
+      ],
+      "vendors": [
+        "n/a n/a"
+      ],
+      "references": [
+        "https://gist.github.com/unpredictable21/39e6ce22e4bc45b0e553d0fa6a6e4d1c",
+        "https://github.com/PowerJob/PowerJob/blob/master/docker-compose.yml",
+        "https://github.com/PowerJob/PowerJob/blob/master/powerjob-server/powerjob-server-auth/src/main/java/tech/powerjob/server/auth/jwt/impl/DefaultSecretProvider.java",
+        "https://github.com/PowerJob/PowerJob/blob/master/powerjob-server/powerjob-server-auth/src/main/java/tech/powerjob/server/auth/jwt/impl/JwtServiceImpl.java"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-75160",
+      "published": "2026-09-04T16:17:57.827",
+      "lastModified": "2026-09-04T20:17:26.533",
+      "vulnStatus": "Received",
+      "description": "An issue in X-Serie Gateway Firmware V6_00_05 allows a remote attacker to escalate privileges via the endpoints /cgi-bin/wwwugw.cgi and /cgi-bin/ugwdownload.cgi.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "n/a n/a"
+      ],
+      "references": [
+        "https://en.mbs-solutions.de/mbs",
+        "https://en.mbs-solutions.de/xserie",
+        "https://github.com/SilviaMun/vulnerability-research/tree/main/CVE-2026-75160"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-44402",
+      "published": "2026-09-04T16:17:25.250",
+      "lastModified": "2026-09-04T18:17:52.080",
+      "vulnStatus": "Received",
+      "description": "Voltronic Power SNMP Web Pro 1.1 contains an unauthenticated remote code execution vulnerability in the upload.cgi firmware update endpoint that allows remote attackers to execute arbitrary commands as root by uploading a crafted tar archive without valid credentials. Attackers can supply a malicious tar archive containing arbitrary executable files that are extracted to a privileged directory and executed as root, achieving full system compromise.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-434",
+          "name": "Unrestricted Dangerous File Upload"
+        }
+      ],
+      "vendors": [
+        "Voltronic Power SNMP Web Pro"
+      ],
+      "references": [
+        "https://github.com/Virgula0/CVE-2026-44402",
+        "https://voltronicpower.com/",
+        "https://www.vulncheck.com/advisories/voltronic-power-snmp-web-pro-unauthenticated-rce-via-upload-cgi"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-19274",
+      "published": "2026-09-04T16:17:21.650",
+      "lastModified": "2026-09-04T18:17:51.260",
+      "vulnStatus": "Received",
+      "description": "IBM Observability with Instana (Agent) Build 1.0.303 through 1.0.323 IBM Instana Agent Operator could allow an authenticated Kubernetes tenant to hijack or permanently destroy another tenant's cluster-level RBAC permissions, caused by cluster-scoped RBAC objects being keyed solely by the bare CR name with no namespace disambiguation, allowing a same-named `InstanaAgent` CR in an attacker-controlled namespace to silently overwrite the shared `ClusterRoleBinding` or delete it outright and revoke t",
+      "cvss": {
+        "score": 9.6,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-284",
+          "name": "Improper Access Control"
+        }
+      ],
+      "vendors": [
+        "IBM Observability with Instana (Agent)"
+      ],
+      "references": [
+        "https://www.ibm.com/support/pages/node/7286070"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-18658",
+      "published": "2026-09-04T16:17:21.133",
+      "lastModified": "2026-09-04T16:17:21.133",
+      "vulnStatus": "Received",
+      "description": "IBM Operational Decision Manager 9.6.0.0, 9.5.0.0, 8.11.1.0, 8.11.0.1, 8.12.0.1, 9.5.0.1, and 9.0.0.1 is vulnerable to SQL injection. An unauthenticated attacker can execute arbitrary SQL statements and leverage database functionality to write a web shell to the application web root, resulting in remote code execution.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "IBM Operational Decision Manager"
+      ],
+      "references": [
+        "https://www.ibm.com/support/pages/node/7286196"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85696",
+      "published": "2026-09-04T15:17:48.523",
+      "lastModified": "2026-09-04T15:17:48.523",
+      "vulnStatus": "Received",
+      "description": "SadTalker contains an OS command injection vulnerability in the video muxing process where uploaded audio filenames are interpolated into ffmpeg commands without proper escaping. Attackers can upload audio files with shell metacharacters in the filename to break out of quoted arguments and execute arbitrary system commands when video generation occurs.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "OpenTalker SadTalker"
+      ],
+      "references": [
+        "https://github.com/OpenTalker/SadTalker",
+        "https://github.com/OpenTalker/SadTalker/blob/v0.0.2/src/utils/videoio.py",
+        "https://github.com/OpenTalker/SadTalker/issues/1043",
+        "https://www.vulncheck.com/advisories/sadtalker-os-command-injection-via-audio-filename"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85695",
+      "published": "2026-09-04T15:17:47.690",
+      "lastModified": "2026-09-04T15:17:47.690",
+      "vulnStatus": "Received",
+      "description": "FastChat contains an authentication bypass vulnerability in the /register_worker endpoint that allows unauthenticated attackers to register arbitrary worker addresses and perform server-side request forgery. Attackers can register malicious workers under victim model names to intercept user prompts, images, and responses, or probe internal network ports across the worker mesh.",
+      "cvss": {
+        "score": 9.4,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "lm-sys FastChat"
+      ],
+      "references": [
+        "https://github.com/lm-sys/FastChat",
+        "https://github.com/lm-sys/FastChat/blob/v0.2.36/fastchat/serve/controller.py",
+        "https://github.com/lm-sys/FastChat/issues/3886",
+        "https://www.vulncheck.com/advisories/fastchat-unauthenticated-worker-registration-ssrf-and-model-spoofing"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85688",
+      "published": "2026-09-04T15:17:46.657",
+      "lastModified": "2026-09-04T15:17:46.657",
+      "vulnStatus": "Received",
+      "description": "TEN Framework 0.11.71 contains unauthenticated arbitrary file read and write vulnerabilities in the TMAN Designer file-content API endpoints. Attackers can submit POST and PUT requests to the /api/designer/v1/file-content endpoints to read arbitrary files or write malicious content to system paths, enabling code execution through authorized_keys, cron files, or executable graph files.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "TEN-framework ten-framework"
+      ],
+      "references": [
+        "https://github.com/TEN-framework/ten-framework",
+        "https://github.com/TEN-framework/ten-framework/blob/0.11.71/core/src/ten_manager/src/designer/file_content/mod.rs",
+        "https://github.com/TEN-framework/ten-framework/issues/2187",
+        "https://www.vulncheck.com/advisories/ten-framework-0.11.71-unauthenticated-file-read-write-via-tman-designer"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85684",
+      "published": "2026-09-04T15:17:46.077",
+      "lastModified": "2026-09-04T15:17:46.077",
+      "vulnStatus": "Received",
+      "description": "marker through 2.0.0 contains a path traversal vulnerability in the FastAPI /marker/upload handler that fails to sanitize the file.filename parameter. Unauthenticated attackers can supply filenames containing directory traversal sequences to write arbitrary files to any location or delete existing files on the system.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-73",
+          "name": "CWE-73"
+        }
+      ],
+      "vendors": [
+        "datalab-to marker"
+      ],
+      "references": [
+        "https://github.com/datalab-to/marker",
+        "https://github.com/datalab-to/marker/blob/v2.0.0/marker/scripts/server.py",
+        "https://github.com/datalab-to/marker/issues/1047",
+        "https://www.vulncheck.com/advisories/marker-through-2.0.0-path-traversal-via-upload-filename"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85672",
+      "published": "2026-09-04T15:17:45.293",
+      "lastModified": "2026-09-04T15:17:45.293",
+      "vulnStatus": "Received",
+      "description": "zerox 1.1.20 contains an OS command injection vulnerability in the file download mechanism where the temporary file extension derived from document URLs is interpolated unsanitized into shell commands executed by poppler utilities. Attackers can craft document URLs with malicious file extensions containing command substitution syntax to execute arbitrary OS commands before document processing occurs.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "getomni-ai zerox"
+      ],
+      "references": [
+        "https://github.com/getomni-ai/zerox",
+        "https://github.com/getomni-ai/zerox/blob/main/node-zerox/src/utils/file.ts",
+        "https://github.com/getomni-ai/zerox/issues/206",
+        "https://www.vulncheck.com/advisories/zerox-1.1.20-os-command-injection-via-document-url-file-extension"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85667",
+      "published": "2026-09-04T15:17:44.543",
+      "lastModified": "2026-09-04T15:17:44.543",
+      "vulnStatus": "Received",
+      "description": "xiaobei through 5.5.2 fails to implement authentication or signature validation on webhook endpoints, allowing unauthenticated attackers to inject arbitrary messages into the agent pipeline. Attackers can publish malicious messages via the /webhook_worktool handler and exploit unvalidated media URL fetching to perform server-side request forgery against internal services.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "TeamWiseFlow xiaobei"
+      ],
+      "references": [
+        "https://github.com/TeamWiseFlow/xiaobei",
+        "https://github.com/TeamWiseFlow/xiaobei/blob/v5.5.2/awada/awada-server/src/routes/webhook-worktool.ts",
+        "https://github.com/TeamWiseFlow/xiaobei/issues/440",
+        "https://www.vulncheck.com/advisories/xiaobei-through-5.5.2-unauthenticated-webhook-message-injection"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85663",
+      "published": "2026-09-04T15:17:43.947",
+      "lastModified": "2026-09-04T16:18:21.027",
+      "vulnStatus": "Received",
+      "description": "Aim 3.29.1 remote tracking server fails to authenticate requests and dispatches arbitrary methods through getattr without allowlist validation. Unauthenticated attackers can register clients, instantiate Repo resources, and invoke arbitrary methods to read experiments or delete runs.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "aimhubio aim"
+      ],
+      "references": [
+        "https://github.com/aimhubio/aim",
+        "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/server.py",
+        "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/tracking.py",
+        "https://github.com/aimhubio/aim/issues/3412"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85661",
+      "published": "2026-09-04T15:17:43.643",
+      "lastModified": "2026-09-04T15:17:43.643",
+      "vulnStatus": "Received",
+      "description": "excel-mcp-server 0.1.8 fails to enforce path confinement in stdio mode when EXCEL_FILES_PATH is unset, allowing attackers to read and write arbitrary files. Attackers can supply unchecked file paths to read and write tools to access any file accessible to the process.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "haris-musa excel-mcp-server"
+      ],
+      "references": [
+        "https://github.com/haris-musa/excel-mcp-server",
+        "https://github.com/haris-musa/excel-mcp-server/blob/v0.1.8/src/excel_mcp/server.py",
+        "https://github.com/haris-musa/excel-mcp-server/blob/v0.1.8/src/excel_mcp/validation.py",
+        "https://github.com/haris-musa/excel-mcp-server/issues/149"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85184",
+      "published": "2026-09-04T10:17:13.900",
+      "lastModified": "2026-09-04T20:17:31.670",
+      "vulnStatus": "Received",
+      "description": "@fastify/middie versions >= 9.1.0 and before 9.3.4 decide whether to run path-scoped middleware by matching against the raw request target, while the Fastify router resolves an absolute-form request target to its path before dispatching. Because the two layers evaluate different strings, a request using an absolute-form target reaches the route handler while the path-scoped middleware, such as authentication or authorization, is skipped. An unauthenticated network attacker can use this to bypass",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-436",
+          "name": "CWE-436"
+        }
+      ],
+      "vendors": [
+        "@fastify/middie @fastify/middie"
+      ],
+      "references": [
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/fastify/middie/security/advisories/GHSA-hx87-8wv7-pjv8"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-82923",
+      "published": "2026-09-04T10:17:13.340",
+      "lastModified": "2026-09-04T19:17:29.473",
+      "vulnStatus": "Received",
+      "description": "The AI Website Builder WordPress plugin (GitHub build) 1.0.0 does not perform any authorisation or nonce check on its REST API routes, allowing unauthenticated attackers to install and activate plugins and themes, import content from a URL under their control, write a file of their choosing into the uploads directory, and delete site content and media. On a host that serves PHP from the uploads directory, that file write is remote code execution.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-862",
+          "name": "Missing Authorization"
+        }
+      ],
+      "vendors": [
+        "Unknown AI Website Builder (GitHub build)"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/663e7004-1cca-4c0f-8d54-7298d40fe179/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85085",
+      "published": "2026-09-04T07:17:11.133",
+      "lastModified": "2026-09-04T19:17:30.750",
+      "vulnStatus": "Received",
+      "description": "The Canva Android App before 2.376.0 allowed an external origin to be loaded in a privileged WebView. A threat actor who controls the page loaded by the user is able to communicate with Canva using the user\u2019s session.",
+      "cvss": {
+        "score": 9.6,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-940",
+          "name": "CWE-940"
+        }
+      ],
+      "vendors": [
+        "Canva Canva"
+      ],
+      "references": [
+        "https://trust.canva.com/?tcuUid=be2ebc32-7053-4885-bf71-68771aa4589a"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-70403",
+      "published": "2026-09-04T07:17:09.467",
+      "lastModified": "2026-09-04T20:17:25.930",
+      "vulnStatus": "Received",
+      "description": "XING CPTrans-ME-X contains a Use of Hard-coded Password (CWE-259). Anyone with the knowledge of the credential may log in to the affected device.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.0",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-259",
+          "name": "CWE-259"
+        }
+      ],
+      "vendors": [
+        "Xing Inc. XING CPTrans-ME-X"
+      ],
+      "references": [
+        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
+        "https://jvn.jp/en/jp/JVN32505330/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-69657",
+      "published": "2026-09-04T07:17:09.340",
+      "lastModified": "2026-09-04T20:17:25.423",
+      "vulnStatus": "Received",
+      "description": "XING CPTrans-ME-X contains a Use of Default Password (CWE-1393). Anyone with the knowledge of the credential may log in to the affected device.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.0",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1393",
+          "name": "CWE-1393"
+        }
+      ],
+      "vendors": [
+        "Xing Inc. XING CPTrans-ME-X"
+      ],
+      "references": [
+        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
+        "https://jvn.jp/en/jp/JVN32505330/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-62928",
+      "published": "2026-09-04T07:17:09.057",
+      "lastModified": "2026-09-04T20:17:24.617",
+      "vulnStatus": "Received",
+      "description": "XING CPTrans-ME-X contains an OS Command Injection (CWE-78). Unauthenticated OS command may be injected.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.0",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Xing Inc. XING CPTrans-ME-X"
+      ],
+      "references": [
+        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
+        "https://jvn.jp/en/jp/JVN32505330/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-15354",
+      "published": "2026-09-04T07:17:08.487",
+      "lastModified": "2026-09-04T19:17:22.257",
+      "vulnStatus": "Deferred",
+      "description": "The ACPT (Premium) plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 2.0.66. This is due to missing authorization in the `submit()` function, which allows unauthenticated form submissions to control the target user ID before calling `wp_update_user()`. This makes it possible for unauthenticated attackers to overwrite any WordPress user's email address and password, including an administrator's, and take over the account. Successful exploitation requ",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Mauro Cassani ACPT (Premium)"
+      ],
+      "references": [
+        "https://acpt.io/changelog/",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/abc138f5-0bb7-4ce3-a504-89580021bedb?source=cve"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-85509",
+      "published": "2026-09-04T05:17:16.723",
+      "lastModified": "2026-09-04T19:17:32.893",
+      "vulnStatus": "Received",
+      "description": "FreeIPMI before 1.6.19 has a stack-based buffer overflow in _read_fru_data in libfreeipmi/fru/ipmi-fru.c when a BMC returns more bytes than requested.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-121",
+          "name": "CWE-121"
+        }
+      ],
+      "vendors": [
+        "FreeIPMI FreeIPMI"
+      ],
+      "references": [
+        "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz",
+        "https://www.gnu.org/software/freeipmi/",
+        "https://www.openwall.com/lists/oss-security/2026/08/28/5"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "month": "2020-03",
+  "cves": [
+    {
+      "id": "CVE-2020-5403",
+      "published": "2020-03-03T19:15:15.210",
+      "lastModified": "2026-09-04T18:59:12.370",
+      "vulnStatus": "Modified",
+      "description": "Reactor Netty HttpServer, versions 0.9.3 and 0.9.4, is exposed to a URISyntaxException that causes the connection to be closed prematurely instead of producing a 400 response.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-20",
+          "name": "Improper Input Validation"
+        },
+        {
+          "id": "CWE-755",
+          "name": "CWE-755"
+        }
+      ],
+      "vendors": [
+        "Pivotal Reactor Netty"
+      ],
+      "references": [
+        "https://pivotal.io/security/cve-2020-5403"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.424131+00:00"
+}

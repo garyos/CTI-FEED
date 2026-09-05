@@ -1,0 +1,40 @@
+{
+  "month": "2025-02",
+  "cves": [
+    {
+      "id": "CVE-2025-1244",
+      "published": "2025-02-12T15:15:18.430",
+      "lastModified": "2026-09-04T15:17:28.810",
+      "vulnStatus": "Deferred",
+      "description": "A command injection flaw was found in the text editor Emacs. It could allow a remote, unauthenticated attacker to execute arbitrary shell commands on a vulnerable system. Exploitation is possible by tricking users into visiting a specially crafted website or an HTTP URL with a redirect.",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.2 Advanced Update Support",
+        "Red Hat Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support",
+        "Red Hat Red Hat Enterprise Linux 8.4 Telecommunications Update Service"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2025:1915",
+        "https://access.redhat.com/errata/RHSA-2025:1917",
+        "https://access.redhat.com/errata/RHSA-2025:1961",
+        "https://access.redhat.com/errata/RHSA-2025:1962"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.425614+00:00"
+}

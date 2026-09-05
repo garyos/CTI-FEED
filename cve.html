@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL — CVE Explorer</title>
+<style>
+  :root {
+    --ink: #0a0e14;
+    --ink-raised: #10151d;
+    --ink-input: #0d1219;
+    --line: #1e2733;
+    --text: #d7dde5;
+    --text-dim: #7d8998;
+    --amber: #ffb020;
+    --red: #ff5c5c;
+    --blue: #5ac8ff;
+    --green: #4fd58a;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--ink); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  .frame { max-width: 920px; margin: 0 auto; padding: 24px 16px 80px; }
+
+  header.masthead {
+    border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 18px;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap;
+  }
+  .masthead h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 4px; }
+  .masthead .sub { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+  .masthead nav { display: flex; gap: 8px; }
+  .masthead nav a {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); text-decoration: none;
+    border: 1px solid var(--line); padding: 6px 10px;
+  }
+  .masthead nav a:hover { color: var(--amber); border-color: var(--amber); }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--line);
+    background: var(--ink-raised); color: var(--text-dim); cursor: pointer; user-select: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .chip:hover { border-color: var(--text-dim); }
+  .chip.active { color: var(--text); border-color: currentColor; }
+  .chip[data-sev="CRITICAL"].active { color: var(--red); }
+  .chip[data-sev="HIGH"].active { color: var(--amber); }
+  .chip[data-sev="MEDIUM"].active { color: var(--blue); }
+  .chip[data-sev="LOW"].active, .chip[data-sev="UNRATED"].active { color: var(--text); }
+  .chip.kev-toggle.active { color: var(--red); border-color: var(--red); }
+  .chip .dot { width: 6px; height: 6px; display: inline-block; background: currentColor; }
+
+  select#category-filter, select#month-select {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line); max-width: 220px;
+  }
+
+  .search-wrap { flex: 1; min-width: 160px; display: flex; }
+  #search-input {
+    width: 100%; font-family: var(--font-mono); font-size: 12px; padding: 7px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line);
+  }
+  #search-input::placeholder { color: var(--text-dim); }
+
+  .reset-btn {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); background: none;
+    border: 1px solid var(--line); padding: 6px 10px; cursor: pointer;
+  }
+  .reset-btn:hover { color: var(--amber); border-color: var(--amber); }
+
+  .archive-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-family: var(--font-mono);
+    font-size: 11px; color: var(--text-dim); flex-wrap: wrap;
+  }
+
+  .result-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 14px; }
+
+  .feed { display: flex; flex-direction: column; }
+  .entry {
+    border-left: 3px solid var(--line); padding: 14px 16px; border-bottom: 1px solid var(--line);
+    cursor: pointer; background: none; text-align: left; width: 100%; color: var(--text); font-family: var(--font-sans);
+  }
+  .entry:hover { background: #10151d; }
+  .entry[data-severity="CRITICAL"] { border-left-color: var(--red); }
+  .entry[data-severity="HIGH"] { border-left-color: var(--amber); }
+  .entry[data-severity="MEDIUM"] { border-left-color: var(--blue); }
+  .entry[data-severity="LOW"], .entry[data-severity="UNRATED"] { border-left-color: var(--line); }
+
+  .entry .meta {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 6px;
+    display: flex; gap: 10px; text-transform: uppercase; letter-spacing: 0.04em; flex-wrap: wrap; align-items: center;
+  }
+  .entry[data-severity="CRITICAL"] .tag { color: var(--red); }
+  .entry[data-severity="HIGH"] .tag { color: var(--amber); }
+  .entry[data-severity="MEDIUM"] .tag { color: var(--blue); }
+  .entry[data-severity="LOW"] .tag, .entry[data-severity="UNRATED"] .tag { color: var(--text-dim); }
+  .kev-badge {
+    color: var(--red); border: 1px solid var(--red); padding: 1px 6px; font-size: 9.5px; letter-spacing: 0.06em;
+  }
+  .entry h2 { font-size: 15.5px; font-weight: 500; margin: 0 0 6px; line-height: 1.4; font-family: var(--font-mono); }
+  .entry p { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; margin: 0 0 8px; font-family: var(--font-sans); }
+  .entry .cwe-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .entry .cwe-tag {
+    font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim); border: 1px solid var(--line); padding: 2px 6px;
+  }
+
+  .empty-state {
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); padding: 40px 0;
+    text-align: center; border: 1px dashed var(--line);
+  }
+
+  /* flyout */
+  .flyout-backdrop {
+    position: fixed; inset: 0; background: rgba(5,7,10,0.6); opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease; z-index: 40;
+  }
+  .flyout-backdrop.open { opacity: 1; pointer-events: auto; }
+  .flyout {
+    position: fixed; background: var(--ink-raised); border-left: 1px solid var(--line); z-index: 41;
+    display: flex; flex-direction: column; top: 0; right: 0; bottom: 0; width: min(460px, 100%);
+    transform: translateX(100%); transition: transform 0.25s ease;
+  }
+  .flyout.open { transform: translateX(0); }
+  @media (max-width: 680px) {
+    .flyout { top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 88vh; border-left: none; border-top: 1px solid var(--line); transform: translateY(100%); }
+    .flyout.open { transform: translateY(0); }
+  }
+  .flyout-head { display: flex; justify-content: flex-end; padding: 10px 14px; border-bottom: 1px solid var(--line); flex: 0 0 auto; }
+  .flyout-close { font-family: var(--font-mono); font-size: 16px; color: var(--text-dim); background: none; border: none; cursor: pointer; padding: 0 4px; }
+  .flyout-close:hover { color: var(--red); }
+  .flyout-body { padding: 16px; overflow-y: auto; flex: 1 1 auto; }
+  .flyout-body .fid { font-family: var(--font-mono); font-size: 12px; color: var(--amber); }
+  .flyout-body h2 { font-size: 19px; margin: 4px 0 10px; font-family: var(--font-mono); }
+  .flyout-summary { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 16px; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .meta-cell { border: 1px solid var(--line); padding: 9px 11px; }
+  .meta-cell span { display: block; font-size: 9px; color: var(--text-dim); letter-spacing: 0.07em; margin-bottom: 3px; text-transform: uppercase; }
+  .meta-cell b { font-family: var(--font-mono); font-size: 13px; }
+  .section-title {
+    font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); margin: 20px 0 10px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .kev-box { border: 1px solid var(--red); padding: 10px 12px; font-size: 12px; line-height: 1.55; color: var(--text); }
+  .kev-box .kb-label { color: var(--red); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .ref-list { display: flex; flex-direction: column; gap: 6px; }
+  .ref-list a { color: var(--blue); font-size: 12px; word-break: break-all; }
+  a.footer-link { color: var(--text-dim); }
+  a.footer-link:hover { color: var(--amber); }
+  footer { margin-top: 32px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="masthead">
+      <div>
+        <h1>CVE EXPLORER</h1>
+        <div class="sub" id="status-line">loading…</div>
+      </div>
+      <nav>
+        <a href="attack.html">‹ ATT&amp;CK</a>
+        <a href="index.html">‹ feed</a>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <span class="chip active" data-sev="CRITICAL"><span class="dot"></span>critical</span>
+      <span class="chip active" data-sev="HIGH"><span class="dot"></span>high</span>
+      <span class="chip active" data-sev="MEDIUM"><span class="dot"></span>medium</span>
+      <span class="chip active" data-sev="LOW"><span class="dot"></span>low</span>
+      <span class="chip active" data-sev="UNRATED"><span class="dot"></span>unrated</span>
+      <span class="chip kev-toggle" id="kev-toggle"><span class="dot"></span>KEV only</span>
+      <select id="category-filter"><option value="all">all categories</option></select>
+      <div class="search-wrap"><input id="search-input" type="text" placeholder="search CVE id or description…" /></div>
+      <button class="reset-btn" id="reset-btn">reset</button>
+    </div>
+
+    <div class="archive-row">
+      <span>viewing:</span>
+      <select id="month-select"><option value="latest">recent &amp; severe</option></select>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
+    <div class="feed" id="feed"><div class="empty-state">Loading CVE data…</div></div>
+
+    <footer>
+      CVE data from <a class="footer-link" href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NVD</a>,
+      cross-referenced against <a class="footer-link" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA KEV</a>,
+      by a scheduled GitHub Action · only Critical/High severity CVEs are captured, plus any CVE listed in KEV regardless of score ·
+      <a class="footer-link" href="data/cve/latest.json">view raw data</a>
+    </footer>
+  </div>
+
+  <div class="flyout-backdrop" id="flyout-backdrop"></div>
+  <aside class="flyout" id="flyout">
+    <div class="flyout-head"><button class="flyout-close" id="flyout-close">✕</button></div>
+    <div class="flyout-body" id="flyout-body"></div>
+  </aside>
+
+<script>
+(() => {
+  const SEVERITIES = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNRATED"];
+  const STORAGE_KEY = "signal-cve-filters-v1";
+
+  let indexData = null;
+  let currentCves = [];
+  let currentMonth = "latest";
+
+  let filters = loadFilters();
+
+  function loadFilters() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return { severities: new Set(SEVERITIES), category: "all", kevOnly: false, search: "" };
+      const p = JSON.parse(raw);
+      return {
+        severities: new Set(p.severities || SEVERITIES),
+        category: p.category || "all",
+        kevOnly: !!p.kevOnly,
+        search: p.search || "",
+      };
+    } catch {
+      return { severities: new Set(SEVERITIES), category: "all", kevOnly: false, search: "" };
+    }
+  }
+  function saveFilters() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      severities: Array.from(filters.severities), category: filters.category, kevOnly: filters.kevOnly, search: filters.search,
+    }));
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function severityOf(cve) {
+    return (cve.cvss && cve.cvss.severity) || "UNRATED";
+  }
+
+  async function loadJson(path) {
+    const res = await fetch(`${path}?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  async function init() {
+    try {
+      indexData = await loadJson("data/cve/index.json");
+    } catch (err) {
+      document.getElementById("feed").innerHTML = `<div class="empty-state">Couldn't load CVE index. Has scripts/fetch_cve.py been run yet?</div>`;
+      console.error(err);
+      return;
+    }
+
+    document.getElementById("status-line").textContent =
+      `${indexData.months.reduce((s, m) => s + m.count, 0)} CVEs on record across ${indexData.months.length} month(s) · last fetched ${new Date(indexData.last_fetched).toLocaleString()}`;
+
+    const monthSelect = document.getElementById("month-select");
+    monthSelect.innerHTML = `<option value="latest">recent &amp; severe</option>` +
+      indexData.months.map(m => `<option value="${m.key}">${m.key} (${m.count})</option>`).join("");
+
+    document.querySelectorAll(".chip[data-sev]").forEach(chip => {
+      chip.classList.toggle("active", filters.severities.has(chip.dataset.sev));
+      chip.addEventListener("click", () => {
+        const sev = chip.dataset.sev;
+        if (filters.severities.has(sev)) filters.severities.delete(sev); else filters.severities.add(sev);
+        chip.classList.toggle("active", filters.severities.has(sev));
+        saveFilters();
+        render();
+      });
+    });
+
+    const kevToggle = document.getElementById("kev-toggle");
+    kevToggle.classList.toggle("active", filters.kevOnly);
+    kevToggle.addEventListener("click", () => {
+      filters.kevOnly = !filters.kevOnly;
+      kevToggle.classList.toggle("active", filters.kevOnly);
+      saveFilters();
+      render();
+    });
+
+    document.getElementById("search-input").value = filters.search;
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      filters.search = e.target.value;
+      saveFilters();
+      render();
+    });
+
+    document.getElementById("category-filter").addEventListener("change", (e) => {
+      filters.category = e.target.value;
+      saveFilters();
+      render();
+    });
+
+    monthSelect.addEventListener("change", (e) => switchMonth(e.target.value));
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      filters = { severities: new Set(SEVERITIES), category: "all", kevOnly: false, search: "" };
+      document.querySelectorAll(".chip[data-sev]").forEach(c => c.classList.add("active"));
+      kevToggle.classList.remove("active");
+      document.getElementById("category-filter").value = "all";
+      document.getElementById("search-input").value = "";
+      saveFilters();
+      render();
+    });
+
+    document.getElementById("flyout-close").addEventListener("click", closeFlyout);
+    document.getElementById("flyout-backdrop").addEventListener("click", closeFlyout);
+
+    await switchMonth("latest");
+  }
+
+  async function switchMonth(month) {
+    currentMonth = month;
+    document.getElementById("feed").innerHTML = `<div class="empty-state">Loading…</div>`;
+    try {
+      const path = month === "latest" ? "data/cve/latest.json" : `data/cve/${month}.json`;
+      const data = await loadJson(path);
+      currentCves = data.cves || [];
+    } catch (err) {
+      document.getElementById("feed").innerHTML = `<div class="empty-state">Couldn't load that data file.</div>`;
+      console.error(err);
+      return;
+    }
+    renderCategoryOptions();
+    render();
+  }
+
+  function renderCategoryOptions() {
+    const select = document.getElementById("category-filter");
+    const names = new Map();
+    currentCves.forEach(c => (c.cwes || []).forEach(w => names.set(w.name, (names.get(w.name) || 0) + 1)));
+    const sorted = [...names.entries()].sort((a, b) => b[1] - a[1]);
+    const prev = filters.category;
+    select.innerHTML = `<option value="all">all categories</option>` +
+      sorted.map(([name, count]) => `<option value="${escapeHtml(name)}">${escapeHtml(name)} (${count})</option>`).join("");
+    if (sorted.some(([name]) => name === prev)) select.value = prev; else { filters.category = "all"; select.value = "all"; }
+  }
+
+  function render() {
+    const term = filters.search.trim().toLowerCase();
+    const filtered = currentCves.filter(c => {
+      if (!filters.severities.has(severityOf(c))) return false;
+      if (filters.kevOnly && !c.kev.in_kev) return false;
+      if (filters.category !== "all" && !(c.cwes || []).some(w => w.name === filters.category)) return false;
+      if (term) {
+        const hay = `${c.id} ${c.description}`.toLowerCase();
+        if (!hay.includes(term)) return false;
+      }
+      return true;
+    });
+
+    document.getElementById("result-count").textContent =
+      `showing ${filtered.length} of ${currentCves.length} CVEs${currentMonth === "latest" ? " (recent & severe)" : ` (${currentMonth})`}`;
+
+    const feed = document.getElementById("feed");
+    if (filtered.length === 0) {
+      feed.innerHTML = `<div class="empty-state">No CVEs match the current filters.</div>`;
+      return;
+    }
+
+    feed.innerHTML = "";
+    for (const c of filtered) {
+      const sev = severityOf(c);
+      const el = document.createElement("button");
+      el.className = "entry";
+      el.dataset.severity = sev;
+      const score = c.cvss ? `${c.cvss.score.toFixed(1)}` : "—";
+      el.innerHTML = `
+        <div class="meta">
+          <span class="tag">${sev}</span>
+          <span>CVSS ${score}</span>
+          <span>${(c.published || "").slice(0, 10)}</span>
+          ${c.kev.in_kev ? `<span class="kev-badge">KEV</span>` : ""}
+        </div>
+        <h2>${escapeHtml(c.id)}</h2>
+        <p>${escapeHtml(c.description)}</p>
+        <div class="cwe-row">${(c.cwes || []).slice(0, 3).map(w => `<span class="cwe-tag">${escapeHtml(w.name)}</span>`).join("")}</div>
+      `;
+      el.addEventListener("click", () => openFlyout(c));
+      feed.appendChild(el);
+    }
+  }
+
+  function openFlyout(c) {
+    const sev = severityOf(c);
+    const body = document.getElementById("flyout-body");
+    body.innerHTML = `
+      <div class="fid">${sev}${c.cvss ? ` · CVSS ${c.cvss.score.toFixed(1)} (v${c.cvss.version})` : ""}</div>
+      <h2>${escapeHtml(c.id)}</h2>
+      <p class="flyout-summary">${escapeHtml(c.description)}</p>
+
+      ${c.kev.in_kev ? `
+        <div class="kev-box">
+          <div class="kb-label">⚠ CISA KNOWN EXPLOITED VULNERABILITY — added ${escapeHtml(c.kev.date_added)}</div>
+          ${escapeHtml(c.kev.required_action)}
+          ${c.kev.known_ransomware && c.kev.known_ransomware !== "Unknown" ? `<br><br>Known ransomware use: ${escapeHtml(c.kev.known_ransomware)}` : ""}
+        </div>` : ""}
+
+      <div class="meta-grid" style="margin-top:16px;">
+        <div class="meta-cell"><span>Published</span><b>${(c.published || "—").slice(0, 10)}</b></div>
+        <div class="meta-cell"><span>Last modified</span><b>${(c.lastModified || "—").slice(0, 10)}</b></div>
+      </div>
+
+      ${c.cwes.length ? `
+        <div class="section-title">Weakness categories</div>
+        <div class="cwe-row">${c.cwes.map(w => `<span class="cwe-tag">${escapeHtml(w.id)} · ${escapeHtml(w.name)}</span>`).join("")}</div>
+      ` : ""}
+
+      ${c.vendors.length ? `
+        <div class="section-title">Affected vendors / products</div>
+        <div class="cwe-row">${c.vendors.map(v => `<span class="cwe-tag">${escapeHtml(v)}</span>`).join("")}</div>
+      ` : ""}
+
+      <div class="section-title">References</div>
+      <div class="ref-list">
+        <a href="https://nvd.nist.gov/vuln/detail/${encodeURIComponent(c.id)}" target="_blank" rel="noopener noreferrer">nvd.nist.gov/vuln/detail/${escapeHtml(c.id)}</a>
+        ${c.references.map(r => `<a href="${escapeHtml(r)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r)}</a>`).join("")}
+      </div>
+    `;
+    document.getElementById("flyout").classList.add("open");
+    document.getElementById("flyout-backdrop").classList.add("open");
+  }
+
+  function closeFlyout() {
+    document.getElementById("flyout").classList.remove("open");
+    document.getElementById("flyout-backdrop").classList.remove("open");
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

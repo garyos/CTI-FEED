@@ -1,0 +1,36 @@
+{
+  "month": "2019-01",
+  "cves": [
+    {
+      "id": "CVE-2019-3773",
+      "published": "2019-01-18T22:29:01.020",
+      "lastModified": "2026-09-04T13:45:35.430",
+      "vulnStatus": "Modified",
+      "description": "Spring Web Services, versions 2.4.3, 3.0.4, and older unsupported versions of all three projects, were susceptible to XML External Entity Injection (XXE) when receiving XML data from untrusted sources.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-611",
+          "name": "XML External Entity Reference (XXE)"
+        }
+      ],
+      "vendors": [
+        "Spring Spring Web Services"
+      ],
+      "references": [
+        "https://pivotal.io/security/cve-2019-3773",
+        "https://security.netapp.com/advisory/ntap-20231227-0011/",
+        "https://www.oracle.com//security-alerts/cpujul2021.html",
+        "https://www.oracle.com/security-alerts/cpuApr2021.html"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.423651+00:00"
+}

@@ -1,0 +1,1375 @@
+{
+  "month": "2026-06",
+  "cves": [
+    {
+      "id": "CVE-2026-13676",
+      "published": "2026-06-29T14:16:47.967",
+      "lastModified": "2026-09-04T13:18:13.167",
+      "vulnStatus": "Modified",
+      "description": "fast-uri versions 2.3.1 through 3.1.2 and 4.0.0 fail to canonicalize Unicode (IDN) hostnames for HTTP-family URLs. The IDN conversion path calls a helper that does not exist on the global URL constructor, silently leaving the host in its original Unicode form while normalize() and equal() still return values that differ from a WHATWG-compatible URL parser. Applications that use fast-uri to enforce host-based policy (denylists, loopback filtering, redirect validation, outbound proxy routing) befo",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-436",
+          "name": "CWE-436"
+        },
+        {
+          "id": "CWE-551",
+          "name": "CWE-551"
+        }
+      ],
+      "vendors": [
+        "fast-uri fast-uri",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Cluster Observability Operator 1.5.0",
+        "Red Hat multicluster engine for Kubernetes 2.11",
+        "Red Hat multicluster engine for Kubernetes 2.17"
+      ],
+      "references": [
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/fastify/fast-uri/security/advisories/GHSA-4c8g-83qw-93j6",
+        "https://access.redhat.com/errata/RHSA-2026:37186",
+        "https://access.redhat.com/errata/RHSA-2026:37585"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-49869",
+      "published": "2026-06-26T22:16:32.113",
+      "lastModified": "2026-09-03T13:05:55.387",
+      "vulnStatus": "Analyzed",
+      "description": "Kestra is an open-source, event-driven orchestration platform. Prior to 1.0.45 and 1.3.21, AuthenticationFilter in Kestra OSS uses request.getPath().endsWith(\"/configs\") to whitelist the public configuration endpoint from Basic Auth. Because the check is a suffix match rather than an exact path match, any API path whose last segment is configs bypasses authentication entirely. An unauthenticated remote attacker can exploit this to create and execute arbitrary workflows without credentials. Becau",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        },
+        {
+          "id": "CWE-184",
+          "name": "CWE-184"
+        },
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        },
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "kestra-io kestra"
+      ],
+      "references": [
+        "https://github.com/kestra-io/kestra/security/advisories/GHSA-5vc5-wxxq-3fjx",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-49869"
+      ],
+      "kev": {
+        "in_kev": true,
+        "date_added": "2026-09-02",
+        "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "known_ransomware": "Unknown"
+      }
+    },
+    {
+      "id": "CVE-2026-53185",
+      "published": "2026-06-25T09:16:35.920",
+      "lastModified": "2026-09-03T13:05:59.273",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: zram: fix use-after-free in zram_bvec_write_partial() zram_read_page() picks the sync or async backing device read path based on whether the parent bio is NULL. zram_bvec_write_partial() passes its parent bio down, so for ZRAM_WB slots the read is dispatched asynchronously and zram_read_page() returns 0 while the bio is still in flight. The caller then runs memcpy_from_bvec(), zram_write_page() and __free_page() on the buffer, l",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-364",
+          "name": "CWE-364"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Enterprise Linux 6",
+        "Red Hat Red Hat Enterprise Linux 7"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/0c2821665ff71be3f4b07ecece384669f2877f6a",
+        "https://git.kernel.org/stable/c/198b5a14cca27263b9c14b20114c8092de15dfcb",
+        "https://git.kernel.org/stable/c/732fd9f0b9c1cdc6dfd77162ded60df005182cc0",
+        "https://git.kernel.org/stable/c/77a602b505ce4802915853cfc435a4722fab3e64"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-53059",
+      "published": "2026-06-24T17:17:18.463",
+      "lastModified": "2026-09-04T13:20:04.593",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: dm log: fix out-of-bounds write due to region_count overflow The local variable region_count in create_log_context() is declared as unsigned int (32-bit), but dm_sector_div_up() returns sector_t (64-bit). When a device-mapper target has a sufficiently large ti->len with a small region_size, the division result can exceed UINT_MAX. The truncated value is then used to calculate bitset_size, causing clean_bits, sync_bits, and recov",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-787",
+          "name": "Out-of-Bounds Write"
+        },
+        {
+          "id": "CWE-190",
+          "name": "Integer Overflow / Wraparound"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/12bd5b88e91a02785244ff1d20fb157e96e9cdc8",
+        "https://git.kernel.org/stable/c/3ec74da927b4e171a6fc0e77b1188ba4d019af51",
+        "https://git.kernel.org/stable/c/44ab8875ae4a2842bde2d756bed195d375e0debb",
+        "https://git.kernel.org/stable/c/4ec8323b9f0764a14d532b1ae9b87f8a9fecb867"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-53006",
+      "published": "2026-06-24T17:17:11.750",
+      "lastModified": "2026-09-03T13:05:58.957",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: ipv6: fix possible UAF in icmpv6_rcv() Caching saddr and daddr before pskb_pull() is problematic since skb->head can change. Remove these temporary variables: - We only access &ipv6_hdr(skb)->saddr and &ipv6_hdr(skb)->daddr when net_dbg_ratelimited() is called in the slow path. - Avoid potential future misuse after pskb_pull() call.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-825",
+          "name": "CWE-825"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.8 Telecommunications Update Service",
+        "Red Hat Red Hat Enterprise Linux 8.8 Update Services for SAP Solutions"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/0069813e6ca9309eca78022bcb3aeb1e9ef90a12",
+        "https://git.kernel.org/stable/c/085e31a811ef234ef8c3e219c4636dfebfe7e10f",
+        "https://git.kernel.org/stable/c/1e1f0f89ee4692a64be3f3707ff8ac1ae57b03e7",
+        "https://git.kernel.org/stable/c/38bdbc897c0d83a3e2b925a51b69420f1feba29a"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-52973",
+      "published": "2026-06-24T17:17:07.840",
+      "lastModified": "2026-09-03T13:05:58.687",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: futex: Drop CLONE_THREAD requirement for private default hash alloc Currently need_futex_hash_allocate_default() depends on strict pthread semantics, abusing CLONE_THREAD. This breaks the non-concurrency assumptions when doing the mm->futex_ref pcpu allocations, leading to bugs[0] when sharing the mm in other ways; ie: BUG: KASAN: slab-use-after-free in futex_hash_put ... where the +1 bias can end up on a percpu counter that mm-",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-825",
+          "name": "CWE-825"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Enterprise Linux 6",
+        "Red Hat Red Hat Enterprise Linux 7"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/1dcd36420af2da5bd59306dba9caf78e3d248b1d",
+        "https://git.kernel.org/stable/c/974ac49a9a068b0591a59f65c63eb06579a13091",
+        "https://git.kernel.org/stable/c/ee9dce44362b2d8132c32964656ab6dff7dfbc6a",
+        "https://access.redhat.com/errata/RHSA-2026:45114"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-52923",
+      "published": "2026-06-24T08:16:22.300",
+      "lastModified": "2026-09-04T13:20:02.593",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: ipc: limit next_id allocation to the valid ID range The checkpoint/restore sysctl path can request the next SysV IPC id through ids->next_id. ipc_idr_alloc() currently forwards that request to idr_alloc() with an open-ended upper bound. If the valid tail of the SysV IPC id space is full, the allocation can spill beyond ipc_mni. The returned SysV IPC id still uses the normal index encoding, so later lookup and removal can target ",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-401",
+          "name": "Memory Leak"
+        },
+        {
+          "id": "CWE-825",
+          "name": "CWE-825"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/157ce2c6836ce0ff19108a819f38df061345425f",
+        "https://git.kernel.org/stable/c/3bbe2bb9111ce6967a951bfac79af142d816fae5",
+        "https://git.kernel.org/stable/c/41058d4c3f63ab64901560a704882e0565f4e456",
+        "https://git.kernel.org/stable/c/8c58a92849175f5e2ab7bc2734b3b89afe79f6ef"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-41523",
+      "published": "2026-06-22T23:16:30.200",
+      "lastModified": "2026-09-04T13:19:41.473",
+      "vulnStatus": "Modified",
+      "description": "vLLM is an inference and serving engine for large language models (LLMs). Prior to 0.22.0, an assert-based security check in vLLM's activation function loading allows any unauthenticated attacker to achieve arbitrary code execution on the server by publishing a malicious HuggingFace model, when vLLM runs in Python optimized mode (python -O or PYTHONOPTIMIZE=1). This vulnerability is fixed in 0.22.0.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        },
+        {
+          "id": "CWE-617",
+          "name": "CWE-617"
+        }
+      ],
+      "vendors": [
+        "vllm-project vllm",
+        "Red Hat Red Hat AI Inference Server 3.2",
+        "Red Hat Red Hat AI Inference Server 3.3",
+        "Red Hat Red Hat AI Inference Server 3.4",
+        "Red Hat Red Hat Enterprise Linux AI 3.3"
+      ],
+      "references": [
+        "https://github.com/vllm-project/vllm/commit/b3c7ffcab82c2439726f8cb213800f6f38c023d3",
+        "https://github.com/vllm-project/vllm/security/advisories/GHSA-q8gq-377p-jq3r",
+        "https://huntr.com/bounties/dcb05b04-e625-41e7-adbc-bbae0cc2d64c",
+        "https://access.redhat.com/errata/RHSA-2026:36005"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-54100",
+      "published": "2026-06-22T14:17:40.950",
+      "lastModified": "2026-09-05T16:17:22.350",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in the Windows Machine Config Operator (WMCO) for Red Hat OpenShift Container Platform. WMCO establishes SSH connections to Windows worker nodes without verifying the remote server host key. An adjacent-network attacker who can intercept or redirect WMCO's SSH session can capture WICD and kubelet bootstrap credentials transferred during node configuration, enabling compromise of Windows node identities in the cluster.",
+      "cvss": {
+        "score": 8.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-295",
+          "name": "Improper Certificate Validation"
+        }
+      ],
+      "vendors": [
+        "Red Hat OpenShift Windows Machine Config Operator 10.21",
+        "Red Hat Red Hat OpenShift for Windows Containers 10.22",
+        "Red Hat Red Hat OpenShift Container Platform 4"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:47173",
+        "https://access.redhat.com/errata/RHSA-2026:61780",
+        "https://access.redhat.com/security/cve/CVE-2026-54100",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2487953"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-54099",
+      "published": "2026-06-22T14:17:40.820",
+      "lastModified": "2026-09-05T16:17:22.110",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in the Windows Machine Config Operator (WMCO) for Red Hat OpenShift Container Platform. The WICD CSR auto-approver validates that a Certificate Signing Request contains the organization system:wicd-nodes but does not reject additional organization values such as system:masters. A compromised Windows worker node that holds WICD credentials can submit a CSR that is auto-approved and signed by the cluster, yielding a client certificate that grants cluster-administrator privileges a",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Red Hat OpenShift Windows Machine Config Operator 10.21",
+        "Red Hat Red Hat OpenShift for Windows Containers 10.22",
+        "Red Hat Red Hat OpenShift Container Platform 4"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:47173",
+        "https://access.redhat.com/errata/RHSA-2026:61780",
+        "https://access.redhat.com/security/cve/CVE-2026-54099",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2487950"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-9697",
+      "published": "2026-06-17T18:18:06.473",
+      "lastModified": "2026-09-04T13:20:12.473",
+      "vulnStatus": "Modified",
+      "description": "Impact: undici's ProxyAgent silently drops the requestTls option when configured with a SOCKS5 proxy URI (socks5:// or socks://). The target HTTPS connection through the SOCKS5 tunnel falls back to Node's default trust store, ignoring user-configured ca, cert, key, rejectUnauthorized, and servername settings. Applications that pin to an internal or corporate CA via requestTls.ca will, when their proxy URI is SOCKS5, get the default Mozilla CA bundle as the trust anchor instead. Any cert signed b",
+      "cvss": {
+        "score": 7.4,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-295",
+          "name": "Improper Certificate Validation"
+        }
+      ],
+      "vendors": [
+        "undici undici",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 9"
+      ],
+      "references": [
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-vmh5-mc38-953g",
+        "https://access.redhat.com/errata/RHSA-2026:22380",
+        "https://access.redhat.com/errata/RHSA-2026:22934"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-6734",
+      "published": "2026-06-17T18:18:05.617",
+      "lastModified": "2026-09-04T13:20:07.583",
+      "vulnStatus": "Modified",
+      "description": "Impact: When using Socks5ProxyAgent, undici reuses a single connection pool across different origins without verifying that the pool's origin matches the requested origin. All requests are dispatched through the pool connected to the first origin, regardless of the intended destination. This causes cross-origin request routing: credentials and request data intended for origin B are sent to origin A, responses from the wrong origin are trusted, and HTTPS requests may be silently downgraded to HTT",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-346",
+          "name": "CWE-346"
+        },
+        {
+          "id": "CWE-940",
+          "name": "CWE-940"
+        }
+      ],
+      "vendors": [
+        "undici undici",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 9"
+      ],
+      "references": [
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-hm92-r4w5-c3mj",
+        "https://access.redhat.com/errata/RHSA-2026:22380",
+        "https://access.redhat.com/errata/RHSA-2026:22934"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-12151",
+      "published": "2026-06-17T17:16:42.370",
+      "lastModified": "2026-09-04T13:18:12.320",
+      "vulnStatus": "Modified",
+      "description": "Impact: The undici WebSocket client enforces maxPayloadSize on the cumulative byte count of fragments in a message but does not enforce a limit on the number of fragments. A malicious WebSocket server can stream many small or empty continuation frames that each pass per-frame and cumulative-size validation, collectively causing unbounded memory growth in the client process. The result is memory exhaustion and a denial of service. Affected applications are those using the undici WebSocket client ",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "undici undici",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 8"
+      ],
+      "references": [
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/nodejs/undici/security/advisories/GHSA-vxpw-j846-p89q",
+        "https://access.redhat.com/errata/RHSA-2026:34342",
+        "https://access.redhat.com/errata/RHSA-2026:35841"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-48779",
+      "published": "2026-06-17T13:20:42.887",
+      "lastModified": "2026-09-04T13:19:56.060",
+      "vulnStatus": "Modified",
+      "description": "ws is an open source WebSocket client and server for Node.js. All versions from 1.1.0 up to (but not including) 5.2.5, from 6.0.0 up to 6.2.4, from 7.0.0 up to 7.5.11, and from 8.0.0 up to 8.21.0 are affected by a memory exhaustion DoS vulnerability. A peer can send a high volume of exceptionally small fragments and data chunks, with modest network traffic, to force the remote peer into allocating and holding structural wrappers that consume far more memory than the default documented message-si",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        },
+        {
+          "id": "CWE-1050",
+          "name": "CWE-1050"
+        }
+      ],
+      "vendors": [
+        "websockets ws",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Cluster Observability Operator 1.5.2",
+        "Red Hat Red Hat Developer Hub 1.10"
+      ],
+      "references": [
+        "https://github.com/websockets/ws/commit/86d3e8a5fb0246ed373860c5fbb0de88824a27f7",
+        "https://github.com/websockets/ws/commit/b5372ac67bb97a773727b8e9f5035a8123556d53",
+        "https://github.com/websockets/ws/commit/bca91adf15677e47dbe4f959653452727be28b94",
+        "https://github.com/websockets/ws/commit/fd36cd864fcdf62a08273a99e19a7d975401fee8"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-12143",
+      "published": "2026-06-12T19:16:26.560",
+      "lastModified": "2026-09-04T13:18:10.690",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "form-data is a library for creating readable multipart/form-data streams. In versions through 4.0.5, the `field` argument to `FormData#append` and the `filename` option are concatenated verbatim into the `Content-Disposition` header without escaping carriage return (CR), line feed (LF), or double-quote (\") characters. An application that passes attacker-controlled data as a field name or filename (for example, an API gateway that turns JSON object keys into multipart field names) allows the atta",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-93",
+          "name": "CWE-93"
+        }
+      ],
+      "vendors": [
+        "form-data form-data",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 9",
+        "Red Hat Red Hat Data Grid 8.6.2",
+        "Red Hat Red Hat Enterprise Linux 10"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/93.html",
+        "https://github.com/form-data/form-data/commit/64190db548c0179e37206858e39f27cf513e9435",
+        "https://github.com/form-data/form-data/commit/be3f3cf553978bac15a5182f1f3c3d2d38ccf229",
+        "https://github.com/form-data/form-data/commit/c7133499c2ee1b80c678e411244f4442bf902045"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-50010",
+      "published": "2026-06-12T16:16:31.180",
+      "lastModified": "2026-09-04T13:20:02.033",
+      "vulnStatus": "Modified",
+      "description": "Netty is a network application framework for development of protocol servers and clients. Prior to versions 4.1.135.Final and 4.2.15.Final, SimpleTrustManagerFactory.engineGetTrustManagers() and related paths wrap any user-supplied plain X509TrustManager in X509TrustManagerWrapper, which extends X509ExtendedTrustManager but implements the 3-arg checkServerTrusted(chain, authType, SSLEngine) by discarding the SSLEngine and calling the 2-arg delegate. Because the object now IS an X509ExtendedTrust",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-347",
+          "name": "Improper Verification of Cryptographic Signature"
+        }
+      ],
+      "vendors": [
+        "netty netty",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Build of Apache Camel 3.33 for Quarkus 3.33.2.SP1",
+        "Red Hat Red Hat build of Apache Camel 4.18.1.P1 for Spring Boot 3.5.16",
+        "Red Hat Red Hat build of Quarkus 3.27.4.SP1"
+      ],
+      "references": [
+        "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+        "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+        "https://github.com/netty/netty/security/advisories/GHSA-c653-97m9-rcg9",
+        "https://access.redhat.com/errata/RHSA-2026:26017"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-45674",
+      "published": "2026-06-12T15:16:27.550",
+      "lastModified": "2026-09-04T13:19:53.297",
+      "vulnStatus": "Modified",
+      "description": "Netty is a network application framework for development of protocol servers and clients. Prior to versions 4.1.135.Final and 4.2.15.Final, Netty's DnsResolveContext fails to validate the origin (bailiwick) of CNAME records in DNS responses. Versions 4.1.135.Final and 4.2.15.Final patch the issue.",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-345",
+          "name": "CWE-345"
+        },
+        {
+          "id": "CWE-346",
+          "name": "CWE-346"
+        }
+      ],
+      "vendors": [
+        "netty netty",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Build of Apache Camel 3.33 for Quarkus 3.33.2.SP1",
+        "Red Hat Red Hat build of Apache Camel 4.18.1.P1 for Spring Boot 3.5.16",
+        "Red Hat Red Hat build of Quarkus 3.27.4.SP1"
+      ],
+      "references": [
+        "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+        "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+        "https://github.com/netty/netty/security/advisories/GHSA-676x-f7gg-47vc",
+        "https://access.redhat.com/errata/RHSA-2026:26017"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-45416",
+      "published": "2026-06-12T15:16:26.940",
+      "lastModified": "2026-09-04T13:19:52.320",
+      "vulnStatus": "Modified",
+      "description": "Netty is a network application framework for development of protocol servers and clients. Prior to versions 4.1.135.Final and 4.2.15.Final, SslClientHelloHandler.decode() reads the 24-bit TLS handshake length and, when the ClientHello does not fit in the first record, eagerly allocates `ctx.alloc().buffer(handshakeLength)` (line 161). The guard at line 140 is `handshakeLength > maxClientHelloLength && maxClientHelloLength != 0`, and the commonly-used SniHandler/AbstractSniHandler constructors (S",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "netty netty",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Build of Apache Camel 3.33 for Quarkus 3.33.2.SP1",
+        "Red Hat Red Hat build of Apache Camel 4.18.1.P1 for Spring Boot 3.5.16",
+        "Red Hat Red Hat build of Quarkus 3.27.4.SP1"
+      ],
+      "references": [
+        "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+        "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+        "https://github.com/netty/netty/security/advisories/GHSA-x4gw-5cx5-pgmh",
+        "https://access.redhat.com/errata/RHSA-2026:26017"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-44893",
+      "published": "2026-06-12T15:16:26.103",
+      "lastModified": "2026-09-03T13:05:51.107",
+      "vulnStatus": "Modified",
+      "description": "Netty is a network application framework for development of protocol servers and clients. In netty-codec-haproxy prior to versions 4.1.135.Final and 4.2.15.Final, when decoding a PP2_TYPE_SSL TLV, HAProxyMessage.readNextTLV() first calls `header.retainedSlice(header.readerIndex(), length)` and only then reads the 1-byte client field and 4-byte verify field. If the attacker sets the TLV length below 5, the subsequent readByte/readInt throws IndexOutOfBoundsException. HAProxyMessageDecoder only ca",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-703",
+          "name": "CWE-703"
+        },
+        {
+          "id": "CWE-805",
+          "name": "CWE-805"
+        }
+      ],
+      "vendors": [
+        "netty netty",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Build of Apache Camel 3.33 for Quarkus 3.33.2.SP1",
+        "Red Hat Red Hat build of Apache Camel 4.18.1.P1 for Spring Boot 3.5.16",
+        "Red Hat Red Hat build of Quarkus 3.27.4.SP1"
+      ],
+      "references": [
+        "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+        "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+        "https://github.com/netty/netty/security/advisories/GHSA-cc37-9q2j-3hfv",
+        "https://access.redhat.com/errata/RHSA-2026:26017"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-47162",
+      "published": "2026-06-11T19:16:44.160",
+      "lastModified": "2026-09-04T13:19:55.257",
+      "vulnStatus": "Modified",
+      "description": "Vim is an open source, command line text editor. Prior to version 9.2.0495, a Vimscript code injection vulnerability exists in s:NetrwBookHistSave() in the netrw plugin (runtime/pack/dist/opt/netrw/autoload/netrw.vim) when serializing browsed directory paths to the history file ~/.vim/.netrwhist. A directory name derived from the filesystem is interpolated into a single-quoted Vimscript string literal without escaping embedded single quotes, allowing a crafted directory name to break out of the ",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        },
+        {
+          "id": "CWE-140",
+          "name": "CWE-140"
+        }
+      ],
+      "vendors": [
+        "vim vim",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 9"
+      ],
+      "references": [
+        "https://github.com/vim/vim/commit/f08ab2f4d7d2947c8dd6c179ae08ee6146a2694b",
+        "https://github.com/vim/vim/releases/tag/v9.2.0495",
+        "https://github.com/vim/vim/security/advisories/GHSA-crm5-rh6j-2c7c",
+        "https://access.redhat.com/errata/RHSA-2026:38509"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-44496",
+      "published": "2026-06-11T17:16:33.590",
+      "lastModified": "2026-09-03T13:05:49.950",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Axios versions before 0.32.0 on the 0.x line and before 1.16.0 on the 1.x line build a regular expression from the configured XSRF cookie name without escaping regex metacharacters. In standard browser environments, an attacker who can influence the cookie name passed to axios can cause expensive regex backtracking while axios reads document.cookie. The practical impact is client-side availability degradation, such as freezing the",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "id": "CWE-1333",
+          "name": "CWE-1333"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat build of Apicurio Registry 3.3.1",
+        "Red Hat Red Hat Data Grid 8.6.2"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-hfxv-24rg-xrqf",
+        "https://access.redhat.com/errata/RHSA-2026:20889",
+        "https://access.redhat.com/errata/RHSA-2026:20938",
+        "https://access.redhat.com/errata/RHSA-2026:27044"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-44495",
+      "published": "2026-06-11T17:16:33.450",
+      "lastModified": "2026-09-03T13:05:49.043",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. From 0.19.0 to before 0.31.1 and 1.15.2, Axios contains prototype-pollution gadgets in request config processing. If another vulnerability in the same JavaScript process has already polluted Object.prototype.transformResponse, affected Axios versions may treat that inherited value as request configuration or as an option validator. Axios does not itself create the prototype pollution. Exploitability requires a separate prototype-p",
+      "cvss": {
+        "score": 7.7,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        },
+        {
+          "id": "CWE-1321",
+          "name": "Prototype Pollution"
+        },
+        {
+          "id": "CWE-915",
+          "name": "CWE-915"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 9",
+        "Red Hat Red Hat Data Grid 8.6.2"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-3g43-6gmg-66jw",
+        "https://access.redhat.com/errata/RHSA-2026:20889",
+        "https://access.redhat.com/errata/RHSA-2026:20938",
+        "https://access.redhat.com/errata/RHSA-2026:27044"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-44492",
+      "published": "2026-06-11T17:16:33.167",
+      "lastModified": "2026-09-03T13:05:48.280",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios does not normalise IPv4-mapped IPv6 addresses. When NO_PROXY lists an IPv4 address such as 127.0.0.1 or 169.254.169.254, a request URL using the IPv4-mapped IPv6 form (::ffff:7f00:1, ::ffff:a9fe:a9fe) still routes through the configured proxy. Node.js resolves these addresses to the underlying IPv4 host, so the request reaches the internal service via the proxy rather than being blocked. This vuln",
+      "cvss": {
+        "score": 8.6,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        },
+        {
+          "id": "CWE-289",
+          "name": "CWE-289"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat Data Grid 8.6.2",
+        "Red Hat multicluster engine for Kubernetes 2.10"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv",
+        "https://access.redhat.com/errata/RHSA-2026:20889",
+        "https://access.redhat.com/errata/RHSA-2026:20938",
+        "https://access.redhat.com/errata/RHSA-2026:27044"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-40999",
+      "published": "2026-06-11T07:16:27.907",
+      "lastModified": "2026-09-04T18:18:26.267",
+      "vulnStatus": "Analyzed",
+      "description": "When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate outbound connections through configured WebServiceMessageSender instances to destinations taken directly from request headers without verifying that those destinations are safe to connect to. Affected versions: Spring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
+      "cvss": {
+        "score": 8.6,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "Spring Spring Web Services"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2026-40999"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-40998",
+      "published": "2026-06-11T07:16:27.787",
+      "lastModified": "2026-09-04T18:19:26.960",
+      "vulnStatus": "Analyzed",
+      "description": "Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code path that parsed attacker-controlled XML with the JDK's default DocumentBuilderFactory behavior instead of Spring's hardened parser configuration. Applications that evaluate XPath against untrusted XML payloads could therefore be exposed to XML External Entity (XXE) style attacks. Affected versions: Spring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-611",
+          "name": "XML External Entity Reference (XXE)"
+        }
+      ],
+      "vendors": [
+        "Spring Spring Web Services"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2026-40998"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-40994",
+      "published": "2026-06-11T07:16:27.297",
+      "lastModified": "2026-09-04T17:11:51.927",
+      "vulnStatus": "Analyzed",
+      "description": "Wss4jSecurityInterceptor initialized its BSP (WS-I Basic Security Profile) compliance flag so that inbound validation disabled WSS4J BSP enforcement on RequestData. Services that validate WS-Security on the network could therefore accept messages that violate BSP rules, weakening protocol-level checks. Affected versions: Spring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1188",
+          "name": "CWE-1188"
+        }
+      ],
+      "vendors": [
+        "Spring Spring Web Services"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2026-40994"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-40987",
+      "published": "2026-06-11T07:16:27.053",
+      "lastModified": "2026-09-04T18:07:41.340",
+      "vulnStatus": "Analyzed",
+      "description": "A malicious or compromised FTP/SFTP/SMB server can write arbitrary files anywhere on the client filesystem (outside the configured local-directory) with attacker-controlled content. Affected versions: Spring Integration 7.0.0 through 7.0.4; 6.5.0 through 6.5.8; 6.4.0 through 6.4.11; 6.3.0 through 6.3.14; 5.5.0 through 5.5.20.",
+      "cvss": {
+        "score": 7.1,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "Spring Spring Integration"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2026-40987"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-46625",
+      "published": "2026-06-10T22:16:59.613",
+      "lastModified": "2026-09-04T13:19:54.887",
+      "vulnStatus": "Modified",
+      "description": "JavaScript Cookie is a JavaScript API for handling cookies, client-side. Prior to version 3.0.7, js-cookie's internal assign() helper copies properties with for...in + plain assignment. When the source object is produced by JSON.parse, the JSON object's \"__proto__\" member is an own enumerable property, so the for\u2026in enumerates it and the target[key] = source[key] write triggers the Object.prototype.__proto__ setter on the fresh target ({}). The result is a per-instance prototype hijack: Object.p",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1321",
+          "name": "Prototype Pollution"
+        },
+        {
+          "id": "CWE-915",
+          "name": "CWE-915"
+        }
+      ],
+      "vendors": [
+        "js-cookie js-cookie",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Advanced Cluster Security for Kubernetes 4.10",
+        "Red Hat Red Hat Ansible Automation Platform 2.2",
+        "Red Hat Red Hat Ansible Automation Platform 2.7"
+      ],
+      "references": [
+        "https://github.com/js-cookie/js-cookie/commit/eb3c40e89731e99b8970faaf35ddad249c6c0020",
+        "https://github.com/js-cookie/js-cookie/releases/tag/v3.0.7",
+        "https://github.com/js-cookie/js-cookie/security/advisories/GHSA-qjx8-664m-686j",
+        "https://access.redhat.com/errata/RHSA-2026:33183"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-45447",
+      "published": "2026-06-09T17:17:19.277",
+      "lastModified": "2026-09-04T13:19:52.843",
+      "vulnStatus": "Modified",
+      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification. Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution. When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling appli",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-825",
+          "name": "CWE-825"
+        }
+      ],
+      "vendors": [
+        "OpenSSL OpenSSL",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.6 Extended Update Support Long-Life Add-On"
+      ],
+      "references": [
+        "https://github.com/openssl/openssl/commit/3aad5eb7af4de4ee0633c30a8541a54d9bbde63c",
+        "https://github.com/openssl/openssl/commit/7d4a980c62258c5910cc883936e0c8dbab4d75a8",
+        "https://github.com/openssl/openssl/commit/9dfd688ad2290fc5075cacbc9bf0c9a93eefed54",
+        "https://github.com/openssl/openssl/commit/a541ae8bfe849a30cc885e8780715c0f488e496c"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-46323",
+      "published": "2026-06-09T13:16:37.753",
+      "lastModified": "2026-09-03T13:05:54.010",
+      "vulnStatus": "Modified",
+      "description": "In the Linux kernel, the following vulnerability has been resolved: net: gro: don't merge zcopy skbs skb_gro_receive() can currently copy frags between the source and GRO skb, without checking the zerocopy status, and in particular the SKBFL_MANAGED_FRAG_REFS flag. When SKBFL_MANAGED_FRAG_REFS is set, the skb doesn't hold a reference on the pages in shinfo->frags. Appending those frags to another skb's frags without fixing up the page refcount can lead to UAF. When either the last skb in the GRO",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        },
+        {
+          "id": "CWE-123",
+          "name": "CWE-123"
+        }
+      ],
+      "vendors": [
+        "Linux Linux",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions"
+      ],
+      "references": [
+        "https://git.kernel.org/stable/c/1f9c828556416fbe3f49386708ce999fc4d4da06",
+        "https://git.kernel.org/stable/c/3c6cc9f2ca65b6dd61b1af75452dc0e1cd0aad8d",
+        "https://git.kernel.org/stable/c/44bea2032af0425e4ce6d26a8af0ede79db49ec1",
+        "https://git.kernel.org/stable/c/479084ae0e1d9cb7929cb4298d35623de189f80a"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-10263",
+      "published": "2026-06-09T10:16:33.003",
+      "lastModified": "2026-09-04T13:17:52.707",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "Arm C1-Ultra, C1-Premium, Neoverse V3 & V3AE, Neoverse V2, Neoverse V1, Neoverse-N2, Neoverse-N1, Cortex-X925, Cortex-X4, Cortex-X3, Cortex-X2, Cortex-X1 & X1C, Cortex-A710, Cortex-A78, A78AE & A78C, Cortex-A77, Cortex-A76 & A76A may allow writes to resources owned by a higher exception level.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-362",
+          "name": "Race Condition"
+        },
+        {
+          "id": "CWE-266",
+          "name": "CWE-266"
+        }
+      ],
+      "vendors": [
+        "Arm C1-Ultra",
+        "Arm C1-Premium",
+        "Arm Neoverse V3",
+        "Arm Neoverse V3AE",
+        "Arm Neoverse V1"
+      ],
+      "references": [
+        "https://developer.arm.com/documentation/112137",
+        "http://www.openwall.com/lists/oss-security/2026/06/09/13",
+        "http://xenbits.xen.org/xsa/advisory-493.html",
+        "https://access.redhat.com/errata/RHSA-2026:34911"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-9698",
+      "published": "2026-06-09T08:16:29.190",
+      "lastModified": "2026-09-03T13:06:25.563",
+      "vulnStatus": "Modified",
+      "description": "DBI versions before 1.648 for Perl saved errors in a limited-sized buffer. Error messages that were returned when RaiseError, PrintError or HandleError were set were written to a 200-byte buffer without a length limit. Attackers that can influence the error text in an application can trigger a buffer overflow.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-787",
+          "name": "Out-of-Bounds Write"
+        },
+        {
+          "id": "CWE-120",
+          "name": "Buffer Overflow"
+        }
+      ],
+      "vendors": [
+        "HMBRAND DBI",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Insights proxy 1.5"
+      ],
+      "references": [
+        "https://github.com/perl5-dbi/dbi/commit/bfe5d73c162d2d1f761a639a0aa33aad6a9eb54e.patch",
+        "https://metacpan.org/release/HMBRAND/DBI-1.648/changes",
+        "http://www.openwall.com/lists/oss-security/2026/06/09/9",
+        "https://access.redhat.com/errata/RHSA-2026:38512"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-11332",
+      "published": "2026-06-05T09:16:26.070",
+      "lastModified": "2026-09-04T19:17:21.540",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "A flaw was found in ansible-core. The ansible-galaxy role install command processes dependency specifications from a role's meta/requirements.yml file. Due to improper neutralization of argument delimiters, a malicious role author can inject arbitrary git configuration flags through the src field. This allows arbitrary code execution on the machine of a user who installs the role via ansible-galaxy role install.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-88",
+          "name": "Argument Injection"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 10",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.7 for RHEL 10"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:42078",
+        "https://access.redhat.com/errata/RHSA-2026:42079",
+        "https://access.redhat.com/errata/RHSA-2026:42080",
+        "https://access.redhat.com/errata/RHSA-2026:46836"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-41567",
+      "published": "2026-06-05T02:17:13.817",
+      "lastModified": "2026-09-04T13:19:41.810",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "Moby is an open source container framework. In versions prior to 29.5.1 and in moby/moby v2 prior to v2.0.0-beta.14, when a compressed archive is uploaded to a container via `PUT /containers/{id}/archive` or piped through `docker cp -`, the daemon resolves decompression binaries (such as `xz` or `unpigz`) from the container's filesystem rather than the host's due to incorrect ordering of operations. A malicious container image containing a trojanized decompression binary can achieve arbitrary co",
+      "cvss": {
+        "score": 7.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-427",
+          "name": "Uncontrolled Search Path Element"
+        }
+      ],
+      "vendors": [
+        "moby moby/v2/daemon",
+        "moby Docker Engine",
+        "docker docker/daemon",
+        "Red Hat Multicluster Global Hub 1.5.6",
+        "Red Hat OpenShift Developer Tools and Services 1.6.0"
+      ],
+      "references": [
+        "https://github.com/moby/moby/security/advisories/GHSA-x86f-5xw2-fm2r",
+        "https://access.redhat.com/errata/RHSA-2026:37387",
+        "https://access.redhat.com/errata/RHSA-2026:41030",
+        "https://access.redhat.com/errata/RHSA-2026:42852"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-10840",
+      "published": "2026-06-04T12:16:24.813",
+      "lastModified": "2026-09-04T15:17:29.817",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "A flaw was found in the OpenShift Pipelines operator. The tekton-scheduler-rolebinding ClusterRoleBinding grants the system:authenticated group write access to Kueue and cert-manager custom resources via the tekton-scheduler-role ClusterRole. When Kueue or cert-manager CRDs are present on the cluster, any authenticated user can disrupt workload scheduling, tamper with scheduling priorities, delete other tenants' Workload objects, or induce cert-manager to overwrite TLS Secrets including the defa",
+      "cvss": {
+        "score": 7.1,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-732",
+          "name": "Incorrect Permission Assignment"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat OpenShift Builds 1.7.4",
+        "Red Hat Red Hat OpenShift Builds 1.8.0",
+        "Red Hat OpenShift Pipelines",
+        "Red Hat Red Hat OpenShift Builds 1.7.3",
+        "Red Hat Red Hat OpenShift Builds 1.8.1"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:36648",
+        "https://access.redhat.com/errata/RHSA-2026:41036",
+        "https://access.redhat.com/security/cve/CVE-2026-10840",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2484720"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-34993",
+      "published": "2026-06-02T20:16:34.857",
+      "lastModified": "2026-09-04T13:19:29.700",
+      "vulnStatus": "Modified",
+      "description": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to version 3.14.0, using ``CookieJar.load()`` with untrusted input may allow arbitrary code execution. Most applications using this function will be doing so with the user's own data, so this is unlikely to affect many applications. Version 3.14.0 patches the issue. If an application does allow attacker controlled files to be loaded, a workaround on older releases would be to sanitize the files before loading.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-502",
+          "name": "Deserialization of Untrusted Data"
+        }
+      ],
+      "vendors": [
+        "aio-libs aiohttp",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 9",
+        "Red Hat Red Hat Satellite 6.16 for RHEL 8"
+      ],
+      "references": [
+        "https://github.com/aio-libs/aiohttp/commit/dcf40f30637e8752c76781cf6703b5a236749a00",
+        "https://github.com/aio-libs/aiohttp/security/advisories/GHSA-jg22-mg44-37j8",
+        "https://access.redhat.com/errata/RHSA-2026:24977",
+        "https://access.redhat.com/errata/RHSA-2026:34456"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-1784",
+      "published": "2026-06-02T09:16:15.683",
+      "lastModified": "2026-09-05T13:18:11.177",
+      "vulnStatus": "Modified",
+      "description": "The Route OpenShift resource allows to define routes to make pods reachable at a subdomain through HAProxy. It was found that the checks performed on the spec.path YAML stanza in a Route document was insufficient and could allow a controlled injection of the HAProxy configuration.",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-15",
+          "name": "CWE-15"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat OpenShift Container Platform 4.13",
+        "Red Hat Red Hat OpenShift Container Platform 4.14",
+        "Red Hat Red Hat OpenShift Container Platform 4.15",
+        "Red Hat Red Hat OpenShift Container Platform 4.16",
+        "Red Hat Red Hat OpenShift Container Platform 4.18"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:23241",
+        "https://access.redhat.com/errata/RHSA-2026:23246",
+        "https://access.redhat.com/errata/RHSA-2026:25045",
+        "https://access.redhat.com/errata/RHSA-2026:25182"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2024-52011",
+      "published": "2026-06-01T19:16:18.977",
+      "lastModified": "2026-09-04T13:17:51.610",
+      "vulnStatus": "Deferred",
+      "description": "launch-editor allows users to open files with line numbers in editor from Node.js. Prior to version 2.9.0, due to the insufficient sanitization of the `file` argument in the `launchEditor`, an attacker can execute arbitrary commands on Windows by supplying a filename that contains special characters. This issue has been fixed in the `launch-editor` version 2.9.0, corresponding to vite version 5.4.9.",
+      "cvss": {
+        "score": 8.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-88",
+          "name": "Argument Injection"
+        }
+      ],
+      "vendors": [
+        "vitejs launch-editor",
+        "vitejs vite",
+        "Red Hat Cluster Observability Operator 1.5.0",
+        "Red Hat Cryostat 4",
+        "Red Hat Migration Toolkit for Containers"
+      ],
+      "references": [
+        "https://github.com/vitejs/launch-editor/commit/971291e8a6a91226e1616c5c0ec85423d2d50a5e",
+        "https://github.com/vitejs/launch-editor/security/advisories/GHSA-c27g-q93r-2cwf",
+        "https://access.redhat.com/errata/RHSA-2026:34342",
+        "https://access.redhat.com/security/cve/CVE-2024-52011"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.431537+00:00"
+}

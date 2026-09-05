@@ -1,0 +1,455 @@
+{
+  "month": "2025-12",
+  "cves": [
+    {
+      "id": "CVE-2024-3884",
+      "published": "2025-12-03T19:15:54.767",
+      "lastModified": "2026-09-04T20:17:20.787",
+      "vulnStatus": "Deferred",
+      "description": "A flaw was found in Undertow that can cause remote denial of service attacks. When the server uses the FormEncodedDataDefinition.doParse(StreamSourceChannel) method to parse large form data encoding with application/x-www-form-urlencoded, the method will cause an OutOfMemory issue. This flaw allows unauthorized users to cause a remote denial of service (DoS) attack.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-20",
+          "name": "Improper Input Validation"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.1 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.3 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4.24",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 ELS on RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 ELS on RHEL 8"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:0383",
+        "https://access.redhat.com/errata/RHSA-2026:0384",
+        "https://access.redhat.com/errata/RHSA-2026:0386",
+        "https://access.redhat.com/errata/RHSA-2026:3889"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13872",
+      "published": "2025-12-02T10:16:01.877",
+      "lastModified": "2026-09-03T03:15:24.410",
+      "vulnStatus": "Analyzed",
+      "description": "Blind Server-Side Request Forgery (SSRF) in the survey-import feature of ObjectPlanet Opinio 7.26 rev12562 on Web-based platforms allows an attacker to force the server to perform HTTP GET requests via crafted import requests to an arbitrary destination.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "ObjectPlanet Opinio"
+      ],
+      "references": [
+        "https://www.objectplanet.com/opinio/changelog.html"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13836",
+      "published": "2025-12-01T18:16:04.200",
+      "lastModified": "2026-09-03T03:15:20.653",
+      "vulnStatus": "Analyzed",
+      "description": "When reading an HTTP response from a server, if no read amount is specified, the default behavior will be to use Content-Length. This allows a malicious server to cause the client to read large amounts of data into memory, potentially causing OOM or other DoS.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        }
+      ],
+      "vendors": [
+        "Python Software Foundation CPython"
+      ],
+      "references": [
+        "https://github.com/python/cpython/commit/14b1fdb0a94b96f86fc7b86671ea9582b8676628",
+        "https://github.com/python/cpython/commit/289f29b0fe38baf2d7cb5854f4bb573cc34a6a15",
+        "https://github.com/python/cpython/commit/4ce27904b597c77d74dd93f2c912676021a99155",
+        "https://github.com/python/cpython/commit/5a4c4a033a4a54481be6870aa1896fad732555b5"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13816",
+      "published": "2025-12-01T09:16:05.593",
+      "lastModified": "2026-09-03T03:15:17.793",
+      "vulnStatus": "Analyzed",
+      "description": "A security vulnerability has been detected in moxi159753 Mogu Blog v2 up to 5.2. The impacted element is the function FileOperation.unzip of the file /networkDisk/unzipFile of the component ZIP File Handler. Such manipulation of the argument fileUrl leads to path traversal. The attack may be launched remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "moxi159753 Mogu Blog v2"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-zip_slip-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-zip_slip-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333825",
+        "https://vuldb.com/?id.333825"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13815",
+      "published": "2025-12-01T09:16:05.370",
+      "lastModified": "2026-09-03T03:15:17.433",
+      "vulnStatus": "Analyzed",
+      "description": "A weakness has been identified in moxi159753 Mogu Blog v2 up to 5.2. The affected element is an unknown function of the file /file/pictures. This manipulation of the argument filedatas causes unrestricted upload. The attack may be initiated remotely. The exploit has been made available to the public and could be exploited. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-284",
+          "name": "Improper Access Control"
+        },
+        {
+          "id": "CWE-434",
+          "name": "Unrestricted Dangerous File Upload"
+        }
+      ],
+      "vendors": [
+        "moxi159753 Mogu Blog v2"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-unrestricted_upload-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-unrestricted_upload-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333824",
+        "https://vuldb.com/?id.333824"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13814",
+      "published": "2025-12-01T08:15:47.640",
+      "lastModified": "2026-09-03T03:15:17.080",
+      "vulnStatus": "Analyzed",
+      "description": "A security flaw has been discovered in moxi159753 Mogu Blog v2 up to 5.2. Impacted is the function LocalFileServiceImpl.uploadPictureByUrl of the file /file/uploadPicsByUrl. The manipulation results in server-side request forgery. The attack can be launched remotely. The exploit has been released to the public and may be exploited. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "moxi159753 Mogu Blog v2"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-ssrf-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-ssrf-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333823",
+        "https://vuldb.com/?id.333823"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13813",
+      "published": "2025-12-01T07:16:01.493",
+      "lastModified": "2026-09-03T03:15:16.740",
+      "vulnStatus": "Analyzed",
+      "description": "A vulnerability was identified in moxi159753 Mogu Blog v2 up to 5.2. This issue affects some unknown processing of the file /storage/ of the component Storage Management Endpoint. The manipulation leads to missing authorization. The attack can be initiated remotely. The attack's complexity is rated as high. The exploitability is assessed as difficult. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 8.1,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-862",
+          "name": "Missing Authorization"
+        },
+        {
+          "id": "CWE-863",
+          "name": "Incorrect Authorization"
+        }
+      ],
+      "vendors": [
+        "moxi159753 Mogu Blog v2"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-broken_access_control-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/mogu_blog_v2-broken_access_control-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333822",
+        "https://vuldb.com/?id.333822"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13811",
+      "published": "2025-12-01T07:16:01.203",
+      "lastModified": "2026-09-03T03:15:16.303",
+      "vulnStatus": "Modified",
+      "description": "A vulnerability was determined in jsnjfz WebStack-Guns 1.0. This vulnerability affects unknown code of the file src/main/java/com/jsnjfz/manage/core/common/constant/factory/PageFactory.java. Executing a manipulation of the argument sort can lead to sql injection. It is possible to launch the attack remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 7.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "jsnjfz WebStack-Guns"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/WebStack-Guns-SQLInjection-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/WebStack-Guns-SQLInjection-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333821",
+        "https://vuldb.com/?id.333821"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13810",
+      "published": "2025-12-01T07:16:00.690",
+      "lastModified": "2026-09-03T03:15:15.950",
+      "vulnStatus": "Modified",
+      "description": "A vulnerability was found in jsnjfz WebStack-Guns 1.0. This affects the function renderPicture of the file src/main/java/com/jsnjfz/manage/modular/system/controller/KaptchaController.java. Performing a manipulation results in path traversal. It is possible to initiate the attack remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "jsnjfz WebStack-Guns"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/WebStack-Guns-PathTraversal-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/WebStack-Guns-PathTraversal-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333820",
+        "https://vuldb.com/?id.333820"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13808",
+      "published": "2025-12-01T05:16:04.070",
+      "lastModified": "2026-09-03T03:15:15.320",
+      "vulnStatus": "Analyzed",
+      "description": "A flaw has been found in orionsec orion-ops up to 5925824997a3109651bbde07460958a7be249ed1. Affected by this vulnerability is the function update of the file orion-ops-api/orion-ops-web/src/main/java/cn/orionsec/ops/controller/UserController.java of the component User Profile Handler. This manipulation of the argument ID causes improper authorization. The attack is possible to be carried out remotely. The exploit has been published and may be used. The vendor was contacted early about this discl",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-266",
+          "name": "CWE-266"
+        },
+        {
+          "id": "CWE-285",
+          "name": "CWE-285"
+        }
+      ],
+      "vendors": [
+        "orionsec orion-ops"
+      ],
+      "references": [
+        "https://github.com/Xzzz111/exps/blob/main/archives/orion-ops-privilege-escalation-1/report.md",
+        "https://github.com/Xzzz111/exps/blob/main/archives/orion-ops-privilege-escalation-1/report.md#proof-of-concept",
+        "https://vuldb.com/?ctiid.333818",
+        "https://vuldb.com/?id.333818"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13803",
+      "published": "2025-12-01T03:15:46.390",
+      "lastModified": "2026-09-03T03:15:13.927",
+      "vulnStatus": "Deferred",
+      "description": "A vulnerability was identified in MediaCrush 1.0.0/1.0.1. The affected element is an unknown function of the file /mediacrush/paths.py of the component Header Handler. Such manipulation of the argument Host leads to improper neutralization of http headers for scripting syntax. The attack can be launched remotely.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-644",
+          "name": "CWE-644"
+        }
+      ],
+      "vendors": [
+        "n/a MediaCrush"
+      ],
+      "references": [
+        "https://github.com/lakshayyverma/CVE-Discovery/blob/main/mediacrush.md",
+        "https://vuldb.com/?ctiid.333813",
+        "https://vuldb.com/?id.333813",
+        "https://vuldb.com/?submit.691857"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13800",
+      "published": "2025-12-01T02:15:45.677",
+      "lastModified": "2026-09-03T03:15:13.163",
+      "vulnStatus": "Analyzed",
+      "description": "A vulnerability was found in ADSLR NBR1005GPEV2 250814-r037c. This issue affects the function set_mesh_disconnect of the file /send_order.cgi. The manipulation of the argument mac results in command injection. It is possible to launch the attack remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        }
+      ],
+      "vendors": [
+        "ADSLR NBR1005GPEV2"
+      ],
+      "references": [
+        "https://vuldb.com/?ctiid.333811",
+        "https://vuldb.com/?id.333811",
+        "https://vuldb.com/?submit.691942",
+        "https://www.notion.so/2a70c75766a88023aa0ed833ff0239e1"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13799",
+      "published": "2025-12-01T01:16:00.620",
+      "lastModified": "2026-09-03T03:15:12.833",
+      "vulnStatus": "Analyzed",
+      "description": "A vulnerability has been found in ADSLR NBR1005GPEV2 250814-r037c. This vulnerability affects the function ap_macfilter_del of the file /send_order.cgi. The manipulation of the argument mac leads to command injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        }
+      ],
+      "vendors": [
+        "ADSLR NBR1005GPEV2"
+      ],
+      "references": [
+        "https://vuldb.com/?ctiid.333810",
+        "https://vuldb.com/?id.333810",
+        "https://vuldb.com/?submit.691842",
+        "https://www.notion.so/2a60c75766a8801e8e4bdd3be8072d9d"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13797",
+      "published": "2025-12-01T01:16:00.147",
+      "lastModified": "2026-09-03T03:15:12.367",
+      "vulnStatus": "Analyzed",
+      "description": "A vulnerability was detected in ADSLR B-QE2W401 250814-r037c. Affected by this issue is the function parameterdel_swifimac of the file /send_order.cgi. Performing manipulation of the argument del_swifimac results in command injection. The attack is possible to be carried out remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        }
+      ],
+      "vendors": [
+        "ADSLR B-QE2W401"
+      ],
+      "references": [
+        "https://vuldb.com/?ctiid.333808",
+        "https://vuldb.com/?id.333808",
+        "https://vuldb.com/?submit.691838",
+        "https://www.notion.so/2a60c75766a88027a6aec07b378332a8"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.427245+00:00"
+}

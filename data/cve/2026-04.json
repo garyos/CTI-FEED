@@ -1,0 +1,784 @@
+{
+  "month": "2026-04",
+  "cves": [
+    {
+      "id": "CVE-2026-3833",
+      "published": "2026-04-30T18:16:30.577",
+      "lastModified": "2026-09-03T15:17:25.783",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unaut",
+      "cvss": {
+        "score": 7.4,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-178",
+          "name": "CWE-178"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:13274",
+        "https://access.redhat.com/errata/RHSA-2026:20611",
+        "https://access.redhat.com/errata/RHSA-2026:20612",
+        "https://access.redhat.com/errata/RHSA-2026:20613"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-33845",
+      "published": "2026-04-30T18:16:28.003",
+      "lastModified": "2026-09-04T13:19:05.583",
+      "vulnStatus": "Modified",
+      "description": "A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-191",
+          "name": "CWE-191"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:13274",
+        "https://access.redhat.com/errata/RHSA-2026:20611",
+        "https://access.redhat.com/errata/RHSA-2026:20612",
+        "https://access.redhat.com/errata/RHSA-2026:20613"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-42043",
+      "published": "2026-04-24T18:16:31.457",
+      "lastModified": "2026-09-04T13:19:45.157",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 1.15.1 and 0.31.1, an attacker who can influence the target URL of an Axios request can use any address in the 127.0.0.0/8 range (other than 127.0.0.1) to completely bypass the NO_PROXY protection. This vulnerability is due to an incomplete for CVE-2025-62718, This vulnerability is fixed in 1.15.1 and 0.31.1.",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-183",
+          "name": "CWE-183"
+        },
+        {
+          "id": "CWE-441",
+          "name": "CWE-441"
+        },
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Data Grid 8.6.1",
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.11"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pmwg-cvhr-8vh7",
+        "https://access.redhat.com/errata/RHSA-2026:14937",
+        "https://access.redhat.com/errata/RHSA-2026:16476",
+        "https://access.redhat.com/errata/RHSA-2026:16532"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-42039",
+      "published": "2026-04-24T18:16:30.827",
+      "lastModified": "2026-09-04T13:19:44.413",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 1.15.1 and 0.31.1, toFormData recursively walks nested objects with no depth limit, so a deeply nested value passed as request data crashes the Node.js process with a RangeError. This vulnerability is fixed in 1.15.1 and 0.31.1.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-674",
+          "name": "CWE-674"
+        },
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Data Grid 8.6.1",
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.11"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-62hf-57xw-28j9",
+        "https://access.redhat.com/errata/RHSA-2026:14937",
+        "https://access.redhat.com/errata/RHSA-2026:16476",
+        "https://access.redhat.com/errata/RHSA-2026:16532"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-42033",
+      "published": "2026-04-24T18:16:29.993",
+      "lastModified": "2026-09-04T13:19:43.723",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 1.15.1 and 0.31.1, when Object.prototype has been polluted by any co-dependency with keys that axios reads without a hasOwnProperty guard, an attacker can (a) silently intercept and modify every JSON response before the application sees it, or (b) fully hijack the underlying HTTP transport, gaining access to request credentials, headers, and body. The precondition is prototype pollution from a separate source in the same ",
+      "cvss": {
+        "score": 7.4,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1321",
+          "name": "Prototype Pollution"
+        },
+        {
+          "id": "CWE-915",
+          "name": "CWE-915"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Data Grid 8.6.1",
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.11"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pf86-5x62-jrwf",
+        "https://access.redhat.com/errata/RHSA-2026:14937",
+        "https://access.redhat.com/errata/RHSA-2026:16476",
+        "https://access.redhat.com/errata/RHSA-2026:16532"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-40895",
+      "published": "2026-04-21T21:16:44.337",
+      "lastModified": "2026-09-04T13:19:40.243",
+      "vulnStatus": "Modified",
+      "description": "follow-redirects is an open source, drop-in replacement for Node's `http` and `https` modules that automatically follows redirects. Prior to 1.16.0, when an HTTP request follows a cross-domain redirect (301/302/307/308), follow-redirects only strips authorization, proxy-authorization, and cookie headers (matched by regex at index.js). Any custom authentication header (e.g., X-API-Key, X-Auth-Token, Api-Key, Token) is forwarded verbatim to the redirect target. This vulnerability is fixed in 1.16.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-200",
+          "name": "Exposure of Sensitive Information"
+        },
+        {
+          "id": "NVD-CWE-noinfo",
+          "name": "Insufficient Information"
+        },
+        {
+          "id": "CWE-212",
+          "name": "CWE-212"
+        }
+      ],
+      "vendors": [
+        "follow-redirects follow-redirects",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Cluster Observability Operator 1.5.0",
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.11"
+      ],
+      "references": [
+        "https://github.com/follow-redirects/follow-redirects/security/advisories/GHSA-r4q5-vmmm-2653",
+        "https://access.redhat.com/errata/RHSA-2026:13826",
+        "https://access.redhat.com/errata/RHSA-2026:14937",
+        "https://access.redhat.com/errata/RHSA-2026:16476"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-41035",
+      "published": "2026-04-16T07:16:31.003",
+      "lastModified": "2026-09-04T13:19:41.070",
+      "vulnStatus": "Modified",
+      "description": "In rsync 3.0.1 through 3.4.1, receive_xattr relies on an untrusted length value during a qsort call, leading to a receiver use-after-free. The victim must run rsync with -X (aka --xattrs). On Linux, many (but not all) common configurations are vulnerable. Non-Linux platforms are more widely vulnerable.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-130",
+          "name": "CWE-130"
+        },
+        {
+          "id": "CWE-805",
+          "name": "CWE-805"
+        }
+      ],
+      "vendors": [
+        "Samba rsync",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 6 Extended Lifecycle Support  - EXTENSION",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support"
+      ],
+      "references": [
+        "https://github.com/RsyncProject/rsync/issues/871",
+        "https://github.com/RsyncProject/rsync/releases",
+        "https://www.openwall.com/lists/oss-security/2026/04/16/2",
+        "http://www.openwall.com/lists/oss-security/2026/04/16/9"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-3505",
+      "published": "2026-04-15T10:16:49.133",
+      "lastModified": "2026-09-03T13:05:38.040",
+      "vulnStatus": "Awaiting Analysis",
+      "description": "Allocation of resources without limits or throttling, Uncontrolled Resource Consumption vulnerability in Legion of the Bouncy Castle Inc. BC-JAVA bcpg on all (pg modules). This vulnerability is associated with program files AEADEncDataPacket.Java, BcAEADUtil.Java, JceAEADUtil.Java, OperatorHelper.Java. This issue affects BC-JAVA: from 1.74 before 1.80.2, from 1.81 before 1.81.1, from 1.82 before 1.84.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "Legion of the Bouncy Castle Inc. BC-JAVA",
+        "Red Hat Red Hat Build of Apache Camel 4.14 for Quarkus 3.27",
+        "Red Hat Red Hat build of Apache Camel 4.18.1 for Spring Boot 3.5.14",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4.25",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 ELS on RHEL 7"
+      ],
+      "references": [
+        "https://github.com/bcgit/bc-java/commit/dc7530939ffb6cdb57636f3609d98e23b94e71c1",
+        "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902026%E2%80%903505",
+        "https://access.redhat.com/errata/RHSA-2026:13631",
+        "https://access.redhat.com/errata/RHSA-2026:17668"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-14813",
+      "published": "2026-04-15T10:16:38.243",
+      "lastModified": "2026-09-04T13:17:54.733",
+      "vulnStatus": "Awaiting Analysis",
+      "description": ": Use of a Broken or Risky Cryptographic Algorithm vulnerability in Legion of the Bouncy Castle Inc. BC-JAVA bcprov on all (core modules). This vulnerability is associated with program files G3413CTRBlockCipher. This issue affects BC-JAVA: from 1.59 before 1.80.2, from 1.81 before 1.81.1, from 1.82 before 1.84.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-327",
+          "name": "CWE-327"
+        }
+      ],
+      "vendors": [
+        "Legion of the Bouncy Castle Inc. BC-JAVA",
+        "Red Hat Red Hat AMQ Broker 7.12.7",
+        "Red Hat Red Hat AMQ Broker 7.13.5",
+        "Red Hat Red Hat Build of Apache Camel 4.14 for Quarkus 3.27",
+        "Red Hat Red Hat build of Apache Camel 4.18.1 for Spring Boot 3.5.14"
+      ],
+      "references": [
+        "https://github.com/bcgit/bc-java/commit/701686cb0184cd9ae103c801b3581fdf95c6d4f3",
+        "https://github.com/bcgit/bc-java/commit/b42574345414e4b7c8051b16fa1fafe01c29871f",
+        "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902025%E2%80%9014813",
+        "https://access.redhat.com/errata/RHSA-2026:11720"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-2332",
+      "published": "2026-04-14T12:16:21.333",
+      "lastModified": "2026-09-03T13:05:03.077",
+      "vulnStatus": "Modified",
+      "description": "In Eclipse Jetty, the HTTP/1.1 parser is vulnerable to request smuggling when chunk extensions are used, similar to the \"funky chunks\" techniques outlined here: * https://w4ke.info/2025/06/18/funky-chunks.html * https://w4ke.info/2025/10/29/funky-chunks-2.html Jetty terminates chunk extension parsing at \\r\\n inside quoted strings instead of treating this as an error. POST / HTTP/1.1 Host: localhost Transfer-Encoding: chunked 1;ext=\"val X 0 GET /smuggled HTTP/1.1 ... Note how the chunk extension ",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-444",
+          "name": "CWE-444"
+        }
+      ],
+      "vendors": [
+        "Eclipse Foundation Eclipse Jetty",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat AMQ Broker 7.13.5",
+        "Red Hat Red Hat build of Apache Camel 4.18.1 for Spring Boot 3.5.14",
+        "Red Hat Red Hat Build of Apache Camel 4.18 for Quarkus 3.33"
+      ],
+      "references": [
+        "https://github.com/jetty/jetty.project/security/advisories/GHSA-355h-qmc2-wpwf",
+        "https://gitlab.eclipse.org/security/cve-assignment/-/issues/89",
+        "https://access.redhat.com/errata/RHSA-2026:10175",
+        "https://access.redhat.com/errata/RHSA-2026:14272"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-4878",
+      "published": "2026-04-09T16:16:31.987",
+      "lastModified": "2026-09-05T17:17:20.720",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in libcap. A local unprivileged user can exploit a Time-of-check-to-time-of-use (TOCTOU) race condition in the `cap_set_file()` function. This allows an attacker with write access to a parent directory to redirect file capability updates to an attacker-controlled file. By doing so, capabilities can be injected into or stripped from unintended executables, leading to privilege escalation.",
+      "cvss": {
+        "score": 7.0,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-367",
+          "name": "Time-of-Check Time-of-Use Race Condition"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.6 Advanced Mission Critical Update Support",
+        "Red Hat Red Hat Enterprise Linux 8.6 Extended Update Support Long-Life Add-On"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:12423",
+        "https://access.redhat.com/errata/RHSA-2026:12441",
+        "https://access.redhat.com/errata/RHSA-2026:13285",
+        "https://access.redhat.com/errata/RHSA-2026:14162"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-62718",
+      "published": "2026-04-09T15:16:08.650",
+      "lastModified": "2026-09-04T13:18:08.443",
+      "vulnStatus": "Modified",
+      "description": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 1.15.0 and 0.31.0, Axios does not correctly handle hostname normalization when checking NO_PROXY rules. Requests to loopback addresses like localhost. (with a trailing dot) or [::1] (IPv6 literal) skip NO_PROXY matching and go through the configured proxy. This goes against what developers expect and lets attackers force requests through a proxy, even if NO_PROXY is set up to protect loopback or internal services. This is",
+      "cvss": {
+        "score": 9.9,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-441",
+          "name": "CWE-441"
+        },
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        },
+        {
+          "id": "CWE-1289",
+          "name": "CWE-1289"
+        }
+      ],
+      "vendors": [
+        "axios axios",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Streams for Apache Kafka 3.2.0",
+        "Red Hat Cluster Observability Operator 1.5.0"
+      ],
+      "references": [
+        "https://datatracker.ietf.org/doc/html/rfc1034#section-3.1",
+        "https://datatracker.ietf.org/doc/html/rfc3986#section-3.2.2",
+        "https://github.com/axios/axios/commit/03cdfc99e8db32a390e12128208b6778492cee9c",
+        "https://github.com/axios/axios/commit/fb3befb6daac6cad26b2e54094d0f2d9e47f24df"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-5795",
+      "published": "2026-04-08T14:16:32.633",
+      "lastModified": "2026-09-04T13:20:05.133",
+      "vulnStatus": "Modified",
+      "description": "In Eclipse Jetty, the class JASPIAuthenticator initiates the authentication checks, which set two ThreadLocal variable. Upon returning from the initial checks, there are conditions that cause an early return from the JASPIAuthenticator code without clearing those ThreadLocals. A subsequent request using the same thread inherits the ThreadLocal values, leading to a broken access control and privilege escalation.",
+      "cvss": {
+        "score": 7.4,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-226",
+          "name": "CWE-226"
+        },
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        }
+      ],
+      "vendors": [
+        "Eclipse Foundation Eclipse Jetty",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat build of Apache Camel 4.18.1 for Spring Boot 3.5.14",
+        "Red Hat Red Hat Offline Knowledge Portal 1.2.12",
+        "Red Hat Red Hat Data Grid 8"
+      ],
+      "references": [
+        "https://github.com/jetty/jetty.project/security/advisories/GHSA-r7p8-xq5m-436chttps://",
+        "https://gitlab.eclipse.org/security/cve-assignment/-/issues/92",
+        "https://access.redhat.com/errata/RHSA-2026:17668",
+        "https://access.redhat.com/errata/RHSA-2026:25089"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-33810",
+      "published": "2026-04-08T02:16:03.950",
+      "lastModified": "2026-09-04T13:18:56.453",
+      "vulnStatus": "Modified",
+      "description": "When verifying a certificate chain containing excluded DNS constraints, these constraints are not correctly applied to wildcard DNS SANs which use a different case than the constraint. This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-295",
+          "name": "Improper Certificate Validation"
+        },
+        {
+          "id": "CWE-1289",
+          "name": "CWE-1289"
+        }
+      ],
+      "vendors": [
+        "Go standard library crypto/x509",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support"
+      ],
+      "references": [
+        "https://go.dev/cl/763763",
+        "https://go.dev/issue/78332",
+        "https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU",
+        "https://pkg.go.dev/vuln/GO-2026-4866"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-32283",
+      "published": "2026-04-08T02:16:03.580",
+      "lastModified": "2026-09-04T13:18:45.903",
+      "vulnStatus": "Modified",
+      "description": "If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service. This only affects TLS 1.3.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        },
+        {
+          "id": "CWE-764",
+          "name": "CWE-764"
+        }
+      ],
+      "vendors": [
+        "Go standard library crypto/tls",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9",
+        "Red Hat Red Hat Ansible Automation Platform 2.6 for RHEL 10"
+      ],
+      "references": [
+        "https://go.dev/cl/763767",
+        "https://go.dev/issue/78334",
+        "https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU",
+        "https://pkg.go.dev/vuln/GO-2026-4870"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-32280",
+      "published": "2026-04-08T02:16:03.247",
+      "lastModified": "2026-09-04T13:18:43.410",
+      "vulnStatus": "Modified",
+      "description": "During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "Go standard library crypto/x509",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 8",
+        "Red Hat Red Hat Ansible Automation Platform 2.5 for RHEL 9"
+      ],
+      "references": [
+        "https://go.dev/cl/758320",
+        "https://go.dev/issue/78282",
+        "https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU",
+        "https://pkg.go.dev/vuln/GO-2026-4947"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-29181",
+      "published": "2026-04-07T21:17:16.003",
+      "lastModified": "2026-09-04T13:18:41.327",
+      "vulnStatus": "Modified",
+      "description": "OpenTelemetry-Go is the Go implementation of OpenTelemetry. From 1.36.0 to 1.40.0, multi-value baggage: header extraction parses each header field-value independently and aggregates members across values. This allows an attacker to amplify cpu and allocations by sending many baggage: header lines, even when each individual value is within the 8192-byte per-value parse limit. This vulnerability is fixed in 1.41.0.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "open-telemetry opentelemetry-go",
+        "Red Hat Cluster Observability Operator 1.5.0",
+        "Red Hat multicluster engine for Kubernetes 2.11",
+        "Red Hat multicluster engine for Kubernetes 2.8",
+        "Red Hat cert-manager Operator for Red Hat OpenShift"
+      ],
+      "references": [
+        "https://github.com/open-telemetry/opentelemetry-go/security/advisories/GHSA-mh2q-q3fh-2475",
+        "https://access.redhat.com/errata/RHSA-2026:25271",
+        "https://access.redhat.com/errata/RHSA-2026:47735",
+        "https://access.redhat.com/errata/RHSA-2026:61314"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-4740",
+      "published": "2026-04-07T15:17:46.797",
+      "lastModified": "2026-09-05T14:17:23.253",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in Open Cluster Management (OCM), the technology underlying Red Hat Advanced Cluster Management (ACM). Improper validation of Kubernetes client certificate renewal allows a managed cluster administrator to forge a client certificate that can be approved by the OCM controller. This enables cross-cluster privilege escalation and may allow an attacker to gain control over other managed clusters, including the hub cluster.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-295",
+          "name": "Improper Certificate Validation"
+        }
+      ],
+      "vendors": [
+        "Red Hat multicluster engine for Kubernetes 2.1",
+        "Red Hat multicluster engine for Kubernetes 2.11",
+        "Red Hat multicluster engine for Kubernetes 2.6",
+        "Red Hat multicluster engine for Kubernetes 2.8",
+        "Red Hat multicluster engine for Kubernetes 2.9"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:11414",
+        "https://access.redhat.com/errata/RHSA-2026:13542",
+        "https://access.redhat.com/errata/RHSA-2026:13853",
+        "https://access.redhat.com/errata/RHSA-2026:8218"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-35172",
+      "published": "2026-04-06T20:16:25.607",
+      "lastModified": "2026-09-04T13:19:30.357",
+      "vulnStatus": "Modified",
+      "description": "Distribution is a toolkit to pack, ship, store, and deliver container content. Prior to 3.1.0, distribution can restore read access in repo a after an explicit delete when storage.cache.blobdescriptor: redis and storage.delete.enabled: true are both enabled. The delete path clears the shared digest descriptor but leaves stale repo-scoped membership behind, so a later Stat or Get from repo b repopulates the shared descriptor and makes the deleted blob readable from repo a again. This vulnerabilit",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-284",
+          "name": "Improper Access Control"
+        },
+        {
+          "id": "NVD-CWE-noinfo",
+          "name": "Insufficient Information"
+        },
+        {
+          "id": "CWE-524",
+          "name": "CWE-524"
+        }
+      ],
+      "vendors": [
+        "distribution distribution",
+        "Red Hat Red Hat OpenShift Container Platform 4.12",
+        "Red Hat Red Hat OpenShift Container Platform 4.13",
+        "Red Hat Red Hat OpenShift Container Platform 4.14",
+        "Red Hat Red Hat OpenShift Container Platform 4.15"
+      ],
+      "references": [
+        "https://github.com/distribution/distribution/security/advisories/GHSA-f2g3-hh2r-cwgc",
+        "https://access.redhat.com/errata/RHSA-2026:23234",
+        "https://access.redhat.com/errata/RHSA-2026:25045",
+        "https://access.redhat.com/errata/RHSA-2026:26529"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-34986",
+      "published": "2026-04-06T17:17:11.870",
+      "lastModified": "2026-09-04T13:19:27.380",
+      "vulnStatus": "Modified",
+      "description": "Go JOSE provides an implementation of the Javascript Object Signing and Encryption set of standards in Go, including support for JSON Web Encryption (JWE), JSON Web Signature (JWS), and JSON Web Token (JWT) standards. Prior to 4.1.4 and 3.0.5, decrypting a JSON Web Encryption (JWE) object will panic if the alg field indicates a key wrapping algorithm (one ending in KW, with the exception of A128GCMKW, A192GCMKW, and A256GCMKW) and the encrypted_key field is empty. The panic happens when cipher.K",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-248",
+          "name": "CWE-248"
+        },
+        {
+          "id": "CWE-131",
+          "name": "CWE-131"
+        }
+      ],
+      "vendors": [
+        "go-jose go-jose",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 8"
+      ],
+      "references": [
+        "https://github.com/go-jose/go-jose/security/advisories/GHSA-78h2-9frx-2jm8",
+        "https://pkg.go.dev/github.com/go-jose/go-jose/v4#pkg-constants",
+        "https://access.redhat.com/errata/RHSA-2026:10125",
+        "https://access.redhat.com/errata/RHSA-2026:10130"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-34982",
+      "published": "2026-04-06T16:16:38.777",
+      "lastModified": "2026-09-04T13:19:26.967",
+      "vulnStatus": "Modified",
+      "description": "Vim is an open source, command line text editor. Prior to version 9.2.0276, a modeline sandbox bypass in Vim allows arbitrary OS command execution when a user opens a crafted file. The `complete`, `guitabtooltip` and `printheader` options are missing the `P_MLE` flag, allowing a modeline to be executed. Additionally, the `mapset()` function lacks a `check_secure()` call, allowing it to be abused from sandboxed expressions. Commit 9.2.0276 fixes the issue.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "vim vim",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 10.0 Extended Update Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.4 Advanced Mission Critical Update Support"
+      ],
+      "references": [
+        "https://github.com/vim/vim/commit/75661a66a1db1e1f3f1245c615",
+        "https://github.com/vim/vim/releases/tag/v9.2.0276",
+        "https://github.com/vim/vim/security/advisories/GHSA-8h6p-m6gr-mpw9",
+        "http://www.openwall.com/lists/oss-security/2026/04/01/1"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.429461+00:00"
+}

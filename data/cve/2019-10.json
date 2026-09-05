@@ -1,0 +1,33 @@
+{
+  "month": "2019-10",
+  "cves": [
+    {
+      "id": "CVE-2019-11284",
+      "published": "2019-10-17T18:15:12.110",
+      "lastModified": "2026-09-04T18:59:12.370",
+      "vulnStatus": "Modified",
+      "description": "Pivotal Reactor Netty, versions prior to 0.8.11, passes headers through redirects, including authorization ones. A remote unauthenticated malicious user may gain access to credentials for a different server than they have access to.",
+      "cvss": {
+        "score": 8.6,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-522",
+          "name": "Insufficiently Protected Credentials"
+        }
+      ],
+      "vendors": [
+        "Pivotal Reactor Netty"
+      ],
+      "references": [
+        "https://pivotal.io/security/cve-2019-11284"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.423931+00:00"
+}

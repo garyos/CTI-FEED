@@ -1,0 +1,77 @@
+{
+  "month": "2025-09",
+  "cves": [
+    {
+      "id": "CVE-2025-9189",
+      "published": "2025-09-02T19:15:33.010",
+      "lastModified": "2026-09-03T17:17:22.643",
+      "vulnStatus": "Modified",
+      "description": "There is an out of bounds write vulnerability due to improper bounds checking resulting in a large destination address when parsing a DSB file with Digilent DASYLab. This vulnerability may result in arbitrary code execution. Successful exploitation requires an attacker to get a user to open a specially crafted DSB file. The vulnerability affects all versions of DASYLab.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1285",
+          "name": "CWE-1285"
+        },
+        {
+          "id": "CWE-787",
+          "name": "Out-of-Bounds Write"
+        }
+      ],
+      "vendors": [
+        "Digilent DASYLab",
+        "measX DASYLab"
+      ],
+      "references": [
+        "https://www.measx.com/en/service/productsecurity/security-updates-for-measx-software/159-securityupdates/1077-deserialization-of-untrusted-data-vulnerability-in-dasylab.html",
+        "https://www.ni.com/en/support/security/available-critical-and-security-updates-for-ni-software/memory-corruption-vulnerabilities-in-digilent-dasylab.html"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-9784",
+      "published": "2025-09-02T14:15:36.593",
+      "lastModified": "2026-09-04T20:17:22.277",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in Undertow where malformed client requests can trigger server-side stream resets without triggering abuse counters. This issue, referred to as the \"MadeYouReset\" attack, allows malicious clients to induce excessive server workload by repeatedly causing server-side stream aborts. While not a protocol bug, this highlights a common implementation weakness that can be exploited to cause a denial of service (DoS).",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        },
+        {
+          "id": "CWE-404",
+          "name": "CWE-404"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat build of Apache Camel 4.14.2 for Spring Boot 3.5.8",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.1 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.3 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4.24",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 ELS on RHEL 7"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2025:23143",
+        "https://access.redhat.com/errata/RHSA-2026:0383",
+        "https://access.redhat.com/errata/RHSA-2026:0384",
+        "https://access.redhat.com/errata/RHSA-2026:0386"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.426457+00:00"
+}

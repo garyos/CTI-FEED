@@ -1,0 +1,40 @@
+{
+  "month": "2025-07",
+  "cves": [
+    {
+      "id": "CVE-2025-7425",
+      "published": "2025-07-10T14:15:27.877",
+      "lastModified": "2026-09-05T16:17:21.610",
+      "vulnStatus": "Deferred",
+      "description": "A flaw was found in libxslt where the attribute type, atype, flags are modified in a way that corrupts internal memory management. When XSLT functions, such as the key() process, result in tree fragments, this corruption prevents the proper cleanup of ID attributes. As a result, the system may access freed memory, causing crashes or enabling attackers to trigger heap corruption.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        }
+      ],
+      "vendors": [
+        "GNOME libxml2",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 7 Extended Lifecycle Support",
+        "Red Hat Red Hat Enterprise Linux 8",
+        "Red Hat Red Hat Enterprise Linux 8.2 Advanced Update Support"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHBA-2025:12345",
+        "https://access.redhat.com/errata/RHSA-2025:12447",
+        "https://access.redhat.com/errata/RHSA-2025:12450",
+        "https://access.redhat.com/errata/RHSA-2025:13267"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.426315+00:00"
+}

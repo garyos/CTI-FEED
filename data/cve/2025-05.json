@@ -1,0 +1,40 @@
+{
+  "month": "2025-05",
+  "cves": [
+    {
+      "id": "CVE-2025-5222",
+      "published": "2025-05-27T21:15:23.030",
+      "lastModified": "2026-09-03T15:17:18.017",
+      "vulnStatus": "Modified",
+      "description": "A stack buffer overflow was found in Internationl components for unicode (ICU ). While running the genrb binary, the 'subtag' struct overflowed at the SRBRoot::addTag function. This issue may lead to memory corruption and local arbitrary code execution.",
+      "cvss": {
+        "score": 7.0,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-120",
+          "name": "Buffer Overflow"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Red Hat Enterprise Linux 9.0 Update Services for SAP Solutions",
+        "Red Hat Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions",
+        "Red Hat Red Hat Enterprise Linux 9.4 Extended Update Support"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2025:11888",
+        "https://access.redhat.com/errata/RHSA-2025:12083",
+        "https://access.redhat.com/errata/RHSA-2025:12331",
+        "https://access.redhat.com/errata/RHSA-2025:12332"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.425943+00:00"
+}

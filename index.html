@@ -88,9 +88,14 @@
     color: var(--ink);
     text-decoration: none;
     padding: 14px 18px;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
     border: 1px solid var(--amber);
     transition: filter 0.15s ease;
+  }
+  .explorer-cta.cve {
+    background: var(--red);
+    border-color: var(--red);
+    margin-bottom: 26px;
   }
   .explorer-cta:hover, .explorer-cta:focus-visible { filter: brightness(1.08); }
   .explorer-cta .cta-icon {
@@ -376,6 +381,15 @@
       <span class="cta-text">
         <span class="cta-title">ATT&amp;CK Explorer</span>
         <span class="cta-desc">Browse MITRE ATT&amp;CK groups, techniques &amp; campaigns — with cinematic Spotlight dossiers</span>
+      </span>
+      <span class="cta-arrow">›</span>
+    </a>
+
+    <a class="explorer-cta cve" href="cve.html">
+      <span class="cta-icon">⚠</span>
+      <span class="cta-text">
+        <span class="cta-title">CVE Explorer</span>
+        <span class="cta-desc">Critical &amp; High severity CVEs, cross-referenced against CISA's actively-exploited catalog</span>
       </span>
       <span class="cta-arrow">›</span>
     </a>

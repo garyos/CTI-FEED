@@ -1,0 +1,98 @@
+{
+  "month": "2024-11",
+  "cves": [
+    {
+      "id": "CVE-2023-7299",
+      "published": "2024-11-23T13:15:04.547",
+      "lastModified": "2026-09-03T02:15:22.637",
+      "vulnStatus": "Analyzed",
+      "description": "A vulnerability was found in DataGear up to 4.60. It has been declared as critical. This vulnerability affects unknown code of the file /dataSet/resolveSql. The manipulation of the argument sql leads to sql injection. The attack can be initiated remotely. Upgrading to version 4.7.0 is able to address this issue. It is recommended to upgrade the affected component.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "n/a DataGear"
+      ],
+      "references": [
+        "https://github.com/datageartech/datagear/issues/29",
+        "https://vuldb.com/?ctiid.285658",
+        "https://vuldb.com/?id.285658",
+        "https://vuldb.com/?submit.442943"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2024-7837",
+      "published": "2024-11-22T09:15:12.850",
+      "lastModified": "2026-09-04T09:17:10.043",
+      "vulnStatus": "Deferred",
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Firmanet Software ERP allows SQL Injection. This issue affects ERP: before 15.0.1.",
+      "cvss": {
+        "score": 8.2,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "Firmanet Software ERP",
+        "firmanet erp"
+      ],
+      "references": [
+        "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-24-1868",
+        "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0988",
+        "https://www.usom.gov.tr/bildirim/tr-24-1868"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2024-42450",
+      "published": "2024-11-19T18:15:20.560",
+      "lastModified": "2026-09-03T18:22:14.940",
+      "vulnStatus": "Analyzed",
+      "description": "The Versa Director uses PostgreSQL (Postgres) to store operational and configuration data. It is also needed for High Availability function of the Versa Director. The default configuration has a common password across all instances of Versa Director. By default, Versa Director configures Postgres to listen on all network interfaces. This combination allows an unauthenticated attacker to access and administer the database or read local filesystem contents to escalate privileges on the system. Exp",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-798",
+          "name": "Use of Hard-Coded Credentials"
+        }
+      ],
+      "vendors": [
+        "Versa Director",
+        "versa director"
+      ],
+      "references": [
+        "https://security-portal.versa-networks.com/emailbulletins/6735a300415abb89e9a8a9d3"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.425408+00:00"
+}

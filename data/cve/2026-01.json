@@ -1,0 +1,139 @@
+{
+  "month": "2026-01",
+  "cves": [
+    {
+      "id": "CVE-2025-61726",
+      "published": "2026-01-28T20:16:09.713",
+      "lastModified": "2026-09-04T13:17:57.207",
+      "vulnStatus": "Modified",
+      "description": "The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-770",
+          "name": "Allocation of Resources Without Limits"
+        }
+      ],
+      "vendors": [
+        "Go standard library net/url",
+        "Red Hat Cryostat 4 on RHEL 9",
+        "Red Hat HawtIO HawtIO 4.3.1",
+        "Red Hat HawtIO HawtIO 4.4.0",
+        "Red Hat Red Hat Ansible Automation Platform 2.4 for RHEL 8"
+      ],
+      "references": [
+        "https://go.dev/cl/736712",
+        "https://go.dev/issue/77101",
+        "https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc",
+        "https://pkg.go.dev/vuln/GO-2026-4341"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-61140",
+      "published": "2026-01-28T16:16:13.547",
+      "lastModified": "2026-09-04T13:17:56.847",
+      "vulnStatus": "Analyzed",
+      "description": "The value function in jsonpath 1.1.1 lib/index.js is vulnerable to Prototype Pollution.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-1321",
+          "name": "Prototype Pollution"
+        },
+        {
+          "id": "CWE-502",
+          "name": "Deserialization of Untrusted Data"
+        }
+      ],
+      "vendors": [
+        "n/a n/a",
+        "Red Hat Red Hat Ansible Automation Platform 2.1",
+        "Red Hat Red Hat Ansible Automation Platform 2.5",
+        "Red Hat Red Hat Ansible Automation Platform 2.6",
+        "Red Hat Red Hat Developer Hub 1.8"
+      ],
+      "references": [
+        "https://gist.github.com/Dremig/8105c189774217222a8ebea3ed4d341d",
+        "https://github.com/dchester/jsonpath",
+        "https://access.redhat.com/errata/RHSA-2026:2180",
+        "https://access.redhat.com/errata/RHSA-2026:2181"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-13845",
+      "published": "2026-01-15T19:16:02.937",
+      "lastModified": "2026-09-03T03:15:22.217",
+      "vulnStatus": "Analyzed",
+      "description": "CWE-416: Use After Free vulnerability that could cause remote code execution when the end user imports the malicious project file (SSD file) into Rapsody.",
+      "cvss": {
+        "score": 7.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-416",
+          "name": "Use After Free"
+        }
+      ],
+      "vendors": [
+        "Schneider Electric EcoStruxure Power Build Rapsody"
+      ],
+      "references": [
+        "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2026-013-04&p_enDocType=Security+and+Safety+Notice&p_File_Name=SEVD-2026-013-04.pdf"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2025-12543",
+      "published": "2026-01-07T17:15:55.093",
+      "lastModified": "2026-09-04T20:17:21.257",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in the Undertow HTTP server core, which is used in WildFly, JBoss EAP, and other Java applications. The Undertow library fails to properly validate the Host header in incoming HTTP requests.As a result, requests containing malformed or malicious Host headers are processed without rejection, enabling attackers to poison caches, perform internal network scans, or hijack user sessions.",
+      "cvss": {
+        "score": 9.6,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-20",
+          "name": "Improper Input Validation"
+        }
+      ],
+      "vendors": [
+        "Red Hat Red Hat build of Apache Camel 4.14.4 for Spring Boot 3.5.11",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.1 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.3 EUS for RHEL 7",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4.24",
+        "Red Hat Red Hat JBoss Enterprise Application Platform 7.4 ELS on RHEL 7"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:0383",
+        "https://access.redhat.com/errata/RHSA-2026:0384",
+        "https://access.redhat.com/errata/RHSA-2026:0386",
+        "https://access.redhat.com/errata/RHSA-2026:33371"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.427901+00:00"
+}

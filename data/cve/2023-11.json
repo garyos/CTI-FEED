@@ -1,0 +1,61 @@
+{
+  "month": "2023-11",
+  "cves": [
+    {
+      "id": "CVE-2023-34054",
+      "published": "2023-11-28T09:15:07.147",
+      "lastModified": "2026-09-04T18:59:12.370",
+      "vulnStatus": "Modified",
+      "description": "In Reactor Netty HTTP Server, versions 1.1.x prior to 1.1.13 and versions 1.0.x prior to 1.0.39, it is possible for a user to provide specially crafted HTTP requests that may cause a denial-of-service (DoS) condition. Specifically, an application is vulnerable if Reactor Netty HTTP Server built-in integration with Micrometer is enabled.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "NVD-CWE-noinfo",
+          "name": "Insufficient Information"
+        }
+      ],
+      "vendors": [
+        "Spring Reactor Netty"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2023-34054"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2023-34062",
+      "published": "2023-11-15T10:15:07.277",
+      "lastModified": "2026-09-04T18:59:12.370",
+      "vulnStatus": "Modified",
+      "description": "In Reactor Netty HTTP Server, versions 1.1.x prior to 1.1.13 and versions 1.0.x prior to 1.0.39, a malicious user can send a request using a specially crafted URL that can lead to a directory traversal attack. Specifically, an application is vulnerable if Reactor Netty HTTP Server is configured to serve static resources.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-22",
+          "name": "Path Traversal"
+        }
+      ],
+      "vendors": [
+        "n/a Reactor Netty",
+        "reactor_netty reactor_netty"
+      ],
+      "references": [
+        "https://spring.io/security/cve-2023-34062"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    }
+  ],
+  "updated_at": "2026-09-05T17:53:51.424468+00:00"
+}
