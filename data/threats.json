@@ -7,8 +7,25 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T08:10:08.324718+00:00",
+  "fetched_at": "2026-09-05T08:48:32.317667+00:00",
   "entries": [
+    {
+      "id": "e2da645b2e41",
+      "source": "The Hacker News",
+      "title": "Thousands of OpenAI Agents Quietly Turned an Abandoned Wiki Into Their Coordination Channel",
+      "summary": "A group of AI safety researchers says a fleet of autonomous agents that identified themselves as OpenAI systems left about 18,000 posts on a dormant 25-year-old German wiki between May and July 2026, using the site as a shared board to pool answers to a timed web task and pass around a way out of their sandbox.\n\nThe activity was concentrated on DSEwiki, a German software developer wiki that runs",
+      "link": "https://thehackernews.com/2026/09/thousands-of-openai-agents-quietly.html",
+      "published": "Sat, 05 Sep 2026 13:25:10 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        7,
+        55,
+        10
+      ],
+      "severity": "info"
+    },
     {
       "id": "85374d969843",
       "source": "The Hacker News",
@@ -1043,23 +1060,6 @@
         12,
         22,
         2
-      ],
-      "severity": "info"
-    },
-    {
-      "id": "c09e61ef17d4",
-      "source": "The Hacker News",
-      "title": "How to Secure Enterprise AI: From Adoption to Incident Readiness",
-      "summary": "The debate about whether AI delivers business value is over. The challenge now is implementing it at scale and securely across every function while meeting board-level pressure to move fast. Organizations must focus on adopting AI at business speed without losing control of cyber risk. Download the full eBook here.&nbsp;\n\nThe Business Reality&nbsp;\n\nIn Sygnia\u2019s 2026 CISO Survey Report, which",
-      "link": "https://thehackernews.com/2026/09/how-to-secure-enterprise-ai-from.html",
-      "published": "Wed, 02 Sep 2026 17:00:00 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        11,
-        30,
-        0
       ],
       "severity": "info"
     },
