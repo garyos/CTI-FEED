@@ -1,0 +1,3569 @@
+{
+  "fetched_at": "2026-09-05T21:34:18.721028+00:00",
+  "groups": [
+    {
+      "name": "0apt",
+      "altname": null,
+      "description": "The group appears unreliable. Most, if not all, of its alleged victims cannot be verified and appear to be randomly selected organizations. WE HAVE DECIDED TO REMOVE ENTRIES FOR THIS GROUP",
+      "raas": true,
+      "first_seen": "2026-01-28",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "0day Syndicate",
+      "altname": null,
+      "description": "",
+      "raas": true,
+      "first_seen": "2026-05-28",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "0mega",
+      "altname": null,
+      "description": "0mega is a double-extortion ransomware group that emerged in May 2022, targeting businesses across multiple sectors worldwide by encrypting files and threatening to leak stolen data; it also pivoted to cloud-based extortion by compromising Microsoft 365 admin accounts.",
+      "raas": false,
+      "first_seen": "2022-07-14",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "8base",
+      "altname": null,
+      "description": "The 8base Ransomware group made its first appearance in early March 2022, remaining somewhat quiet after the attacks. This group operates like other ransomware actors, engaging in double extortion. <BR> However, in mid-May and June 2023, the ransomware operation saw a spike in activity against organizations from various sectors, listing 131 organizations in just 3 months.<BR> The 8base data leak site was created and made available in March 2023, claiming honesty and simplicity in its\u2026",
+      "raas": false,
+      "first_seen": "2023-05-23",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "Abrahams_Ax",
+      "altname": null,
+      "description": "Abraham's Ax is an Iranian-linked hacktivist persona tied to Moses Staff that emerged in November 2022, primarily targeting Saudi Arabian government institutions for geopolitical reasons related to Saudi-Israeli normalization, using destructive wiper malware and data leak tactics rather than financial ransomware.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "abyss",
+      "altname": null,
+      "description": "Abyss (also known as Abyss Locker) is a ransomware operation first identified in March 2023, derived from the Babuk source code, that targets Windows and Linux/VMware ESXi systems using double-extortion tactics across healthcare, manufacturing, finance, and technology sectors \u2014 predominantly in North America.",
+      "raas": false,
+      "first_seen": "2023-03-21",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "adminlocker",
+      "altname": null,
+      "description": "AdminLocker is a relatively low-profile ransomware strain first observed around December 2021, encrypting victim files and demanding Bitcoin ransom via a Tor-based portal, operated by a lone actor or small closed group with no evidence of an affiliate model.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "againstthewest",
+      "altname": null,
+      "description": "AgainstTheWest (ATW) is a hacktivist group active since October 2021 that targets governments and corporations perceived as authoritarian, breaching organizations like Alibaba, Sberbank, and Gazprom using custom ransomware and wiper malware for ideological disruption rather than financial profit.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "aGl0bGVyCg",
+      "altname": null,
+      "description": "\"aGl0bGVyCg\" (Base64 for \"hitler\") is a reference to the Hitler-Ransomware (2016), a German-origin proof-of-concept that displayed a Hitler image, did not actually encrypt files, and demanded a 25-euro Vodafone card payment; assessed as an amateur test project rather than a serious criminal operation.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "AiLock",
+      "altname": null,
+      "description": "AiLock is a ransomware operation that emerged in early 2025, marketing itself as AI-assisted ransomware using a hybrid ChaCha20/NTRUEncrypt encryption scheme and double-extortion tactics, actively recruiting affiliates and threatening regulatory reporting if ransoms are unpaid.",
+      "raas": true,
+      "first_seen": "2026-03-03",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "akira",
+      "altname": null,
+      "description": "The Akira ransomware group is said to have emerged in March 2023, and there's much speculation about its ties to the former CONTI ransomware group.<br> <br> It's worth noting that with the end of CONTI's operation, several affiliates migrated to independent campaigns such as Royal, BlackBasta, and others.<br> <br> According to some reports, Akira affiliates also work with other ransomware operations, such as Snatch and BlackByte, as an open directory of tools used by an Akira operator was\u2026",
+      "raas": false,
+      "first_seen": "2023-04-26",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "ako",
+      "altname": null,
+      "description": "A Windows ransomware that will run certain tasks to prepare the target system for the encryption of files. MedusaLocker avoids executable files, probably to avoid rendering the targeted system unusable for paying the ransom. It uses a combination of AES and RSA-2048, and reportedly appends extensions such as .encrypted, .bomber, .boroff, .breakingbad, .locker16, .newlock, .nlocker, and .skynet.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ALP-001",
+      "altname": null,
+      "description": "\u26a0\ufe0f The group appears unreliable. Most, if not all, of its alleged victims cannot be verified. WE HAVE DECIDED TO REMOVE ENTRIES FOR THIS GROUP",
+      "raas": false,
+      "first_seen": "2026-03-21",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "alphalocker",
+      "altname": null,
+      "description": "AlphaLocker is a low-cost ransomware operation built on the EDA2 open-source project that sells affiliates an admin panel, ransomware executable, and decryption key generator, lowering the barrier for entry-level cybercriminals using double-extortion tactics.",
+      "raas": true,
+      "first_seen": "2024-01-24",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "alphv",
+      "altname": "blackcat",
+      "description": "The operators of the ALPHV/BlackCat ransomware began their activity in December 2021, making posts on Dark Web forums to promote their affiliate program, offering other actors the opportunity to engage in a 'new type of ransomware family' developed from scratch using the Rust programming language.<BR> <BR> Some clear evidence indicates that the actors behind this new ransomware are not new to cybercrime, and there were links to other affiliate programs such as DarkSide, BlackMatter, and REvil.\u2026",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "anubis",
+      "altname": null,
+      "description": "Anubis is a ransomware-as-a-service group active since December 2024 that targets healthcare, engineering, construction, and professional services sectors, offering affiliates a flexible revenue split model and an optional destructive \"wipe mode\" alongside standard encryption.",
+      "raas": true,
+      "first_seen": "2025-02-25",
+      "active_sites": 2,
+      "total_sites": 3
+    },
+    {
+      "name": "apos",
+      "altname": null,
+      "description": "Apos is a data-broker extortion group that surfaced in April 2024, focusing on data exfiltration and threatening to publish or sell stolen information rather than encrypting files, targeting technology, healthcare, manufacturing, telecom, and government sectors across multiple countries.",
+      "raas": false,
+      "first_seen": "2024-04-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "apt73",
+      "altname": "bashe",
+      "description": "A new ransomware group is said to have emerged in mid-April 2024, under the name 'APT73.' It's worth noting that the group reportedly self-proclaimed as an APT, which stands for 'Advanced Persistent Threat' in the cybersecurity field.<br> <br> According to research, much of the available information about the aforementioned group came from another ransomware group known as LockBit.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+      "raas": true,
+      "first_seen": "2024-04-22",
+      "active_sites": 6,
+      "total_sites": 11
+    },
+    {
+      "name": "Aptlock",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2025-01-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "arcusmedia",
+      "altname": null,
+      "description": "Arcus Media is a ransomware-as-a-service group that emerged in May 2024, employing double extortion with ChaCha20 + RSA-2048 encryption and recruiting affiliates via a referral-based vetting process, claiming 50+ victims across manufacturing, healthcare, retail, and business services globally.",
+      "raas": true,
+      "first_seen": "2024-05-15",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "argonauts",
+      "altname": null,
+      "description": "Argonauts is a ransomware group that emerged in September 2024, operating a double-extortion model targeting logistics, healthcare, energy, and telecom sectors, with approximately 13 claimed victims tracked via a TOR-based leak site.",
+      "raas": false,
+      "first_seen": "2024-11-27",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "arkana",
+      "altname": null,
+      "description": "Arkana is a ransomware group that emerged in early 2025 and gained attention by claiming an attack on U.S. broadband provider WideOpenWest (WOW!), operating a three-phase ransom/sale/leak extortion model primarily focused on telecom and internet service providers.",
+      "raas": false,
+      "first_seen": "2025-03-25",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "arvinclub",
+      "altname": null,
+      "description": "Arvin Club is a threat actor with hacktivist leanings that first appeared in May 2021, primarily publishing stolen data via a TOR site and Telegram rather than deploying file-encrypting ransomware, targeting government, education, and banking sectors globally including Iranian government entities.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "atomsilo",
+      "altname": null,
+      "description": "AtomSilo is a double-extortion ransomware group that emerged in September 2021, exploiting the Atlassian Confluence vulnerability (CVE-2021-26084) for initial access and demanding ransoms up to $1 million, attributed to the Chinese state-linked threat actor BRONZE STARLIGHT.",
+      "raas": true,
+      "first_seen": "2021-12-21",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "AuditTeam",
+      "altname": null,
+      "description": "AuditTeam is a small ransomware group with approximately 5 known victims, primarily targeting organizations in East and Southeast Asia across technology and manufacturing sectors, operating a data leak site consistent with double-extortion methodology.",
+      "raas": false,
+      "first_seen": "2026-04-08",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "aurora",
+      "altname": null,
+      "description": "Aurora is a ransomware group associated with a multi-purpose Go-based malware distributed by multiple criminal teams from mid-2022, also sold as an infostealer/botnet under the same name on underground forums.",
+      "raas": false,
+      "first_seen": "2026-04-29",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "avaddon",
+      "altname": null,
+      "description": "Avaddon is a ransomware malware targeting Windows systems often spread via malicious spam. The first known attack where Avaddon ransomware was distributed was in February 2020. Avaddon encrypts files using the extension .avdn and uses a TOR payment site for the ransom payment.",
+      "raas": false,
+      "first_seen": "2021-02-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "avos",
+      "altname": null,
+      "description": "Avos is the threat actor group behind AvosLocker ransomware, a RaaS operation active since June 2021 that recruited affiliates to deploy ransomware against critical infrastructure including financial services, manufacturing, and government sectors across the US and a dozen other countries.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "avoslocker",
+      "altname": null,
+      "description": "AvosLocker is the ransomware payload of the Avos RaaS group, active from July 2021 to approximately May 2023, targeting education, manufacturing, and healthcare sectors on Windows, Linux, and VMware ESXi environments, with the US accounting for ~72% of victims.",
+      "raas": true,
+      "first_seen": "2021-06-13",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "aware",
+      "altname": null,
+      "description": "Aware is a recently emerged ransomware group that operates a Tor-based data leak site with very limited public documentation and no publicly catalogued victims, tools, or TTPs in major threat intelligence databases.",
+      "raas": false,
+      "first_seen": "2026-01-06",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "aztroteam",
+      "altname": null,
+      "description": "AztroTeam is a ransomware group with very limited public documentation and no confirmed victims, listed as offline on ransomware tracking platforms.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "babuk",
+      "altname": null,
+      "description": "Babuk Ransomware is a sophisticated ransomware compiled for several platforms. Windows and ARM for Linux are the most used compiled versions, but ESX and a 32bit old PE executable were observed over time. as well It uses an Elliptic Curve Algorithm (Montgomery Algorithm) to build the encryption keys.",
+      "raas": false,
+      "first_seen": "2020-10-25",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "babuk2",
+      "altname": "Satanlock",
+      "description": "Babuk Locker 2.0, also known as Bjorka or SkyWave, after failing to make any profit from selling public databases on forums, decided to impersonate Babuk Ransomware group. He launched a blog where he claimed multiple public breaches from BreachForums as ransomware attacks",
+      "raas": false,
+      "first_seen": "2025-01-27",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "babyduck",
+      "altname": null,
+      "description": "BabyDuck is a ransomware group tracked on ransomware.live with approximately 180 claimed victims, appending the .babyduck extension to encrypted files, distinct from the better-known Babuk group.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Barracuda",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-06",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "beast",
+      "altname": "GIGAKICK",
+      "description": "Beast is a Ransomware-as-a-service (RaaS) product which provides functionality such as SMB scanning, file encryption, service and process starting and stopping, and geographic identification to avoid encryption in CIS countries.",
+      "raas": true,
+      "first_seen": "2025-07-29",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "benzona",
+      "altname": null,
+      "description": "Benzona is a financially motivated ransomware group that emerged in late 2024, targeting small to mid-sized organizations across manufacturing, healthcare, technology, and hospitality sectors using double-extortion tactics \u2014 encrypting files while exfiltrating data and threatening publication via a Tor-based leak site.",
+      "raas": true,
+      "first_seen": "2025-11-26",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "bert",
+      "altname": null,
+      "description": "BERT is a newly emerged ransomware group first identified in mid-2025, targeting Windows and Linux platforms across healthcare, technology, and event services sectors in Asia, Europe, and the US, with ransomware derived from a Linux variant of REvil using AES encryption and multi-threaded file locking.",
+      "raas": false,
+      "first_seen": "2025-04-06",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "bianlian",
+      "altname": null,
+      "description": "BianLian ransomware operations began in late 2021. The group practices multi-pronged extortion, demanding payment for a decryptor, as well as the non-release of stolen data. The ransomware group hosts a public, TOR-based, blog to post victim identities and stolen data. Somewhat unique to BianLian at the time of their launch was their inclusion of an I2P mirror for their blog.",
+      "raas": false,
+      "first_seen": "2022-07-14",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "Black X",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-02",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "blackbasta",
+      "altname": null,
+      "description": "\"Black Basta\" is a new ransomware strain discovered during April 2022 - looks in dev since at least early February 2022 - and due to their ability to quickly amass new victims and the style of their negotiations, this is likely not a new operation but rather a rebrand of a previous top-tier ransomware gang that brought along their affiliates.",
+      "raas": true,
+      "first_seen": "2022-04-26",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "blackbyte",
+      "altname": null,
+      "description": "Ransomware. Uses dropper written in JavaScript to deploy a .NET payload.",
+      "raas": true,
+      "first_seen": "2021-10-04",
+      "active_sites": 0,
+      "total_sites": 9
+    },
+    {
+      "name": "Blackfield",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "blacklock",
+      "altname": null,
+      "description": "BlackLock is a rebranded version of another ransomware group known as Eldorado. It has since become one of the most active extortion syndicates in 2025, heavily targeting technology, manufacturing, construction, finance, and retail sectors.",
+      "raas": true,
+      "first_seen": "2025-05-16",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "BlackLocks",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-09-04",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "blackmatter",
+      "altname": null,
+      "description": "Ransomware-as-a-Service",
+      "raas": false,
+      "first_seen": "2021-09-08",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "blacknevas",
+      "altname": "Trial Recovery",
+      "description": "BlackNevas is a ransomware group first observed in November 2024, believed to be derived from the Trigona ransomware family, targeting telecommunications, manufacturing, medical, and legal industries primarily in Asia-Pacific, the UK, Italy, and Lithuania using double-extortion with a dual AES/RSA encryption scheme.",
+      "raas": false,
+      "first_seen": "2025-08-06",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "blackout",
+      "altname": null,
+      "description": "Blackout is a ransomware group that first appeared in early 2024, initially claiming attacks against healthcare entities in Canada, France, and Germany before expanding to telecommunications, mining, and manufacturing sectors, operating a double-extortion model with a data leak site.",
+      "raas": false,
+      "first_seen": "2024-02-26",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "blackshadow",
+      "altname": null,
+      "description": "BlackShadow is an Iranian-linked hack-and-leak group (linked to the Agrius APT) that targeted Israeli companies including insurance firm Shirbit and hosting provider Cyberserve, leaking medical records of 290,000 patients, using extortion as a tool of geopolitical disruption rather than purely for financial gain.",
+      "raas": false,
+      "first_seen": "2021-12-18",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "blackshrantac",
+      "altname": null,
+      "description": "BlackShrantac is a ransomware group that emerged in late 2025, targeting organizations in manufacturing, financial services, technology, and the public sector globally, employing double-extortion combined with living-off-the-land techniques to weaponize legitimate tools and disable defenses before encrypting files.",
+      "raas": false,
+      "first_seen": "2025-09-17",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "blacksuit",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2023-06-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "blacktor",
+      "altname": null,
+      "description": "Blacktor is a low-profile data breach and extortion group active around 2021 with a Tor-based leak site, claiming victims in Indonesia, Italy, Venezuela, and the US, with minimal public threat-intelligence coverage.",
+      "raas": false,
+      "first_seen": "2021-12-30",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "blackwater",
+      "altname": null,
+      "description": "Blackwater is a ransomware group that first surfaced in early 2026, combining file encryption with data theft and targeting healthcare organizations, with known victims including Minidoka Memorial Hospital in Idaho.",
+      "raas": false,
+      "first_seen": "2026-04-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "bluebox",
+      "altname": null,
+      "description": "Bluebox is a data extortion group that emerged in December 2024, employing double-extortion tactics against victims primarily in France, Sweden, and the French Caribbean, and threatening to notify data protection authorities to add regulatory pressure on victims.",
+      "raas": false,
+      "first_seen": "2024-12-11",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "bluelocker",
+      "altname": null,
+      "description": "Blue Locker targets Pakistan\u2019s vital energy sector, particularly Pakistan Petroleum",
+      "raas": false,
+      "first_seen": "2025-08-19",
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "bluesky",
+      "altname": null,
+      "description": "BlueSky is a financially motivated ransomware group active from mid-2022 into early 2023, using multi-threaded ChaCha20/Curve25519 encryption for fast file locking on Windows hosts, with code sharing significant overlap with Conti v2/v3 and Babuk, attributed with high confidence to Russian-origin threat actors.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "BlueWhale",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-14",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Bolt Team",
+      "altname": "Bolt",
+      "description": "",
+      "raas": true,
+      "first_seen": "2026-08-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "bonacigroup",
+      "altname": null,
+      "description": "Bonaci Group is a small, short-lived ransomware group that was active in 2021 with only 3 known victims before going offline, with very little public documentation about their tactics, targets, or tooling.",
+      "raas": false,
+      "first_seen": "2021-10-04",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Booba Project",
+      "altname": "Booba Team",
+      "description": "Booba",
+      "raas": false,
+      "first_seen": "2026-07-06",
+      "active_sites": 3,
+      "total_sites": 3
+    },
+    {
+      "name": "bqtlock",
+      "altname": null,
+      "description": "BQTLock is a ransomware-as-a-service operation that emerged in 2025, using AES-256/RSA-4096 encryption with Monero payment demands, linked to pro-Palestinian hacktivist networks and targeting organizations with wave-based campaigns with 48-hour ransom deadlines.",
+      "raas": true,
+      "first_seen": "2025-07-31",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "BrainCipher",
+      "altname": null,
+      "description": "Brain Cipher emerged in July 2024. Both Windows and Linux variants are available. Brain Cipher using the leaked build of LockBit Black for their operations. The group suspected to have exploited CVE-2023-28252 (Microsoft Windows CLFS Driver Privilege Escalation Vulnerability). The Ransom demand ranges from $150,000 to $1,00,0000. Demand to be paid with Monero (XMR) cryptocurrency. In 2025, they have shifted their new Negotiation portal to new server with vanity TOR Domain starting with 'brain'.",
+      "raas": false,
+      "first_seen": "2024-07-01",
+      "active_sites": 22,
+      "total_sites": 32
+    },
+    {
+      "name": "bravox",
+      "altname": null,
+      "description": "BravoX is a selective ransomware-as-a-service operation that surfaced publicly in January 2026 after advertising on the RAMP underground forum, targeting primarily US-based organizations in healthcare and retail while applying strict affiliate vetting requirements including proof of access or a financial deposit.",
+      "raas": true,
+      "first_seen": "2026-02-11",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "brotherhood",
+      "altname": null,
+      "description": "Brotherhood is a ransomware group that emerged in late 2025, targeting organizations in the US, Canada, and Australia across manufacturing, communications, and construction sectors, operating a Tor-based double-extortion leak site.",
+      "raas": false,
+      "first_seen": "2025-11-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cactus",
+      "altname": null,
+      "description": "The CACTUS ransomware is said to have emerged around March 2023. The group became known for exploiting vulnerabilities to gain initial access and maintain a presence within the organization's infrastructure.<br> <br> There is little known information about the ransomware group, except that it emerged on the mentioned date and, following encryption, a text file named 'cAcTuS.readme.txt' would be created. Additionally, encrypted files were altered to the '.cts1' extension, and data exfiltration\u2026",
+      "raas": false,
+      "first_seen": "2023-07-20",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "cephalus",
+      "altname": null,
+      "description": "Cephalus is a ransomware group active from mid-2025 that leverages stolen RDP credentials to deploy a Go-based ransomware payload via DLL sideloading, targeting law firms, healthcare, financial services, and IT firms across the US and Japan with 19 known victims.",
+      "raas": false,
+      "first_seen": "2025-08-26",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "chaos",
+      "altname": null,
+      "description": "Chaos is a ransomware-as-a-service operation that emerged in early 2025, likely formed by former BlackSuit/Royal members, offering cross-platform ransomware for Windows, Linux, ESXi, and NAS to affiliates recruited on the RAMP dark web forum, excluding CIS/BRICS countries and hospitals from targeting.",
+      "raas": true,
+      "first_seen": "2025-03-31",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "cheers",
+      "altname": null,
+      "description": "Cheers is a Linux-based ransomware group that emerged in 2022, built on leaked Babuk source code and specializing in attacks against VMware ESXi servers, running a double-extortion leak site with four documented victims.",
+      "raas": false,
+      "first_seen": "2022-05-29",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "chilelocker",
+      "altname": null,
+      "description": "ChileLocker (also known as ARCrypter) first appeared in August 2022 after attacking a Chilean government agency and quickly expanded globally, appending a \".crypt\" extension to encrypted files and recruiting affiliates under a RaaS model on criminal forums.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "chort",
+      "altname": null,
+      "description": "Chort is a double-extortion ransomware group (whose name means \"Devil\" in Russian) that emerged in October 2024, primarily targeting US education and government sectors, with notable victims including the City of Sheboygan and Kuwait's Ministry of Finance.",
+      "raas": false,
+      "first_seen": "2024-11-17",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cicada3301",
+      "altname": null,
+      "description": "Cicada3301 is a ransomware-as-a-service group (tracked as Repellent Scorpius by Palo Alto) that emerged in mid-2024 using Rust-based ransomware targeting Windows, Linux, and ESXi systems, suspected to be a successor of BlackCat/ALPHV and running an affiliate program with 20% commissions.",
+      "raas": true,
+      "first_seen": "2024-06-20",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ciphbit",
+      "altname": null,
+      "description": "CiphBit is a ransomware-as-a-service group active since April 2023, targeting small-to-mid-sized businesses across the UK, Europe, and North America with 38 known victims, employing a data-broker model with selective free leaks to pressure victims alongside standard double extortion.",
+      "raas": true,
+      "first_seen": "2023-09-14",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cipherforce",
+      "altname": null,
+      "description": "CipherForce is a newly emerged ransomware group first detected in early 2026, operating a dark web leak site and targeting technology, business services, and logistics companies across the US, China, Vietnam, India, and UAE, with at least 6 claimed victims.",
+      "raas": false,
+      "first_seen": "2026-02-23",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cloak",
+      "altname": null,
+      "description": "Cloak is a ransomware-as-a-service operation active since late 2022, primarily targeting small-to-medium enterprises in Europe \u2014 especially Germany \u2014 across manufacturing, healthcare, education, and government sectors, with expansion into North American and Asian targets by 2025.",
+      "raas": true,
+      "first_seen": "2023-08-24",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "clop",
+      "altname": "Cl0p",
+      "description": "The ransomware group known as Cl0p is a variant of a previously known strain dubbed CryptoMix. It is worth noting that this variant was delivered as the final payload in a phishing campaign in 2019 and was exclusively financially motivated, with attacks carried out by the threat actors TA505.<br> <br> At that time, malicious actors sent phishing emails that led to a macro-enabled document that would drop a loader called 'Get2.' After gaining an initial foothold in the system or infrastructure,\u2026",
+      "raas": false,
+      "first_seen": "2020-03-13",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "CMDOrganization",
+      "altname": null,
+      "description": "CMD is a new kind of company that specializes in corporate system security and in identifying vulnerabilities across all aspects of the software used by a company. CMD operates on a global scale recognizing the critical importance of timeliness and confidentiality.",
+      "raas": false,
+      "first_seen": "2026-05-02",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "coinbasecartel",
+      "altname": null,
+      "description": "CoinbaseCartel specializes in data acquisition through system access and strategic partnerships. It focus exclusively on data exfiltration\u2014our operations never involve system encryption or operational disruption.",
+      "raas": false,
+      "first_seen": "2025-09-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ContFR",
+      "altname": "",
+      "description": "RAAS - Ransomware int\u00e9gr\u00e9 \u00e0 un fichier PDF, \u00e0 faire ouvrir \u00e0 vos victimes ou \u00e0 ins\u00e9rer vous-m\u00eame, Windows et Mac, ne fonctionne pas sur Linux. Tableau de vitcimes et r\u00e9cup\u00e9ration de donn\u00e9es possible depuis votre espace abonn\u00e9. Configuration de votre ransomware \u00e0 votre premi\u00e8re connexion, puis modification possible selon votre formule.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "conti",
+      "altname": null,
+      "description": "Conti is an extremely damaging ransomware due to the speed with which it encrypts data and spreads to other systems. It was first observed in 2020 and it is thought to be led by a Russia-based cybercrime group that goes under the Wizard Spider pseudonym. In early May 2022, the US government announced a reward of up to $10 million for information on the Conti ransomware gang.",
+      "raas": false,
+      "first_seen": "2020-07-31",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "cooming",
+      "altname": null,
+      "description": "CoomingProject is a ransomware group that emerged around 2021 and operated a double-extortion scheme with multiple Tor-based leak sites; six members were identified by French authorities in February 2022, after which the group's infrastructure went offline.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "crazyhunter",
+      "altname": null,
+      "description": "CrazyHunter is a Go-based ransomware group that emerged in early 2025, derived from the open-source Prince encryptor, exclusively targeting Taiwanese organizations in healthcare, education, and industrial sectors using BYOVD techniques and tools like SharpGPOAbuse for lateral movement.",
+      "raas": false,
+      "first_seen": "2025-03-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "crosslock",
+      "altname": null,
+      "description": "CrossLock is a short-lived Go-based ransomware group that appeared in April 2023 and went dark by July 2023, using Curve25519 and ChaCha20 encryption and double-extortion tactics with only one known confirmed victim in the IT sector in Brazil.",
+      "raas": false,
+      "first_seen": "2023-04-17",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "CRPxO",
+      "altname": "CRPx0",
+      "description": "CRPxO is actively recruiting affiliates, offering: \ud83d\udd39 70% revenue share \ud83d\udd39 XMR/BTC payouts \ud83d\udd39 Claimed payouts within 24 hours \ud83d\udd39 $333 one-time affiliate access",
+      "raas": true,
+      "first_seen": "2026-07-09",
+      "active_sites": 1,
+      "total_sites": 5
+    },
+    {
+      "name": "cry0",
+      "altname": null,
+      "description": "Cry0 is a ransomware-as-a-service operation that recruits affiliates via underground forums, using a Rust-written payload with blockchain-based (Internet Computer Protocol) negotiation infrastructure to resist law enforcement takedowns and offering affiliates a 90/10 revenue split.",
+      "raas": true,
+      "first_seen": "2026-01-19",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "crylock",
+      "altname": null,
+      "description": "CryLock (originally known as Cryakl/Fantomas since 2014) is a ransomware operation run by a Russian couple who targeted roughly 400,000 victims over eight years and earned over \u20ac64 million in Bitcoin; the operators were arrested in Spain in June 2023 and extradited to Belgium.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cryp70n1c0d3",
+      "altname": null,
+      "description": "Cryp70n1c0d3 is a low-profile ransomware group with limited public documentation; specific targets, attack methodology, and operational model remain poorly documented in open sources.",
+      "raas": false,
+      "first_seen": "2021-12-18",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "cryptbb",
+      "altname": null,
+      "description": "CryptBB is a ransomware group with likely Russian origins active around 2023, whose payload appends random extensions to encrypted files and whose data leak site copied 8Base's source code, listing approximately 8 victims as of September 2023.",
+      "raas": false,
+      "first_seen": "2023-09-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "cryptnet",
+      "altname": null,
+      "description": "According to OALabs, this ransomware has the following features: * Files are encrypted with AES CBC using a generated 256 bit key and IV.* The generated AES keys are encrypted using a hard coded RSA key and appended to the encrypted files.",
+      "raas": false,
+      "first_seen": "2023-04-19",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "crypto24",
+      "altname": null,
+      "description": "Crypto24 is a double-extortion ransomware-as-a-service group that surfaced on the RAMP forum in mid-2024, targeting large organizations in financial services, healthcare, manufacturing, and technology across Asia, Europe, and North America, with notable victims including CMC Group, Vietnam's second-largest ICT conglomerate.",
+      "raas": true,
+      "first_seen": "2025-04-08",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "cuba",
+      "altname": "Colddraw",
+      "description": "The Cuba Ransomware, also known as Colddraw Ransomware, was first identified in the threat landscape in 2019 and built a relatively small but selected list of victims. The group is also known as Fidel Ransomware, due to a characteristic marker placed at the beginning of all encrypted files. This file marker is used as an indicator for the ransomware and its decoder that the file has been encrypted.<br> <br> Despite its name and the Cuban nationalist style on its leak site, it is difficult to\u2026",
+      "raas": false,
+      "first_seen": "2021-02-03",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "cyclops",
+      "altname": null,
+      "description": "Cyclops emerged in May 2023 as a cross-platform RaaS operation targeting Windows, macOS, and Linux systems; it rebranded as \"Knight\" in August 2023 and its codebase was ultimately sold, with affiliates largely migrating to RansomHub.",
+      "raas": true,
+      "first_seen": "2023-07-01",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "D1R",
+      "altname": null,
+      "description": "D1R Claims Synopsys and Bosch Breaches, but Synopsys Disputes Intrusion",
+      "raas": false,
+      "first_seen": "2026-07-13",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "d4rk4rmy",
+      "altname": null,
+      "description": "D4rk4rmy is a ransomware and data extortion group active since at least 2025, targeting financial services, hospitality, technology, and logistics sectors, operating a RaaS model with notable claimed victims including the Monte Carlo casino resort.",
+      "raas": true,
+      "first_seen": "2025-07-07",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "dagonlocker",
+      "altname": null,
+      "description": "Dagon Locker is a ransomware strain that first appeared in early 2023, evolved from the MountLocker/Quantum ransomware lineage, and uses IcedID as an initial access vector before deploying double-extortion attacks with ChaCha20+RSA-2048 encryption.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "daixin",
+      "altname": null,
+      "description": "Daixin Team is a ransomware and data extortion group active since at least June 2022, exclusively targeting the US Healthcare and Public Health sector by encrypting EHR and diagnostic systems and exfiltrating patient data to pressure victims into paying ransoms.",
+      "raas": false,
+      "first_seen": "2022-08-03",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "dAn0n",
+      "altname": null,
+      "description": "dAn0n emerged in early 2024 operating a RaaS model, rapidly claiming 13 victims in May 2024 alone, predominantly targeting US-based organizations in business services and filling the vacuum left by disruptions to LockBit and BlackCat/ALPHV.",
+      "raas": true,
+      "first_seen": "2024-04-25",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Dark Project",
+      "altname": null,
+      "description": "Dark Project is a newly emerged ransomware leak operation active as of August 2026. The group utilizes a double extortion model (stealing sensitive data before encrypting local systems and threatening to leak it on their dark web portal).",
+      "raas": false,
+      "first_seen": "2026-08-05",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "darkangels",
+      "altname": null,
+      "description": "Dark Angels is a highly selective ransomware group active since April 2022 that targets a small number of large enterprises \u2014 including Johnson Controls \u2014 exfiltrating up to 100 TB of data per victim, and secured the largest known single ransom payment of $75 million from a Fortune 50 company in early 2024.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "darkbit",
+      "altname": null,
+      "description": "DarkBit is an ideologically motivated ransomware group that appeared in February 2023, primarily targeting Israeli entities \u2014 most notably the Technion Institute of Technology \u2014 with politically charged ransom notes condemning Israeli government policies, assessed to be linked to Iranian state-sponsored activity.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "darkleakmarket",
+      "altname": null,
+      "description": "DarkLeakMarket is a dark web data leak marketplace active since at least 2019 that sells stolen data sourced from ransomware groups and hacking forums, with 39 known victim organizations; it operates more as a data resale market than a traditional ransomware operator.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "DarkMatter",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "darkpower",
+      "altname": null,
+      "description": "Dark Power emerged in January 2023 as a ransomware group written in the Nim programming language, claiming 10 victims across eight countries within its first month across agriculture, education, healthcare, IT, and manufacturing sectors, demanding $10,000 ransoms payable in Monero.",
+      "raas": false,
+      "first_seen": "2023-03-11",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "darkrace",
+      "altname": null,
+      "description": "DarkRace is a ransomware variant that surfaced in mid-2023 sharing strong code similarities with LockBit, employing double-extortion via a dark web leak site, but remained a minor player with fewer than 15 posted victims in its first half-year.",
+      "raas": false,
+      "first_seen": "2023-05-31",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "darkside",
+      "altname": "",
+      "description": "Darkside ransomware group has started its operation in August of 2020 with the model of RaaS (Ransomware-as-a-Service). They have become known for their operations of large ransoms scale. They have announced that they prefer not to attack hospitals, schools, non-profits, and governments, but rather big organizations that can be able to pay large ransoms. Darkside ransomware group became very famous following the cyberattack of the Colonial Pipeline and Toshiba unit. The FBI finally terminate\u2026",
+      "raas": true,
+      "first_seen": "2020-08-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "darkvault",
+      "altname": null,
+      "description": "DarkVault is a data-exfiltration and double-extortion group first identified in late 2023, targeting medium-to-large organizations in finance, professional services, legal, and technology sectors across Europe, the UK, and North America, with a suspected connection to LockBit.",
+      "raas": false,
+      "first_seen": "2024-04-11",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "datacarry",
+      "altname": null,
+      "description": "DataCarry is a ransomware and data-extortion operation first observed in May 2025, operating a double-extortion model with a Tor-hosted leak portal and claiming victims across insurance, healthcare, aerospace, legal, and retail sectors in at least six countries.",
+      "raas": false,
+      "first_seen": "2025-05-26",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "datakeeper",
+      "altname": null,
+      "description": "DataKeeper is a ransomware-as-a-service operation dating back to at least 2018 that promoted an affiliate model called \"CrystalPartnership RaaS,\" offering a Windows-focused ransomware toolkit with hybrid RSA-4096 encryption, open dark web registration, and an innovative split-payment mechanism to build affiliate trust.",
+      "raas": true,
+      "first_seen": "2026-01-14",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "dataleak",
+      "altname": null,
+      "description": "Dataleak is a low-profile ransomware group with approximately 6 known victims including entities in Brazil; very limited public threat intelligence exists on this group's tools, TTPs, or origins.",
+      "raas": false,
+      "first_seen": "2022-12-02",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Deadlock",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-15",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "desolator",
+      "altname": null,
+      "description": "Desolator is a ransomware group that emerged in May 2025, targeting construction and engineering firms in Latin America and Europe and technology companies in Asia, actively recruiting pen testers, initial access brokers, and social engineers via dark web forums to build an affiliate program.",
+      "raas": true,
+      "first_seen": "2025-08-30",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "devman",
+      "altname": "Devman 2.0",
+      "description": "Former RansomHub and INC Ransom affiliate.",
+      "raas": true,
+      "first_seen": "2025-04-06",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "diavol",
+      "altname": null,
+      "description": "A ransomware with potential ties to Wizard Spider.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "direwolf",
+      "altname": null,
+      "description": "Dire Wolf is a sophisticated human-operated ransomware group first documented in May 2025, written in Golang using Curve25519/ChaCha20 encryption, targeting manufacturing and technology sectors across 13+ countries with ransoms up to $500,000, operated by a tight core team rather than a broad affiliate program.",
+      "raas": false,
+      "first_seen": "2025-05-22",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "dispossessor",
+      "altname": null,
+      "description": "This is not a ransomware group but a data broker",
+      "raas": false,
+      "first_seen": "2024-04-19",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "donex",
+      "altname": null,
+      "description": "DoNex is a ransomware strain that emerged in March 2024 as the latest rebrand of a lineage beginning with Muse (2022) \u2192 DarkRace (2023) \u2192 DoNex, targeting enterprises in the US and Europe using double-extortion; Avast released a free decryptor in July 2024 after discovering a cryptographic flaw.",
+      "raas": false,
+      "first_seen": "2024-03-08",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "donutleaks",
+      "altname": null,
+      "description": "Donut Leaks (D0nut) is a data-extortion group active since August 2022 that developed its own ransomware encryptor, linked to attacks on Greece's DESFA gas company and Continental, believed to be an affiliate of multiple RaaS operations who pivoted to running an independent extortion platform.",
+      "raas": false,
+      "first_seen": "2022-08-24",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "Doommageddon",
+      "altname": null,
+      "description": "Direct Extortion Double Extortion",
+      "raas": false,
+      "first_seen": "2026-07-06",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "doppelpaymer",
+      "altname": null,
+      "description": "Doppelpaymer is a ransomware family that encrypts user data and later on it asks for a ransom in order to restore original files. It is recognizable by its trademark file extension added to encrypted files: .doppeled. It also creates a note file named: \".how2decrypt.txt\".",
+      "raas": false,
+      "first_seen": "2019-05-25",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "dragonforce",
+      "altname": null,
+      "description": "DragonForce is a major ransomware-as-a-service operation first observed in August 2023 that launched a formal affiliate program offering 80% revenue share, then rebranded as a \"ransomware cartel\" in 2025, gaining notoriety for high-profile attacks on UK retailers Marks & Spencer, Co-op, and Harrods.",
+      "raas": true,
+      "first_seen": "2023-12-13",
+      "active_sites": 2,
+      "total_sites": 4
+    },
+    {
+      "name": "dragonransomware",
+      "altname": null,
+      "description": "Dragon Ransomware, is promising rapid and customizable ransomware operations for Windows systems. Key features include a compact 50KB file size, ultra-fast encryption speed, and a builder tool that allows users to personalize ransomware configurations. The tool will be available to the public once the team reaches 1,000 subscribers on their channel, signaling a potential rise in availability to threat actors.",
+      "raas": false,
+      "first_seen": "2024-12-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "dread",
+      "altname": null,
+      "description": "Dread is a ransomware group that appears in tracking databases but has no publicly documented attacks or confirmed TTPs from major security vendors.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "dunghill",
+      "altname": "darkangel",
+      "description": "Dunghill Leak is the data extortion site operated by the Dark Angels ransomware group, active since early 2023, targeting large enterprises across healthcare, finance, industrial, and technology sectors using a highly selective non-affiliate model, and responsible for a record-breaking $75 million ransom payment in 2024.",
+      "raas": false,
+      "first_seen": "2023-04-10",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "DYSPHOR1A",
+      "altname": null,
+      "description": "Suspicious group. We did not manage to confirm any victims.",
+      "raas": false,
+      "first_seen": "2026-08-20",
+      "active_sites": 3,
+      "total_sites": 3
+    },
+    {
+      "name": "ech0raix",
+      "altname": null,
+      "description": "The QNAPCrypt ransomware works similarly to other ransomware, including encrypting all files and delivering a ransom note. However, there are several important differences:1. The ransom note was included solely as a text file, without any message on the screen\u2014naturally, because it is a server and not an endpoint.2. Every victim is provided with a different, unique Bitcoin wallet\u2014this could help the attackers avoid being traced.3. Once a victim is compromised, the malware requests a wallet\u2026",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "Eclipse",
+      "altname": null,
+      "description": "",
+      "raas": true,
+      "first_seen": "2026-08-11",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "ElDorado",
+      "altname": null,
+      "description": "In September The El Dorado ransomware group have been rebrand as BlackLock",
+      "raas": true,
+      "first_seen": "2024-06-06",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "embargo",
+      "altname": null,
+      "description": "Embargo is a Rust-based ransomware-as-a-service group that emerged in April 2024, primarily targeting US healthcare, manufacturing, and business services organizations using double extortion, assessed as a potential successor to BlackCat/ALPHV with over $34 million in ransom proceeds.",
+      "raas": true,
+      "first_seen": "2024-04-21",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "Emperador",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-12",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "entropy",
+      "altname": null,
+      "description": "Entropy is a ransomware first seen in 1st quarter of 2022, is being used in conjunction of Dridex infection. The ransomware uses a custom packer to pack itself which has been seen in some early dridex samples.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ep918",
+      "altname": null,
+      "description": "EP918 is a low-activity ransomware group listed in tracking databases with no confirmed victims and no publicly documented attacks or operational details.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "esxiargs",
+      "altname": null,
+      "description": "ESXiArgs is a ransomware campaign that emerged in February 2023, targeting VMware ESXi servers by exploiting the CVE-2021-21974 vulnerability. It encrypts virtual machine configuration files (.vmdk, .vmx, .vmxf, .vmsd, .vmsn, .vswp, .vmss, .nvram, .vmem) rendering VMs inaccessible. The campaign compromised thousands of unpatched servers globally, primarily affecting European organizations. A decryptor was later released by CISA and FBI.",
+      "raas": false,
+      "first_seen": "2023-02-03",
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "Ethics",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-12",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "everest",
+      "altname": null,
+      "description": "Everest ransom group collects and analyzes information about their victims. They specialize in customer privacy data, financial information, databases, credit card information, and more. The Everest ransom group leaks the victim's data to the darknet and they announced that any victim that will not contact them will suffer from a data leak and they will not delete hist files for future usage.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "ExfilSquad",
+      "altname": null,
+      "description": "Only exfiltration",
+      "raas": false,
+      "first_seen": "2026-07-26",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "exitium",
+      "altname": null,
+      "description": "Exitium is a data extortion group first observed in early 2026, operating a Tor-based double extortion site and targeting victims via bulk data exfiltration followed by public naming-and-shaming, with known victims including a Brazilian agro-industrial firm and a US county appraisal district.",
+      "raas": false,
+      "first_seen": "2026-03-17",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "exorcist",
+      "altname": null,
+      "description": "According to PCrisk, Exorcist is a ransomware-type malicious program. Systems infected with this malware experience data encryption and users receive ransom demands for decryption. During the encryption process, all compromised files are appended with an extension consisting of a ransom string of characters.For example, a file originally named \"1.jpg\" could appear as something similar to \"1.jpg.rnyZoV\" following encryption. After this process is complete, Exorcist ransomware changes the desktop\u2026",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Falcon",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-28",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "fletchen",
+      "altname": null,
+      "description": "Fletchen is primarily documented as a sophisticated infostealer-as-a-service written in Rust, targeting browser credentials, cryptocurrency wallets, and financial data, used by groups including Hunters International; its developer also advertises ransomware services on underground forums.",
+      "raas": false,
+      "first_seen": "2026-01-03",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "flocker",
+      "altname": null,
+      "description": "Flocker (also linked to the FSociety brand) is a ransomware-as-a-service group active since 2023\u20132024, targeting Windows and Linux systems via phishing, compromised RDP, and exploit kits using a double extortion model, and observed collaborating with FunkSec.",
+      "raas": true,
+      "first_seen": "2024-05-03",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "fog",
+      "altname": null,
+      "description": "Fog, which uses the .flocked extension for encrypted files, was first observed in May in campaigns by Storm-0844, a threat actor known for distributing Akira. By June, Storm-0844 was deploying Fog more than Akira.",
+      "raas": false,
+      "first_seen": "2024-07-16",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "frag",
+      "altname": null,
+      "description": "Frag is a ransomware group that emerged in late 2024, exploiting a critical Veeam Backup & Replication vulnerability (CVE-2024-40711) to compromise targets in industrial sectors, with blockchain analysis linking it to a shared wallet cluster with the Akira group.",
+      "raas": false,
+      "first_seen": "2025-03-24",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "freecivilian",
+      "altname": null,
+      "description": "FreeCivilian is a data extortion group with suspected ties to Russian GRU military intelligence, known for targeting Ukrainian government websites \u2014 including sites offering surrender guidance to Russian troops \u2014 blending cybercrime with apparent state-aligned political objectives.",
+      "raas": false,
+      "first_seen": "2022-12-31",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "fsteam",
+      "altname": null,
+      "description": "New possible leak site posted to a forum on November 20th, 2022, no victims at present. Unclear if its for a ransomware or extortion group",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "fulcrumsec",
+      "altname": null,
+      "description": "FulcrumSec is a data extortion group active since approximately September 2025, specializing in high-speed exfiltration of cloud-hosted databases by exploiting unrotated API keys and misconfigured cloud permissions rather than deploying encryption, with known victims including Australian fintech youX and LexisNexis.",
+      "raas": false,
+      "first_seen": "2026-05-01",
+      "active_sites": 2,
+      "total_sites": 4
+    },
+    {
+      "name": "funksec",
+      "altname": null,
+      "description": "FunkSec is an AI-assisted ransomware-as-a-service group that launched its data leak site in December 2024 and rapidly claimed over 85 victims across government, technology, finance, and education sectors globally, demanding unusually low ransoms and using AI tooling to lower the technical bar for affiliates.",
+      "raas": true,
+      "first_seen": "2024-12-04",
+      "active_sites": 2,
+      "total_sites": 11
+    },
+    {
+      "name": "Gammax",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-07-30",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "GDLockerSec",
+      "altname": null,
+      "description": "Our team members are from different countries and we are not interested in anything else, we are only interested in dollars. We do not allow CIS, Cuba, North Korea and China to be targeted. Re-attacks are not allowed for target companies that have already made payments. We do not allow non-profit hospitals and some non-profit organizations be targeted.",
+      "raas": true,
+      "first_seen": "2025-01-24",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "genesis",
+      "altname": null,
+      "description": "Genesis is an emerging ransomware group first observed in late 2025, targeting small to mid-sized US organizations across healthcare, retail, financial services, legal, and manufacturing using double-extortion tactics, focusing heavily on data exfiltration and public leaking.",
+      "raas": false,
+      "first_seen": "2025-10-21",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "global",
+      "altname": null,
+      "description": "GLOBAL GROUP is a ransomware-as-a-service operation that emerged in June 2025, reportedly launched by a known Russian-speaking threat actor, featuring AI-driven ransom negotiation and a mobile control panel for affiliates, targeting healthcare, oil and gas, industrial engineering, and automotive sectors.",
+      "raas": true,
+      "first_seen": "2025-06-04",
+      "active_sites": 3,
+      "total_sites": 5
+    },
+    {
+      "name": "Global Secret Group",
+      "altname": "GSG",
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-07-26",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "GodDamn ransomwhere",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-07-26",
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "grief",
+      "altname": null,
+      "description": "Doppelpaymer is a ransomware family that encrypts user data and later on it asks for a ransom in order to restore original files. It is recognizable by its trademark file extension added to encrypted files: .doppeled. It also creates a note file named: \".how2decrypt.txt\".",
+      "raas": false,
+      "first_seen": "2021-05-26",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "groove",
+      "altname": null,
+      "description": "Groove emerged in mid-2021 as a loose criminal collective linked to former Babuk gang members, known for publicly leaking Fortinet VPN credentials to attract affiliates and calling for attacks on US government and financial targets; the group later claimed its entire operation was a hoax to mislead security researchers.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "gunra",
+      "altname": null,
+      "description": "Gunra is a financially motivated ransomware group that emerged in April 2025, using double-extortion tactics against real estate, pharmaceuticals, and manufacturing sectors across Japan, Egypt, Panama, Italy, and Argentina, deploying separate Windows and Linux variants with a strict five-day payment deadline.",
+      "raas": false,
+      "first_seen": "2025-04-23",
+      "active_sites": 2,
+      "total_sites": 3
+    },
+    {
+      "name": "hades",
+      "altname": null,
+      "description": "According to PCrisk, Hades Locker is an updated version of WildFire Locker ransomware that infiltrates systems and encrypts a variety of data types using AES encryption. Hades Locker appends the names of encrypted files with the .~HL[5_random_characters] (first 5 characters of encryption password) extension.",
+      "raas": false,
+      "first_seen": "2020-12-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "handala",
+      "altname": null,
+      "description": "Not a Ransomware Group",
+      "raas": false,
+      "first_seen": "2024-05-26",
+      "active_sites": 2,
+      "total_sites": 5
+    },
+    {
+      "name": "haron",
+      "altname": null,
+      "description": "Haron appeared in July 2021 as a ransomware-as-a-service operation heavily borrowing from the defunct Avaddon ransomware (copying ransom notes and leak site structure) and built on the Thanos ransomware builder, targeting enterprise organizations with a six-day negotiation window.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Helix",
+      "altname": "UNC7761",
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-07",
+      "active_sites": 2,
+      "total_sites": 3
+    },
+    {
+      "name": "hellcat",
+      "altname": null,
+      "description": "HellCat is a ransomware-as-a-service group that formed in Q4 2024 and quickly became notable for high-profile attacks against Schneider Electric, Telef\u00f3nica, and Israel's Knesset, primarily gaining initial access via stolen Jira credentials harvested by infostealer malware, targeting critical infrastructure and government entities.",
+      "raas": true,
+      "first_seen": "2024-10-25",
+      "active_sites": 0,
+      "total_sites": 7
+    },
+    {
+      "name": "helldown",
+      "altname": null,
+      "description": "Helldown is an aggressive ransomware group first documented in August 2024, known for exploiting Zyxel firewall vulnerabilities to gain initial access and conducting large-scale data exfiltration averaging 70 GB per victim, targeting IT services, telecommunications, manufacturing, and healthcare primarily in the US.",
+      "raas": false,
+      "first_seen": "2024-08-13",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "hellogookie",
+      "altname": null,
+      "description": "HelloGookie is a rebrand of the HelloKitty ransomware group announced in April 2024, releasing previously stolen data from CD Projekt Red and Cisco; HelloKitty/HelloGookie has been active since 2020 with its highest-profile attack being the 2021 breach of CD Projekt Red.",
+      "raas": false,
+      "first_seen": "2024-04-19",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "hellokitty",
+      "altname": null,
+      "description": "Unit42 states that HelloKitty is a ransomware family that first surfaced at the end of 2020, primarily targeting Windows systems. The malware family got its name due to its use of a Mutex with the same name: HelloKittyMutex. The ransomware samples seem to evolve quickly and frequently, with different versions making use of the .crypted or .kitty file extensions for encrypted files. Some newer samples make use of a Golang packer that ensures the final ransomware code is only loaded in memory,\u2026",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "hive",
+      "altname": null,
+      "description": "Hive is a strain of ransomware that was first discovered in June 2021. Hive was designed to be used by Ransomware-as-a-service providers, to enable novice cyber-criminals to launch ransomware attacks on healthcare providers, energy providers, charities, and retailers across the globe. In 2022 there was a switch from GoLang to Rust.",
+      "raas": false,
+      "first_seen": "2021-08-14",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "holyghost",
+      "altname": null,
+      "description": "HolyGhost (tracked by Microsoft as DEV-0530) is a North Korean state-linked ransomware group active since June 2021, associated with the Andariel threat group, targeting small to mid-sized businesses in financial services, manufacturing, education, and entertainment globally.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "hotarus",
+      "altname": null,
+      "description": "Hotarus Corp is a ransomware group that came to attention in early 2021 after attacking Ecuador's Ministry of Finance and Banco Pichincha \u2014 the country's largest private bank \u2014 deploying PHP-based ransomware and claiming to have stolen tens of millions of customer records.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "hunters",
+      "altname": null,
+      "description": "In mid-October 2023, just a few days before the Europol operation, the source code of the Ransomware Hive was sold, along with its website and older versions developed in Golang and C (although this purchase has only been reported by the actors without concrete evidence). The buyer of this new source code was the group Hunters International, who claimed to have fixed the bugs in the Ransomware Hive that were responsible for preventing file decryption in some cases. The group also stated that\u2026",
+      "raas": false,
+      "first_seen": "2023-10-20",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "iah6477",
+      "altname": null,
+      "description": "Archive without group name",
+      "raas": false,
+      "first_seen": "2026-08-20",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "Icarus",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-05-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "icefire",
+      "altname": null,
+      "description": "IceFire is a ransomware group first observed in 2022 that expanded to Linux in early 2023 by exploiting a vulnerability in IBM Aspera Faspex (CVE-2022-47986), targeting media and entertainment organizations in Turkey, Iran, Pakistan, and the UAE using double-extortion tactics.",
+      "raas": false,
+      "first_seen": "2022-08-20",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "IMNCrew",
+      "altname": null,
+      "description": "IMN Crew is a data extortion and ransomware group that emerged in late March 2025, primarily targeting financial services organizations in the US, Croatia, and Indonesia by exploiting exposed perimeter services such as firewalls and VPNs, claiming at least five victims.",
+      "raas": false,
+      "first_seen": "2025-05-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "incransom",
+      "altname": "Inc Ransom",
+      "description": "INC Ransom is a prolific ransomware-as-a-service operation active since July 2023 that systematically targets healthcare, government, education, and manufacturing sectors in North America and Europe, having posted over 200 victims in 2025 alone with no sector off-limits.",
+      "raas": true,
+      "first_seen": "2023-08-09",
+      "active_sites": 2,
+      "total_sites": 7
+    },
+    {
+      "name": "insane",
+      "altname": null,
+      "description": "Insane is a short-lived ransomware group that briefly surfaced in early 2024, claiming a single victim in Thailand before going quiet, with minimal documented activity or technical details available.",
+      "raas": false,
+      "first_seen": "2024-01-17",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "insomnia",
+      "altname": null,
+      "description": "Insomnia is a data-theft and extortion group that emerged in October 2025, targeting primarily US-based healthcare organizations \u2014 stealing patient files and threatening public exposure rather than encrypting files \u2014 and avoiding former Soviet states, consistent with Russian-speaking cybercrime norms.",
+      "raas": false,
+      "first_seen": "2026-02-07",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "interlock",
+      "altname": null,
+      "description": "Interlock is a ransomware group first observed in September 2024 that targets critical infrastructure sectors including healthcare, government, education, and technology across North America and Europe using double-extortion, with 57+ claimed victims including a major US dialysis provider exposing over two million patient records.",
+      "raas": false,
+      "first_seen": "2024-10-13",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "J",
+      "altname": null,
+      "description": "J is an emerging ransomware group that launched its leak site in May 2025, claiming over 41 victims by late 2025 including FAI Aviation Group (Germany), operating primarily as a leak-site-centric extortion identity with limited public technical analysis.",
+      "raas": false,
+      "first_seen": "2025-05-02",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "kairos",
+      "altname": null,
+      "description": "Kairos is a data extortion group active since late 2024 that focuses solely on data theft with no encryption, primarily targeting small-to-mid-sized organizations in healthcare, manufacturing, and business services in the US, purchasing initial access from brokers and demanding Bitcoin payments.",
+      "raas": false,
+      "first_seen": "2024-11-13",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "karakurt",
+      "altname": null,
+      "description": "Karakurt is a pure data-extortion group (no encryption) assessed with high confidence to be the extortion arm of the Conti ransomware group, active from 2021, that steals data and threatens to auction or publish it unless ransoms ranging from $25,000 to $13 million are paid.",
+      "raas": false,
+      "first_seen": "2022-12-11",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "karma",
+      "altname": null,
+      "description": "Karma is a ransomware group first observed in mid-2021, part of a lineage tracing back through Nefilim and FiveHands, operating double-extortion attacks against enterprises in healthcare, manufacturing, and technology; the group was managed by threat actor \"farnetwork\" who ran multiple RaaS programs across related strains. Platforms: Windows and Linux",
+      "raas": true,
+      "first_seen": "2021-10-04",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "kawa4096",
+      "altname": "KaWaLocker",
+      "description": "Kawa4096 is a ransomware group that emerged in June 2025, targeting multinational corporations across finance, education, and services sectors primarily in the US and Japan, using partial-encryption (25% of each file chunk) with Salsa20 and a leak site styled after Akira's retro terminal aesthetic, claiming at least 11 victims.",
+      "raas": false,
+      "first_seen": "2025-06-27",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "kazu",
+      "altname": null,
+      "description": "Kazu is an emerging ransomware group active since September 2025 that employs double-extortion tactics, targeting government, healthcare, and financial organizations primarily in Southeast Asia, the Middle East, and Latin America, with notable claimed breaches including Dubai's Ports, Customs and Free Zone Corporation with 1.94 TB exfiltrated.",
+      "raas": false,
+      "first_seen": "2025-11-11",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "kelvinsecurity",
+      "altname": null,
+      "description": "KelvinSecurity is a financially motivated hacking group active since at least 2015, primarily engaged in stealing and selling databases from telecommunications, healthcare, and political organizations worldwide, with notable breaches including Vodafone Italia and Frost & Sullivan; the group's leader was arrested by Spanish police.",
+      "raas": false,
+      "first_seen": "2022-04-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "killsec",
+      "altname": null,
+      "description": "KillSec originated as a hacktivist group aligned with the Anonymous movement before pivoting to ransomware operations in October 2023, officially launching a RaaS platform in June 2024 with an affiliate-friendly 88% revenue split, primarily targeting healthcare, financial services, and government sectors with over 250 documented victims as of late 2025.",
+      "raas": true,
+      "first_seen": "2024-03-21",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "kittykatkrew",
+      "altname": null,
+      "description": "KittyKatKrew is a newly emerged ransomware group first identified in early 2026, using both direct and double-extortion methods against US targets including the Arkansas State Crime Laboratory, operating under the alias KKK with Telegram and X/Twitter communication channels.",
+      "raas": false,
+      "first_seen": "2026-02-19",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "knight",
+      "altname": null,
+      "description": "[Cyclops](group/cyclops) rebrand",
+      "raas": false,
+      "first_seen": "2023-09-06",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "kraken",
+      "altname": null,
+      "description": "Kraken is a Russian-speaking ransomware group that emerged in February 2025, believed to have links to the HelloKitty operation, employing a RaaS model notable for a benchmarking step that measures victim machine speed to optimize encryption, and in September 2025 launched an underground criminal forum called \"The Last Haven Board.\"",
+      "raas": true,
+      "first_seen": "2025-02-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "krybit",
+      "altname": null,
+      "description": "Krybit is an emerging RaaS group that launched in late March 2026, offering affiliates an 80/20 revenue split with support for Windows, Linux, ESXi, and NAS device encryption, and became notable for a public feud with rival group 0APT in which each breached and leaked the other's operator data.",
+      "raas": true,
+      "first_seen": "2026-04-03",
+      "active_sites": 1,
+      "total_sites": 6
+    },
+    {
+      "name": "kryptos",
+      "altname": null,
+      "description": "Kryptos is a small ransomware group first observed in October 2025, conducting simultaneous attacks across North America and Oceania on its debut day with a focus on professional, technical, and legal service sectors, with only 3 known documented victims.",
+      "raas": false,
+      "first_seen": "2025-10-08",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "kyber",
+      "altname": null,
+      "description": "Kyber is a recently identified ransomware group using sophisticated hybrid encryption (AES-256-CTR with X25519 and Kyber1024), operating Tor-based communication channels and employing double-extortion with free partial decryption offered to build negotiation trust, discovered through underground forum monitoring in 2025.",
+      "raas": false,
+      "first_seen": "2025-10-08",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "L Group",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-07",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "la_piovra",
+      "altname": null,
+      "description": "\u2139\ufe0f La Piovra Ransomware is an exercise of the company Offensive Security (also known as OffSec)",
+      "raas": false,
+      "first_seen": "2023-06-10",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "lamashtu",
+      "altname": null,
+      "description": "Lamashtu is an extortion group that first appeared in April 2026, claiming attacks against organizations in France, Romania, and Thailand across energy, pharmaceutical, and film sectors; it has not yet been confirmed as operating actual file-encrypting ransomware rather than pure data-theft extortion.",
+      "raas": false,
+      "first_seen": "2026-04-13",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "lapsus$",
+      "altname": null,
+      "description": "Lapsus$ is an internationally composed data extortion group most active from mid-2021 through 2022, executing high-profile breaches against Microsoft, Nvidia, Samsung, Okta, and Uber by stealing source code and threatening leaks rather than encrypting files; several members \u2014 predominantly teenagers \u2014 were arrested in the UK.",
+      "raas": false,
+      "first_seen": "2026-03-01",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "LeakBazaar",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-05-10",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "leaktheanalyst",
+      "altname": null,
+      "description": "LeakTheAnalyst is a data-theft extortion group that operates a dark web leak site with approximately 20 claimed victims, notable for a 2017 operation targeting a Mandiant security researcher; the group focuses on stealing and publishing sensitive corporate data rather than deploying file-encrypting ransomware.",
+      "raas": false,
+      "first_seen": "2022-01-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "lilith",
+      "altname": null,
+      "description": "Lilith is a C/C++-based double-extortion ransomware that emerged in July 2022, targeting 64-bit Windows systems and sharing code with the Babuk ransomware family, with its first confirmed victim being a large South American construction firm.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "linkc",
+      "altname": null,
+      "description": "Linkc is a ransomware group first observed in February 2025, operating a Tor-based data leak site and targeting US-based AI, cloud, aerospace, and manufacturing companies \u2014 including H2O.ai \u2014 demanding ransoms as high as $15 million using double-extortion tactics.",
+      "raas": false,
+      "first_seen": "2025-02-19",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "lockbit",
+      "altname": null,
+      "description": "LockBit is one of the most prolific ransomware groups in history, operating as a full RaaS platform that at its peak accounted for an estimated 44% of all ransomware incidents globally in 2023, targeting virtually every sector worldwide through an affiliate model where developers maintain infrastructure and affiliates conduct intrusions.",
+      "raas": true,
+      "first_seen": "2020-10-21",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "lockbit2",
+      "altname": null,
+      "description": "LockBit 2.0 is the second major iteration of the LockBit RaaS platform, launched in mid-2021, introducing automated domain-wide encryption via Active Directory Group Policy and claiming the fastest encryption speed among ransomware families, accounting for 46% of ransomware breach events in early 2022.",
+      "raas": true,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 5
+    },
+    {
+      "name": "lockbit3",
+      "altname": null,
+      "description": "LockBit, also recognized as LockBit Black or Lockbit 3.0, is one of the largest Ransomware Groups in the world and has orchestrated extensive cyberattacks across various industries, impacting thousands of organizations globally with its relentless and adaptive strategies.",
+      "raas": true,
+      "first_seen": "2022-06-29",
+      "active_sites": 2,
+      "total_sites": 38
+    },
+    {
+      "name": "lockbit3_fs",
+      "altname": null,
+      "description": "LockBit 3.0 (\"LockBit Black\"), active since June 2022, is the third iteration of the LockBit RaaS platform incorporating code from BlackMatter ransomware, featuring modular encrypted payloads that evade analysis and targeting Windows and VMware ESXi environments across all sectors globally.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 20,
+      "total_sites": 26
+    },
+    {
+      "name": "lockbit5",
+      "altname": null,
+      "description": "LockBit 5.0 (\"ChuongDong\") emerged in September 2025 as the group's resurgence following the February 2024 law enforcement takedown, introducing cross-platform payloads targeting Windows, Linux, and VMware ESXi with enhanced evasion capabilities and continuing the RaaS affiliate model of its predecessors.",
+      "raas": true,
+      "first_seen": "2025-12-04",
+      "active_sites": 20,
+      "total_sites": 23
+    },
+    {
+      "name": "lockdata",
+      "altname": null,
+      "description": "LockData Auction is a dark web marketplace that emerged around May 2021 operating an invite-only stolen data auction portal, representing a shift toward pure data-theft extortion with auctions for stolen corporate data starting from $50,000, rather than a traditional ransomware encryptor operation.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Loki",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "lolnek",
+      "altname": null,
+      "description": "Lolnek (also known as Lolkek/GlobeImposter) is a commodity ransomware strain primarily targeting small and medium-sized businesses with relatively low ransom demands, associated with the TZW ransomware family, and unsophisticated compared to major RaaS operations with no formal affiliate program.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "lorenz",
+      "altname": null,
+      "description": "Tesorion describes Lorenz as a ransomware with design and implementation flaws, leading to impossible decryption with tools provided by the attackers. A free decryptor for 2021 versions was made available via the NoMoreRansom initiative. A new version of the malware was discovered in March 2022, for which again was provided a free decryptor, while the ransomware operators are not able to provide tools to decrypt affected files.",
+      "raas": false,
+      "first_seen": "2020-01-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "losttrust",
+      "altname": null,
+      "description": "LostTrust is a double-extortion ransomware operation that emerged in March 2023 and publicized over 50 victims within days of launching its leak site in September 2023, believed to be a rebrand of the MetaEncryptor gang, primarily targeting manufacturing, professional services, construction, and education sectors with 71% of known victims in the US.",
+      "raas": false,
+      "first_seen": "2023-09-26",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "lunalock",
+      "altname": null,
+      "description": "LunaLock emerged in September 2025 targeting creative and digital platforms, notably breaching an illustrator marketplace and a Mexican ISP, and is notable for threatening to submit stolen artwork to AI companies for training if the ransom is not paid.",
+      "raas": false,
+      "first_seen": "2025-09-02",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "lv",
+      "altname": null,
+      "description": "LV ransomware group main message: \"Here are companies which didn't meet consumer data protection obligations. They rejected to fix their mistakes, they rejected to protect this data in the case when they could and had to ptotect it. These companies prefered to sell their private information, their employees' and customers' personal data\". Security researchers claim that the LV group is utilizing the REvil ransomware group malware. The LV group claim to have compromised the corporate network of\u2026",
+      "raas": false,
+      "first_seen": "2021-11-22",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "lynx",
+      "altname": null,
+      "description": "Lynx is a ransomware-as-a-service operation that emerged in mid-2024 as a rebrand of INC Ransomware (whose source code was sold for $300,000 on the RAMP forum), claiming ~300 victims across manufacturing, business services, technology, and transportation with an 80/20 profit split for affiliates.",
+      "raas": true,
+      "first_seen": "2024-07-29",
+      "active_sites": 8,
+      "total_sites": 10
+    },
+    {
+      "name": "m3rx",
+      "altname": null,
+      "description": "M3rx is a small ransomware group first observed in 2025, using AES-CTR/AES-GCM encryption and targeting organizations in England, the US, Australia, Germany, Italy, and Switzerland, with around eight claimed victims including a Sydney-based property firm.",
+      "raas": false,
+      "first_seen": "2026-04-29",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "madcat",
+      "altname": null,
+      "description": "MadCat is a suspected fraudulent ransomware operation that surfaced briefly in late 2023, apparently linked to scammers targeting other criminals on the dark web with fake stolen passport offers; its leak site appeared dead shortly after announcement, casting doubt on whether it ever operated as a genuine ransomware group.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "madliberator",
+      "altname": null,
+      "description": "MadLiberator is a ransomware group that emerged in mid-2024, known for erratic behavior including randomized ransom demands and unpredictable encryption patterns, targeting government entities including the Italian Ministry of Culture and using a data leak site to post exfiltrated files.",
+      "raas": false,
+      "first_seen": "2024-07-17",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Majinahanashi",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-12",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "malas",
+      "altname": null,
+      "description": "Malas is a lesser-documented ransomware group that maintains an active dark web presence; detailed information about its targets, victims, or operational model is limited in public reporting.",
+      "raas": false,
+      "first_seen": "2023-04-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "malekteam",
+      "altname": null,
+      "description": "Malek Team is an Iranian-linked threat actor that emerged on October 8, 2023 (the day after the Hamas attack on Israel), believed to be tied to Iranian military intelligence, primarily targeting Israeli organizations using data exfiltration and extortion, with notable attacks on Ziv Medical Center and Ono Academic College.",
+      "raas": false,
+      "first_seen": "2023-12-24",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "mallox",
+      "altname": null,
+      "description": "This ransomware uses a combination of different crypto algorithms (ChaCha20, AES-128, Curve25519). The activity of this malware is dated to mid-June 2021. The extension of the encrypted files are set to the compromised company: .<target_company>",
+      "raas": false,
+      "first_seen": "2022-11-04",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "mamona",
+      "altname": null,
+      "description": "Mamona was a short-lived ransomware rebrand attempted by the operator behind BlackLock RaaS in March 2025 that failed before reverting; as a standalone strain it operates entirely offline with no C2 communication, uses custom encryption, and targets Windows systems.",
+      "raas": true,
+      "first_seen": "2025-03-12",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "marketo",
+      "altname": null,
+      "description": "Marketo, launched in April 2021, is a data-theft extortion marketplace that steals and sells data to third parties or back to victims without encrypting files, applying aggressive pressure by emailing victims' competitors with sample data packs.",
+      "raas": false,
+      "first_seen": "2021-12-07",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "maze",
+      "altname": null,
+      "description": "Maze ransomware group is one of the most known ransomware gangs, they targeted organizations worldwide across many industries. Security researchers believed that Maze operates as an affiliated network model. MAZE was one of the first groups that made a 'Double Extortion Attack' involved Allied Universal, in November 2019, the group leaks their victim's data in the darknet. On November 1, 2020, MAZE announced an official press release that they are closing their operation. is malware targeting\u2026",
+      "raas": false,
+      "first_seen": "2019-10-21",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "mbc",
+      "altname": null,
+      "description": "MBC is a very obscure ransomware group with minimal public documentation and no significant threat intelligence reports available from mainstream security vendors.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "medusa",
+      "altname": null,
+      "description": "Medusa is a ransomware-as-a-service operation active since June 2021 that has targeted over 300 victims across critical infrastructure sectors including healthcare, education, legal, and manufacturing using double-extortion, with attacks surging 42% between 2023 and 2024 and a formal CISA advisory issued in early 2025.",
+      "raas": true,
+      "first_seen": "2023-01-11",
+      "active_sites": 0,
+      "total_sites": 11
+    },
+    {
+      "name": "medusalocker",
+      "altname": null,
+      "description": "Medusa is a DDoS bot written in .NET 2.0. In its current incarnation its C&C protocol is based on HTTP, while its predecessor made use of IRC.",
+      "raas": false,
+      "first_seen": "2022-11-15",
+      "active_sites": 0,
+      "total_sites": 5
+    },
+    {
+      "name": "meow",
+      "altname": null,
+      "description": "Meow emerged in 2022 (resurfacing aggressively in 2024), initially operating as a RaaS using the Conti v2 codebase before transitioning to a data-extortion-only model \u2014 selling stolen data rather than encrypting files \u2014 with a heavy focus on US healthcare and medical research organizations.",
+      "raas": false,
+      "first_seen": "2023-11-24",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "Meowciety403",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-27",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "metaencryptor",
+      "altname": null,
+      "description": "MetaEncryptor is a ransomware group first observed in mid-2023, targeting medium-to-large enterprises in legal, technology, logistics, manufacturing, and finance sectors primarily in the UK, Europe, and Southeast Asia, using AES-256/RSA-2048 encryption and double extortion.",
+      "raas": false,
+      "first_seen": "2023-08-16",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "midas",
+      "altname": null,
+      "description": "This malware written in C# is a variant of the Thanos ransomware family and emerged in October 2021 and is obfuscated using SmartAssembly. In 2022, ThreatLabz analysed a report of Midas ransomware was slowly deployed over a two month period (ZScaler). This ransomware features also its own data leak site as part of its double extortion strategy.",
+      "raas": false,
+      "first_seen": "2021-11-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "mindware",
+      "altname": null,
+      "description": "Ransomware, potential rebranding of win.sfile.",
+      "raas": false,
+      "first_seen": "2022-05-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "minteye",
+      "altname": null,
+      "description": "MintEye is a ransomware group with concentrated activity in North America, targeting professional services, construction, engineering, architecture, and logistics sectors, with victims documented in the US and Chile; limited public technical analysis is available.",
+      "raas": false,
+      "first_seen": "2025-12-12",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "mnt6",
+      "altname": null,
+      "description": "MNT6 is a lower-profile ransomware group claiming victims across legal, manufacturing, construction, healthcare, and logistics sectors in the US, Canada, New Zealand, and Spain, with notable claimed targets including Silfab Solar; some victim listings have been flagged as potentially unverified.",
+      "raas": false,
+      "first_seen": "2026-04-30",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "mogilevich",
+      "altname": null,
+      "description": "Mogilevich appeared in February 2024, rapidly claiming high-profile breaches of Epic Games, DJI, Shein, and Kick.com, but was quickly exposed as a fraud \u2014 the group's operator admitted they were \"professional fraudsters\" who sold fake breach data and access to a non-existent RaaS panel.",
+      "raas": false,
+      "first_seen": "2024-02-20",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "moneymessage",
+      "altname": "ThreatLabz",
+      "description": "Money Message emerged in March 2023 targeting Windows and Linux systems across banking, transportation, and professional services sectors, demanding ransoms in the millions and publishing stolen data on their blog if unpaid, with most known victims based in the US.",
+      "raas": false,
+      "first_seen": "2023-03-29",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "Montage",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-13",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "monti",
+      "altname": null,
+      "description": "Monti is a ransomware group first observed in June 2022 that initially copied nearly all of Conti's leaked source code, pivoting to target government, legal, and healthcare entities, later releasing a new Linux variant in 2023 with significantly less Conti code similarity, and experimenting with an affiliate model.",
+      "raas": true,
+      "first_seen": "2022-12-07",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "morpheus",
+      "altname": null,
+      "description": "Morpheus emerged in late 2024 as a semi-private RaaS operation whose affiliates share identical payloads with the HellCat ransomware group, targeting pharmaceutical, manufacturing, legal, and Italian ESXi environments with ransom demands reaching up to 32 BTC (~$3M USD).",
+      "raas": true,
+      "first_seen": "2025-01-07",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "mortar",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "mosesstaff",
+      "altname": null,
+      "description": "Cybereason Nocturnus describes Moses Staff as an Iranian hacker group, first spotted in October 2021. Their motivation appears to be to harm Israeli companies by leaking sensitive, stolen data.",
+      "raas": false,
+      "first_seen": "2021-12-18",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "mountlocker",
+      "altname": null,
+      "description": "MountLocker operated as a ransomware-as-a-service from July 2020, using a standard developer/affiliate revenue split and leveraging compromised RDP credentials for initial access, propagating laterally via Windows Active Directory APIs and targeting over 2,600 file extensions.",
+      "raas": true,
+      "first_seen": "2021-02-07",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ms13089",
+      "altname": "ms13-089",
+      "description": "MS13089 is a newly emerged ransomware group (first observed December 2025) that named itself after a 2013 Microsoft Security Bulletin, claiming a handful of victims including a law firm, operating primarily as a double-extortion actor.",
+      "raas": false,
+      "first_seen": "2025-12-18",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "mydecryptor",
+      "altname": null,
+      "description": "MyDecryptor is a low-profile ransomware group with minimal public documentation, appearing on ransomware tracking platforms but not the subject of major threat intelligence reporting, suggesting it is a small or relatively inactive operation.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "n3tworm",
+      "altname": null,
+      "description": "N3tw0rm ransomware group is linked to Iran by many security researchers especially for the fact that the group targeting only Israeli companies. Like other ransomware groups, N3tw0rm has a data leak site in the darknet. Due to the low ransom price the group requested and lack of response to negotiations, some security researchers believe that the N3tw0rm group's main goal is to be used for sowing chaos for Israeli interests and not for profit.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "nasirsecurity",
+      "altname": null,
+      "description": "Nasir Security is a pro-Iranian threat actor that emerged around October 2025, primarily targeting energy sector organizations in the Middle East (UAE, Oman, Saudi Arabia, Iraq) and Israeli IT supply chain firms, using spear-phishing, BEC, and exploitation of public-facing applications.",
+      "raas": false,
+      "first_seen": "2025-10-11",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "nblock",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "nefilim",
+      "altname": null,
+      "description": "According to Vitali Kremez and Michael Gillespie, this ransomware shares much code with Nemty 2.5. A difference is removal of the RaaS component, which was switched to email communications for payments. Uses AES-128, which is then protected RSA2048.",
+      "raas": false,
+      "first_seen": "2020-05-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "nemty",
+      "altname": null,
+      "description": "Nemty is a ransomware that was discovered in September 2019. Fortinet states that they found it being distributed through similar ways as Sodinokibi and also noted artfifacts they had seen before in Gandcrab.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "netrunner",
+      "altname": null,
+      "description": "NetRunner is a ransomware group active from at least 2025 targeting diverse sectors including healthcare, telecommunications, manufacturing, and agriculture across Japan, Italy, the US, and Jordan, notably demanding a $100M ransom from Nippon Medical School Musashi Kosugi Hospital.",
+      "raas": false,
+      "first_seen": "2026-04-03",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "netwalker",
+      "altname": null,
+      "description": "NetWalker ransomware group operates by the threat actor known as \"CIRCUS SPIDER\". The NetWalker ransomware was discovered in 2019. The group mainly targeting the Asia Pacific region but can attack globally. The group uses common attacking tools like Mimikatz and other legitimate tools (LOLBINS) like PSTools, AnyDesk, TeamViewer, NLBrute, and more. The group knowing by targeting the healthcare sector. Finally, in January 2021, Netwalker was takedown by the authorities, the police have\u2026",
+      "raas": false,
+      "first_seen": "2020-01-31",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "nevada",
+      "altname": null,
+      "description": "Nevada Ransomware is a RaaS operation written in Rust that emerged on the RAMP dark web forum in late 2022, offering affiliates favorable revenue splits (85/15 or 90/10) and conducting opportunistic mass attacks against a wide range of industries worldwide.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "nightsky",
+      "altname": null,
+      "description": "Night Sky is a China-nexus ransomware group (attributed to the \"Emperor Dragonfly\" cluster) that emerged in late 2021, gaining notoriety in early 2022 by exploiting the Log4Shell vulnerability (CVE-2021-44228) to target corporate networks across healthcare, finance, government, and manufacturing using multi-extortion tactics.",
+      "raas": true,
+      "first_seen": "2022-01-04",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "nightspire",
+      "altname": null,
+      "description": "NightSpire is a ransomware group that first emerged in March 2025 and rapidly claimed over 250 victims across retail, manufacturing, healthcare, finance, and education sectors in the US, France, India, Taiwan, and Japan, using aggressive double-extortion with ransom deadlines as short as two days.",
+      "raas": true,
+      "first_seen": "2025-03-12",
+      "active_sites": 1,
+      "total_sites": 6
+    },
+    {
+      "name": "nitrogen",
+      "altname": null,
+      "description": "Nitrogen began as a malware loader in 2023 used to deliver BlackCat/ALPHV ransomware, then evolved into a fully independent ransomware operator by mid-2024, operating its own strain derived from leaked Conti 2 builder code and conducting double-extortion attacks primarily linked to Eastern European infrastructure.",
+      "raas": false,
+      "first_seen": "2024-09-30",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "noescape",
+      "altname": null,
+      "description": "NoEscape was a RaaS operation active from May to December 2023 believed to be a rebrand of the defunct Avaddon ransomware, targeting professional services, manufacturing, and healthcare with triple-extortion capabilities (encryption, data theft, and optional DDoS), before abruptly shutting down in an apparent exit scam.",
+      "raas": true,
+      "first_seen": "2023-06-12",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "nokoyawa",
+      "altname": null,
+      "description": "Nokoyawa is a double-extortion ransomware group that launched a RaaS program in 2022 (operated by threat actor \"farnetwork\"), primarily targeting businesses in South America across healthcare, financial services, government, and manufacturing, gaining significant attention in 2023 for exploiting a Windows CLFS zero-day (CVE-2023-28252).",
+      "raas": true,
+      "first_seen": "2022-12-09",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "noname",
+      "altname": null,
+      "description": "NoName (also known as CosmicBeetle) is a ransomware group active since at least 2020 targeting small and medium-sized businesses globally using its custom ScRansom tool, exploiting vulnerabilities like EternalBlue and ZeroLogon, and becoming a RansomHub affiliate to access that platform's RaaS infrastructure.",
+      "raas": true,
+      "first_seen": "2024-01-16",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "NotPetya",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2017-01-01",
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "nova",
+      "altname": null,
+      "description": "Nova (formerly RALord) is a ransomware-as-a-service (RaaS) group that encrypts victims\u2019files and uses double-extortion tactics to pressure organizations into paying for decryption and data non-disclosure.",
+      "raas": true,
+      "first_seen": "2025-04-28",
+      "active_sites": 1,
+      "total_sites": 11
+    },
+    {
+      "name": "obscura",
+      "altname": null,
+      "description": "Obscura is a ransomware strain observed in 2025, written in Go and specifically targeting Windows domain controllers via the SYSVOL/NETLOGON share, using Curve25519 + XChaCha20 encryption with double-extortion tactics and a 10-day payment deadline.",
+      "raas": false,
+      "first_seen": "2025-09-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "onepercent",
+      "altname": null,
+      "description": "OnePercent Group is a cybercriminal operation active since at least November 2020 that targeted US organizations using phishing with IcedID trojans, Cobalt Strike, and double-extortion, threatening a \"one percent leak\" of data before escalating to a full dump or sale to REvil; the FBI issued a formal flash advisory in August 2021.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "onyx",
+      "altname": null,
+      "description": "Onyx is a ransomware group first observed in April 2022, based on the Chaos ransomware builder, that is notably destructive \u2014 files larger than 2MB are overwritten with random data rather than encrypted, making recovery impossible even after ransom payment \u2014 claiming approximately 13 victims across six countries.",
+      "raas": false,
+      "first_seen": "2022-04-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "orca",
+      "altname": null,
+      "description": "Orca is a ransomware group that emerged in September 2024, identified as a variant of the Zeppelin malware family, targeting organizations in manufacturing and logistics across Taiwan, Tunisia, Austria, and France, claiming to avoid hospitals, government institutions, and non-profits.",
+      "raas": false,
+      "first_seen": "2024-09-16",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "orion",
+      "altname": null,
+      "description": "Orion is a ransomware operation first observed in October 2025 that listed 13 alleged victims on a dark web leak site across financial services, manufacturing, and healthcare, though analysts determined its victim list was recycled from prior LockBit and BlackCat disclosures rather than fresh compromises.",
+      "raas": true,
+      "first_seen": "2026-01-14",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "Orova",
+      "altname": null,
+      "description": "First seen 2026-07-07",
+      "raas": false,
+      "first_seen": "2026-07-07",
+      "active_sites": 4,
+      "total_sites": 4
+    },
+    {
+      "name": "osiris",
+      "altname": null,
+      "description": "Osiris is a ransomware-as-a-service operation first observed in November 2025 that uses a Bring Your Own Vulnerable Driver (BYOVD) technique to disable endpoint detection tools before deploying hybrid ECC + AES-128-CTR encryption; Symantec researchers linked its operators to former INC ransomware affiliates.",
+      "raas": true,
+      "first_seen": "2025-12-18",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "pandora",
+      "altname": null,
+      "description": "Pandora ransomware was obtained by vx-underground at 2022-03-14.",
+      "raas": false,
+      "first_seen": "2022-03-17",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "Panzer",
+      "altname": null,
+      "description": "",
+      "raas": true,
+      "first_seen": "2026-08-05",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "pay2key",
+      "altname": null,
+      "description": "Pay2Key is ransomware that has been used by the threat actor Fox Kitten. The group seems to operate since July 2020, targetting mainly Israeli companies. Pay2Key has a darknet leak site to public stolen and sensitive information of their victims. Some of their victims: Intel - Habana Labs, IAI - Israel Aerospace Industries, Portnox - Network Security Solutions.",
+      "raas": false,
+      "first_seen": "2020-12-13",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Payday",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "payload",
+      "altname": null,
+      "description": "Payload is a ransomware group that emerged in early 2026, using Babuk-derived source code targeting both Windows and ESXi systems with cross-platform double-extortion attacks against healthcare, energy, real estate, and agriculture sectors, claiming 12 victims across seven countries within hours of launching its leak site.",
+      "raas": false,
+      "first_seen": "2026-02-17",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "payloadbin",
+      "altname": null,
+      "description": "PayloadBIN is a ransomware strain deployed in 2021 by Evil Corp as a rebranding of their WastedLocker/Hades/Phoenix lineage, specifically designed to evade US Treasury OFAC sanctions by impersonating the unrelated Babuk gang's rebrand rather than operating as an independent group.",
+      "raas": false,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "payoutsking",
+      "altname": "Payouts King",
+      "description": "PayoutsKing is an active ransomware group observed through at least 2026 that has claimed attacks against a wide range of industries internationally \u2014 including Del Monte Foods and V. FRAAS \u2014 across the US, UK, Germany, and Ireland using standard double-extortion tactics.",
+      "raas": false,
+      "first_seen": "2025-07-07",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "pear",
+      "altname": "Pure Extraction And Ransom",
+      "description": "Pure Extraction And Ransom (PEAR) Team is the community of highly responsible and strictly disciplined members. We are a private team and have nothing common with any other threat actors. We've been monitoring this field for a long-long time. So, we understand all the processes and know well how it all works.",
+      "raas": false,
+      "first_seen": "2025-08-05",
+      "active_sites": 17,
+      "total_sites": 19
+    },
+    {
+      "name": "play",
+      "altname": null,
+      "description": "Initially observed in June 2022, the Play ransomware (a.k.a PlayCrypt) operates through double extortion, targeting numerous organizations in Latin America. Its Initial Access method is quite similar to other ransomwares, involving attacks such as Phishing, Exposed Services to the Internet, and Valid Account compromises.<br> <br> On April 19, 2023, the security company Symantec published two new tools developed by the Play group. These tools allow the malicious actor to enumerate and exfiltrate\u2026",
+      "raas": false,
+      "first_seen": "2022-11-26",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "playboy",
+      "altname": null,
+      "description": "PlayBoy Locker is a ransomware-as-a-service operation that emerged in September 2024, targeting Windows, NAS, and ESXi systems across multiple sectors on an 85/15 affiliate revenue split; its source code was reportedly sold underground by late 2024.",
+      "raas": true,
+      "first_seen": "2024-10-28",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "PrinzEugen",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-05-04",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "projectrelic",
+      "altname": null,
+      "description": "Project Relic emerged in mid-2022 as a Golang-based ransomware targeting Windows and Linux hosts, operating with a TOR-based data leak site and using double-extortion tactics, with operators dwelling in networks for days or weeks before encrypting.",
+      "raas": true,
+      "first_seen": "2022-11-11",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "prolock",
+      "altname": null,
+      "description": "PwndLocker is a ransomware that was observed in late 2019 and is reported to have been used to target businesses and local governments/cities. According to one source, ransom amounts demanded as part of PwndLocker activity range from $175k USD to $650k USD depending on the size of the network. PwndLocker attempts to disable a variety of Windows services so that their data can be encrypted. Various processes will also be targeted, such as web browsers and software related to security, backups,\u2026",
+      "raas": false,
+      "first_seen": "2020-02-23",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "prometheus",
+      "altname": null,
+      "description": "Ransomware written in .NET, apparently derived from the codebase of win.hakbit (Thanos) ransomware.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "promptlock",
+      "altname": null,
+      "description": "First known AI-powered ransomware. The PromptLock malware uses the gpt-oss:20b model from OpenAI locally via the Ollama API to generate malicious Lua scripts on the fly",
+      "raas": false,
+      "first_seen": "2025-08-26",
+      "active_sites": 0,
+      "total_sites": 0
+    },
+    {
+      "name": "pysa",
+      "altname": null,
+      "description": "Mespinosa is a ransomware which encrypts file using an asymmetric encryption and adds .pysa as file extension. According to dissectingmalware the extension \"pysa\" is probably derived from the Zanzibari Coin with the same name.",
+      "raas": false,
+      "first_seen": "2020-07-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "qilin",
+      "altname": null,
+      "description": "Qilin ransomware was first observed in July of 2022. Qilin Ransomware is written in Golang and supports multiple encryption modes; all of which are controlled by the operator. Qilin actors practice double extortion \u2013 demanding payment for a decryptor, as well as for the non-release of stolen data.",
+      "raas": false,
+      "first_seen": "2022-10-08",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "qiulong",
+      "altname": null,
+      "description": "Qiulong is a ransomware group that emerged around April 2024 primarily targeting Brazilian organizations using double extortion and unique tactics such as publishing identity documents of victims' family members to pressure payment.",
+      "raas": false,
+      "first_seen": "2024-04-22",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "qlocker",
+      "altname": null,
+      "description": "QLocker was a financially motivated ransomware operation active in 2021 that exclusively targeted QNAP NAS devices exposed to the internet, exploiting a hard-coded credentials vulnerability to compress files into password-protected 7-Zip archives and demanding roughly $400 per victim, netting approximately $350,000 in a single month.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "quantum",
+      "altname": null,
+      "description": "Quantum ransomware, active from mid-2021 through 2022, was a rebrand of the MountLocker/AstroLocker/XingLocker lineage that operated as RaaS, known for extremely fast attack timelines (under four hours from initial access to encryption) and ransom demands ranging from $150,000 to multi-million dollars.",
+      "raas": true,
+      "first_seen": "2021-09-09",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "rabbithole",
+      "altname": null,
+      "description": "RabbitHole is a low-profile ransomware group with limited publicly available threat intelligence, not appearing prominently in major threat intelligence reports, suggesting it operates at a small scale or under limited visibility.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "radar",
+      "altname": null,
+      "description": "Radar (also known as Dispossessor), active since August 2023 and led by an actor called \"Brain,\" was a RaaS group targeting small-to-mid-sized businesses across healthcare, education, finance, and transportation in over 14 countries; it was dismantled by an FBI-led international operation in August 2024 that seized 24 servers and 9 criminal domains.",
+      "raas": true,
+      "first_seen": "2025-09-10",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "radiant",
+      "altname": null,
+      "description": "Radiant is a financially motivated ransomware group that emerged in September 2025, conducting double- and single-extortion attacks without affiliates, drawing widespread condemnation after attacking UK childcare provider Kido International and publishing photographs, names, and home addresses of over 8,000 children.",
+      "raas": false,
+      "first_seen": "2025-10-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ragnarlocker",
+      "altname": null,
+      "description": "Ragnar Locker was an elite ransomware group active from December 2019 to October 2023 that targeted large enterprises and critical infrastructure \u2014 including Capcom and Campari \u2014 claiming at least 168 victims before being taken down by a Europol-led international law enforcement operation in October 2023.",
+      "raas": false,
+      "first_seen": "2020-04-01",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "ragnarok",
+      "altname": null,
+      "description": "According to Bleeping Computer, the ransomware is used in targeted attacks against unpatched Citrix servers. It excludes Russian and Chinese targets using the system's Language ID for filtering. It also tries to disable Windows Defender and has a number of UNIX filepath references in its strings. Encryption method is AES using a dynamically generated key, then bundling this key up via RSA.",
+      "raas": false,
+      "first_seen": "2021-03-31",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "ralord",
+      "altname": null,
+      "description": "RALord is a ransomware group identified in March 2025 operating within the NOVA RaaS platform, targeting healthcare, education, hospitality, and IT sectors across multiple continents, using a Rust-based payload with an 85/15 affiliate revenue split; it later rebranded as \"Nova.\"",
+      "raas": true,
+      "first_seen": "2025-03-26",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "ramp",
+      "altname": null,
+      "description": "RAMP (Russian Anonymous Marketplace) was a Russian-speaking dark web forum founded in 2021 that served as a central marketplace and recruitment hub for ransomware operators, affiliates, and initial access brokers \u2014 not a ransomware group itself but the backbone of the RaaS ecosystem; it was seized by the FBI in January 2026.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "rancoz",
+      "altname": null,
+      "description": "Rancoz is a Windows-targeting ransomware strain first observed in November 2022 that appends the \".rec_rans\" extension to encrypted files, considered a Vice Society copycat, deployed against a small number of organizations using double extortion and linked to the same developer as the \"Buddy\" ransomware.",
+      "raas": false,
+      "first_seen": "2023-05-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ranion",
+      "altname": null,
+      "description": "Ranion is a ransomware-as-a-service operation first observed in April 2017 that offers a low-barrier, pay-upfront model where affiliates keep 100% of ransom payments, with packages ranging from $150 to $1,900, making it a popular entry point for less experienced attackers.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ransombay",
+      "altname": "",
+      "description": "Launched on April 24th, 2025 RansomBay is a new project operating under the DragonForce initiative",
+      "raas": false,
+      "first_seen": "2025-05-13",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ransomcartel",
+      "altname": null,
+      "description": "Ransom Cartel is a ransomware-as-a-service operation that surfaced in December 2021, assessed by Palo Alto Unit 42 to share source code and technical overlap with the defunct REvil group, suggesting its operators had prior access to REvil's codebase, conducting double-extortion attacks against corporate networks.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "ransomcortex",
+      "altname": null,
+      "description": "RansomCortex emerged in July 2024 with a narrow focus on healthcare facilities, claiming four victims within days of its first appearance including hospitals in Brazil and Canada, operating as a relatively small and niche group.",
+      "raas": false,
+      "first_seen": "2024-07-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ransomed",
+      "altname": null,
+      "description": "RansomedVC was a short-lived extortion group active from August to November 2023 that claimed high-profile victims including Sony, innovating by threatening GDPR regulatory fines as an additional extortion lever; it briefly operated as a RaaS before shutting down in an apparent exit scam following reported arrests of six members.",
+      "raas": true,
+      "first_seen": "2023-08-21",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "ransomexx",
+      "altname": null,
+      "description": "RansomExx is a ransomware family that targeted multiple companies starting in mid-2020. It shares commonalities with Defray777.",
+      "raas": false,
+      "first_seen": "2020-05-14",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "ransomhouse",
+      "altname": null,
+      "description": "RansomHouse is a double-extortion RaaS operation active since late 2021, attributed to the threat actor \"Jolly Scorpius,\" targeting over 120 organizations across healthcare, finance, transportation, and government, recently upgrading to a multi-layered dual-key encryption architecture.",
+      "raas": true,
+      "first_seen": "2021-06-01",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "ransomhub",
+      "altname": null,
+      "description": "The group emerged in mid-February 2024 and has already listed several organizations as alleged victims of their attacks, resulting from extortion through encryption and data leaks.<br> <br> The announcement of the sale of the new Ransomware-as-a-Service (RaaS) by RansomHub was published on one of the Russian-origin forums used by cybercrime to advertise malicious services, known as RAMP4U (or RAMP). A user with the nickname and persona of 'koley' announced the affiliate program on February 2,\u2026",
+      "raas": false,
+      "first_seen": "2024-02-10",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "ranstreet",
+      "altname": null,
+      "description": "Ranstreet is a low-profile ransomware group with very limited public documentation, appearing in ransomware tracking lists but without major vendor research reports or significant attributed attacks.",
+      "raas": false,
+      "first_seen": "2023-12-21",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ranzy",
+      "altname": null,
+      "description": "Ranzy Locker, Former known as ThunderX. The group hosting a data leak site in the darknet where they posting sensitive information of victims who do not pay the ransom. ThunderX was launched at the end of August 2020. Soon after launching, weaknesses were found in the code, that allowed decrypting the files that the malware encrypted. The group has fixed the code and publish a new version, then released it under the name Ranzy Locker. The Tor onion URL used by the Ranzy Leak site is the same as\u2026",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "raworld",
+      "altname": "ragroup",
+      "description": "RA Group, also known as RA World, first surfaced in April 2023, utilizing a custom variant of the Babuk ransomware.",
+      "raas": false,
+      "first_seen": "2023-05-06",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "raznatovic",
+      "altname": null,
+      "description": "RANSOMED.VC aka Raznatovic",
+      "raas": false,
+      "first_seen": "2023-12-17",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "rebornvc",
+      "altname": "RansomedVC2",
+      "description": "RebornVC is a rebrand of RansomedVC re-emerging in July 2025 under new leadership, using data auctions, direct extortion, and double extortion techniques with ransom demands ranging from $10,000 to $1,000,000, with confirmed victims in the US and Brazil.",
+      "raas": false,
+      "first_seen": "2025-07-08",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "Redact",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-28",
+      "active_sites": 2,
+      "total_sites": 3
+    },
+    {
+      "name": "redalert",
+      "altname": null,
+      "description": "RedAlert (also called N13V) is a ransomware group first observed in July 2022 that targets both Windows and Linux VMware ESXi servers, encrypting virtual machine files using the NTRUEncrypt algorithm and accepting only Monero for payment, conducting double-extortion attacks against corporate networks.",
+      "raas": false,
+      "first_seen": "2022-07-14",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "redransomware",
+      "altname": null,
+      "description": "Red Ransomware (Red CryptoApp) emerged in early 2024, debuting its \"Wall of Shame\" data leak site with 11 victims across IT, legal, hospitality, manufacturing, and education sectors predominantly in the US, using phishing and vulnerability exploitation with double-extortion tactics.",
+      "raas": false,
+      "first_seen": "2024-03-28",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "revil",
+      "altname": null,
+      "description": "Sodinokibi ransomware group also known as REvil (Ransomware Evil) operates as a ransomware-as-a-service (RaaS) model. After the group compromised his victims, they would threaten to publish the victim's sensitive data on their darknet blog named 'Happy Blog', unless the ransom is paid. The ransomware malware code used by REvil is pretty similar to the ransomware code used by DarkSide - a different threat actor. REvil group claims to steal information after a successful attack on the supplier of\u2026",
+      "raas": false,
+      "first_seen": "2019-08-26",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "reynolds",
+      "altname": null,
+      "description": "Reynolds is a ransomware family first identified in early 2026, notable for embedding BYOVD (Bring Your Own Vulnerable Driver) defense evasion by exploiting CVE-2025-68947 to terminate security software before encrypting files, initially attributed to Black Basta and considered attractive to RaaS affiliates.",
+      "raas": true,
+      "first_seen": "2026-02-11",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "rhysida",
+      "altname": null,
+      "description": "Rhysida is a ransomware-as-a-service (RAAS) group that emerged in May 2023. The group utilizes a namesake ransomware through phishing attacks and Cobalt Strike to breach the targets' networks and deploy their payloads.<br> <br> The group threatens to publicly distribute exfiltrated data if the ransom is not paid, and it's worth mentioning that Rhysida is still in the early stages of development.<br> <br> The ransomware leaves PDF notes in the affected folders, instructing victims to contact the\u2026",
+      "raas": false,
+      "first_seen": "2023-06-05",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "robinhood",
+      "altname": null,
+      "description": "RobbinHood is a ransomware group first observed in April\u2013May 2019, responsible for high-profile attacks on US cities including Baltimore, Maryland \u2014 demanding 13 BTC and causing months of disruption to city services \u2014 believed to operate as a limited closed-circle model rather than a broad public affiliate program.",
+      "raas": false,
+      "first_seen": "2021-12-06",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "rook",
+      "altname": null,
+      "description": "According to PCrisk, Rook is ransomware (an updated variant of Babuk) that prevents victims from accessing/opening files by encrypting them. It also modifies filenames and creates a text file/ransom note (HowToRestoreYourFiles.txt). Rook renames files by appending the .Rook extension. For example, it renames 1.jpg to 1.jpg.Rook, 2.jpg to 2.jpg.Rook.",
+      "raas": false,
+      "first_seen": "2021-12-07",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "royal",
+      "altname": null,
+      "description": "According to Trendmicro, Royal ransomware was first observed in September 2022, and the threat actors behind it are believed to be seasoned cybercriminals who used to be part of Conti Team One.",
+      "raas": false,
+      "first_seen": "2022-11-04",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "rransom",
+      "altname": null,
+      "description": "RRansom is a low-profile ransomware group whose dark web leak site has been listed as offline in tracking directories, with very limited public threat intelligence available about its targets, tactics, or scale of operations.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "RunSomeWares",
+      "altname": null,
+      "description": "RunSomeWares is an emerging ransomware group that surfaced in February 2025 with initial victims across supply-chain services, financial services, accounting, and manufacturing, with unclear deployment of an encryptor vs. pure data-theft extortion.",
+      "raas": false,
+      "first_seen": "2025-02-27",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "sabbath",
+      "altname": null,
+      "description": "Sabbath (also known as 54BB47h, operated by UNC2190) is a ransomware group active from mid-2021 that emerged as a rebrand of the Arcane ransomware, targeting critical infrastructure in the US and Canada \u2014 particularly hospitals, schools, and natural resources \u2014 using double extortion, backup destruction, and affiliate recruitment on Russian-language dark web forums.",
+      "raas": true,
+      "first_seen": "2021-11-22",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "safepay",
+      "altname": null,
+      "description": "SafePay emerged in September 2024 as a rapidly growing ransomware operation that explicitly disavows the RaaS model and manages all operations internally, claiming over 300 victims worldwide by mid-2025 with a high-profile early attack against UK telematics firm Microlise stealing 1.2 TB of data.",
+      "raas": false,
+      "first_seen": "2024-11-19",
+      "active_sites": 1,
+      "total_sites": 5
+    },
+    {
+      "name": "sarcoma",
+      "altname": null,
+      "description": "Sarcoma is a ransomware group that debuted in October 2024, immediately ranking among the top three most active groups globally and surpassing 116 documented victims by mid-2025, targeting mid-market companies across manufacturing, retail, healthcare, legal, and business services with roughly 50% of victims in the United States.",
+      "raas": true,
+      "first_seen": "2024-10-09",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "satanlockv2",
+      "altname": null,
+      "description": "SatanLock is a short-lived ransomware group that first appeared in April 2025 and abruptly shut down in July 2025 after claiming attacks against roughly 67 organizations \u2014 though over 65% of listed victims were duplicates from other groups \u2014 leaking all stolen data publicly upon shutdown.",
+      "raas": false,
+      "first_seen": "2025-07-04",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "secp0",
+      "altname": "secpo",
+      "description": "Encrypted Extension: .vanhelsing, .vanlocker. Targets Windows Platform only",
+      "raas": false,
+      "first_seen": "2025-03-14",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "Section9",
+      "altname": null,
+      "description": "\ud83d\udea8 This is a fake group with fake victims.",
+      "raas": false,
+      "first_seen": "2026-07-26",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "securotrop",
+      "altname": null,
+      "description": "Securotrop is a ransomware group established in early 2025 that operates within the Qilin affiliate network while maintaining an independent public identity, focusing exclusively on commercial targets and deliberately avoiding healthcare and government entities, with approximately 32 documented victims.",
+      "raas": true,
+      "first_seen": "2025-07-22",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "SenSayQ",
+      "altname": null,
+      "description": "SenSayQ is an emerging ransomware actor that appeared in mid-2024 using a leaked LockBit 3.0 builder for double-extortion attacks; Group-IB links it operationally to the Brain Cipher group and its siblings EstateRansomware and \"Noname,\" suggesting a shared operator.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "settra",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-28",
+      "active_sites": 3,
+      "total_sites": 10
+    },
+    {
+      "name": "SevyWare",
+      "altname": null,
+      "description": "Direct Extortion Double Extortion",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "shadow",
+      "altname": null,
+      "description": "Shadow is a low-profile ransomware group tracked on ransomware monitoring platforms with limited public documentation; specific attribution details regarding its targets, origin, or scale remain sparse in published threat intelligence reports.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ShadowByt3$",
+      "altname": null,
+      "description": "ShadowByt3$ is a ransomware-as-a-service group first observed in October 2025, using multi-method extortion and communicating via Telegram and Tox, with a very small confirmed victim list suggesting it remains in early-stage operation.",
+      "raas": true,
+      "first_seen": "2026-02-25",
+      "active_sites": 1,
+      "total_sites": 6
+    },
+    {
+      "name": "shaoleaks",
+      "altname": null,
+      "description": "SHAOleaks is a low-profile data leak and extortion group with minimal public documentation, operating a leak site but lacking detailed analysis by major threat intelligence firms, suggesting a very limited or short-lived operation.",
+      "raas": false,
+      "first_seen": "2022-11-01",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Shiba",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-07-27",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "shinyhunters",
+      "altname": null,
+      "description": "ShinyHunters is a financially motivated data-theft and extortion group active since 2020, responsible for high-profile breaches including Ticketmaster (via Snowflake) and PowerSchool; by 2025 they launched a RaaS offering called \"shinysp1d3r,\" and in August 2025 French authorities arrested four members.",
+      "raas": true,
+      "first_seen": "2025-10-03",
+      "active_sites": 2,
+      "total_sites": 4
+    },
+    {
+      "name": "ShinySp1d3r",
+      "altname": "ShinySpider",
+      "description": "Likely associated with the cybercrime group BlingLibra (ShinyHunters)",
+      "raas": true,
+      "first_seen": "2025-11-15",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "sicarii",
+      "altname": null,
+      "description": "Sicarii is a pro-Israeli/Jewish-branded ransomware-as-a-service operation that emerged in late 2025, explicitly targeting Arab and Muslim-majority organizations while avoiding Israeli systems, exploiting exposed RDP services and Fortinet devices, with its admin later instructing operators to migrate to the BQTLock platform.",
+      "raas": true,
+      "first_seen": "2025-12-30",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "siegedsec",
+      "altname": null,
+      "description": "Not a ransomware group but a hacktivist group that appeared coincidentally days before Russia\u2019s invasion of Ukraine",
+      "raas": false,
+      "first_seen": "2023-12-08",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "silent",
+      "altname": "",
+      "description": "Unlike many other groups, Silent claims to operate with a high level of anonymity and discretion. According to their own statement, they avoid public negotiations and encrypt minimal data. Instead, their focus is on stealing valuable confidential corporate information \u2014 and either selling it to competitors, on the dark web, or publishing it selectively.",
+      "raas": true,
+      "first_seen": "2025-04-23",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "SilentRansomGroup",
+      "altname": "Luna Moth",
+      "description": "a former Conti team",
+      "raas": false,
+      "first_seen": "2025-05-06",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "sinobi",
+      "altname": null,
+      "description": "Sinobi is a private vetted-affiliate RaaS group that emerged in mid-2025, believed to be a rebrand of the Lynx/INC ransomware lineage, claiming 176 victims by end of 2025 through double-extortion attacks primarily against mid-market US organizations via compromised SonicWall VPN credentials.",
+      "raas": true,
+      "first_seen": "2025-07-05",
+      "active_sites": 0,
+      "total_sites": 8
+    },
+    {
+      "name": "skira",
+      "altname": null,
+      "description": "Skira is a small ransomware group that emerged around late 2024, claiming responsibility for the breach of Carruth Compliance Consulting that exposed SSNs, W-2s, and financial records of employees across 36 US school districts, with five total claimed victims across the US, Turkey, and India.",
+      "raas": false,
+      "first_seen": "2025-03-06",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "slug",
+      "altname": null,
+      "description": "Slug is a very obscure ransomware or extortion group with only a single documented victim (AerCap, the aircraft leasing company) recorded on ransomware tracking platforms; no detailed threat intelligence reports exist for this group.",
+      "raas": false,
+      "first_seen": "2024-01-18",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "snatch",
+      "altname": null,
+      "description": "Snatch is a ransomware which infects victims by rebooting the PC into Safe Mode. Most of the existing security protections do not run in Safe Mode so that it the malware can act without expected countermeasures and it can encrypt as many files as it finds. It uses common packers such as UPX to hide its payload.",
+      "raas": false,
+      "first_seen": "2021-11-29",
+      "active_sites": 0,
+      "total_sites": 5
+    },
+    {
+      "name": "solidbit",
+      "altname": null,
+      "description": "Ransomware, written in .NET.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Sovcali",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-09",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "spacebears",
+      "altname": null,
+      "description": "Space Bears is a double-extortion ransomware group that emerged in April 2024, distinguished by a professional \"corporate\" aesthetic on its leak site, leveraging Phobos RaaS infrastructure and targeting small-to-medium organizations in manufacturing, technology, and healthcare across the US and Europe.",
+      "raas": true,
+      "first_seen": "2024-04-29",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "sparta",
+      "altname": null,
+      "description": "Sparta is a short-lived ransomware group first observed in September 2022 that conducted double-extortion attacks primarily targeting organizations in Spain before ceasing activity, gaining initial access via phishing and exploitation of unpatched systems.",
+      "raas": false,
+      "first_seen": "2022-09-13",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "spook",
+      "altname": null,
+      "description": "Spook ransomware operated briefly in September\u2013October 2021 as a rebrand of the Prometheus ransomware group (built on the Thanos builder), conducting double-extortion attacks against global targets with a concentration in manufacturing and unusually publishing all victim names regardless of ransom payment.",
+      "raas": false,
+      "first_seen": "2021-10-04",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Storm",
+      "altname": null,
+      "description": "",
+      "raas": true,
+      "first_seen": "2026-08-07",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "stormous",
+      "altname": null,
+      "description": "Stormous is an Arabic-speaking, pro-Russian ransomware and hacktivist group active since at least 2022, known for politically motivated attacks across 15+ countries, collaborating with GhostSec on the GhostLocker 2.0 RaaS platform and inheriting GhostSec's RaaS operations in mid-2024. On 1st July 2026 the group has annonced the end of their operations & ervices",
+      "raas": true,
+      "first_seen": "2022-03-22",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "sugar",
+      "altname": null,
+      "description": "Ransomware, written in Delphi.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "suncrypt",
+      "altname": null,
+      "description": "SunCrypt is a RaaS operation first observed in October 2019, notable for pioneering triple extortion (encryption, data publication threats, and DDoS attacks on non-paying victims), operating a closed small affiliate program and partnering with TrickBot for initial access.",
+      "raas": true,
+      "first_seen": "2020-08-24",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "synack",
+      "altname": null,
+      "description": "SynAck is a sophisticated ransomware operation first spotted in 2017, known for using hybrid ECIES encryption and the Doppelganging process injection technique to evade detection; in August 2021 the group rebranded as El_Cometa, transitioning to a full RaaS model and releasing master decryption keys for prior victims.",
+      "raas": true,
+      "first_seen": "2021-03-21",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "teamxxx",
+      "altname": null,
+      "description": "TeamXXX is an emerging ransomware group that launched its leak site in June 2025, claiming victims across healthcare, agriculture, hospitality, financial services, and shipping sectors in the US, UK, Norway, Ireland, and Europe within its first months.",
+      "raas": false,
+      "first_seen": "2025-06-10",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "tengu",
+      "altname": "Shisa",
+      "description": "Tengu is a RaaS operation first observed in October 2025, following a double-extortion model and using Living Off The Land Binaries (LOLBins) to blend malicious activity with normal admin traffic, primarily targeting consumer goods, real estate, automotive, healthcare, and IT sectors.",
+      "raas": true,
+      "first_seen": "2025-10-23",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "termite",
+      "altname": null,
+      "description": "Termite is a ransomware group first identified in late 2024 using a modified version of Babuk ransomware code; its most notable attack was the November 2024 breach of supply-chain software firm Blue Yonder, claiming 680 GB of exfiltrated data and disrupting major customers including Starbucks.",
+      "raas": false,
+      "first_seen": "2024-11-17",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "The Green Blood Group",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-02-04",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "The Syndicate",
+      "altname": null,
+      "description": "Data Broker",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "thegentlemen",
+      "altname": "Storm-2697",
+      "description": "The Gentlemen is a RaaS group that emerged in July\u2013August 2025, rapidly claiming over 320 victims across 17+ countries by offering affiliates a 90% revenue share, deploying a Go-based locker against Windows, Linux, NAS, and BSD systems; a compromised C2 server in 2026 revealed more than 1,570 linked victims.",
+      "raas": true,
+      "first_seen": "2025-09-09",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "thegreenbloodgroup",
+      "altname": null,
+      "description": "The Green Blood Group is an emerging ransomware operation first identified in early 2026 whose Go-based Windows payload uses ChaCha8 encryption and aggressively destroys backup and recovery options, targeting organizations in India, Senegal, Egypt, Colombia, and Belgium.",
+      "raas": false,
+      "first_seen": "2026-01-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "threeam",
+      "altname": "3Am",
+      "description": "A new Ransomware family identified by the name '3AM' or 'ThreeAM' in September 2023. The ransomware operation was observed by the Symantec team, in which a ransomware affiliate attempted to deploy another ransomware, LockBit, on the target network and then switched to 3AM when LockBit was reportedly blocked.<BR> > <BR> > The ransomware operation, according to the publication on its Tor-based website, has been operating since mid-August 2023, according to the publication from its first\u2026",
+      "raas": false,
+      "first_seen": "2023-09-14",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "TiMc",
+      "altname": null,
+      "description": "TiMc is a ransomware group that emerged in early 2026, claiming high-impact attacks against Spanish IT services leader Seidor (1 TB+ data) and oncology organization Oncologica (100 GB+), targeting Business Services, Healthcare, and IT sectors with a focus on Spanish-speaking and European targets.",
+      "raas": false,
+      "first_seen": "2026-04-09",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "titan",
+      "altname": null,
+      "description": "Founded 4 April 2026",
+      "raas": true,
+      "first_seen": "2026-05-18",
+      "active_sites": 3,
+      "total_sites": 3
+    },
+    {
+      "name": "Tommyleaks",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "toufan",
+      "altname": null,
+      "description": "Pro-Palestinian Group",
+      "raas": false,
+      "first_seen": "2023-12-17",
+      "active_sites": 1,
+      "total_sites": 4
+    },
+    {
+      "name": "tridentlocker",
+      "altname": null,
+      "description": "TridentLocker is a newly emerged ransomware group (surfaced mid-2025) targeting organizations managing high volumes of regulated or third-party data \u2014 including government services, telecom, and engineering firms \u2014 across the US, Canada, UK, and Asia using double-extortion tactics.",
+      "raas": false,
+      "first_seen": "2025-11-29",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "trigona",
+      "altname": null,
+      "description": "According to PCrisk, Trigona is ransomware that encrypts files and appends the ._locked extension to filenames. Also, it drops the how_to_decrypt.hta file that opens a ransom note. An example of how Trigona renames files: it renames 1.jpg to 1.jpg._locked, 2.png to 2.png._locked, and so forth.It embeds the encrypted decryption key, the campaign ID, and the victim ID in the encrypted files.",
+      "raas": false,
+      "first_seen": "2023-04-17",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "trinity",
+      "altname": null,
+      "description": "Trinity ransomware was first discovered in May 2024, believed to be a rebrand of the Venus/2023Lock variants, using ChaCha20 encryption and double-extortion via a Tor leak site; the US HHS flagged it as a specific threat to the healthcare sector after confirmed attacks on healthcare organizations.",
+      "raas": false,
+      "first_seen": "2024-06-11",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Triple X",
+      "altname": "triplex",
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-13",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "trisec",
+      "altname": null,
+      "description": "Trisec is a Tunisian-origin ransomware group that emerged in February 2024, claiming affiliation with the Tunisian government and operating as both a financially motivated and state-sponsored mercenary group, exclusively recruiting Tunisian members and reporting nine victims in the first half of 2024.",
+      "raas": false,
+      "first_seen": "2024-02-16",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "u-bomb",
+      "altname": null,
+      "description": "U-Bomb is a low-profile ransomware operation discovered in March 2023 that arrives via phishing emails and uses third-party offensive frameworks (BRC4, Sliver, Cobalt Strike) for lateral movement before deploying its encryptor, likely becoming inactive in the second half of 2023.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ULose",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-09",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "underground",
+      "altname": null,
+      "description": "Underground ransomware is deployed by the Russia-based RomCom group (Storm-0978) and has victimized companies across multiple industries since July 2023 by exploiting CVE-2023-36884, encrypting files without changing extensions and deleting Volume Shadow Copies and Windows event logs in double-extortion campaigns.",
+      "raas": false,
+      "first_seen": "2024-05-01",
+      "active_sites": 1,
+      "total_sites": 2
+    },
+    {
+      "name": "unknown",
+      "altname": null,
+      "description": "\"Unknown\" is a catch-all tracking label used on ransomware monitoring platforms for attacks where the responsible threat actor has not been positively attributed to a known named group, serving as a placeholder for unattributed incidents.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "unsafe",
+      "altname": null,
+      "description": "A group which seems to recycle leak from other ransomware groups",
+      "raas": false,
+      "first_seen": "2022-12-21",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "ValenciaLeaks",
+      "altname": "Valencia",
+      "description": "ValenciaLeaks is a data-extortion group that surfaced in August\u2013September 2024, focused on exfiltrating large volumes of data and publishing it on a dedicated leak site, with documented victims including the City of Pleasanton, CA (283 GB exfiltrated) and pharmaceutical firm Duo Pharma Biotech.",
+      "raas": false,
+      "first_seen": "2024-09-10",
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "VanHelsing",
+      "altname": null,
+      "description": "VanHelsing is a multi-platform RaaS operation that launched on March 7, 2025, requiring a $5,000 affiliate deposit and splitting ransoms 80/20, supporting Windows, Linux, BSD, ARM, and ESXi targets, reaching at least five victims across the US, France, Italy, and Australia within its first two months.",
+      "raas": true,
+      "first_seen": "2025-03-17",
+      "active_sites": 0,
+      "total_sites": 7
+    },
+    {
+      "name": "vanirgroup",
+      "altname": null,
+      "description": "VanirGroup is an Eastern European ransomware group composed of former affiliates from Karakurt, LockBit, and Knight ransomware that emerged in mid-2024, before German law enforcement (Karlsruhe Public Prosecutor's Office) seized its leak site.",
+      "raas": false,
+      "first_seen": "2024-07-10",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "vect",
+      "altname": null,
+      "description": "VECT is a RaaS group that launched its affiliate program in December 2025 with a five-tier revenue-sharing model and a formal partnership with BreachForums; its VECT 2.0 payload contains a critical encryption flaw that irreversibly destroys files larger than 128 KB rather than encrypting them.",
+      "raas": true,
+      "first_seen": "2026-01-06",
+      "active_sites": 0,
+      "total_sites": 3
+    },
+    {
+      "name": "vendetta",
+      "altname": null,
+      "description": "Ransomware, which appears to be a rebranding of win.cuba.",
+      "raas": false,
+      "first_seen": "2023-02-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "Vexy Ransomware",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-09-03",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "vfokx",
+      "altname": null,
+      "description": "VFOKX is a low-profile ransomware group tracked on ransomware monitoring platforms with very limited public documentation and no detailed analysis or named victims published by major threat intelligence vendors.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 2
+    },
+    {
+      "name": "vicesociety",
+      "altname": null,
+      "description": "Vice Society ransomware appends the .v-society extension when encrypting Linux machines. Running a leak site on the darkweb, Possible relations with \"HelloKitty\"",
+      "raas": false,
+      "first_seen": "2021-05-31",
+      "active_sites": 0,
+      "total_sites": 6
+    },
+    {
+      "name": "Wallstreet",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-06-26",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "walocker",
+      "altname": null,
+      "description": "WALocker is an emerging ransomware group that came to attention in 2025, targeting organizations in Southeast Asia and government entities, with a notable attack breaching Myanmar's Union Civil Service Board and exposing data on approximately 200,000 government officials.",
+      "raas": false,
+      "first_seen": "2025-06-10",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "wannacry",
+      "altname": null,
+      "description": "WannaCry ransomware is a cyber attack that spreads by exploiting vulnerabilities in the Windows operating system. At its peak in May 2017, WannaCry became a global threat. Cybercriminals used the ransomware to hold an organization's data hostage and extort money in the form of cryptocurrency. WannaCry spreads using EternalBlue, an exploit leaked from the National Security Agency (NSA). EternalBlue enables attackers to use a zero-day vulnerability to gain access to a system. It targets Windows\u2026",
+      "raas": false,
+      "first_seen": "2017-05-12",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "warlock",
+      "altname": null,
+      "description": "The Warlock ransomware and operator(s) are believed to be attributed to Storm-2603, a China-based threat actor who is also known to have deployed LockBit ransomware. There's also a crossover between victims with Black Basta. Both are RaaS and have a long list of known and unknown affiliates. Having said that, this is possibly an affiliate (likely a cybergroup) of both of those groups. The Alliance & Association would technically be Encryptor Sharing, but this is realistically more of an \"Old\u2026",
+      "raas": false,
+      "first_seen": "2025-06-10",
+      "active_sites": 0,
+      "total_sites": 4
+    },
+    {
+      "name": "werewolves",
+      "altname": null,
+      "description": "WereWolves is a Russian-speaking ransomware group that emerged in May 2023, using a modified LockBit 3 (Black) encryptor, operating an unusual public website that actively recruits new members and offers a bug-bounty program with rewards up to $1 million, with at least 26 victims across Russia, the US, and Europe.",
+      "raas": false,
+      "first_seen": "2023-12-20",
+      "active_sites": 2,
+      "total_sites": 2
+    },
+    {
+      "name": "weyhro",
+      "altname": null,
+      "description": "Weyhro is a data-extortion group (relying on data theft and leak threats without file encryption) that launched a Tor leak site in March 2025, focusing on manufacturing, financial services, and real estate sectors with victims in the US, Italy, and Canada.",
+      "raas": false,
+      "first_seen": "2025-03-06",
+      "active_sites": 1,
+      "total_sites": 3
+    },
+    {
+      "name": "worldleaks",
+      "altname": null,
+      "description": "World Leaks emerged in January 2025 as a rebrand of the Hunters International ransomware operation, shifting its focus from file encryption to solely stealing sensitive data and threatening to leak it unless a ransom is paid",
+      "raas": false,
+      "first_seen": "2025-05-16",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "x001xs",
+      "altname": null,
+      "description": "X001xs is a low-profile ransomware group tracked on monitoring platforms with minimal public documentation, employing standard double-extortion tactics with no detailed technical analysis published by major vendors.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "xinglocker",
+      "altname": null,
+      "description": "XingLocker is a ransomware group that emerged in May 2021 as part of a franchise-style RaaS model built on a customized MountLocker payload, using IcedID for initial access and Windows Active Directory APIs for worm-style lateral movement across networks.",
+      "raas": true,
+      "first_seen": "2021-04-29",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "xinof",
+      "altname": null,
+      "description": "XINOF (also known as Fonix/FonixCrypter) is a RaaS operation that began in June 2020 with no upfront affiliate cost and four methods of encryption per file; the operators shut down the service and released the master decryption key in January 2021, allowing free decryption for all victims.",
+      "raas": true,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "xp95",
+      "altname": null,
+      "description": "XP95 is a cyber-extortion group that emerged in March 2026, using a pure data-theft-and-extortion model with a Windows XP/95-themed leak site, with notable targets including Statistics South Africa (154 GB exfiltrated) and the Gauteng Provincial Government.",
+      "raas": false,
+      "first_seen": "2026-03-17",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "xpl0itrs",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-15",
+      "active_sites": 1,
+      "total_sites": 1
+    },
+    {
+      "name": "yanluowang",
+      "altname": null,
+      "description": "According to PCrisk, Yanluowang is ransomware that encrypts (and renames) files, ends all running processes, stops services, and creates the README.txt file containing a ransom note. It appends the .yanluowang extension to filenames. Cybercriminals behind Yanluowang are targeting enterprise entities and organizations in the financial sector.Files encrypted by Yanluowang can be decrypted with this tool (it is possible to decrypt all files if the original file is larger than 3GB. If the original\u2026",
+      "raas": false,
+      "first_seen": "2022-07-02",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "yurei",
+      "altname": null,
+      "description": "Yurei is a ransomware group first observed in September 2025 whose payload is a minimally modified fork of the open-source Prince-Ransomware, using ChaCha20 encryption and propagating across SMB shares, primarily targeting food manufacturing, transportation, and IT sectors in Sri Lanka and Nigeria.",
+      "raas": false,
+      "first_seen": "2025-09-05",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "ZaWoo",
+      "altname": null,
+      "description": "",
+      "raas": false,
+      "first_seen": "2026-08-30",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "zeon",
+      "altname": null,
+      "description": "Zeon was the precursor identity used by the group that rebranded as Royal in September 2022, composed primarily of former Conti \"Team One\" members, deliberately avoiding the RaaS model and keeping its code and infrastructure private.",
+      "raas": false,
+      "first_seen": null,
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "zerolockersec",
+      "altname": null,
+      "description": "ZeroLockerSec is a small ransomware group with very limited public documentation that became inactive by Q2 2025 with no recorded leak posts, suggesting a brief operational period before going dormant.",
+      "raas": false,
+      "first_seen": "2025-04-28",
+      "active_sites": 0,
+      "total_sites": 1
+    },
+    {
+      "name": "zerotolerance",
+      "altname": null,
+      "description": "ZeroTolerance is a low-profile ransomware group tracked on monitoring platforms with no detailed threat actor profiles, technical analysis, or named victim reports published by major threat intelligence vendors.",
+      "raas": false,
+      "first_seen": "2024-05-09",
+      "active_sites": 0,
+      "total_sites": 1
+    }
+  ]
+}

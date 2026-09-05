@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL — Ransomware Tracker</title>
+<style>
+  :root {
+    --ink: #0a0e14;
+    --ink-raised: #10151d;
+    --ink-input: #0d1219;
+    --line: #1e2733;
+    --text: #d7dde5;
+    --text-dim: #7d8998;
+    --amber: #ffb020;
+    --red: #ff5c5c;
+    --blue: #5ac8ff;
+    --green: #4fd58a;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--ink); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  .frame { max-width: 920px; margin: 0 auto; padding: 24px 16px 80px; }
+
+  header.masthead {
+    border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 18px;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap;
+  }
+  .masthead h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 4px; }
+  .masthead .sub { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+  .masthead nav { display: flex; gap: 8px; }
+  .masthead nav a {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); text-decoration: none;
+    border: 1px solid var(--line); padding: 6px 10px;
+  }
+  .masthead nav a:hover { color: var(--amber); border-color: var(--amber); }
+
+  .view-toggle { display: flex; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 12px; }
+  .view-toggle button {
+    flex: 1; background: var(--ink-raised); color: var(--text-dim); border: none;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; padding: 10px 6px; cursor: pointer;
+    text-transform: uppercase;
+  }
+  .view-toggle button.active { background: var(--ink); color: var(--green); font-weight: 600; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  select#group-filter, select#sector-filter, select#month-select {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line); max-width: 200px;
+  }
+  .chip {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--line);
+    background: var(--ink-raised); color: var(--text-dim); cursor: pointer; user-select: none;
+  }
+  .chip.active { color: var(--green); border-color: var(--green); }
+  .search-wrap { flex: 1; min-width: 160px; display: flex; }
+  #search-input {
+    width: 100%; font-family: var(--font-mono); font-size: 12px; padding: 7px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line);
+  }
+  #search-input::placeholder { color: var(--text-dim); }
+  .reset-btn {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); background: none;
+    border: 1px solid var(--line); padding: 6px 10px; cursor: pointer;
+  }
+  .reset-btn:hover { color: var(--amber); border-color: var(--amber); }
+
+  .archive-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-family: var(--font-mono);
+    font-size: 11px; color: var(--text-dim); flex-wrap: wrap;
+  }
+
+  .result-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 14px; }
+
+  .feed { display: flex; flex-direction: column; }
+  .entry {
+    border-left: 3px solid var(--line); padding: 14px 16px; border-bottom: 1px solid var(--line);
+    cursor: pointer; background: none; text-align: left; width: 100%; color: var(--text); font-family: var(--font-sans);
+  }
+  .entry:hover { background: #10151d; }
+  .entry.victim { border-left-color: var(--red); }
+  .entry.group { border-left-color: var(--green); }
+
+  .entry .meta {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 6px;
+    display: flex; gap: 10px; text-transform: uppercase; letter-spacing: 0.04em; flex-wrap: wrap; align-items: center;
+  }
+  .entry.victim .tag { color: var(--red); }
+  .entry.group .tag { color: var(--green); }
+  .raas-badge { color: var(--amber); border: 1px solid var(--amber); padding: 1px 6px; font-size: 9.5px; letter-spacing: 0.06em; }
+  .entry h2 { font-size: 15.5px; font-weight: 500; margin: 0 0 6px; line-height: 1.4; font-family: var(--font-mono); }
+  .entry p { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; margin: 0; font-family: var(--font-sans); }
+
+  .empty-state {
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); padding: 40px 0;
+    text-align: center; border: 1px dashed var(--line);
+  }
+
+  /* flyout */
+  .flyout-backdrop {
+    position: fixed; inset: 0; background: rgba(5,7,10,0.6); opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease; z-index: 40;
+  }
+  .flyout-backdrop.open { opacity: 1; pointer-events: auto; }
+  .flyout {
+    position: fixed; background: var(--ink-raised); border-left: 1px solid var(--line); z-index: 41;
+    display: flex; flex-direction: column; top: 0; right: 0; bottom: 0; width: min(460px, 100%);
+    transform: translateX(100%); transition: transform 0.25s ease;
+  }
+  .flyout.open { transform: translateX(0); }
+  @media (max-width: 680px) {
+    .flyout { top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 88vh; border-left: none; border-top: 1px solid var(--line); transform: translateY(100%); }
+    .flyout.open { transform: translateY(0); }
+  }
+  .flyout-head { display: flex; justify-content: flex-end; padding: 10px 14px; border-bottom: 1px solid var(--line); flex: 0 0 auto; }
+  .flyout-close { font-family: var(--font-mono); font-size: 16px; color: var(--text-dim); background: none; border: none; cursor: pointer; padding: 0 4px; }
+  .flyout-close:hover { color: var(--red); }
+  .flyout-body { padding: 16px; overflow-y: auto; flex: 1 1 auto; }
+  .flyout-body .fid { font-family: var(--font-mono); font-size: 12px; color: var(--green); }
+  .flyout-body h2 { font-size: 19px; margin: 4px 0 10px; font-family: var(--font-mono); }
+  .flyout-summary { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 16px; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .meta-cell { border: 1px solid var(--line); padding: 9px 11px; }
+  .meta-cell span { display: block; font-size: 9px; color: var(--text-dim); letter-spacing: 0.07em; margin-bottom: 3px; text-transform: uppercase; }
+  .meta-cell b { font-family: var(--font-mono); font-size: 13px; }
+  .section-title {
+    font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); margin: 20px 0 10px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .ref-list { display: flex; flex-direction: column; gap: 6px; }
+  .ref-list a { color: var(--blue); font-size: 12px; word-break: break-all; }
+  .group-link {
+    display: inline-block; margin-top: 4px; font-size: 11px; color: var(--green); text-decoration: none; cursor: pointer;
+  }
+  .group-link:hover { text-decoration: underline; }
+  a.footer-link { color: var(--text-dim); }
+  a.footer-link:hover { color: var(--amber); }
+  footer { margin-top: 32px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="masthead">
+      <div>
+        <h1>RANSOMWARE TRACKER</h1>
+        <div class="sub" id="status-line">loading…</div>
+      </div>
+      <nav>
+        <a href="cve.html">‹ CVE</a>
+        <a href="attack.html">‹ ATT&amp;CK</a>
+        <a href="index.html">‹ feed</a>
+      </nav>
+    </header>
+
+    <div class="view-toggle" id="view-toggle">
+      <button data-view="victims" class="active">Victims</button>
+      <button data-view="groups">Groups</button>
+    </div>
+
+    <div class="toolbar">
+      <select id="group-filter"><option value="all">all groups</option></select>
+      <select id="sector-filter"><option value="all">all sectors</option></select>
+      <div class="search-wrap"><input id="search-input" type="text" placeholder="search…" /></div>
+      <button class="reset-btn" id="reset-btn">reset</button>
+    </div>
+
+    <div class="archive-row" id="archive-row">
+      <span>viewing:</span>
+      <select id="month-select"><option value="latest">most recent</option></select>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
+    <div class="feed" id="feed"><div class="empty-state">Loading ransomware tracker data…</div></div>
+
+    <footer>
+      Ransomware group &amp; leak-site victim data from
+      <a class="footer-link" href="https://ransomware.live/" target="_blank" rel="noopener noreferrer">ransomware.live</a>
+      by a scheduled GitHub Action · victims accumulate over time (seeded from a recent window, not the full historical archive) ·
+      <a class="footer-link" href="data/leaktracker/latest.json">view raw data</a>
+    </footer>
+  </div>
+
+  <div class="flyout-backdrop" id="flyout-backdrop"></div>
+  <aside class="flyout" id="flyout">
+    <div class="flyout-head"><button class="flyout-close" id="flyout-close">✕</button></div>
+    <div class="flyout-body" id="flyout-body"></div>
+  </aside>
+
+<script>
+(() => {
+  let indexData = null;
+  let groupsData = null;
+  let currentView = "victims";
+  let currentVictims = [];
+  let currentMonth = "latest";
+  let filters = { group: "all", sector: "all", search: "" };
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  async function loadJson(path) {
+    const res = await fetch(`${path}?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  function groupByName(name) {
+    return groupsData && groupsData.groups.find(g => g.name.toLowerCase() === (name || "").toLowerCase());
+  }
+
+  async function init() {
+    try {
+      [indexData, groupsData] = await Promise.all([loadJson("data/leaktracker/index.json"), loadJson("data/leaktracker/groups.json")]);
+    } catch (err) {
+      document.getElementById("feed").innerHTML = `<div class="empty-state">Couldn't load leak-site tracker data. Has scripts/fetch_leaktracker.py been run yet?</div>`;
+      console.error(err);
+      return;
+    }
+
+    const totalVictims = indexData.months.reduce((s, m) => s + m.count, 0);
+    document.getElementById("status-line").textContent =
+      `${totalVictims} victim postings across ${indexData.months.length} month(s) · ${groupsData.groups.length} tracked groups · last fetched ${new Date(indexData.last_fetched).toLocaleString()}`;
+
+    const monthSelect = document.getElementById("month-select");
+    monthSelect.innerHTML = `<option value="latest">most recent</option>` +
+      indexData.months.map(m => `<option value="${m.key}">${m.key} (${m.count})</option>`).join("");
+
+    document.querySelectorAll("#view-toggle button").forEach(btn => {
+      btn.addEventListener("click", () => switchView(btn.dataset.view));
+    });
+
+    document.getElementById("group-filter").addEventListener("change", (e) => { filters.group = e.target.value; render(); });
+    document.getElementById("sector-filter").addEventListener("change", (e) => { filters.sector = e.target.value; render(); });
+    document.getElementById("search-input").addEventListener("input", (e) => { filters.search = e.target.value; render(); });
+    monthSelect.addEventListener("change", (e) => switchMonth(e.target.value));
+    document.getElementById("reset-btn").addEventListener("click", resetFilters);
+    document.getElementById("flyout-close").addEventListener("click", closeFlyout);
+    document.getElementById("flyout-backdrop").addEventListener("click", closeFlyout);
+
+    await switchMonth("latest");
+  }
+
+  function resetFilters() {
+    filters = { group: "all", sector: "all", search: "" };
+    document.getElementById("group-filter").value = "all";
+    document.getElementById("sector-filter").value = "all";
+    document.getElementById("search-input").value = "";
+    render();
+  }
+
+  function switchView(view) {
+    currentView = view;
+    document.querySelectorAll("#view-toggle button").forEach(b => b.classList.toggle("active", b.dataset.view === view));
+    document.getElementById("archive-row").style.display = view === "victims" ? "flex" : "none";
+    document.getElementById("sector-filter").style.display = view === "victims" ? "" : "none";
+    document.getElementById("month-select").parentElement;
+    resetFilters();
+    if (view === "groups") renderGroupFilterOptions();
+    render();
+  }
+
+  async function switchMonth(month) {
+    currentMonth = month;
+    document.getElementById("feed").innerHTML = `<div class="empty-state">Loading…</div>`;
+    try {
+      const path = month === "latest" ? "data/leaktracker/latest.json" : `data/leaktracker/victims/${month}.json`;
+      const data = await loadJson(path);
+      currentVictims = data.victims || [];
+    } catch (err) {
+      document.getElementById("feed").innerHTML = `<div class="empty-state">Couldn't load that month's data.</div>`;
+      console.error(err);
+      return;
+    }
+    renderGroupFilterOptions();
+    renderSectorFilterOptions();
+    render();
+  }
+
+  function renderGroupFilterOptions() {
+    const select = document.getElementById("group-filter");
+    const prev = filters.group;
+    let names;
+    if (currentView === "groups") {
+      names = groupsData.groups.map(g => g.name);
+    } else {
+      const counts = new Map();
+      currentVictims.forEach(v => counts.set(v.group, (counts.get(v.group) || 0) + 1));
+      names = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([n]) => n);
+    }
+    select.innerHTML = `<option value="all">all groups</option>` + names.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join("");
+    select.value = names.includes(prev) ? prev : "all";
+    filters.group = select.value;
+  }
+
+  function renderSectorFilterOptions() {
+    const select = document.getElementById("sector-filter");
+    const prev = filters.sector;
+    const counts = new Map();
+    currentVictims.forEach(v => { if (v.sector) counts.set(v.sector, (counts.get(v.sector) || 0) + 1); });
+    const sectors = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([n]) => n);
+    select.innerHTML = `<option value="all">all sectors</option>` + sectors.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)} (${counts.get(s)})</option>`).join("");
+    select.value = sectors.includes(prev) ? prev : "all";
+    filters.sector = select.value;
+  }
+
+  function render() {
+    if (currentView === "groups") renderGroups(); else renderVictims();
+  }
+
+  function renderVictims() {
+    const term = filters.search.trim().toLowerCase();
+    const filtered = currentVictims.filter(v => {
+      if (filters.group !== "all" && v.group !== filters.group) return false;
+      if (filters.sector !== "all" && v.sector !== filters.sector) return false;
+      if (term && !`${v.victim} ${v.description}`.toLowerCase().includes(term)) return false;
+      return true;
+    });
+
+    document.getElementById("result-count").textContent =
+      `showing ${filtered.length} of ${currentVictims.length} victim postings${currentMonth === "latest" ? " (most recent)" : ` (${currentMonth})`}`;
+
+    const feed = document.getElementById("feed");
+    if (filtered.length === 0) { feed.innerHTML = `<div class="empty-state">No postings match the current filters.</div>`; return; }
+
+    feed.innerHTML = "";
+    for (const v of filtered) {
+      const el = document.createElement("button");
+      el.className = "entry victim";
+      el.innerHTML = `
+        <div class="meta">
+          <span class="tag">${escapeHtml(v.group)}</span>
+          ${v.sector ? `<span>${escapeHtml(v.sector)}</span>` : ""}
+          ${v.country ? `<span>${escapeHtml(v.country)}</span>` : ""}
+          <span>${(v.published || "").slice(0, 10)}</span>
+        </div>
+        <h2>${escapeHtml(v.victim)}</h2>
+        <p>${escapeHtml((v.description || "").slice(0, 200))}${(v.description || "").length > 200 ? "…" : ""}</p>
+      `;
+      el.addEventListener("click", () => openVictimFlyout(v));
+      feed.appendChild(el);
+    }
+  }
+
+  function renderGroups() {
+    const term = filters.search.trim().toLowerCase();
+    const filtered = groupsData.groups.filter(g => {
+      if (filters.group !== "all" && g.name !== filters.group) return false;
+      if (term && !`${g.name} ${g.description}`.toLowerCase().includes(term)) return false;
+      return true;
+    });
+
+    document.getElementById("result-count").textContent = `showing ${filtered.length} of ${groupsData.groups.length} tracked groups`;
+
+    const feed = document.getElementById("feed");
+    if (filtered.length === 0) { feed.innerHTML = `<div class="empty-state">No groups match the current filters.</div>`; return; }
+
+    feed.innerHTML = "";
+    for (const g of filtered) {
+      const el = document.createElement("button");
+      el.className = "entry group";
+      el.innerHTML = `
+        <div class="meta">
+          <span class="tag">GROUP</span>
+          ${g.raas ? `<span class="raas-badge">RaaS</span>` : ""}
+          <span>${g.active_sites}/${g.total_sites} leak sites active</span>
+        </div>
+        <h2>${escapeHtml(g.name)}${g.altname ? ` <span style="color:var(--text-dim); font-weight:400;">(${escapeHtml(g.altname)})</span>` : ""}</h2>
+        <p>${escapeHtml(g.description || "No description on file.")}</p>
+      `;
+      el.addEventListener("click", () => openGroupFlyout(g));
+      feed.appendChild(el);
+    }
+  }
+
+  function openVictimFlyout(v) {
+    const group = groupByName(v.group);
+    document.getElementById("flyout-body").innerHTML = `
+      <div class="fid">${escapeHtml(v.group.toUpperCase())}</div>
+      <h2>${escapeHtml(v.victim)}</h2>
+      <p class="flyout-summary">${escapeHtml(v.description) || "No description available."}</p>
+      <div class="meta-grid">
+        <div class="meta-cell"><span>Published</span><b>${(v.published || "—").slice(0, 10)}</b></div>
+        <div class="meta-cell"><span>Sector</span><b>${escapeHtml(v.sector || "Unknown")}</b></div>
+        <div class="meta-cell"><span>Country</span><b>${escapeHtml(v.country || "Unknown")}</b></div>
+        <div class="meta-cell"><span>Group</span><b>${escapeHtml(v.group)}</b></div>
+      </div>
+      ${group ? `<a class="group-link" id="view-group-link">view ${escapeHtml(group.name)} group profile ›</a>` : ""}
+      <div class="section-title">Links</div>
+      <div class="ref-list">
+        ${v.website ? `<a href="https://${escapeHtml(v.website.replace(/^https?:\/\//, ""))}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.website)}</a>` : ""}
+        ${v.post_url ? `<a href="${escapeHtml(v.post_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.post_url)}</a>` : ""}
+        ${!v.website && !v.post_url ? `<span style="color:var(--text-dim); font-size:12px;">none recorded</span>` : ""}
+      </div>
+    `;
+    openFlyout();
+    if (group) document.getElementById("view-group-link").addEventListener("click", () => { closeFlyout(); openGroupFlyout(group); });
+  }
+
+  function openGroupFlyout(g) {
+    document.getElementById("flyout-body").innerHTML = `
+      <div class="fid">RANSOMWARE GROUP${g.raas ? " · RaaS" : ""}</div>
+      <h2>${escapeHtml(g.name)}${g.altname ? ` (${escapeHtml(g.altname)})` : ""}</h2>
+      <p class="flyout-summary">${escapeHtml(g.description) || "No description available."}</p>
+      <div class="meta-grid">
+        <div class="meta-cell"><span>Leak sites tracked</span><b>${g.total_sites}</b></div>
+        <div class="meta-cell"><span>Currently active</span><b>${g.active_sites}</b></div>
+        <div class="meta-cell"><span>First seen</span><b>${escapeHtml(g.first_seen || "Unknown")}</b></div>
+      </div>
+    `;
+    openFlyout();
+  }
+
+  function openFlyout() {
+    document.getElementById("flyout").classList.add("open");
+    document.getElementById("flyout-backdrop").classList.add("open");
+  }
+  function closeFlyout() {
+    document.getElementById("flyout").classList.remove("open");
+    document.getElementById("flyout-backdrop").classList.remove("open");
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
