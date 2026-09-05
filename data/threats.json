@@ -7,13 +7,13 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T22:28:20.942280+00:00",
+  "fetched_at": "2026-09-05T23:37:21.660127+00:00",
   "entries": [
     {
       "id": "a6f7e900dd40",
       "source": "The Hacker News",
       "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
-      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. \"Sansec is publishing early",
+      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. \"Sansec is",
       "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
       "published": "Sun, 06 Sep 2026 01:44:47 +0530",
       "published_sort": [
