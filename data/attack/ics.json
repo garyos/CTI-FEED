@@ -1,7 +1,7 @@
 {
   "domain": "ics",
   "name": "ATT&CK for ICS",
-  "fetched_at": "2026-09-05T14:53:10.762930+00:00",
+  "fetched_at": "2026-09-05T15:02:52.720447+00:00",
   "tactics": [
     {
       "id": "TA0108",
