@@ -1,7 +1,11 @@
 {
   "domain": "ics",
   "name": "ATT&CK for ICS",
+<<<<<<< HEAD
   "fetched_at": "2026-09-05T15:28:10.543946+00:00",
+=======
+  "fetched_at": "2026-09-05T15:02:52.720447+00:00",
+>>>>>>> afd9a9f2b94f369adf4245ca4e223006cc11f899
   "tactics": [
     {
       "id": "TA0108",
