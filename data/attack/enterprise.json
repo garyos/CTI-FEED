@@ -1,7 +1,11 @@
 {
   "domain": "enterprise",
   "name": "Enterprise ATT&CK",
+<<<<<<< HEAD
   "fetched_at": "2026-09-05T16:24:01.478851+00:00",
+=======
+  "fetched_at": "2026-09-05T15:42:44.078657+00:00",
+>>>>>>> 393521d1222b7b129c0e2366ea60e88061342c93
   "tactics": [
     {
       "id": "TA0043",

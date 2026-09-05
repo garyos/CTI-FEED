@@ -7,7 +7,7 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T15:02:55.198550+00:00",
+  "fetched_at": "2026-09-05T15:42:43.624857+00:00",
   "entries": [
     {
       "id": "b0588f2d7af5",
@@ -23,6 +23,23 @@
         14,
         29,
         13
+      ],
+      "severity": "info"
+    },
+    {
+      "id": "2d965a358adc",
+      "source": "The Hacker News",
+      "title": "Trezor Says ShipMonk Breach Exposed 67,000 U.S. Customers' Data It Said Was Deleted",
+      "summary": "Hardware wallet manufacturer Trezor on Friday disclosed that another 67,000 customers from the U.S. have been impacted in a breach at its shipping provider ShipMonk.\n\nThe exposed information includes customer names, email addresses, phone numbers, shipping addresses, and order numbers between November 2019 and August 2021. The breach does not affect the security of the company's hardware wallets",
+      "link": "https://thehackernews.com/2026/09/trezor-says-shipmonk-breach-exposed.html",
+      "published": "Sat, 05 Sep 2026 19:47:02 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        14,
+        17,
+        2
       ],
       "severity": "info"
     },
@@ -1045,23 +1062,6 @@
         45
       ],
       "severity": "medium"
-    },
-    {
-      "id": "8332879a747e",
-      "source": "The Hacker News",
-      "title": "Meta Ads Push StreamRat Android Trojan That Can Gain Near-Complete Device Control",
-      "summary": "Cybersecurity researchers have disclosed details of a new Android banking trojan called StreamRat that was promoted to Spanish-speaking users through a fake television-streaming campaign on Meta and can give operators near-complete control of infected devices.\n\nThreatFabric said the campaign's advertisement focused on Spain and reached an estimated 570,950 Meta accounts in the European Union",
-      "link": "https://thehackernews.com/2026/09/meta-ads-push-streamrat-android-trojan.html",
-      "published": "Wed, 02 Sep 2026 17:52:02 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        12,
-        22,
-        2
-      ],
-      "severity": "info"
     },
     {
       "id": "47af0e0edff9",
