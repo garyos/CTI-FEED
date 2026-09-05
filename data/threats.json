@@ -7,8 +7,42 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T16:34:52.474148+00:00",
+  "fetched_at": "2026-09-05T17:06:00.884717+00:00",
   "entries": [
+    {
+      "id": "21ba9ecf17eb",
+      "source": "The Hacker News",
+      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
+      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment.\n\n\"Cadence users should immediately revoke or rotate all credentials and secrets that may have been used to run their Cadence executions,\" JetBrains said.",
+      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
+      "published": "Sat, 05 Sep 2026 22:22:33 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        16,
+        52,
+        33
+      ],
+      "severity": "critical"
+    },
+    {
+      "id": "ca7ece09a157",
+      "source": "The Hacker News",
+      "title": "Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code",
+      "summary": "Broadcom has released security updates for two security flaws impacting VMware Workstation and Fusion, including one critical bug that could result in arbitrary code execution under certain conditions.\n\nThe vulnerability, tracked as CVE-2026-59346 (CVSS score: 9.3), is an integer-overflow vulnerability that a local attacker with elevated privileges can exploit to run arbitrary code.\n\n\"A",
+      "link": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html",
+      "published": "Sat, 05 Sep 2026 21:35:08 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        16,
+        5,
+        8
+      ],
+      "severity": "critical"
+    },
     {
       "id": "b0588f2d7af5",
       "source": "BleepingComputer",
@@ -1028,40 +1062,6 @@
         59
       ],
       "severity": "high"
-    },
-    {
-      "id": "ffcf22101b87",
-      "source": "The Hacker News",
-      "title": "Malicious Apache Modules Hijack Brazilian Government Site Traffic to Push Betting Pages",
-      "summary": "A Chinese-speaking cybercrime cluster known as Gambling Goblin has been observed installing malicious Apache modules on compromised web servers run by Brazilian government and educational institutions, and using them to divert visitors to attacker-controlled pages promoting online gambling and sports betting.\n\nCheck Point Research said it has tracked the campaign since mid-2025.\n\nThe modules",
-      "link": "https://thehackernews.com/2026/09/malicious-apache-modules-hijack.html",
-      "published": "Wed, 02 Sep 2026 19:14:16 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        13,
-        44,
-        16
-      ],
-      "severity": "info"
-    },
-    {
-      "id": "caf7e586b61e",
-      "source": "The Hacker News",
-      "title": "BGP Hijack Delivers Malicious Virtualizor Update That Establishes Persistent Root Access",
-      "summary": "Virtualizor said hackers used a Border Gateway Protocol (BGP) hijack to divert Softaculous traffic. The hackers then used the diverted update traffic to deliver a malicious Virtualizor package to some installations. A hosting-provider account separately said 5 of its 34 checked Virtualizor hypervisors sustained root-level compromise.\n\nThe incident window ran from approximately August 28 at 20:57",
-      "link": "https://thehackernews.com/2026/09/bgp-hijack-delivers-malicious.html",
-      "published": "Wed, 02 Sep 2026 18:42:45 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        13,
-        12,
-        45
-      ],
-      "severity": "medium"
     },
     {
       "id": "47af0e0edff9",
