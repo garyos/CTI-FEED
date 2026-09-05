@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Pulls entries from a public cyber threat intelligence RSS feed and writes
-them to data/threats.json, which the static front end (index.html) polls.
+Pulls entries from several public cyber threat intelligence / infosec news
+RSS feeds and writes them to data/threats.json, which the static front end
+(index.html) polls.
 
-Swap FEED_URL for any RSS/Atom feed you like. A few public options:
-  - The Hacker News:  https://feeds.feedburner.com/TheHackersNews
-  - Krebs on Security: https://krebsonsecurity.com/feed/
-  - Bleeping Computer: https://www.bleepingcomputer.com/feed/
+Add or remove feeds by editing FEEDS below. Each entry needs a short display
+`name` (used for filtering in the UI) and the feed `url`. A few more public
+options if you want to expand further:
+  - Graham Cluley:     https://grahamcluley.com/feed/
+  - Cisco Talos Blog:  https://blog.talosintelligence.com/rss/
 
 CISA retired its public RSS feeds in 2025, so if you want CISA advisories
 specifically, check https://www.cisa.gov/news-events/cybersecurity-advisories
-for their current subscription options and swap the URL below if a feed
-is available.
+for their current subscription options and add a feed here if one exists.
 """
 
 import json
@@ -21,9 +22,17 @@ from pathlib import Path
 
 import feedparser
 
-FEED_URL = "https://feeds.feedburner.com/TheHackersNews"
+FEEDS = [
+    {"name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews"},
+    {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/feed/"},
+    {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/"},
+    {"name": "Dark Reading", "url": "https://www.darkreading.com/rss.xml"},
+    {"name": "SecurityWeek", "url": "https://www.securityweek.com/feed/"},
+]
+
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "threats.json"
-MAX_ENTRIES = 40  # keep the file small; oldest entries drop off
+MAX_ENTRIES_PER_FEED = 25   # cap per source so one noisy feed can't drown the rest
+MAX_TOTAL_ENTRIES = 150     # keep the overall file small
 
 
 def entry_id(entry) -> str:
@@ -44,36 +53,61 @@ def guess_severity(title: str, summary: str) -> str:
     return "info"
 
 
-def main():
-    parsed = feedparser.parse(FEED_URL)
+def sort_key(entry):
+    # feedparser gives a time.struct_time in published_parsed when it can
+    # figure out the date; entries without one sort to the back.
+    return entry.get("published_parsed") or (0,)
 
-    if parsed.bozo and not parsed.entries:
-        # Feed failed to fetch/parse. Don't wipe out existing good data.
-        print(f"Failed to fetch or parse feed: {parsed.bozo_exception}")
+
+def main():
+    all_entries = []
+    sources_seen = []
+    failures = []
+
+    for feed_cfg in FEEDS:
+        name, url = feed_cfg["name"], feed_cfg["url"]
+        parsed = feedparser.parse(url)
+
+        if parsed.bozo and not parsed.entries:
+            print(f"Failed to fetch or parse {name}: {parsed.bozo_exception}")
+            failures.append(name)
+            continue
+
+        sources_seen.append(name)
+        raw_entries = sorted(parsed.entries, key=sort_key, reverse=True)
+
+        for entry in raw_entries[:MAX_ENTRIES_PER_FEED]:
+            title = entry.get("title", "Untitled")
+            summary = entry.get("summary", "")
+            all_entries.append({
+                "id": entry_id(entry),
+                "source": name,
+                "title": title,
+                "summary": summary[:400],
+                "link": entry.get("link", ""),
+                "published": entry.get("published", ""),
+                "published_sort": list(sort_key(entry))[:6],  # for client-side sorting
+                "severity": guess_severity(title, summary),
+            })
+
+    if not all_entries:
+        # Every feed failed. Don't overwrite existing good data with an empty file.
+        print("All feeds failed to fetch, leaving existing data/threats.json untouched.")
         return
 
-    entries = []
-    for entry in parsed.entries[:MAX_ENTRIES]:
-        title = entry.get("title", "Untitled")
-        summary = entry.get("summary", "")
-        entries.append({
-            "id": entry_id(entry),
-            "title": title,
-            "summary": summary[:400],
-            "link": entry.get("link", ""),
-            "published": entry.get("published", ""),
-            "severity": guess_severity(title, summary),
-        })
+    all_entries.sort(key=lambda e: e["published_sort"], reverse=True)
+    all_entries = all_entries[:MAX_TOTAL_ENTRIES]
 
     payload = {
-        "source": parsed.feed.get("title", FEED_URL),
+        "sources": sources_seen,
+        "failed_sources": failures,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "entries": entries,
+        "entries": all_entries,
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2))
-    print(f"Wrote {len(entries)} entries to {OUTPUT_PATH}")
+    print(f"Wrote {len(all_entries)} entries from {len(sources_seen)} sources to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

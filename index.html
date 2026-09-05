@@ -8,6 +8,7 @@
   :root {
     --ink: #0a0e14;
     --ink-raised: #10151d;
+    --ink-input: #0d1219;
     --line: #1e2733;
     --text: #d7dde5;
     --text-dim: #7d8998;
@@ -35,7 +36,7 @@
   }
 
   .frame {
-    max-width: 760px;
+    max-width: 920px;
     margin: 0 auto;
     padding: 40px 20px 80px;
   }
@@ -94,18 +95,148 @@
     100% { box-shadow: 0 0 0 0 rgba(79, 213, 138, 0); }
   }
 
-  .legend {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 22px;
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    color: var(--text-dim);
-    flex-wrap: wrap;
+  .analytics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 26px;
   }
 
-  .legend span { display: inline-flex; align-items: center; gap: 6px; }
-  .swatch { width: 8px; height: 8px; display: inline-block; }
+  .analytics-panel {
+    background: var(--ink-raised);
+    padding: 14px 16px 16px;
+  }
+
+  .analytics-panel h3 {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin: 0 0 12px;
+    font-weight: 500;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 62px 1fr 26px;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    margin-bottom: 7px;
+  }
+
+  .bar-row .label { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-row .count { text-align: right; color: var(--text-dim); }
+
+  .bar-track {
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    position: relative;
+  }
+  .bar-fill { height: 100%; }
+  .bar-fill.critical { background: var(--red); }
+  .bar-fill.high { background: var(--amber); }
+  .bar-fill.medium { background: var(--blue); }
+  .bar-fill.info { background: var(--text-dim); }
+  .bar-fill.source { background: var(--amber); opacity: 0.85; }
+
+  .sparkline {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 46px;
+  }
+  .spark-bar {
+    flex: 1;
+    background: var(--amber);
+    opacity: 0.75;
+    min-height: 2px;
+  }
+  .spark-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    padding: 6px 11px;
+    border: 1px solid var(--line);
+    background: var(--ink-raised);
+    color: var(--text-dim);
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .chip:hover { border-color: var(--text-dim); }
+  .chip.active { color: var(--text); border-color: currentColor; }
+  .chip[data-sev="critical"].active { color: var(--red); }
+  .chip[data-sev="high"].active { color: var(--amber); }
+  .chip[data-sev="medium"].active { color: var(--blue); }
+  .chip[data-sev="info"].active { color: var(--text); }
+  .chip .dot { width: 6px; height: 6px; display: inline-block; background: currentColor; }
+
+  select#source-filter {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    padding: 6px 10px;
+    background: var(--ink-input);
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+  }
+  #search-input {
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 7px 10px;
+    background: var(--ink-input);
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+  #search-input::placeholder { color: var(--text-dim); }
+
+  .clear-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    background: none;
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .clear-btn:hover { color: var(--amber); border-color: var(--amber); }
+
+  .result-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
 
   .feed { display: flex; flex-direction: column; }
 
@@ -113,7 +244,6 @@
     border-left: 3px solid var(--line);
     padding: 14px 0 14px 16px;
     border-bottom: 1px solid var(--line);
-    transition: border-left-color 0.2s ease;
   }
 
   .entry[data-severity="critical"] { border-left-color: var(--red); }
@@ -130,12 +260,15 @@
     gap: 10px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    flex-wrap: wrap;
   }
 
   .entry[data-severity="critical"] .tag { color: var(--red); }
   .entry[data-severity="high"] .tag     { color: var(--amber); }
   .entry[data-severity="medium"] .tag   { color: var(--blue); }
   .entry[data-severity="info"] .tag     { color: var(--text-dim); }
+
+  .entry .src { color: var(--text); opacity: 0.8; }
 
   .entry h2 {
     font-size: 15.5px;
@@ -144,15 +277,8 @@
     line-height: 1.4;
   }
 
-  .entry h2 a {
-    color: var(--text);
-    text-decoration: none;
-  }
-  .entry h2 a:hover,
-  .entry h2 a:focus-visible {
-    color: var(--amber);
-    text-decoration: underline;
-  }
+  .entry h2 a { color: var(--text); text-decoration: none; }
+  .entry h2 a:hover, .entry h2 a:focus-visible { color: var(--amber); text-decoration: underline; }
 
   .entry p {
     font-size: 13.5px;
@@ -161,9 +287,7 @@
     margin: 0;
   }
 
-  .entry.new {
-    animation: reveal 0.6s ease;
-  }
+  .entry.new { animation: reveal 0.6s ease; }
   @keyframes reveal {
     from { background: rgba(255, 176, 32, 0.08); }
     to   { background: transparent; }
@@ -189,6 +313,10 @@
   a.footer-link:hover { color: var(--amber); }
 
   :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+  @media (max-width: 680px) {
+    .analytics { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -196,7 +324,7 @@
     <header class="masthead">
       <div>
         <h1>SIGNAL</h1>
-        <div class="sub" id="source-line">source: —</div>
+        <div class="sub" id="source-line">sources: —</div>
       </div>
       <div class="status">
         <div class="pulse-row"><span class="pulse-dot"></span> LIVE — polling every 30s</div>
@@ -204,12 +332,38 @@
       </div>
     </header>
 
-    <div class="legend">
-      <span><span class="swatch" style="background:var(--red)"></span> critical</span>
-      <span><span class="swatch" style="background:var(--amber)"></span> high</span>
-      <span><span class="swatch" style="background:var(--blue)"></span> medium</span>
-      <span><span class="swatch" style="background:var(--line)"></span> info</span>
+    <div class="analytics">
+      <div class="analytics-panel">
+        <h3>Severity breakdown</h3>
+        <div id="severity-bars"></div>
+      </div>
+      <div class="analytics-panel">
+        <h3>Volume by source</h3>
+        <div id="source-bars"></div>
+      </div>
+      <div class="analytics-panel">
+        <h3>Activity, last 24h</h3>
+        <div class="sparkline" id="sparkline"></div>
+        <div class="spark-labels"><span>-24h</span><span>now</span></div>
+      </div>
     </div>
+
+    <div class="filters">
+      <span class="chip active" data-sev="critical"><span class="dot"></span>critical</span>
+      <span class="chip active" data-sev="high"><span class="dot"></span>high</span>
+      <span class="chip active" data-sev="medium"><span class="dot"></span>medium</span>
+      <span class="chip active" data-sev="info"><span class="dot"></span>info</span>
+
+      <select id="source-filter"><option value="all">all sources</option></select>
+
+      <div class="search-wrap">
+        <input id="search-input" type="text" placeholder="search title or summary…" />
+      </div>
+
+      <button class="clear-btn" id="clear-filters">reset</button>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
 
     <div class="feed" id="feed">
       <div class="empty-state">Waiting for first data pull…</div>
@@ -224,30 +378,147 @@
   <script>
     const FEED_PATH = "data/threats.json";
     const POLL_INTERVAL_MS = 30000;
+    const STORAGE_KEY = "signal-filters-v1";
+
     let knownIds = new Set();
+    let latestData = { sources: [], entries: [] };
+
+    const SEVERITIES = ["critical", "high", "medium", "info"];
+
+    const defaultFilters = {
+      severities: new Set(SEVERITIES),
+      source: "all",
+      search: "",
+    };
+
+    function loadFilters() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return { ...defaultFilters, severities: new Set(SEVERITIES) };
+        const parsed = JSON.parse(raw);
+        return {
+          severities: new Set(parsed.severities || SEVERITIES),
+          source: parsed.source || "all",
+          search: parsed.search || "",
+        };
+      } catch {
+        return { ...defaultFilters, severities: new Set(SEVERITIES) };
+      }
+    }
+
+    function saveFilters() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        severities: Array.from(filters.severities),
+        source: filters.source,
+        search: filters.search,
+      }));
+    }
+
+    let filters = loadFilters();
 
     async function loadFeed() {
       try {
         const res = await fetch(`${FEED_PATH}?t=${Date.now()}`); // cache-bust
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        render(data);
+        latestData = data;
+        renderHeader(data);
+        renderFilterControls(data);
+        renderAnalytics(data);
+        applyFiltersAndRender();
       } catch (err) {
         console.error("Failed to load feed:", err);
       }
     }
 
-    function render(data) {
-      document.getElementById("source-line").textContent = `source: ${data.source || "unknown"}`;
+    function renderHeader(data) {
+      const sources = data.sources || [];
+      document.getElementById("source-line").textContent =
+        sources.length ? `sources: ${sources.join(" · ")}` : "sources: —";
       document.getElementById("updated-line").textContent = data.fetched_at
         ? `last update: ${new Date(data.fetched_at).toLocaleString()}`
         : "last update: —";
+    }
 
-      const feedEl = document.getElementById("feed");
+    function renderFilterControls(data) {
+      const select = document.getElementById("source-filter");
+      const sources = data.sources || [];
+      select.innerHTML = `<option value="all">all sources</option>` +
+        sources.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");
+      if (!sources.includes(filters.source) && filters.source !== "all") {
+        filters.source = "all";
+      }
+      select.value = filters.source;
+    }
+
+    function renderAnalytics(data) {
       const entries = data.entries || [];
 
+      const sevCounts = { critical: 0, high: 0, medium: 0, info: 0 };
+      for (const e of entries) sevCounts[e.severity] = (sevCounts[e.severity] || 0) + 1;
+      const maxSev = Math.max(1, ...Object.values(sevCounts));
+      document.getElementById("severity-bars").innerHTML = SEVERITIES.map(sev => `
+        <div class="bar-row">
+          <span class="label">${sev}</span>
+          <div class="bar-track"><div class="bar-fill ${sev}" style="width:${(sevCounts[sev]/maxSev*100).toFixed(0)}%"></div></div>
+          <span class="count">${sevCounts[sev]}</span>
+        </div>
+      `).join("");
+
+      const sourceCounts = {};
+      for (const e of entries) sourceCounts[e.source] = (sourceCounts[e.source] || 0) + 1;
+      const sortedSources = Object.entries(sourceCounts).sort((a, b) => b[1] - a[1]);
+      const maxSrc = Math.max(1, ...Object.values(sourceCounts));
+      document.getElementById("source-bars").innerHTML = sortedSources.map(([name, count]) => `
+        <div class="bar-row">
+          <span class="label" title="${escapeHtml(name)}">${escapeHtml(name)}</span>
+          <div class="bar-track"><div class="bar-fill source" style="width:${(count/maxSrc*100).toFixed(0)}%"></div></div>
+          <span class="count">${count}</span>
+        </div>
+      `).join("") || `<div class="bar-row"><span class="label">—</span></div>`;
+
+      const now = new Date();
+      const buckets = new Array(24).fill(0);
+      for (const e of entries) {
+        if (!e.published_sort || e.published_sort.length < 4) continue;
+        const [y, mo, d, h] = e.published_sort;
+        const entryDate = new Date(Date.UTC(y, mo - 1, d, h));
+        const hoursAgo = Math.floor((now - entryDate) / (1000 * 60 * 60));
+        if (hoursAgo >= 0 && hoursAgo < 24) {
+          buckets[23 - hoursAgo]++;
+        }
+      }
+      const maxBucket = Math.max(1, ...buckets);
+      document.getElementById("sparkline").innerHTML = buckets.map(count => `
+        <div class="spark-bar" style="height:${Math.max(4, (count/maxBucket*100))}%" title="${count} entries"></div>
+      `).join("");
+    }
+
+    function applyFiltersAndRender() {
+      const entries = latestData.entries || [];
+      const searchTerm = filters.search.trim().toLowerCase();
+
+      const filtered = entries.filter(e => {
+        if (!filters.severities.has(e.severity)) return false;
+        if (filters.source !== "all" && e.source !== filters.source) return false;
+        if (searchTerm) {
+          const hay = `${e.title} ${e.summary}`.toLowerCase();
+          if (!hay.includes(searchTerm)) return false;
+        }
+        return true;
+      });
+
+      document.getElementById("result-count").textContent =
+        `showing ${filtered.length} of ${entries.length} entries`;
+
+      renderFeed(filtered);
+    }
+
+    function renderFeed(entries) {
+      const feedEl = document.getElementById("feed");
+
       if (entries.length === 0) {
-        feedEl.innerHTML = `<div class="empty-state">No entries yet. The scheduled Action hasn't run, or the feed returned nothing.</div>`;
+        feedEl.innerHTML = `<div class="empty-state">No entries match the current filters.</div>`;
         return;
       }
 
@@ -260,6 +531,7 @@
         el.innerHTML = `
           <div class="meta">
             <span class="tag">${entry.severity || "info"}</span>
+            <span class="src">${escapeHtml(entry.source || "")}</span>
             <span>${entry.published || ""}</span>
           </div>
           <h2><a href="${entry.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(entry.title)}</a></h2>
@@ -268,14 +540,51 @@
         feedEl.appendChild(el);
       }
 
-      knownIds = new Set(entries.map(e => e.id));
+      knownIds = new Set((latestData.entries || []).map(e => e.id));
     }
 
     function escapeHtml(str) {
       const div = document.createElement("div");
-      div.textContent = str;
+      div.textContent = str || "";
       return div.innerHTML;
     }
+
+    document.querySelectorAll(".chip").forEach(chip => {
+      const sev = chip.dataset.sev;
+      chip.classList.toggle("active", filters.severities.has(sev));
+      chip.addEventListener("click", () => {
+        if (filters.severities.has(sev)) {
+          filters.severities.delete(sev);
+        } else {
+          filters.severities.add(sev);
+        }
+        chip.classList.toggle("active", filters.severities.has(sev));
+        saveFilters();
+        applyFiltersAndRender();
+      });
+    });
+
+    document.getElementById("source-filter").addEventListener("change", (e) => {
+      filters.source = e.target.value;
+      saveFilters();
+      applyFiltersAndRender();
+    });
+
+    document.getElementById("search-input").value = filters.search;
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      filters.search = e.target.value;
+      saveFilters();
+      applyFiltersAndRender();
+    });
+
+    document.getElementById("clear-filters").addEventListener("click", () => {
+      filters = { severities: new Set(SEVERITIES), source: "all", search: "" };
+      document.querySelectorAll(".chip").forEach(chip => chip.classList.add("active"));
+      document.getElementById("source-filter").value = "all";
+      document.getElementById("search-input").value = "";
+      saveFilters();
+      applyFiltersAndRender();
+    });
 
     loadFeed();
     setInterval(loadFeed, POLL_INTERVAL_MS);
