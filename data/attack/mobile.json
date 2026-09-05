@@ -1,7 +1,7 @@
 {
   "domain": "mobile",
   "name": "Mobile ATT&CK",
-  "fetched_at": "2026-09-05T15:28:10.144042+00:00",
+  "fetched_at": "2026-09-05T15:42:44.414871+00:00",
   "tactics": [
     {
       "id": "TA0027",
