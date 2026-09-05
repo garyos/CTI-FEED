@@ -7,8 +7,25 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T20:01:33.821471+00:00",
+  "fetched_at": "2026-09-05T21:32:59.633974+00:00",
   "entries": [
+    {
+      "id": "a6f7e900dd40",
+      "source": "The Hacker News",
+      "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
+      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. \"Sansec is publishing early",
+      "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
+      "published": "Sun, 06 Sep 2026 01:44:47 +0530",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        20,
+        14,
+        47
+      ],
+      "severity": "critical"
+    },
     {
       "id": "21ba9ecf17eb",
       "source": "The Hacker News",
@@ -1045,23 +1062,6 @@
         6
       ],
       "severity": "medium"
-    },
-    {
-      "id": "cd4ac32eea59",
-      "source": "The Hacker News",
-      "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code",
-      "summary": "Manifold Security has disclosed eight security flaws across seven command-line AI coding agents in which a repository's own Git configuration names a command that the agent runs on the developer's machine, four of them still unpatched at publication. The command executes as the user, outside the agent's sandbox and without an approval prompt, and exploitation requires the repository to arrive",
-      "link": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
-      "published": "Wed, 02 Sep 2026 19:36:59 +0530",
-      "published_sort": [
-        2026,
-        9,
-        2,
-        14,
-        6,
-        59
-      ],
-      "severity": "high"
     },
     {
       "id": "47af0e0edff9",
