@@ -588,6 +588,24 @@
 
     loadFeed();
     setInterval(loadFeed, POLL_INTERVAL_MS);
+
+    // Mobile browsers commonly pause setInterval timers once a tab is
+    // backgrounded (app switch, screen lock). Force an immediate refetch
+    // whenever the page becomes visible again, rather than waiting for the
+    // next interval tick to happen to land after you've returned.
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        loadFeed();
+      }
+    });
+
+    // Also catch the case where the OS/browser fully froze the page
+    // (bfcache) rather than just backgrounding the tab.
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        loadFeed();
+      }
+    });
   </script>
 </body>
 </html>
