@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SIGNAL — Spotlight Dossier</title>
+<style>
+  :root {
+    --ink: #05070a;
+    --ink-raised: #10151d;
+    --ink-input: #0d1219;
+    --line: #1e2733;
+    --text: #d7dde5;
+    --text-dim: #7d8998;
+    --amber: #ffb020;
+    --red: #ff5c5c;
+    --blue: #5ac8ff;
+    --green: #4fd58a;
+    --purple: #c792ea;
+    --teal: #2dd4bf;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: var(--ink); }
+  body { font-family: var(--font-mono); color: var(--text); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  .stage {
+    position: fixed; inset: 0; overflow: hidden;
+    background:
+      radial-gradient(ellipse 120% 90% at 50% 20%, #16202f 0%, #05070a 60%),
+      var(--ink);
+    -webkit-user-select: none; user-select: none;
+  }
+  .stage::before {
+    content: ""; position: absolute; inset: -20% 0; pointer-events: none; z-index: 30;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 3px);
+    mix-blend-mode: overlay;
+    animation: scandrift 9s linear infinite;
+  }
+  @keyframes scandrift { from { transform: translateY(0); } to { transform: translateY(24px); } }
+  .stage::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 31;
+    box-shadow: inset 0 0 140px rgba(0,0,0,0.75);
+  }
+
+  .hud-corner {
+    position: absolute; width: 26px; height: 26px; z-index: 25; opacity: 0.7;
+    border-color: var(--amber); pointer-events: none;
+  }
+  .hud-corner.tl { top: 10px; left: 10px; border-top: 2px solid; border-left: 2px solid; }
+  .hud-corner.tr { top: 10px; right: 10px; border-top: 2px solid; border-right: 2px solid; }
+  .hud-corner.bl { bottom: 10px; left: 10px; border-bottom: 2px solid; border-left: 2px solid; }
+  .hud-corner.br { bottom: 10px; right: 10px; border-bottom: 2px solid; border-right: 2px solid; }
+
+  .progress-bar {
+    position: absolute; top: max(10px, env(safe-area-inset-top)); left: 12px; right: 12px; z-index: 22;
+    display: flex; gap: 4px;
+  }
+  .seg { flex: 1; height: 3px; background: rgba(255,255,255,0.15); border-radius: 1px; overflow: hidden; }
+  .seg-fill { height: 100%; width: 0%; background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+
+  .topbar {
+    position: absolute; top: calc(max(10px, env(safe-area-inset-top)) + 12px); left: 12px; right: 12px; z-index: 22;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  }
+  .exit-link {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); text-decoration: none;
+    border: 1px solid var(--line); background: rgba(10,14,20,0.7); padding: 6px 10px; letter-spacing: 0.04em;
+  }
+  .exit-link:hover { color: var(--red); border-color: var(--red); }
+  .case-id {
+    font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.08em; text-align: center;
+    text-transform: uppercase;
+  }
+  .stamp {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em; color: var(--red);
+    border: 2px solid var(--red); padding: 3px 7px; transform: rotate(-6deg); opacity: 0.75;
+    text-align: center; line-height: 1.3; white-space: nowrap;
+  }
+
+  .slides { position: absolute; inset: 0; z-index: 10; }
+  /* .slide is a plain block scroll container — NOT itself a flex box with
+     justify-content:center, which combined with overflow:auto makes the
+     start of overflowing content unreachable by scroll in most browsers.
+     Centering happens on .slide-inner instead, which has no fixed height
+     so it simply grows (no centering bug) once content exceeds one screen. */
+  .slide {
+    position: absolute; inset: 0; display: none;
+    padding: 92px 22px 64px; overflow-y: auto;
+  }
+  .slide.active { display: block; animation: slideIn 0.35s ease; }
+  .slide-inner { min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-label {
+    font-size: 11px; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 16px; opacity: 0.9;
+  }
+  .section-label::before { content: "// "; opacity: 0.6; }
+
+  /* redaction-reveal motif for headline text */
+  .redact { position: relative; display: inline-block; }
+  .redact::after {
+    content: ""; position: absolute; inset: -2px -4px; background: #05070a; transform-origin: right;
+  }
+  .slide.active .redact::after { animation: declassify 0.55s ease forwards; animation-delay: 0.2s; }
+  @keyframes declassify { to { transform: scaleX(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .redact::after { transform: scaleX(0); }
+  }
+
+  /* --- title slide --- */
+  .case-number { font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 10px; }
+  .slide-title h1 {
+    font-family: var(--font-sans); font-size: clamp(28px, 8vw, 44px); margin: 0 0 12px; line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag-chip {
+    font-size: 10.5px; color: var(--text-dim); border: 1px solid var(--line); padding: 4px 9px;
+    letter-spacing: 0.03em;
+  }
+  .flag-chip { font-size: 13px; }
+
+  .gauge-wrap { margin: 18px 0 16px; }
+  .gauge-label { font-size: 10.5px; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 6px; }
+  .gauge-label b { color: var(--gauge-color, var(--amber)); }
+  .gauge-track { height: 10px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); position: relative; }
+  .gauge-track::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent calc(10% - 1px), rgba(255,255,255,0.15) 10%);
+  }
+  .gauge-fill { height: 100%; width: 0%; background: var(--gauge-color, var(--amber)); box-shadow: 0 0 10px var(--gauge-color, var(--amber)); }
+  .gauge-caption { font-size: 9.5px; color: var(--text-dim); margin-top: 6px; opacity: 0.8; }
+
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .badge {
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--amber);
+    border: 1px solid var(--amber); padding: 5px 9px; background: rgba(255,176,32,0.08);
+  }
+
+  /* --- origin slide --- */
+  .dossier-text {
+    font-family: var(--font-sans); font-size: 15px; line-height: 1.7; color: var(--text);
+    white-space: pre-line; max-width: 60ch;
+  }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .meta-cell { border: 1px solid var(--line); padding: 10px 12px; }
+  .meta-cell span { display: block; font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.08em; margin-bottom: 4px; }
+  .meta-cell b { font-family: var(--font-sans); font-size: 14px; }
+
+  /* --- coverage / scan slide --- */
+  .scan-list { display: flex; flex-direction: column; gap: 9px; }
+  .scan-row { display: grid; grid-template-columns: 1fr 34px; align-items: center; gap: 10px; font-size: 11px; }
+  .scan-row .sname { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .scan-row.hit .sname { color: var(--text); }
+  .scan-row .strack { height: 6px; background: rgba(255,255,255,0.06); margin-top: 3px; }
+  .scan-row .sfill { height: 100%; width: 0%; background: var(--teal); box-shadow: 0 0 6px var(--teal); transition: width 0.5s ease; }
+  .scan-row .scount { text-align: right; color: var(--text-dim); font-size: 10px; }
+
+  /* --- arsenal slide --- */
+  .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+  .asset-card {
+    text-align: left; background: var(--ink-raised); border: 1px solid var(--line); border-left: 2px solid var(--purple);
+    color: var(--text); font-family: var(--font-mono); padding: 9px 10px; cursor: pointer;
+  }
+  .asset-card .aid { font-size: 9px; color: var(--text-dim); }
+  .asset-card .aname { font-size: 12px; font-weight: 600; margin-top: 2px; }
+  .asset-card .adesc { font-size: 10.5px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; display: none; }
+  .asset-card.expanded .adesc { display: block; }
+  .asset-card.expanded { border-left-color: var(--amber); }
+
+  /* --- campaigns / timeline slide --- */
+  .timeline { position: relative; padding-left: 18px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; }
+  .tl-entry { position: relative; }
+  .tl-entry::before {
+    content: ""; position: absolute; left: -22.5px; top: 3px; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--red); box-shadow: 0 0 6px var(--red);
+  }
+  .tl-year { font-size: 10px; color: var(--red); letter-spacing: 0.08em; margin-bottom: 3px; }
+  .tl-name { font-family: var(--font-sans); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .tl-desc { font-size: 12px; color: var(--text-dim); line-height: 1.55; max-width: 56ch; }
+
+  /* --- connections slide --- */
+  .orbit-wrap { position: relative; height: 130px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; }
+  .orbit-center {
+    width: 14px; height: 14px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 14px var(--amber); z-index: 1;
+  }
+  .orbit-ring { position: absolute; inset: 0; animation: spin 16s linear infinite; }
+  .orbit-ring.rev { animation-direction: reverse; animation-duration: 22s; }
+  .orbit-dot {
+    position: absolute; top: 50%; left: 50%; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blue); box-shadow: 0 0 6px var(--blue);
+    transform: rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a)));
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .associate-list { display: flex; flex-direction: column; gap: 8px; }
+  .associate-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: var(--ink-raised); border: 1px solid var(--line); border-left: 2px solid var(--blue);
+    padding: 10px 12px; text-decoration: none; color: var(--text);
+  }
+  .associate-row:hover { border-left-color: var(--amber); }
+  .ar-name { font-family: var(--font-sans); font-size: 13.5px; font-weight: 600; }
+  .ar-score { font-size: 10px; color: var(--text-dim); white-space: nowrap; }
+
+  /* --- defense slide --- */
+  .counter-list { display: flex; flex-direction: column; gap: 14px; }
+  .counter-entry { display: grid; grid-template-columns: 30px 1fr; gap: 12px; }
+  .cnum { font-size: 16px; color: var(--green); font-weight: 700; opacity: 0.8; }
+  .cname { font-family: var(--font-sans); font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .cdesc { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; max-width: 56ch; }
+
+  /* --- nav --- */
+  /* purely a visual/documentation region — pointer-events:none so it never
+     shadows interactive elements inside the active slide underneath it;
+     navigation is decided by tap x-position in the #stage pointer handler */
+  .tap-zone { position: absolute; top: 88px; bottom: 40px; z-index: 15; pointer-events: none; }
+  .tap-left { left: 0; width: 30%; }
+  .tap-right { right: 0; width: 70%; }
+  .hint {
+    position: absolute; bottom: max(12px, env(safe-area-inset-bottom)); left: 0; right: 0; z-index: 22;
+    text-align: center; font-size: 10px; color: var(--text-dim); opacity: 0.7; pointer-events: none;
+    letter-spacing: 0.04em;
+  }
+
+  .empty-target {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; text-align: center; padding: 24px; z-index: 20;
+  }
+  .empty-target a { color: var(--amber); }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+
+    <div class="progress-bar" id="progress-bar"></div>
+    <div class="topbar">
+      <a class="exit-link no-nav" id="exit-link" href="attack.html">‹ EXIT</a>
+      <div class="case-id" id="case-id">SIGNAL // SPOTLIGHT</div>
+      <div class="stamp">CLASSIFIED<br>EYES ONLY</div>
+    </div>
+
+    <div class="slides" id="slides"></div>
+    <div class="tap-zone tap-left" id="tap-left"></div>
+    <div class="tap-zone tap-right" id="tap-right"></div>
+    <div class="hint" id="hint">tap right to advance · left to go back · hold to pause</div>
+  </div>
+
+<script>
+(() => {
+  const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const params = new URLSearchParams(location.search);
+  const domain = params.get("domain") || "enterprise";
+  const groupId = params.get("group");
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+  function flagEmoji(code) {
+    if (!code || code.length !== 2) return "🏳";
+    return [...code.toUpperCase()].map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join("");
+  }
+
+  function showEmptyTarget(message) {
+    document.getElementById("stage").innerHTML = `
+      <div class="empty-target">
+        <div class="stamp" style="transform:rotate(-4deg)">NO TARGET<br>SELECTED</div>
+        <div style="color:var(--text-dim); font-size:13px; max-width:40ch;">${escapeHtml(message)}</div>
+        <a href="attack.html" style="font-family:var(--font-mono); font-size:12px;">‹ return to ATT&amp;CK Explorer</a>
+      </div>`;
+  }
+
+  async function loadDomain() {
+    const res = await fetch(`data/attack/${domain}.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    data.byId = { techniques: {}, groups: {}, software: {}, campaigns: {}, mitigations: {}, tactics: {} };
+    for (const key of Object.keys(data.byId)) {
+      data.byId[key] = Object.fromEntries((data[key] || []).map(e => [e.id, e]));
+    }
+    return data;
+  }
+
+  function techniqueLabel(t, data) {
+    if (t.parent && data.byId.techniques[t.parent]) return `${data.byId.techniques[t.parent].name}: ${t.name}`;
+    return t.name;
+  }
+
+  function percentile(arr, p) {
+    const s = [...arr].sort((a, b) => a - b);
+    if (!s.length) return 0;
+    return s[Math.min(s.length - 1, Math.floor(s.length * p))];
+  }
+
+  function computeAssessment(group, data) {
+    const techCounts = data.groups.map(g => g.techniques.length);
+    const softCounts = data.groups.map(g => g.software.length);
+    const techMax = Math.max(1, ...techCounts);
+    const tacticsTouched = new Set(group.techniques.flatMap(tid => data.byId.techniques[tid]?.tactics || []));
+    const coveragePct = data.tactics.length ? (tacticsTouched.size / data.tactics.length) * 100 : 0;
+    const techPct = (group.techniques.length / techMax) * 100;
+    const score = Math.round((techPct + coveragePct) / 2);
+
+    let level, color;
+    if (score >= 75) { level = "CRITICAL"; color = "var(--red)"; }
+    else if (score >= 50) { level = "HIGH"; color = "var(--amber)"; }
+    else if (score >= 25) { level = "MODERATE"; color = "var(--teal)"; }
+    else { level = "LOW"; color = "var(--text-dim)"; }
+
+    const techP75 = percentile(techCounts, 0.75);
+    const softP75 = percentile(softCounts, 0.75);
+    const badges = [];
+    if (group.countries.length) badges.push("STATE-LINKED");
+    if (coveragePct >= 80) badges.push("FULL SPECTRUM");
+    if (techP75 > 0 && group.techniques.length >= techP75) badges.push("PROLIFIC OPERATOR");
+    if (softP75 > 0 && group.software.length >= softP75) badges.push("HEAVY ARSENAL");
+    if (group.campaigns.length >= 2) badges.push("ACTIVE CAMPAIGNS");
+    if (!badges.length) badges.push("LOW PROFILE");
+
+    return { score, level, color, coveragePct, tacticsTouched, badges };
+  }
+
+  function relatedGroups(group, data, limit = 6) {
+    const mySoft = new Set(group.software);
+    const myTech = new Set(group.techniques);
+    return data.groups
+      .filter(g => g.id !== group.id)
+      .map(g => {
+        const softOverlap = g.software.filter(id => mySoft.has(id)).length;
+        const techOverlap = g.techniques.filter(id => myTech.has(id)).length;
+        return { g, score: softOverlap * 3 + techOverlap };
+      })
+      .filter(x => x.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit);
+  }
+
+  function mitigationsForGroup(group, data, limit = 10) {
+    const freq = {};
+    group.techniques.forEach(tid => {
+      (data.byId.techniques[tid]?.mitigations || []).forEach(mid => { freq[mid] = (freq[mid] || 0) + 1; });
+    });
+    return Object.entries(freq)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, limit)
+      .map(([mid]) => data.byId.mitigations[mid])
+      .filter(Boolean);
+  }
+
+  // ---------- slide builders ----------
+
+  function titleSlide(g, data, assessment) {
+    return {
+      key: "title", duration: 4500,
+      html: `
+        <div class="case-number">CASE FILE // ${g.id} // ${escapeHtml(domain.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(g.name)}</h1>
+        <div class="chip-row">
+          ${g.countries.map(c => `<span class="tag-chip flag-chip">${flagEmoji(c.code)} ${escapeHtml(c.name)}</span>`).join("")}
+          ${g.aliases.filter(a => a !== g.name).slice(0, 6).map(a => `<span class="tag-chip">${escapeHtml(a)}</span>`).join("")}
+        </div>
+        <div class="gauge-wrap" style="--gauge-color:${assessment.color}">
+          <div class="gauge-label">THREAT ASSESSMENT: <b>${assessment.level}</b> (${assessment.score}/100)</div>
+          <div class="gauge-track"><div class="gauge-fill" style="width:${assessment.score}%"></div></div>
+          <div class="gauge-caption">derived from technique breadth &amp; kill-chain coverage — not an official rating</div>
+        </div>
+        <div class="badge-row">${assessment.badges.map(b => `<span class="badge">${b}</span>`).join("")}</div>
+      `,
+    };
+  }
+
+  function originSlide(g) {
+    return {
+      key: "origin", duration: 8500,
+      html: `
+        <div class="section-label">Origin &amp; Identity</div>
+        <p class="dossier-text">${escapeHtml(g.description) || "No description on file."}</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><span>ALIASES ON RECORD</span><b>${g.aliases.length}</b></div>
+          <div class="meta-cell"><span>ATTRIBUTION</span><b>${g.countries.map(c => c.name).join(", ") || "UNKNOWN"}</b></div>
+        </div>
+      `,
+    };
+  }
+
+  function coverageSlide(g, data, assessment) {
+    const rows = data.tactics.map(t => {
+      const count = g.techniques.filter(tid => (data.byId.techniques[tid]?.tactics || []).includes(t.id)).length;
+      return { t, count };
+    });
+    const max = Math.max(1, ...rows.map(r => r.count));
+    return {
+      key: "coverage", duration: 6500,
+      html: `
+        <div class="section-label">Kill-Chain Scan</div>
+        <div class="scan-list">
+          ${rows.map(({ t, count }) => `
+            <div class="scan-row ${count ? "hit" : ""}" data-count="${count}" data-pct="${count ? (count / max * 100).toFixed(0) : 0}">
+              <div>
+                <div class="sname">${escapeHtml(t.name)}</div>
+                <div class="strack"><div class="sfill"></div></div>
+              </div>
+              <div class="scount">${count || "—"}</div>
+            </div>`).join("")}
+        </div>
+      `,
+      onMount(el) {
+        const rowsEl = [...el.querySelectorAll(".scan-row")];
+        rowsEl.forEach((row, i) => {
+          const fill = row.querySelector(".sfill");
+          const pct = row.dataset.pct;
+          if (REDUCED_MOTION) { fill.style.width = pct + "%"; return; }
+          setTimeout(() => { fill.style.width = pct + "%"; }, 60 * i);
+        });
+      },
+    };
+  }
+
+  function arsenalSlide(g, data) {
+    const items = g.software.map(id => data.byId.software[id]).filter(Boolean);
+    return {
+      key: "arsenal", duration: 7500,
+      html: `
+        <div class="section-label">Arsenal On Record (${items.length})</div>
+        <div class="asset-grid">
+          ${items.map(s => `
+            <button class="asset-card no-nav" data-id="${s.id}">
+              <div class="aid">${s.id} · ${s.type}</div>
+              <div class="aname">${escapeHtml(s.name)}</div>
+              <div class="adesc">${escapeHtml((s.description || "No description on file.").slice(0, 220))}${(s.description || "").length > 220 ? "…" : ""}</div>
+            </button>`).join("")}
+        </div>
+      `,
+      onMount(el) {
+        el.querySelectorAll(".asset-card").forEach(card => {
+          card.addEventListener("click", (e) => { e.stopPropagation(); card.classList.toggle("expanded"); });
+        });
+      },
+    };
+  }
+
+  function campaignsSlide(g, data) {
+    const items = g.campaigns.map(id => data.byId.campaigns[id]).filter(Boolean)
+      .sort((a, b) => (a.first_seen || "").localeCompare(b.first_seen || ""));
+    return {
+      key: "campaigns", duration: 7000,
+      html: `
+        <div class="section-label">Operations Log (${items.length})</div>
+        <div class="timeline">
+          ${items.map(c => `
+            <div class="tl-entry">
+              <div class="tl-year">${(c.first_seen || "").slice(0, 4) || "DATE UNKNOWN"}${c.last_seen && c.last_seen.slice(0, 4) !== (c.first_seen || "").slice(0, 4) ? " – " + c.last_seen.slice(0, 4) : ""}</div>
+              <div class="tl-name">${escapeHtml(c.name)}</div>
+              <div class="tl-desc">${escapeHtml((c.description || "").slice(0, 260))}${(c.description || "").length > 260 ? "…" : ""}</div>
+            </div>`).join("")}
+        </div>
+      `,
+    };
+  }
+
+  function connectionsSlide(g, data, related) {
+    const dots = Array.from({ length: 10 }, (_, i) => {
+      const a = (360 / 10) * i;
+      return `<div class="orbit-dot" style="--a:${a}deg; --r:${50 + (i % 3) * 12}px"></div>`;
+    }).join("");
+    return {
+      key: "connections", duration: 6500,
+      html: `
+        <div class="section-label">Known Associates</div>
+        <div class="orbit-wrap" aria-hidden="true">
+          <div class="orbit-ring">${dots}</div>
+          <div class="orbit-ring rev">${dots}</div>
+          <div class="orbit-center"></div>
+        </div>
+        <div class="associate-list">
+          ${related.map(({ g: other, score }) => `
+            <a class="associate-row no-nav" href="spotlight.html?domain=${encodeURIComponent(domain)}&group=${encodeURIComponent(other.id)}">
+              <span class="ar-name">${escapeHtml(other.name)}</span>
+              <span class="ar-score">${score} shared TTP${score === 1 ? "" : "s"}</span>
+            </a>`).join("")}
+        </div>
+      `,
+    };
+  }
+
+  function defenseSlide(items) {
+    return {
+      key: "defense", duration: 7500,
+      html: `
+        <div class="section-label">Recommended Countermeasures</div>
+        <div class="counter-list">
+          ${items.map((m, i) => `
+            <div class="counter-entry">
+              <div class="cnum">${String(i + 1).padStart(2, "0")}</div>
+              <div>
+                <div class="cname">${escapeHtml(m.name)}</div>
+                <div class="cdesc">${escapeHtml((m.description || "").slice(0, 220))}${(m.description || "").length > 220 ? "…" : ""}</div>
+              </div>
+            </div>`).join("")}
+        </div>
+      `,
+    };
+  }
+
+  // ---------- engine ----------
+
+  let slides = [];
+  let idx = 0;
+  let timerRAF = null;
+  let timerStart = 0;
+  let timerDuration = 0;
+  let isPaused = false;
+  let pauseBegan = 0;
+
+  function buildSlides(g, data) {
+    const assessment = computeAssessment(g, data);
+    const related = relatedGroups(g, data);
+    const mitigations = mitigationsForGroup(g, data);
+
+    const list = [titleSlide(g, data, assessment), originSlide(g), coverageSlide(g, data, assessment)];
+    if (g.software.length) list.push(arsenalSlide(g, data));
+    if (g.campaigns.length) list.push(campaignsSlide(g, data));
+    if (related.length) list.push(connectionsSlide(g, data, related));
+    if (mitigations.length) list.push(defenseSlide(mitigations));
+    return list;
+  }
+
+  function renderChrome() {
+    document.getElementById("case-id").textContent = `SIGNAL // SPOTLIGHT // ${domain.toUpperCase()}`;
+    document.getElementById("progress-bar").innerHTML = slides.map(() => `<div class="seg"><div class="seg-fill"></div></div>`).join("");
+  }
+
+  function renderSlides() {
+    const root = document.getElementById("slides");
+    root.innerHTML = slides.map((s, i) => `<div class="slide" data-i="${i}" data-key="${s.key}"><div class="slide-inner">${s.html}</div></div>`).join("");
+    slides.forEach((s, i) => {
+      if (s.onMount) s.onMount(root.querySelector(`.slide[data-i="${i}"]`));
+    });
+  }
+
+  function segFills() { return [...document.querySelectorAll(".seg-fill")]; }
+
+  function setSegProgress(i, pct) {
+    const fills = segFills();
+    if (fills[i]) fills[i].style.width = pct + "%";
+  }
+
+  function syncSegsForIndex(i) {
+    segFills().forEach((fill, si) => { fill.style.width = si < i ? "100%" : si > i ? "0%" : fill.style.width; });
+  }
+
+  function cancelTimer() {
+    if (timerRAF) cancelAnimationFrame(timerRAF);
+    timerRAF = null;
+  }
+
+  function startTimer(duration) {
+    cancelTimer();
+    isPaused = false;
+    timerDuration = duration;
+    timerStart = performance.now();
+    if (REDUCED_MOTION) { setSegProgress(idx, 100); return; }
+    setSegProgress(idx, 0);
+    tick();
+  }
+
+  function tick() {
+    if (!isPaused) {
+      const elapsed = performance.now() - timerStart;
+      const frac = Math.min(1, elapsed / timerDuration);
+      setSegProgress(idx, frac * 100);
+      if (frac >= 1) { timerRAF = null; next(true); return; }
+    }
+    timerRAF = requestAnimationFrame(tick);
+  }
+
+  function pauseTimer() { if (!isPaused) { isPaused = true; pauseBegan = performance.now(); } }
+  function resumeTimer() { if (isPaused) { isPaused = false; timerStart += performance.now() - pauseBegan; } }
+
+  function goTo(i) {
+    if (i < 0 || i >= slides.length) return;
+    const root = document.getElementById("slides");
+    root.querySelectorAll(".slide").forEach(el => el.classList.remove("active"));
+    idx = i;
+    root.querySelector(`.slide[data-i="${i}"]`).classList.add("active");
+    syncSegsForIndex(i);
+    startTimer(slides[i].duration);
+  }
+
+  function next(fromTimer) {
+    if (idx < slides.length - 1) { goTo(idx + 1); }
+    else if (!fromTimer) { /* already at the end, tapping right does nothing further */ }
+  }
+  function prev() { if (idx > 0) goTo(idx - 1); }
+
+  function setupInput() {
+    const stage = document.getElementById("stage");
+    let downAt = null, downX = 0, downY = 0, moved = false, downOnNoNav = false;
+
+    // A swipe always navigates, even if it starts on a card or link — a card-dense
+    // slide (Arsenal, Connections) must never trap the user with no way to move on.
+    // A short TAP on a .no-nav element defers to that element's own click handler
+    // (e.g. expanding an asset card) instead of also advancing the slide.
+    stage.addEventListener("pointerdown", (e) => {
+      downAt = performance.now(); downX = e.clientX; downY = e.clientY; moved = false;
+      downOnNoNav = !!e.target.closest(".no-nav");
+      pauseTimer();
+    });
+    stage.addEventListener("pointermove", (e) => {
+      if (downAt == null) return;
+      if (Math.abs(e.clientX - downX) > 10 || Math.abs(e.clientY - downY) > 10) moved = true;
+    });
+    stage.addEventListener("pointerup", (e) => {
+      if (downAt == null) return;
+      const heldMs = performance.now() - downAt;
+      const dx = e.clientX - downX;
+      downAt = null;
+
+      if (moved && Math.abs(dx) > 60) {
+        resumeTimer();
+        if (dx < 0) next(); else prev();
+        return;
+      }
+      if (heldMs < 250 && !moved) {
+        if (downOnNoNav) { resumeTimer(); return; }
+        const w = window.innerWidth;
+        if (e.clientX < w * 0.3) prev(); else next();
+        return;
+      }
+      resumeTimer();
+    });
+    stage.addEventListener("pointercancel", () => { downAt = null; resumeTimer(); });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") next();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === "Escape") location.href = "attack.html";
+    });
+  }
+
+  async function init() {
+    if (!groupId) { showEmptyTarget("No actor was specified. Open a group's dossier from the ATT&CK Explorer."); return; }
+    let data;
+    try { data = await loadDomain(); }
+    catch (err) { showEmptyTarget(`Couldn't load ${domain} data. Has scripts/fetch_attack.py been run yet?`); console.error(err); return; }
+
+    const g = data.byId.groups[groupId];
+    if (!g) { showEmptyTarget(`No record for "${escapeHtml(groupId)}" in the ${domain} domain.`); return; }
+
+    document.getElementById("exit-link").href = `attack.html`;
+    slides = buildSlides(g, data);
+    renderChrome();
+    renderSlides();
+    setupInput();
+    goTo(0);
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

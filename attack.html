@@ -194,21 +194,42 @@
   }
 
   .flyout-head {
-    display: flex; align-items: center; justify-content: space-between; gap: 10px;
-    padding: 12px 16px; border-bottom: 1px solid var(--line); flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+    padding: 10px 14px; border-bottom: 1px solid var(--line); flex: 0 0 auto;
   }
-  .flyout-back {
-    font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); background: none;
-    border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 4px;
-  }
-  .flyout-back:hover { color: var(--amber); }
-  .flyout-back:disabled { opacity: 0.3; cursor: default; }
   .flyout-close {
     font-family: var(--font-mono); font-size: 16px; color: var(--text-dim); background: none;
     border: none; cursor: pointer; padding: 0 4px; line-height: 1;
   }
   .flyout-close:hover { color: var(--red); }
   .flyout-body { padding: 16px; overflow-y: auto; flex: 1 1 auto; }
+
+  /* back/breadcrumb nav lives at the bottom — thumb-reachable on mobile */
+  .flyout-nav {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-top: 1px solid var(--line); background: var(--ink-raised);
+  }
+  .flyout-back {
+    flex: 0 0 auto; font-family: var(--font-mono); font-size: 11.5px; color: var(--text);
+    background: var(--ink-input); border: 1px solid var(--line); padding: 8px 12px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .flyout-back:hover:not(:disabled) { color: var(--amber); border-color: var(--amber); }
+  .flyout-back:disabled { opacity: 0.3; cursor: default; }
+  .flyout-crumbs {
+    flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 5px;
+    overflow-x: auto; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
+    scrollbar-width: none;
+  }
+  .flyout-crumbs::-webkit-scrollbar { display: none; }
+  .flyout-crumbs button {
+    flex: 0 0 auto; background: none; border: none; color: var(--text-dim); font-family: var(--font-mono);
+    font-size: 11px; cursor: pointer; padding: 2px; white-space: nowrap; max-width: 110px;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .flyout-crumbs button:last-child { color: var(--amber); cursor: default; }
+  .flyout-crumbs button:not(:last-child):hover { color: var(--text); text-decoration: underline; }
+  .flyout-crumbs .sep { flex: 0 0 auto; opacity: 0.5; }
 
   .flyout-body .fid {
     font-family: var(--font-mono); font-size: 11px; color: var(--card-color, var(--text-dim));
@@ -238,49 +259,9 @@
   .spotlight-btn {
     margin-top: 20px; width: 100%; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em;
     color: var(--ink); background: var(--amber); border: none; padding: 12px; cursor: pointer;
-    text-transform: uppercase; font-weight: 600;
+    text-transform: uppercase; font-weight: 600; text-align: center; text-decoration: none; display: block;
   }
   .spotlight-btn:hover { filter: brightness(1.1); }
-
-  /* spotlight mode */
-  .spotlight-overlay {
-    position: fixed; inset: 0; z-index: 60; background:
-      radial-gradient(ellipse at 50% 40%, #131c2c 0%, #05070a 75%);
-    display: none;
-    overflow: hidden;
-  }
-  .spotlight-overlay.open { display: block; }
-  .spotlight-overlay::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px);
-    mix-blend-mode: overlay;
-  }
-  .spotlight-overlay canvas { display: block; width: 100%; height: 100%; touch-action: none; }
-
-  .spotlight-hud {
-    position: absolute; top: 0; left: 0; right: 0; z-index: 2;
-    display: flex; align-items: center; justify-content: space-between; gap: 10px;
-    padding: 14px 16px; pointer-events: none;
-  }
-  .spotlight-crumbs {
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
-    display: flex; gap: 6px; flex-wrap: wrap; pointer-events: auto;
-  }
-  .spotlight-crumbs button {
-    background: none; border: none; color: var(--text-dim); font-family: var(--font-mono);
-    font-size: 11px; cursor: pointer; padding: 2px;
-  }
-  .spotlight-crumbs button:last-child { color: var(--amber); }
-  .spotlight-crumbs button:hover { color: var(--amber); }
-  .spotlight-exit {
-    pointer-events: auto; font-family: var(--font-mono); font-size: 13px; color: var(--text);
-    background: rgba(16,21,29,0.85); border: 1px solid var(--line); padding: 7px 12px; cursor: pointer;
-  }
-  .spotlight-exit:hover { border-color: var(--red); color: var(--red); }
-  .spotlight-hint {
-    position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; z-index: 2;
-    font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); pointer-events: none;
-  }
 
   footer { margin-top: 32px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
   a.footer-link { color: var(--text-dim); }
@@ -332,20 +313,14 @@
   <div class="flyout-backdrop" id="flyout-backdrop"></div>
   <aside class="flyout" id="flyout">
     <div class="flyout-head">
-      <button class="flyout-back" id="flyout-back">‹ back</button>
       <button class="flyout-close" id="flyout-close">✕</button>
     </div>
     <div class="flyout-body" id="flyout-body"></div>
-  </aside>
-
-  <div class="spotlight-overlay" id="spotlight-overlay">
-    <div class="spotlight-hud">
-      <div class="spotlight-crumbs" id="spotlight-crumbs"></div>
-      <button class="spotlight-exit" id="spotlight-exit">⤫ exit</button>
+    <div class="flyout-nav">
+      <button class="flyout-back" id="flyout-back">‹ back</button>
+      <div class="flyout-crumbs" id="flyout-crumbs"></div>
     </div>
-    <canvas id="spotlight-canvas"></canvas>
-    <div class="spotlight-hint">tap a node to fly in · drag to pan · drag a node to move it</div>
-  </div>
+  </aside>
 
 <script>
 (() => {
@@ -681,7 +656,7 @@
             ${e.aliases.filter(a => a !== e.name).map(a => `<span class="alias-chip">${escapeHtml(a)}</span>`).join("")}
           </div>
           <p class="flyout-summary">${escapeHtml(e.description) || "No description available."}</p>
-          <button class="spotlight-btn" id="open-spotlight">⌁ Spotlight this actor</button>
+          <a class="spotlight-btn" href="spotlight.html?domain=${encodeURIComponent(currentDomain)}&group=${encodeURIComponent(e.id)}">⌁ Spotlight this actor</a>
           ${relatedSection("Campaigns", "campaigns", e.campaigns, data)}
           ${relatedSection("Software &amp; tools", "software", e.software, data)}
           <div class="section-title">Techniques by tactic (${e.techniques.length})</div>
@@ -758,26 +733,53 @@
     return "";
   }
 
+  function flyoutStackLabel(hop, data) {
+    const e = getEntity(data, hop.type, hop.id);
+    if (!e) return hop.id;
+    return hop.type === "techniques" ? techniqueLabel(e, data) : e.name;
+  }
+
+  function renderFlyoutCrumbs() {
+    const data = cache[currentDomain];
+    const el = document.getElementById("flyout-crumbs");
+    el.innerHTML = flyoutStack.map((hop, i) => {
+      const isLast = i === flyoutStack.length - 1;
+      const label = escapeHtml(flyoutStackLabel(hop, data));
+      return (i > 0 ? `<span class="sep">›</span>` : "") + `<button data-i="${i}" ${isLast ? "disabled" : ""}>${label}</button>`;
+    }).join("");
+    el.querySelectorAll("button:not([disabled])").forEach(b => {
+      b.addEventListener("click", () => {
+        const i = Number(b.dataset.i);
+        const hop = flyoutStack[i];
+        flyoutStack = flyoutStack.slice(0, i + 1);
+        openFlyout(hop.type, hop.id, { push: false });
+      });
+    });
+    el.scrollLeft = el.scrollWidth;
+  }
+
   function openFlyout(type, id, opts = {}) {
     const data = cache[currentDomain];
     const entity = getEntity(data, type, id);
     if (!entity) return;
 
-    if (opts.reset) flyoutStack = [];
-    if (opts.push !== false) flyoutStack.push({ type, id });
-    else flyoutStack = [{ type, id }];
+    if (opts.reset) {
+      flyoutStack = [{ type, id }];
+    } else if (opts.push !== false) {
+      flyoutStack.push({ type, id });
+    }
+    // else: opts.push === false and not resetting — caller already put the
+    // stack in the right shape (e.g. flyoutBack popped it), just re-render.
 
     document.getElementById("flyout-body").innerHTML = flyoutBodyHtml(type, entity, data);
     document.getElementById("flyout-back").disabled = flyoutStack.length <= 1;
+    renderFlyoutCrumbs();
     document.getElementById("flyout").classList.add("open");
     document.getElementById("flyout-backdrop").classList.add("open");
 
     document.getElementById("flyout-body").querySelectorAll("[data-type][data-id]").forEach(el => {
       el.addEventListener("click", () => openFlyout(el.dataset.type, el.dataset.id));
     });
-
-    const spotlightBtn = document.getElementById("open-spotlight");
-    if (spotlightBtn) spotlightBtn.addEventListener("click", () => openSpotlight(id));
 
     document.getElementById("flyout-body").scrollTop = 0;
   }
@@ -798,379 +800,6 @@
   document.getElementById("flyout-back").addEventListener("click", flyoutBack);
   document.getElementById("flyout-close").addEventListener("click", closeFlyout);
   document.getElementById("flyout-backdrop").addEventListener("click", closeFlyout);
-
-  // ---------- spotlight mode ----------
-
-  const NODE_COLOR = {
-    groups: "#ffb020", tactics: "#2dd4bf", techniques: "#5ac8ff",
-    software: "#c792ea", campaigns: "#ff5c5c", mitigations: "#4fd58a",
-  };
-
-  const spotlight = {
-    canvas: null, ctx: null, nodes: [], edges: [], camera: { x: 0, y: 0, zoom: 1 },
-    flying: null, dragNode: null, dragCanvas: null, path: [], raf: null,
-    stars: [],
-  };
-
-  function neighborsFor(data, type, id) {
-    const e = getEntity(data, type, id);
-    if (!e) return [];
-    const out = [];
-    const add = (t, ids) => (ids || []).forEach(i => out.push({ type: t, id: i }));
-    switch (type) {
-      case "groups":
-        add("tactics", [...new Set(e.techniques.flatMap(tid => data.byId.techniques[tid]?.tactics || []))]);
-        add("software", e.software);
-        add("campaigns", e.campaigns);
-        break;
-      case "tactics":
-        add("techniques", techniquesForTactic(data, id).map(t => t.id));
-        break;
-      case "techniques":
-        add("groups", e.groups);
-        add("software", e.software);
-        add("campaigns", e.campaigns);
-        add("mitigations", e.mitigations);
-        break;
-      case "software":
-        add("groups", groupsUsingSoftware(data, id).map(g => g.id));
-        add("techniques", e.techniques);
-        add("campaigns", e.campaigns);
-        break;
-      case "campaigns":
-        add("groups", e.groups);
-        add("techniques", e.techniques);
-        add("software", e.software);
-        break;
-      case "mitigations":
-        add("techniques", e.techniques);
-        break;
-    }
-    return out;
-  }
-
-  function entityName(data, type, id) {
-    const e = getEntity(data, type, id);
-    if (!e) return id;
-    return type === "techniques" ? techniqueLabel(e, data) : e.name;
-  }
-
-  function buildGraph(type, id) {
-    const data = cache[currentDomain];
-    const neighbors = neighborsFor(data, type, id);
-    const w = spotlight.canvas.width / (window.devicePixelRatio || 1);
-    const h = spotlight.canvas.height / (window.devicePixelRatio || 1);
-    const radius = Math.min(w, h) * 0.36;
-
-    const center = { type, id, x: 0, y: 0, vx: 0, vy: 0, r: 16, fixed: true, label: entityName(data, type, id) };
-    const nodes = [center];
-    neighbors.forEach((n, i) => {
-      const angle = (i / Math.max(1, neighbors.length)) * Math.PI * 2;
-      nodes.push({
-        type: n.type, id: n.id,
-        x: Math.cos(angle) * radius, y: Math.sin(angle) * radius,
-        vx: 0, vy: 0, r: 8, fixed: false,
-        label: entityName(data, n.type, n.id),
-      });
-    });
-    const edges = neighbors.map((n, i) => ({ a: 0, b: i + 1 }));
-
-    spotlight.nodes = nodes;
-    spotlight.edges = edges;
-
-    if (REDUCED_MOTION) {
-      for (let i = 0; i < 200; i++) stepPhysics(1);
-    }
-  }
-
-  function stepPhysics(dt) {
-    const nodes = spotlight.nodes;
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        let dx = a.x - b.x, dy = a.y - b.y;
-        let d2 = dx * dx + dy * dy;
-        if (d2 < 1) d2 = 1;
-        const d = Math.sqrt(d2);
-        const force = 2600 / d2;
-        const fx = (dx / d) * force, fy = (dy / d) * force;
-        if (!a.fixed) { a.vx += fx * dt; a.vy += fy * dt; }
-        if (!b.fixed) { b.vx -= fx * dt; b.vy -= fy * dt; }
-      }
-    }
-    const REST = 140;
-    for (const edge of spotlight.edges) {
-      const a = nodes[edge.a], b = nodes[edge.b];
-      const dx = b.x - a.x, dy = b.y - a.y;
-      const d = Math.max(1, Math.sqrt(dx * dx + dy * dy));
-      const force = (d - REST) * 0.02;
-      const fx = (dx / d) * force, fy = (dy / d) * force;
-      if (!a.fixed) { a.vx += fx * dt; a.vy += fy * dt; }
-      if (!b.fixed) { b.vx -= fx * dt; b.vy -= fy * dt; }
-    }
-    for (const n of nodes) {
-      if (n.fixed) { n.x = 0; n.y = 0; n.vx = 0; n.vy = 0; continue; }
-      n.vx -= n.x * 0.0025 * dt;
-      n.vy -= n.y * 0.0025 * dt;
-      n.vx *= 0.86;
-      n.vy *= 0.86;
-      n.x += n.vx * dt;
-      n.y += n.vy * dt;
-    }
-  }
-
-  function resizeCanvas() {
-    const c = spotlight.canvas;
-    if (!c) return;
-    const dpr = window.devicePixelRatio || 1;
-    c.width = c.clientWidth * dpr;
-    c.height = c.clientHeight * dpr;
-    spotlight.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function ensureStars() {
-    if (spotlight.stars.length) return;
-    for (let i = 0; i < 110; i++) {
-      spotlight.stars.push({
-        x: Math.random(), y: Math.random(),
-        r: Math.random() * 1.4 + 0.3,
-        speed: Math.random() * 0.00012 + 0.00003,
-      });
-    }
-  }
-
-  function drawFrame(ts) {
-    const ctx = spotlight.ctx;
-    const c = spotlight.canvas;
-    const w = c.clientWidth, h = c.clientHeight;
-    ctx.clearRect(0, 0, w, h);
-
-    // starfield (screen space, drifts independently for parallax depth)
-    ctx.save();
-    for (const s of spotlight.stars) {
-      const sx = ((s.x + ts * s.speed) % 1) * w;
-      const sy = s.y * h;
-      ctx.globalAlpha = 0.5;
-      ctx.fillStyle = "#9fd8ff";
-      ctx.beginPath();
-      ctx.arc(sx, sy, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.restore();
-
-    if (!REDUCED_MOTION) {
-      stepPhysics(0.9);
-      if (spotlight.flying) advanceFly(ts);
-    }
-
-    ctx.save();
-    ctx.translate(w / 2, h / 2);
-    ctx.scale(spotlight.camera.zoom, spotlight.camera.zoom);
-    ctx.translate(-spotlight.camera.x, -spotlight.camera.y);
-
-    ctx.lineWidth = 1;
-    for (const edge of spotlight.edges) {
-      const a = spotlight.nodes[edge.a], b = spotlight.nodes[edge.b];
-      const color = NODE_COLOR[b.type] || "#5ac8ff";
-      ctx.strokeStyle = color;
-      ctx.globalAlpha = 0.35;
-      ctx.shadowColor = color;
-      ctx.shadowBlur = 6;
-      ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.lineTo(b.x, b.y);
-      ctx.stroke();
-    }
-    ctx.globalAlpha = 1;
-
-    for (const n of spotlight.nodes) {
-      const color = NODE_COLOR[n.type] || "#ffb020";
-      ctx.shadowColor = color;
-      ctx.shadowBlur = n.fixed ? 22 : 12;
-      ctx.fillStyle = color;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = "#0a0e14";
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r * 0.45, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.font = n.fixed ? "600 13px var(--font-sans), sans-serif" : "11px var(--font-mono), monospace";
-      ctx.fillStyle = "#d7dde5";
-      ctx.textAlign = "center";
-      ctx.shadowBlur = 4;
-      ctx.shadowColor = "#000";
-      const label = n.label.length > 26 ? n.label.slice(0, 25) + "…" : n.label;
-      ctx.fillText(label, n.x, n.y + n.r + 14);
-    }
-    ctx.restore();
-
-    spotlight.raf = requestAnimationFrame(drawFrame);
-  }
-
-  function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-
-  function advanceFly(ts) {
-    const f = spotlight.flying;
-    const t = Math.min(1, (ts - f.start) / f.duration);
-    const e = easeInOutCubic(t);
-    spotlight.camera.x = f.from.x + (f.to.x - f.from.x) * e;
-    spotlight.camera.y = f.from.y + (f.to.y - f.from.y) * e;
-    spotlight.camera.zoom = f.from.zoom + (f.to.zoom - f.from.zoom) * e;
-    if (t >= 1) {
-      spotlight.flying = null;
-      recenterOn(f.targetType, f.targetId);
-    }
-  }
-
-  function flyTo(node) {
-    spotlight.flying = {
-      start: performance.now(),
-      duration: REDUCED_MOTION ? 1 : 600,
-      from: { ...spotlight.camera },
-      to: { x: node.x, y: node.y, zoom: 1.5 },
-      targetType: node.type, targetId: node.id,
-    };
-    if (REDUCED_MOTION) {
-      spotlight.camera = { x: node.x, y: node.y, zoom: 1.5 };
-      spotlight.flying = null;
-      recenterOn(node.type, node.id);
-    }
-  }
-
-  function recenterOn(type, id) {
-    const data = cache[currentDomain];
-    if (!getEntity(data, type, id)) return;
-    spotlight.path.push({ type, id, name: entityName(data, type, id) });
-    if (spotlight.path.length > 6) spotlight.path.shift();
-    spotlight.camera = { x: 0, y: 0, zoom: 1 };
-    buildGraph(type, id);
-    renderCrumbs();
-    openFlyout(type, id, { reset: true });
-  }
-
-  function renderCrumbs() {
-    const el = document.getElementById("spotlight-crumbs");
-    el.innerHTML = spotlight.path.map((p, i) => `<button data-i="${i}">${escapeHtml(p.name)}</button>`).join(" › ");
-    el.querySelectorAll("button").forEach(b => {
-      b.addEventListener("click", () => {
-        const i = Number(b.dataset.i);
-        const hop = spotlight.path[i];
-        spotlight.path = spotlight.path.slice(0, i);
-        recenterOn(hop.type, hop.id);
-      });
-    });
-  }
-
-  function screenToWorld(px, py) {
-    const c = spotlight.canvas;
-    const w = c.clientWidth, h = c.clientHeight;
-    return {
-      x: (px - w / 2) / spotlight.camera.zoom + spotlight.camera.x,
-      y: (py - h / 2) / spotlight.camera.zoom + spotlight.camera.y,
-    };
-  }
-
-  function nodeAt(px, py) {
-    const world = screenToWorld(px, py);
-    let best = null, bestD = Infinity;
-    for (const n of spotlight.nodes) {
-      const dx = n.x - world.x, dy = n.y - world.y;
-      const d = Math.sqrt(dx * dx + dy * dy);
-      if (d < n.r + 10 && d < bestD) { best = n; bestD = d; }
-    }
-    return best;
-  }
-
-  function setupSpotlightInput() {
-    const c = spotlight.canvas;
-    let pointerStart = null;
-    let moved = false;
-
-    c.addEventListener("pointerdown", (ev) => {
-      c.setPointerCapture(ev.pointerId);
-      const rect = c.getBoundingClientRect();
-      const px = ev.clientX - rect.left, py = ev.clientY - rect.top;
-      pointerStart = { px, py };
-      moved = false;
-      const hit = nodeAt(px, py);
-      if (hit && !hit.fixed) {
-        spotlight.dragNode = hit;
-      } else {
-        spotlight.dragCanvas = { px, py, camX: spotlight.camera.x, camY: spotlight.camera.y };
-      }
-    });
-
-    c.addEventListener("pointermove", (ev) => {
-      if (!pointerStart) return;
-      const rect = c.getBoundingClientRect();
-      const px = ev.clientX - rect.left, py = ev.clientY - rect.top;
-      if (Math.abs(px - pointerStart.px) > 4 || Math.abs(py - pointerStart.py) > 4) moved = true;
-
-      if (spotlight.dragNode) {
-        const world = screenToWorld(px, py);
-        spotlight.dragNode.x = world.x;
-        spotlight.dragNode.y = world.y;
-        spotlight.dragNode.vx = 0;
-        spotlight.dragNode.vy = 0;
-      } else if (spotlight.dragCanvas) {
-        const dx = (px - spotlight.dragCanvas.px) / spotlight.camera.zoom;
-        const dy = (py - spotlight.dragCanvas.py) / spotlight.camera.zoom;
-        spotlight.camera.x = spotlight.dragCanvas.camX - dx;
-        spotlight.camera.y = spotlight.dragCanvas.camY - dy;
-      }
-    });
-
-    c.addEventListener("pointerup", (ev) => {
-      const rect = c.getBoundingClientRect();
-      const px = ev.clientX - rect.left, py = ev.clientY - rect.top;
-      if (!moved) {
-        const hit = nodeAt(px, py);
-        if (hit && !hit.fixed) flyTo(hit);
-      }
-      spotlight.dragNode = null;
-      spotlight.dragCanvas = null;
-      pointerStart = null;
-    });
-
-    window.addEventListener("resize", resizeCanvas);
-  }
-
-  function openSpotlight(groupId) {
-    const data = cache[currentDomain];
-    const g = getEntity(data, "groups", groupId);
-    if (!g) return;
-
-    closeFlyout();
-    document.getElementById("spotlight-overlay").classList.add("open");
-
-    if (!spotlight.canvas) {
-      spotlight.canvas = document.getElementById("spotlight-canvas");
-      spotlight.ctx = spotlight.canvas.getContext("2d");
-      ensureStars();
-      setupSpotlightInput();
-    }
-    resizeCanvas();
-
-    spotlight.path = [{ type: "groups", id: groupId, name: g.name }];
-    spotlight.camera = { x: 0, y: 0, zoom: 1 };
-    buildGraph("groups", groupId);
-    renderCrumbs();
-    openFlyout("groups", groupId, { reset: true });
-
-    if (!spotlight.raf) spotlight.raf = requestAnimationFrame(drawFrame);
-  }
-
-  function closeSpotlight() {
-    document.getElementById("spotlight-overlay").classList.remove("open");
-    if (spotlight.raf) { cancelAnimationFrame(spotlight.raf); spotlight.raf = null; }
-    closeFlyout();
-  }
-
-  document.getElementById("spotlight-exit").addEventListener("click", closeSpotlight);
 
   // ---------- wiring ----------
 
