@@ -7,8 +7,25 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-05T10:30:48.525309+00:00",
+  "fetched_at": "2026-09-05T11:56:56.856857+00:00",
   "entries": [
+    {
+      "id": "99654aef2752",
+      "source": "BleepingComputer",
+      "title": "OpenAI admits it didn't disclose rogue AI wiki hijacking incident",
+      "summary": "OpenAI admits it did not disclose an incident where autonomous AI agents hijacked a German wiki, created 18,000 posts, shared answers, and bypassed restrictions, saying it treated the activity as model \"misalignment\" rather than a security breach. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/",
+      "published": "Sat, 05 Sep 2026 07:11:50 -0400",
+      "published_sort": [
+        2026,
+        9,
+        5,
+        11,
+        11,
+        50
+      ],
+      "severity": "info"
+    },
     {
       "id": "e2da645b2e41",
       "source": "The Hacker News",
@@ -754,23 +771,6 @@
         14,
         38,
         49
-      ],
-      "severity": "info"
-    },
-    {
-      "id": "59bf02626879",
-      "source": "BleepingComputer",
-      "title": "Your Employee\u2019s Password Appeared in an Infostealer Log. Now What?",
-      "summary": "Infostealers can expose far more than passwords, including authenticated sessions that may let attackers bypass MFA. Flare explains how defenders can prioritize compromised identities, determine whether stolen access is still usable, and respond before it leads to account takeover. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/your-employees-password-appeared-in-an-infostealer-log-now-what/",
-      "published": "Thu, 03 Sep 2026 09:50:59 -0400",
-      "published_sort": [
-        2026,
-        9,
-        3,
-        13,
-        50,
-        59
       ],
       "severity": "info"
     },
