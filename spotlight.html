@@ -48,15 +48,6 @@
     box-shadow: inset 0 0 140px rgba(0,0,0,0.75);
   }
 
-  .hud-corner {
-    position: absolute; width: 26px; height: 26px; z-index: 25; opacity: 0.7;
-    border-color: var(--amber); pointer-events: none;
-  }
-  .hud-corner.tl { top: 10px; left: 10px; border-top: 2px solid; border-left: 2px solid; }
-  .hud-corner.tr { top: 10px; right: 10px; border-top: 2px solid; border-right: 2px solid; }
-  .hud-corner.bl { bottom: 10px; left: 10px; border-bottom: 2px solid; border-left: 2px solid; }
-  .hud-corner.br { bottom: 10px; right: 10px; border-bottom: 2px solid; border-right: 2px solid; }
-
   .progress-bar {
     position: absolute; top: max(10px, env(safe-area-inset-top)); left: 12px; right: 12px; z-index: 22;
     display: flex; gap: 4px;
@@ -68,16 +59,29 @@
     position: absolute; top: calc(max(10px, env(safe-area-inset-top)) + 12px); left: 12px; right: 12px; z-index: 22;
     display: flex; align-items: center; justify-content: space-between; gap: 10px;
   }
+  /* exit-link and stamp are fixed-size chrome; only the case-id block (which
+     already wraps its own text to 2 lines) should ever shrink for space —
+     without flex-shrink:0 here, a long case-id line squeezes exit-link down
+     to a sliver via the flex default instead of wrapping the middle column. */
   .exit-link {
+    flex: 0 0 auto;
     font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); text-decoration: none;
     border: 1px solid var(--line); background: rgba(10,14,20,0.7); padding: 6px 10px; letter-spacing: 0.04em;
+    max-width: 34vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .exit-link:hover { color: var(--red); border-color: var(--red); }
+  .case-id-wrap { flex: 1 1 auto; min-width: 0; }
   .case-id {
     font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.08em; text-align: center;
     text-transform: uppercase;
   }
+  .paused-flag {
+    font-size: 9px; color: var(--amber); letter-spacing: 0.1em; margin-top: 3px; opacity: 0;
+    text-align: center; transition: opacity 0.2s ease;
+  }
+  .paused-flag.on { opacity: 1; }
   .stamp {
+    flex: 0 0 auto;
     font-size: 9px; font-weight: 700; letter-spacing: 0.14em; color: var(--red);
     border: 2px solid var(--red); padding: 3px 7px; transform: rotate(-6deg); opacity: 0.75;
     text-align: center; line-height: 1.3; white-space: nowrap;
@@ -95,12 +99,20 @@
   }
   .slide.active { display: block; animation: slideIn 0.35s ease; }
   .slide-inner { min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  /* Slides with expand/collapse content (Coverage, Arsenal) must NOT vertically
+     center — centering re-flows the whole block on every toggle, so a second tap
+     in the same spot (e.g. the double-tap-to-resume gesture) lands on whatever
+     content shifted into that position instead of what the user was looking at. */
+  .slide-inner.top-align { justify-content: flex-start; }
   @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   .section-label {
     font-size: 11px; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 16px; opacity: 0.9;
   }
   .section-label::before { content: "// "; opacity: 0.6; }
+  .subhead {
+    font-size: 10px; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 8px; text-transform: uppercase;
+  }
 
   /* redaction-reveal motif for headline text */
   .redact { position: relative; display: inline-block; }
@@ -143,7 +155,7 @@
     border: 1px solid var(--amber); padding: 5px 9px; background: rgba(255,176,32,0.08);
   }
 
-  /* --- origin slide --- */
+  /* --- origin / profile slide --- */
   .dossier-text {
     font-family: var(--font-sans); font-size: 15px; line-height: 1.7; color: var(--text);
     white-space: pre-line; max-width: 60ch;
@@ -154,13 +166,28 @@
   .meta-cell b { font-family: var(--font-sans); font-size: 14px; }
 
   /* --- coverage / scan slide --- */
-  .scan-list { display: flex; flex-direction: column; gap: 9px; }
-  .scan-row { display: grid; grid-template-columns: 1fr 34px; align-items: center; gap: 10px; font-size: 11px; }
+  .scan-list { display: flex; flex-direction: column; gap: 4px; }
+  .scan-row {
+    display: grid; grid-template-columns: 1fr 34px; align-items: center; gap: 10px; font-size: 11px;
+    width: 100%; padding: 6px 0;
+  }
+  button.scan-row {
+    background: none; border: none; color: inherit; font-family: inherit; cursor: pointer; text-align: left;
+  }
   .scan-row .sname { color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .scan-row.hit .sname { color: var(--text); }
+  button.scan-row.hit .sname::after { content: " ▾"; color: var(--teal); font-size: 9px; }
   .scan-row .strack { height: 6px; background: rgba(255,255,255,0.06); margin-top: 3px; }
   .scan-row .sfill { height: 100%; width: 0%; background: var(--teal); box-shadow: 0 0 6px var(--teal); transition: width 0.5s ease; }
   .scan-row .scount { text-align: right; color: var(--text-dim); font-size: 10px; }
+  .scan-detail { padding: 2px 0 10px 2px; }
+  .scan-detail[hidden] { display: none; }
+
+  .chip {
+    font-size: 11px; padding: 5px 10px; background: var(--ink-input); border: 1px solid var(--line);
+    color: var(--text); text-decoration: none; display: inline-block;
+  }
+  .chip:hover { border-color: var(--teal); color: var(--teal); }
 
   /* --- arsenal slide --- */
   .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
@@ -173,6 +200,11 @@
   .asset-card .adesc { font-size: 10.5px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; display: none; }
   .asset-card.expanded .adesc { display: block; }
   .asset-card.expanded { border-left-color: var(--amber); }
+  .zoom-link {
+    display: inline-block; margin-top: 8px; font-size: 10px; color: var(--amber); text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .zoom-link:hover { text-decoration: underline; }
 
   /* --- campaigns / timeline slide --- */
   .timeline { position: relative; padding-left: 18px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; }
@@ -185,7 +217,7 @@
   .tl-name { font-family: var(--font-sans); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .tl-desc { font-size: 12px; color: var(--text-dim); line-height: 1.55; max-width: 56ch; }
 
-  /* --- connections slide --- */
+  /* --- connections / used-by slide --- */
   .orbit-wrap { position: relative; height: 130px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; }
   .orbit-center {
     width: 14px; height: 14px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 14px var(--amber); z-index: 1;
@@ -238,22 +270,20 @@
 </head>
 <body>
   <div class="stage" id="stage">
-    <div class="hud-corner tl"></div>
-    <div class="hud-corner tr"></div>
-    <div class="hud-corner bl"></div>
-    <div class="hud-corner br"></div>
-
     <div class="progress-bar" id="progress-bar"></div>
     <div class="topbar">
       <a class="exit-link no-nav" id="exit-link" href="attack.html">‹ EXIT</a>
-      <div class="case-id" id="case-id">SIGNAL // SPOTLIGHT</div>
+      <div class="case-id-wrap">
+        <div class="case-id" id="case-id">SIGNAL // SPOTLIGHT</div>
+        <div class="paused-flag" id="paused-flag">‖ PAUSED — DOUBLE-TAP TO RESUME</div>
+      </div>
       <div class="stamp">CLASSIFIED<br>EYES ONLY</div>
     </div>
 
     <div class="slides" id="slides"></div>
     <div class="tap-zone tap-left" id="tap-left"></div>
     <div class="tap-zone tap-right" id="tap-right"></div>
-    <div class="hint" id="hint">tap right to advance · left to go back · hold to pause</div>
+    <div class="hint" id="hint">tap right to advance · left to go back · tap an item to inspect</div>
   </div>
 
 <script>
@@ -261,7 +291,17 @@
   const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const params = new URLSearchParams(location.search);
   const domain = params.get("domain") || "enterprise";
-  const groupId = params.get("group");
+  let type = params.get("type") || (params.get("group") ? "groups" : null);
+  const id = params.get("id") || params.get("group");
+  const fromUrl = params.get("from");
+  const fromName = params.get("fromName");
+
+  const TYPE_META = {
+    groups: { caseLabel: "CASE FILE", pageLabel: "ACTOR" },
+    techniques: { caseLabel: "TECHNIQUE FILE", pageLabel: "TECHNIQUE" },
+    software: { caseLabel: "ASSET FILE", pageLabel: "ASSET" },
+  };
+  if (!TYPE_META[type]) type = "groups";
 
   function escapeHtml(str) {
     const div = document.createElement("div");
@@ -271,6 +311,16 @@
   function flagEmoji(code) {
     if (!code || code.length !== 2) return "🏳";
     return [...code.toUpperCase()].map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join("");
+  }
+
+  function zoomHref(zType, zId, selfLabel) {
+    const p = new URLSearchParams();
+    p.set("domain", domain);
+    p.set("type", zType);
+    p.set("id", zId);
+    p.set("from", location.pathname + location.search);
+    p.set("fromName", selfLabel);
+    return "spotlight.html?" + p.toString();
   }
 
   function showEmptyTarget(message) {
@@ -296,6 +346,10 @@
   function techniqueLabel(t, data) {
     if (t.parent && data.byId.techniques[t.parent]) return `${data.byId.techniques[t.parent].name}: ${t.name}`;
     return t.name;
+  }
+
+  function groupsUsingSoftware(s, data) {
+    return data.groups.filter(g => g.software.includes(s.id));
   }
 
   function percentile(arr, p) {
@@ -347,9 +401,9 @@
       .slice(0, limit);
   }
 
-  function mitigationsForGroup(group, data, limit = 10) {
+  function mitigationsFor(techniqueIds, data, limit = 10) {
     const freq = {};
-    group.techniques.forEach(tid => {
+    techniqueIds.forEach(tid => {
       (data.byId.techniques[tid]?.mitigations || []).forEach(mid => { freq[mid] = (freq[mid] || 0) + 1; });
     });
     return Object.entries(freq)
@@ -359,7 +413,7 @@
       .filter(Boolean);
   }
 
-  // ---------- slide builders ----------
+  // ---------- shared slide builders ----------
 
   function titleSlide(g, data, assessment) {
     return {
@@ -395,25 +449,36 @@
     };
   }
 
-  function coverageSlide(g, data, assessment) {
+  function coverageSlide(g, data, selfLabel) {
     const rows = data.tactics.map(t => {
-      const count = g.techniques.filter(tid => (data.byId.techniques[tid]?.tactics || []).includes(t.id)).length;
-      return { t, count };
+      const techs = g.techniques.map(tid => data.byId.techniques[tid]).filter(t2 => t2 && t2.tactics.includes(t.id));
+      return { t, techs };
     });
-    const max = Math.max(1, ...rows.map(r => r.count));
+    const max = Math.max(1, ...rows.map(r => r.techs.length));
     return {
       key: "coverage", duration: 6500,
       html: `
         <div class="section-label">Kill-Chain Scan</div>
         <div class="scan-list">
-          ${rows.map(({ t, count }) => `
-            <div class="scan-row ${count ? "hit" : ""}" data-count="${count}" data-pct="${count ? (count / max * 100).toFixed(0) : 0}">
-              <div>
-                <div class="sname">${escapeHtml(t.name)}</div>
-                <div class="strack"><div class="sfill"></div></div>
-              </div>
-              <div class="scount">${count || "—"}</div>
-            </div>`).join("")}
+          ${rows.map(({ t, techs }, i) => {
+            const pct = techs.length ? (techs.length / max * 100).toFixed(0) : 0;
+            const rowTag = techs.length ? "button" : "div";
+            const rowHtml = `
+              <${rowTag} class="scan-row ${techs.length ? "hit no-nav" : ""}" data-i="${i}" data-pct="${pct}">
+                <div>
+                  <div class="sname">${escapeHtml(t.name)}</div>
+                  <div class="strack"><div class="sfill"></div></div>
+                </div>
+                <div class="scount">${techs.length || "—"}</div>
+              </${rowTag}>`;
+            const detailHtml = techs.length ? `
+              <div class="scan-detail" data-i="${i}" hidden>
+                <div class="chip-row">
+                  ${techs.map(tq => `<a class="chip no-nav" href="${zoomHref("techniques", tq.id, selfLabel)}">${escapeHtml(techniqueLabel(tq, data))}</a>`).join("")}
+                </div>
+              </div>` : "";
+            return rowHtml + detailHtml;
+          }).join("")}
         </div>
       `,
       onMount(el) {
@@ -424,11 +489,21 @@
           if (REDUCED_MOTION) { fill.style.width = pct + "%"; return; }
           setTimeout(() => { fill.style.width = pct + "%"; }, 60 * i);
         });
+        el.querySelectorAll("button.scan-row").forEach(row => {
+          row.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const i = row.dataset.i;
+            const detail = el.querySelector(`.scan-detail[data-i="${i}"]`);
+            const willOpen = detail.hidden;
+            el.querySelectorAll(".scan-detail").forEach(d => { d.hidden = true; });
+            detail.hidden = !willOpen;
+          });
+        });
       },
     };
   }
 
-  function arsenalSlide(g, data) {
+  function arsenalSlide(g, data, selfLabel) {
     const items = g.software.map(id => data.byId.software[id]).filter(Boolean);
     return {
       key: "arsenal", duration: 7500,
@@ -436,24 +511,34 @@
         <div class="section-label">Arsenal On Record (${items.length})</div>
         <div class="asset-grid">
           ${items.map(s => `
-            <button class="asset-card no-nav" data-id="${s.id}">
+            <div class="asset-card no-nav" data-id="${s.id}" tabindex="0" role="button">
               <div class="aid">${s.id} · ${s.type}</div>
               <div class="aname">${escapeHtml(s.name)}</div>
-              <div class="adesc">${escapeHtml((s.description || "No description on file.").slice(0, 220))}${(s.description || "").length > 220 ? "…" : ""}</div>
-            </button>`).join("")}
+              <div class="adesc">
+                <div>${escapeHtml((s.description || "No description on file.").slice(0, 220))}${(s.description || "").length > 220 ? "…" : ""}</div>
+                <a class="zoom-link no-nav" href="${zoomHref("software", s.id, selfLabel)}">open full dossier ⌕</a>
+              </div>
+            </div>`).join("")}
         </div>
       `,
       onMount(el) {
         el.querySelectorAll(".asset-card").forEach(card => {
-          card.addEventListener("click", (e) => { e.stopPropagation(); card.classList.toggle("expanded"); });
+          const toggle = () => card.classList.toggle("expanded");
+          card.addEventListener("click", (e) => {
+            if (e.target.closest(".zoom-link")) return; // let the link navigate normally
+            e.stopPropagation();
+            toggle();
+          });
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+          });
         });
       },
     };
   }
 
-  function campaignsSlide(g, data) {
-    const items = g.campaigns.map(id => data.byId.campaigns[id]).filter(Boolean)
-      .sort((a, b) => (a.first_seen || "").localeCompare(b.first_seen || ""));
+  function campaignsSlide(items) {
+    items = [...items].sort((a, b) => (a.first_seen || "").localeCompare(b.first_seen || ""));
     return {
       key: "campaigns", duration: 7000,
       html: `
@@ -470,7 +555,7 @@
     };
   }
 
-  function connectionsSlide(g, data, related) {
+  function connectionsSlide(related, selfLabel) {
     const dots = Array.from({ length: 10 }, (_, i) => {
       const a = (360 / 10) * i;
       return `<div class="orbit-dot" style="--a:${a}deg; --r:${50 + (i % 3) * 12}px"></div>`;
@@ -486,7 +571,7 @@
         </div>
         <div class="associate-list">
           ${related.map(({ g: other, score }) => `
-            <a class="associate-row no-nav" href="spotlight.html?domain=${encodeURIComponent(domain)}&group=${encodeURIComponent(other.id)}">
+            <a class="associate-row no-nav" href="${zoomHref("groups", other.id, selfLabel)}">
               <span class="ar-name">${escapeHtml(other.name)}</span>
               <span class="ar-score">${score} shared TTP${score === 1 ? "" : "s"}</span>
             </a>`).join("")}
@@ -514,6 +599,114 @@
     };
   }
 
+  // used by technique + software dossiers to cross-link into groups/software/techniques
+  function crossRefSlide(groupsList, softwareList, techniquesList, data, selfLabel) {
+    const sections = [];
+    if (groupsList.length) sections.push({
+      label: "GROUPS", rows: groupsList.map(g => ({ href: zoomHref("groups", g.id, selfLabel), name: g.name, meta: g.countries.map(c => flagEmoji(c.code)).join("") })),
+    });
+    if (softwareList.length) sections.push({
+      label: "SOFTWARE & TOOLS", rows: softwareList.map(s => ({ href: zoomHref("software", s.id, selfLabel), name: s.name, meta: s.type })),
+    });
+    if (techniquesList.length) sections.push({
+      label: "TECHNIQUES", rows: techniquesList.map(t => ({ href: zoomHref("techniques", t.id, selfLabel), name: techniqueLabel(t, data), meta: t.id })),
+    });
+    return {
+      key: "usedby", duration: 7500,
+      html: `
+        <div class="section-label">Observed Usage</div>
+        ${sections.map(s => `
+          <div class="subhead">${s.label} (${s.rows.length})</div>
+          <div class="associate-list" style="margin-bottom:18px;">
+            ${s.rows.map(r => `
+              <a class="associate-row no-nav" href="${r.href}">
+                <span class="ar-name">${escapeHtml(r.name)}</span>
+                <span class="ar-score">${escapeHtml(r.meta)}</span>
+              </a>`).join("")}
+          </div>`).join("")}
+      `,
+    };
+  }
+
+  // ---------- per-type title/profile slides ----------
+
+  function techniqueTitleSlide(t, data) {
+    const tacticNames = t.tactics.map(id => data.byId.tactics[id]?.name).filter(Boolean);
+    return {
+      key: "title", duration: 4500,
+      html: `
+        <div class="case-number">TECHNIQUE FILE // ${t.id} // ${escapeHtml(domain.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(techniqueLabel(t, data))}</h1>
+        <div class="chip-row">
+          ${tacticNames.map(n => `<span class="tag-chip">${escapeHtml(n)}</span>`).join("")}
+          ${t.platforms.map(p => `<span class="tag-chip">${escapeHtml(p)}</span>`).join("")}
+        </div>
+      `,
+    };
+  }
+
+  function profileSlide(entity, label) {
+    return {
+      key: "origin", duration: 8000,
+      html: `
+        <div class="section-label">${escapeHtml(label)}</div>
+        <p class="dossier-text">${escapeHtml(entity.description) || "No description on file."}</p>
+      `,
+    };
+  }
+
+  function softwareTitleSlide(s) {
+    return {
+      key: "title", duration: 4500,
+      html: `
+        <div class="case-number">ASSET FILE // ${s.id} // ${escapeHtml(domain.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(s.name)}</h1>
+        <div class="chip-row">
+          <span class="tag-chip">${escapeHtml(s.type)}</span>
+          ${s.platforms.map(p => `<span class="tag-chip">${escapeHtml(p)}</span>`).join("")}
+          ${s.aliases.filter(a => a !== s.name).slice(0, 6).map(a => `<span class="tag-chip">${escapeHtml(a)}</span>`).join("")}
+        </div>
+      `,
+    };
+  }
+
+  // ---------- per-type slide-deck assembly ----------
+
+  function buildGroupSlides(g, data, selfLabel) {
+    const assessment = computeAssessment(g, data);
+    const related = relatedGroups(g, data);
+    const mitigations = mitigationsFor(g.techniques, data);
+
+    const list = [titleSlide(g, data, assessment), originSlide(g), coverageSlide(g, data, selfLabel)];
+    if (g.software.length) list.push(arsenalSlide(g, data, selfLabel));
+    if (g.campaigns.length) list.push(campaignsSlide(g.campaigns.map(id => data.byId.campaigns[id]).filter(Boolean)));
+    if (related.length) list.push(connectionsSlide(related, selfLabel));
+    if (mitigations.length) list.push(defenseSlide(mitigations));
+    return list;
+  }
+
+  function buildTechniqueSlides(t, data, selfLabel) {
+    const list = [techniqueTitleSlide(t, data), profileSlide(t, "Technique Profile")];
+    const groupsList = t.groups.map(id => data.byId.groups[id]).filter(Boolean);
+    const softwareList = t.software.map(id => data.byId.software[id]).filter(Boolean);
+    if (groupsList.length || softwareList.length) list.push(crossRefSlide(groupsList, softwareList, [], data, selfLabel));
+    const campaignsList = (t.campaigns || []).map(id => data.byId.campaigns[id]).filter(Boolean);
+    if (campaignsList.length) list.push(campaignsSlide(campaignsList));
+    const mitigations = (t.mitigations || []).map(id => data.byId.mitigations[id]).filter(Boolean);
+    if (mitigations.length) list.push(defenseSlide(mitigations));
+    return list;
+  }
+
+  function buildSoftwareSlides(s, data, selfLabel) {
+    const list = [softwareTitleSlide(s), profileSlide(s, "Asset Profile")];
+    const groupsList = groupsUsingSoftware(s, data);
+    const techniquesList = s.techniques.map(id => data.byId.techniques[id]).filter(Boolean);
+    if (groupsList.length || techniquesList.length) list.push(crossRefSlide(groupsList, [], techniquesList, data, selfLabel));
+    const campaignsList = (s.campaigns || []).map(id => data.byId.campaigns[id]).filter(Boolean);
+    if (campaignsList.length) list.push(campaignsSlide(campaignsList));
+    return list;
+  }
+
   // ---------- engine ----------
 
   let slides = [];
@@ -523,28 +716,26 @@
   let timerDuration = 0;
   let isPaused = false;
   let pauseBegan = 0;
+  let interactionPaused = false;
+  let pendingNavTimer = null;
 
-  function buildSlides(g, data) {
-    const assessment = computeAssessment(g, data);
-    const related = relatedGroups(g, data);
-    const mitigations = mitigationsForGroup(g, data);
-
-    const list = [titleSlide(g, data, assessment), originSlide(g), coverageSlide(g, data, assessment)];
-    if (g.software.length) list.push(arsenalSlide(g, data));
-    if (g.campaigns.length) list.push(campaignsSlide(g, data));
-    if (related.length) list.push(connectionsSlide(g, data, related));
-    if (mitigations.length) list.push(defenseSlide(mitigations));
-    return list;
+  function setPausedFlag(on) {
+    document.getElementById("paused-flag").classList.toggle("on", on);
   }
 
   function renderChrome() {
-    document.getElementById("case-id").textContent = `SIGNAL // SPOTLIGHT // ${domain.toUpperCase()}`;
+    document.getElementById("case-id").textContent = `SIGNAL // SPOTLIGHT // ${TYPE_META[type].pageLabel} // ${domain.toUpperCase()}`;
     document.getElementById("progress-bar").innerHTML = slides.map(() => `<div class="seg"><div class="seg-fill"></div></div>`).join("");
   }
 
+  const EXPANDABLE_SLIDE_KEYS = new Set(["coverage", "arsenal"]);
+
   function renderSlides() {
     const root = document.getElementById("slides");
-    root.innerHTML = slides.map((s, i) => `<div class="slide" data-i="${i}" data-key="${s.key}"><div class="slide-inner">${s.html}</div></div>`).join("");
+    root.innerHTML = slides.map((s, i) => `
+      <div class="slide" data-i="${i}" data-key="${s.key}">
+        <div class="slide-inner ${EXPANDABLE_SLIDE_KEYS.has(s.key) ? "top-align" : ""}">${s.html}</div>
+      </div>`).join("");
     slides.forEach((s, i) => {
       if (s.onMount) s.onMount(root.querySelector(`.slide[data-i="${i}"]`));
     });
@@ -569,6 +760,7 @@
   function startTimer(duration) {
     cancelTimer();
     isPaused = false;
+    setPausedFlag(false);
     timerDuration = duration;
     timerStart = performance.now();
     if (REDUCED_MOTION) { setSegProgress(idx, 100); return; }
@@ -587,7 +779,7 @@
   }
 
   function pauseTimer() { if (!isPaused) { isPaused = true; pauseBegan = performance.now(); } }
-  function resumeTimer() { if (isPaused) { isPaused = false; timerStart += performance.now() - pauseBegan; } }
+  function resumeTimer() { if (isPaused) { isPaused = false; timerStart += performance.now() - pauseBegan; } setPausedFlag(false); }
 
   function goTo(i) {
     if (i < 0 || i >= slides.length) return;
@@ -596,6 +788,8 @@
     idx = i;
     root.querySelector(`.slide[data-i="${i}"]`).classList.add("active");
     syncSegsForIndex(i);
+    interactionPaused = false;
+    if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
     startTimer(slides[i].duration);
   }
 
@@ -608,11 +802,22 @@
   function setupInput() {
     const stage = document.getElementById("stage");
     let downAt = null, downX = 0, downY = 0, moved = false, downOnNoNav = false;
+    let lastTapAt = 0;
+    const DOUBLE_TAP_MS = 340;
+
+    function performNav(clientX) {
+      const w = window.innerWidth;
+      if (clientX < w * 0.3) prev(); else next();
+    }
 
     // A swipe always navigates, even if it starts on a card or link — a card-dense
     // slide (Arsenal, Connections) must never trap the user with no way to move on.
-    // A short TAP on a .no-nav element defers to that element's own click handler
-    // (e.g. expanding an asset card) instead of also advancing the slide.
+    //
+    // A short tap on an interactive element (.no-nav) pauses the auto-advance timer
+    // and KEEPS it paused — it does not resume on its own. Only a double-tap resumes
+    // it (continuing the current slide's countdown toward the next slide). A single
+    // background tap while paused this way is held for one double-tap window before
+    // falling through to normal prev/next, so the two gestures don't collide.
     stage.addEventListener("pointerdown", (e) => {
       downAt = performance.now(); downX = e.clientX; downY = e.clientY; moved = false;
       downOnNoNav = !!e.target.closest(".no-nav");
@@ -626,17 +831,44 @@
       if (downAt == null) return;
       const heldMs = performance.now() - downAt;
       const dx = e.clientX - downX;
+      const wasOnNoNav = downOnNoNav;
       downAt = null;
 
       if (moved && Math.abs(dx) > 60) {
+        interactionPaused = false;
+        if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
         resumeTimer();
         if (dx < 0) next(); else prev();
         return;
       }
+
       if (heldMs < 250 && !moved) {
-        if (downOnNoNav) { resumeTimer(); return; }
-        const w = window.innerWidth;
-        if (e.clientX < w * 0.3) prev(); else next();
+        const now = performance.now();
+        const isDoubleTap = (now - lastTapAt) < DOUBLE_TAP_MS;
+        lastTapAt = isDoubleTap ? 0 : now;
+
+        if (isDoubleTap && interactionPaused) {
+          if (pendingNavTimer) { clearTimeout(pendingNavTimer); pendingNavTimer = null; }
+          interactionPaused = false;
+          resumeTimer();
+          return;
+        }
+
+        if (wasOnNoNav) {
+          interactionPaused = true;
+          pauseTimer();
+          setPausedFlag(true);
+          return;
+        }
+
+        if (interactionPaused) {
+          if (pendingNavTimer) clearTimeout(pendingNavTimer);
+          const clientX = e.clientX;
+          pendingNavTimer = setTimeout(() => { pendingNavTimer = null; performNav(clientX); }, DOUBLE_TAP_MS);
+          return;
+        }
+
+        performNav(e.clientX);
         return;
       }
       resumeTimer();
@@ -646,21 +878,32 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") next();
       else if (e.key === "ArrowLeft") prev();
-      else if (e.key === "Escape") location.href = "attack.html";
+      else if (e.key === "Escape") { const el = document.getElementById("exit-link"); if (el) location.href = el.href; }
     });
   }
 
+  function setupBackLink() {
+    const el = document.getElementById("exit-link");
+    if (fromUrl) { el.href = fromUrl; el.textContent = `‹ ${fromName || "back"}`; }
+    else { el.href = "attack.html"; el.textContent = "‹ EXIT"; }
+  }
+
   async function init() {
-    if (!groupId) { showEmptyTarget("No actor was specified. Open a group's dossier from the ATT&CK Explorer."); return; }
+    if (!id) { showEmptyTarget("No target was specified. Open a dossier from the ATT&CK Explorer."); return; }
     let data;
     try { data = await loadDomain(); }
     catch (err) { showEmptyTarget(`Couldn't load ${domain} data. Has scripts/fetch_attack.py been run yet?`); console.error(err); return; }
 
-    const g = data.byId.groups[groupId];
-    if (!g) { showEmptyTarget(`No record for "${escapeHtml(groupId)}" in the ${domain} domain.`); return; }
+    const entity = data.byId[type] && data.byId[type][id];
+    if (!entity) { showEmptyTarget(`No record for "${escapeHtml(id)}" in the ${domain} domain.`); return; }
 
-    document.getElementById("exit-link").href = `attack.html`;
-    slides = buildSlides(g, data);
+    setupBackLink();
+    const selfLabel = type === "techniques" ? techniqueLabel(entity, data) : entity.name;
+
+    if (type === "groups") slides = buildGroupSlides(entity, data, selfLabel);
+    else if (type === "techniques") slides = buildTechniqueSlides(entity, data, selfLabel);
+    else if (type === "software") slides = buildSoftwareSlides(entity, data, selfLabel);
+
     renderChrome();
     renderSlides();
     setupInput();
