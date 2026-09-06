@@ -2,6 +2,18 @@
   "month": "2026-09",
   "victims": [
     {
+      "id": "542b8561ecfdd90d",
+      "victim": "Edacentrum",
+      "group": "Panzer",
+      "published": "2026-09-06T10:15:36+00:00",
+      "discovered": "2026-09-06T10:51:32.892177+00:00",
+      "country": "SE",
+      "sector": "Not Found",
+      "website": null,
+      "description": "The edacentrum is the network for electronics, design and applications in business and science. As an independent authority, the edacentrum designs research & development for a consistent design methodology along the entire value chain. In this role, the edacentrum is a recognized innovation accelerator for the microelectronics industry and its user industries",
+      "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/edacentrum"
+    },
+    {
       "id": "3d680b9965648712",
       "victim": "Mission Pet Health",
       "group": "direwolf",
@@ -551,6 +563,18 @@
       "sector": "Hospitality",
       "website": "mcdonalds.com.ec",
       "description": "McDonald's Ecuador is the local franchise operation of the global McDonald's brand. The company operates fast-food restaurants across Ecuador, offering products such as burgers, fries, beverages, breakfast items, and children's meals. It operates under the McDonald's franchise model through Arcos Dorados, the largest McDonald's franchise operator in Latin America and the Caribbean.",
+      "post_url": null
+    },
+    {
+      "id": "bd1b0e108c6b150c",
+      "victim": "McDonalds Ecuador",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-03T12:33:16+00:00",
+      "discovered": "2026-09-06T08:21:33.629764+00:00",
+      "country": "EC",
+      "sector": "Hospitality",
+      "website": "mcdonalds.com.ec",
+      "description": "McDonalds Ecuador is the local franchise operation of the global McDonalds brand. The company operates fast-food restaurants across Ecuador, offering products such as burgers, fries, beverages, breakfast items, and childrens meals. It operates under the McDonalds franchise model through Arcos Dorados, the largest McDonalds franchise operator in Latin America and the Caribbean.",
       "post_url": null
     },
     {
@@ -1430,5 +1454,5 @@
       "post_url": "http://everestndkvzcibcje2cqxhre2hmmybl3rn2gwzwsblz7gx6uryn5rad.onion/news/rise-up"
     }
   ],
-  "updated_at": "2026-09-05T22:15:51.601489+00:00"
+  "updated_at": "2026-09-06T11:23:13.247825+00:00"
 }

@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-09-05T22:28:10.961923+00:00",
+  "generated_at": "2026-09-06T11:23:13.268914+00:00",
   "victims": [
+    {
+      "id": "542b8561ecfdd90d",
+      "victim": "Edacentrum",
+      "group": "Panzer",
+      "published": "2026-09-06T10:15:36+00:00",
+      "discovered": "2026-09-06T10:51:32.892177+00:00",
+      "country": "SE",
+      "sector": "Not Found",
+      "website": null,
+      "description": "The edacentrum is the network for electronics, design and applications in business and science. As an independent authority, the edacentrum designs research & development for a consistent design methodology along the entire value chain. In this role, the edacentrum is a recognized innovation accelerator for the microelectronics industry and its user industries",
+      "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/edacentrum"
+    },
     {
       "id": "3d680b9965648712",
       "victim": "Mission Pet Health",
@@ -468,18 +480,6 @@
       "website": null,
       "description": "[AI generated] SouthernCarlson is a U.S.-based distributor specializing in packaging, fastening, and installation solutions. The company serves industries such as construction, manufacturing, and retail, supplying tools, equipment, and materials including staples, nails, strapping, and related supplies. Operating primarily across the United States, SouthernCarlson functions as a key distribution partner for businesses requiring industrial packaging and fastening products.",
       "post_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion/article/5589e436-5387-4f33-99da-6c76ecf35856"
-    },
-    {
-      "id": "e5f8690d1da25a2e",
-      "victim": "Worrell",
-      "group": "akira",
-      "published": "2026-09-04T00:00:00+00:00",
-      "discovered": "2026-09-04T13:51:54.499887+00:00",
-      "country": null,
-      "sector": "Not Found",
-      "website": null,
-      "description": "Worrell Corporation is a family-owned business based in Indianapolis that specializes in promot ional products, marketing, and print services. They assist clients in finding impactful promoti onal items while offering tailored marketing strategies and webstore solutions. We will upload 45gb of corporate data soon. Employee and client information, contacts and agree ments, financials, projects and so on.",
-      "post_url": null
     }
   ]
 }
