@@ -98,12 +98,12 @@
     padding: 92px 22px 64px; overflow-y: auto;
   }
   .slide.active { display: block; animation: slideIn 0.35s ease; }
-  .slide-inner { min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
-  /* Slides with expand/collapse content (Coverage, Arsenal) must NOT vertically
-     center — centering re-flows the whole block on every toggle, so a second tap
-     in the same spot (e.g. the double-tap-to-resume gesture) lands on whatever
-     content shifted into that position instead of what the user was looking at. */
-  .slide-inner.top-align { justify-content: flex-start; }
+  /* Top-aligned, not centered: slide content heights vary a lot (a two-line
+     summary vs. a full CVE record with CWEs/vendors/references), and
+     vertical centering made the title jump to a different y-position on
+     every slide as the block's height changed. Fixing everything to the
+     top keeps the title anchored in the same place across the carousel. */
+  .slide-inner { min-height: 100%; display: flex; flex-direction: column; justify-content: flex-start; }
   @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   .section-label {
@@ -960,13 +960,11 @@
     document.getElementById("progress-bar").innerHTML = slides.map(() => `<div class="seg"><div class="seg-fill"></div></div>`).join("");
   }
 
-  const EXPANDABLE_SLIDE_KEYS = new Set(["coverage", "arsenal"]);
-
   function renderSlides() {
     const root = document.getElementById("slides");
     root.innerHTML = slides.map((s, i) => `
       <div class="slide" data-i="${i}" data-key="${s.key}">
-        <div class="slide-inner ${EXPANDABLE_SLIDE_KEYS.has(s.key) ? "top-align" : ""}">${s.html}</div>
+        <div class="slide-inner">${s.html}</div>
       </div>`).join("");
     slides.forEach((s, i) => {
       if (s.onMount) s.onMount(root.querySelector(`.slide[data-i="${i}"]`));
