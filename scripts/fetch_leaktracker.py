@@ -34,6 +34,11 @@ from pathlib import Path
 GROUPS_URL = "https://data.ransomware.live/groups.json"
 VICTIMS_URL = "https://data.ransomware.live/victims.json"
 
+# Public archive of leaked ransomware negotiation chat transcripts, indexed by
+# group. Refreshed alongside groups.json (same weekly cadence) since it's a
+# similarly slow-moving reference dataset, not an event stream.
+CHAT_INDEX_URL = "https://raw.githubusercontent.com/Casualtek/Ransomchats/refs/heads/main/chat_index.json"
+
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "leaktracker"
 GROUPS_PATH = OUTPUT_DIR / "groups.json"
 INDEX_PATH = OUTPUT_DIR / "index.json"
@@ -43,6 +48,214 @@ GROUPS_REFRESH_DAYS = 7   # groups.json is a slow-moving profile table, not an e
 SEED_DAYS = 60            # first run: don't backfill all 31k+ historical victims, just recent ones
 LATEST_COUNT = 40
 DESCRIPTION_MAX_LEN = 500
+
+# ---------- origin-country inference (ported from fetch_attack.py) ----------
+# Same conservative demonym + attribution-word approach used for ATT&CK
+# groups: bare country names are never enough on their own (ransomware group
+# profiles frequently name countries they *refuse* to target, e.g. "we do not
+# allow CIS, Cuba, North Korea and China to be targeted" — that must not read
+# as the group's own origin).
+
+DEMONYMS = [
+    ("North Korean", "KP", "North Korea"),
+    ("South Korean", "KR", "South Korea"),
+    ("Russian", "RU", "Russia"),
+    ("Chinese", "CN", "China"),
+    ("Iranian", "IR", "Iran"),
+    ("Vietnamese", "VN", "Vietnam"),
+    ("Indian", "IN", "India"),
+    ("Pakistani", "PK", "Pakistan"),
+    ("Israeli", "IL", "Israel"),
+    ("Turkish", "TR", "Turkey"),
+    ("Belarusian", "BY", "Belarus"),
+    ("Syrian", "SY", "Syria"),
+    ("Lebanese", "LB", "Lebanon"),
+    ("Ukrainian", "UA", "Ukraine"),
+    ("American", "US", "United States"),
+    ("British", "GB", "United Kingdom"),
+    ("French", "FR", "France"),
+    ("German", "DE", "Germany"),
+]
+
+ATTRIBUTION_WORDS = re.compile(
+    r"state[- ]sponsored|state[- ]affiliated|threat group|threat actor|"
+    r"intelligence (?:service|agency)|military intelligence|"
+    r"government-sponsored|cyber ?espionage|espionage actor",
+    re.IGNORECASE,
+)
+
+SPONSOR_VERBS = [
+    "associated with", "linked to", "nexus to", "on behalf of", "backed by",
+    "sponsored by", "tied to", "overlap with", "works for", "attributed to",
+]
+_demonym_alt = "|".join(re.escape(d) for d, _, _ in DEMONYMS)
+SPONSOR_GOVERNMENT_PATTERN = re.compile(
+    r"(?:" + "|".join(re.escape(v) for v in SPONSOR_VERBS) + r")"
+    r"(?:\s+\S+){0,4}\s+(" + _demonym_alt + r")\s+government",
+    re.IGNORECASE,
+)
+
+COUNTRY_NOUNS = [
+    ("North Korea", "KP", "North Korea"),
+    ("South Korea", "KR", "South Korea"),
+    ("Russia", "RU", "Russia"),
+    ("China", "CN", "China"),
+    ("Iran", "IR", "Iran"),
+    ("Vietnam", "VN", "Vietnam"),
+    ("India", "IN", "India"),
+    ("Pakistan", "PK", "Pakistan"),
+    ("Israel", "IL", "Israel"),
+    ("Turkey", "TR", "Turkey"),
+    ("Belarus", "BY", "Belarus"),
+    ("Syria", "SY", "Syria"),
+    ("Lebanon", "LB", "Lebanon"),
+    ("Ukraine", "UA", "Ukraine"),
+]
+BASED_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(n) for n, _, _ in COUNTRY_NOUNS) + r")[- ]based\b",
+    re.IGNORECASE,
+)
+
+AGENCY_TO_COUNTRY = {
+    "GRU": ("RU", "Russia"),
+    "FSB": ("RU", "Russia"),
+    "SVR": ("RU", "Russia"),
+    "MSS": ("CN", "China"),
+    "PLA": ("CN", "China"),
+    "RGB": ("KP", "North Korea"),
+    "Reconnaissance General Bureau": ("KP", "North Korea"),
+    "IRGC": ("IR", "Iran"),
+    "MOIS": ("IR", "Iran"),
+}
+
+
+def guess_countries(description: str) -> list:
+    """Best-effort origin attribution from free text — same heuristic as
+    fetch_attack.py's guess_countries(). Group profiles rarely state this
+    outright, so coverage will be modest; that's expected."""
+    if not description:
+        return []
+
+    found = {}
+    for noun_match in BASED_PATTERN.finditer(description):
+        noun = noun_match.group(1)
+        for n, code, name in COUNTRY_NOUNS:
+            if n.lower() == noun.lower():
+                found[code] = name
+                break
+
+    demonym_to_country = {d.lower(): (code, name) for d, code, name in DEMONYMS}
+    for m in SPONSOR_GOVERNMENT_PATTERN.finditer(description):
+        code, name = demonym_to_country[m.group(1).lower()]
+        found[code] = name
+
+    for demonym, code, name in DEMONYMS:
+        for m in re.finditer(re.escape(demonym), description):
+            window = description[max(0, m.start() - 40): m.end() + 40]
+            if ATTRIBUTION_WORDS.search(window):
+                found[code] = name
+                break
+
+    if not found:
+        for agency, (code, name) in AGENCY_TO_COUNTRY.items():
+            if re.search(rf"\b{re.escape(agency)}\b", description):
+                found[code] = name
+
+    return [{"code": code, "name": name} for code, name in sorted(found.items(), key=lambda kv: kv[1])]
+
+
+# ---------- ransomchat negotiation matching ----------
+
+def normalize_group_name(name: str) -> str:
+    """Lowercase, alnum-only, with a trailing '.0' version suffix dropped
+    first (Ransomchats' "lockbit3.0" vs. ransomware.live's "lockbit3")."""
+    name = re.sub(r"\.0\b", "", name or "")
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def parse_chat_date(chat_id: str) -> str | None:
+    """Chat ids are usually a YYYYMMDD date, sometimes with a suffix
+    ('20250425b', '20250203 - from @user') or, for a minority, an opaque
+    UUID/hex id with no date at all — those return None rather than a
+    guess."""
+    m = re.match(r"^(\d{4})(\d{2})(\d{2})", chat_id or "")
+    if not m:
+        return None
+    try:
+        datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+    except ValueError:
+        return None
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+
+
+def fetch_chat_index() -> dict | None:
+    try:
+        return fetch_json(CHAT_INDEX_URL)
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        print(f"  ransomchat index fetch failed ({exc}); negotiation data will be unavailable this run.")
+        return None
+
+
+def build_negotiation_lookup(chat_index: dict) -> dict:
+    """Ransomchats' display name -> negotiation summary, computed once from
+    the index. message_count comes straight from the index (no need to
+    download every individual chat just to measure it)."""
+    lookup = {}
+    for chat_name, gdata in (chat_index.get("groups") or {}).items():
+        chats = gdata.get("chats") or []
+        if not chats:
+            continue
+        dated = [(parse_chat_date(c["chat_id"]), c) for c in chats]
+        dated = [(d, c) for d, c in dated if d]
+        latest = max(dated, key=lambda dc: dc[0]) if dated else None
+        longest = max(chats, key=lambda c: c.get("message_count") or 0)
+        lookup[chat_name] = {
+            "chat_count": len(chats),
+            "latest_chat_date": latest[0] if latest else None,
+            "latest_chat_url": latest[1]["raw_url"] if latest else None,
+            "longest_chat_url": longest["raw_url"],
+            "longest_chat_message_count": longest.get("message_count"),
+        }
+    return lookup
+
+
+EMPTY_NEGOTIATION = {
+    "available": False, "chat_count": None, "latest_chat_date": None,
+    "latest_chat_url": None, "longest_chat_url": None, "longest_chat_message_count": None,
+}
+
+
+def match_negotiation(name: str, altname: str, description: str, chat_lookup: dict) -> dict:
+    """Match a ransomware.live group against the Ransomchats index. Tries an
+    exact normalized name/altname match first; if that fails, falls back to
+    the group's own description naming it — but only among candidates whose
+    normalized name is itself a substring/superstring of the Ransomchats
+    name (e.g. our 'hunters' vs. their 'Hunters International'), not a blind
+    full-corpus text search. That distinction matters: a corpus-wide search
+    for "Hunters International" also hits an unrelated group's description
+    that merely mentions Hunters International as a third party using their
+    tooling — the name-relation guard rules that false match out while still
+    catching genuine aliasing."""
+    if not chat_lookup:
+        return dict(EMPTY_NEGOTIATION)
+
+    norm_name = normalize_group_name(name)
+    norm_alt = normalize_group_name(altname) if altname else None
+
+    for chat_name, summary in chat_lookup.items():
+        if normalize_group_name(chat_name) in (norm_name, norm_alt):
+            return {"available": True, **summary}
+
+    if description and len(norm_name) >= 3:
+        desc_lower = description.lower()
+        for chat_name, summary in chat_lookup.items():
+            cn_norm = normalize_group_name(chat_name)
+            if len(cn_norm) < 3:
+                continue
+            if (norm_name in cn_norm or cn_norm in norm_name) and chat_name.lower() in desc_lower:
+                return {"available": True, **summary}
+
+    return dict(EMPTY_NEGOTIATION)
 
 
 def fetch_json(url: str, timeout: int = 120) -> object:
@@ -82,19 +295,30 @@ def refresh_groups():
         print(f"  groups fetch failed ({exc}); leaving existing groups.json untouched.")
         return
 
+    chat_index = fetch_chat_index()
+    chat_lookup = build_negotiation_lookup(chat_index) if chat_index else {}
+    if chat_lookup:
+        print(f"  ransomchat index: {len(chat_lookup)} groups with negotiation transcripts")
+
     groups = []
     for g in raw_groups:
         locations = g.get("locations") or []
         active = sum(1 for loc in locations if loc.get("available"))
+        name = g.get("name", "")
+        altname = g.get("altname")
+        description = clean_text(g.get("description", ""))
         groups.append({
-            "name": g.get("name", ""),
-            "altname": g.get("altname"),
-            "description": clean_text(g.get("description", "")),
+            "name": name,
+            "altname": altname,
+            "description": description,
             "raas": bool((g.get("type") or {}).get("raas")),
             "first_seen": g.get("date"),
             "active_sites": active,
             "total_sites": len(locations),
+            "is_active": active > 0,
             "total_victims": g.get("_victim_count"),
+            "countries": guess_countries(description),
+            "negotiation": match_negotiation(name, altname, description, chat_lookup),
         })
     groups.sort(key=lambda g: g["name"].lower())
 

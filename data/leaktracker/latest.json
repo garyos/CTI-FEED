@@ -1,6 +1,42 @@
 {
-  "generated_at": "2026-09-06T11:23:13.268914+00:00",
+  "generated_at": "2026-09-06T15:16:07.914980+00:00",
   "victims": [
+    {
+      "id": "f3653c46bf8abb21",
+      "victim": "evergenbio.com",
+      "group": "chaos",
+      "published": "2026-09-06T13:25:24.392280+00:00",
+      "discovered": "2026-09-06T13:25:44.025363+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "evergenbio.com",
+      "description": "Evergen is a leading Contract Development and Manufacturing Organization (CDMO) specializing in biomaterial solutions for regenerative medicine. We work closely with OEM partners to deliver customized biomaterial solutions that meet specific clinical needs",
+      "post_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion/post/MU7nZVTkyUp3ngugKlwOnyVtxCATQdyB"
+    },
+    {
+      "id": "e86e334bc4610ca0",
+      "victim": "KHALED ALFAGIH ENGINEERING CONSULTANCY",
+      "group": "Panzer",
+      "published": "2026-09-06T11:46:40+00:00",
+      "discovered": "2026-09-06T12:22:23.544880+00:00",
+      "country": "SA",
+      "sector": "Professional Services",
+      "website": null,
+      "description": "Khaled Alfagih Engineering Consultancy Company is one of the most specialized engineering consultancy firms in healthcare design and planning in KSA with more than 25 years of experience. KFO providing the quality in the field of architecture and engineering design, execution supervision and projects management. KFO focused on teamwork, client relationship and knowledge transfer.",
+      "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/khaled-alfagih-engineering-consultancy"
+    },
+    {
+      "id": "f28c034c58f1e73d",
+      "victim": "myLaurel",
+      "group": "direwolf",
+      "published": "2026-09-06T11:00:55.378000+00:00",
+      "discovered": "2026-09-06T11:53:36.694741+00:00",
+      "country": "US",
+      "sector": "Not Found",
+      "website": "mylaurelhealth.com",
+      "description": "Elderly Care Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/123"
+    },
     {
       "id": "542b8561ecfdd90d",
       "victim": "Edacentrum",
@@ -444,42 +480,6 @@
       "website": null,
       "description": "AStA Hochschule Heilbronn is the general students' committee that represents student interests both within and outside the university in Heilbronn. The organization serves as a spokesperson for the student body and provides a variety of support services, including legal and tax counseling, a grievance box, and laptop rentals. Additionally, the committee organizes numerous events and manages the university sports program. It operates as a central point of contact for students facing problems and\u2026",
       "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/hochschule-heilbronn-bildungscampus"
-    },
-    {
-      "id": "94022e70c9c56fe2",
-      "victim": "Schwartz, Giannini, Lantsberger & Adamson (SGLA)",
-      "group": "spacebears",
-      "published": "2026-09-04T00:02:45.756264+00:00",
-      "discovered": "2026-09-04T00:03:09.704891+00:00",
-      "country": "US",
-      "sector": "Professional Services",
-      "website": "www.sglacpas.com",
-      "description": "Schwartz, Giannini, Lantsberger & Adamson (SGLA) Accountancy Corporation is a full-service certified public accounting firm based in Stockton, California, founded in 1988. The firm provides tax planning and compliance, audits, reviews and compilations, bookkeeping, payroll, outsourced CFO support, and business consulting for individuals and companies. It has particular experience with real estate, healthcare, nonprofits, affordable housing, common-interest realty associations, and local\u2026",
-      "post_url": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/74/schwartz-giannini-lantsberger-adamson-sgla"
-    },
-    {
-      "id": "6562e0aac7c72982",
-      "victim": "Stransky Heiz-Mess-Regeltechnik GmbH",
-      "group": "akira",
-      "published": "2026-09-04T00:00:00+00:00",
-      "discovered": "2026-09-04T14:53:27.302480+00:00",
-      "country": "DE",
-      "sector": "Manufacturing",
-      "website": null,
-      "description": "Discover Stransky\u2014a leader in sustainable energy solutions. Trust in over 30 years of experienc e in heating technology and quality. We will upload 50gb of corporate data soon. Employee personal information, contacts and agreeme nts, financials, projects, NDAs and so on.",
-      "post_url": null
-    },
-    {
-      "id": "1f3c2d1d597c19dd",
-      "victim": "SouthernCarlson",
-      "group": "tridentlocker",
-      "published": "2026-09-04T00:00:00+00:00",
-      "discovered": "2026-09-04T14:04:00.266010+00:00",
-      "country": null,
-      "sector": "Not Found",
-      "website": null,
-      "description": "[AI generated] SouthernCarlson is a U.S.-based distributor specializing in packaging, fastening, and installation solutions. The company serves industries such as construction, manufacturing, and retail, supplying tools, equipment, and materials including staples, nails, strapping, and related supplies. Operating primarily across the United States, SouthernCarlson functions as a key distribution partner for businesses requiring industrial packaging and fastening products.",
-      "post_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion/article/5589e436-5387-4f33-99da-6c76ecf35856"
     }
   ]
 }

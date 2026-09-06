@@ -317,6 +317,34 @@
     gap: 14px; text-align: center; padding: 24px; z-index: 20;
   }
   .empty-target a { color: var(--amber); }
+
+  /* --- negotiation replay: a scrolling chat log instead of a slide deck.
+     Navigation here is browser scroll, not swipe, so tap-zones/hint are
+     hidden for this mode via .negotiation-mode on #stage. --- */
+  .negotiation-mode .tap-zone, .negotiation-mode .hint { display: none; }
+  .chat-scroll { position: absolute; inset: 0; overflow-y: auto; z-index: 10; padding: 92px 16px 116px; }
+  .chat-msg {
+    display: flex; flex-direction: column; max-width: 82%; margin-bottom: 16px;
+    opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .chat-msg.visible { opacity: 1; transform: translateY(0); }
+  .chat-msg.them { align-items: flex-start; margin-right: auto; }
+  .chat-msg.victim { align-items: flex-end; margin-left: auto; }
+  .chat-bubble {
+    padding: 10px 13px; font-size: 13.5px; line-height: 1.55; white-space: pre-line;
+    font-family: var(--font-sans);
+  }
+  .chat-msg.them .chat-bubble { background: rgba(255,92,92,0.1); border: 1px solid var(--red); color: var(--text); }
+  .chat-msg.victim .chat-bubble { background: rgba(90,200,255,0.1); border: 1px solid var(--blue); color: var(--text); }
+  .chat-meta {
+    font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 5px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .chat-end {
+    text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+    letter-spacing: 0.1em; opacity: 0; transition: opacity 0.4s ease; padding: 8px 0 4px;
+  }
+  .chat-end.visible { opacity: 0.75; }
   ::-webkit-scrollbar { width: 0; height: 0; }
 </style>
 </head>
@@ -352,7 +380,8 @@
   // Digest mode: no specific entity requested (e.g. the plain "Spotlight" button on
   // index.html) — a mixed carousel of recent feed items, severe CVEs, and two full
   // group dossiers, built once in init() and assembled by buildDigestSlides().
-  const isDigest = params.get("mode") === "digest" || !id;
+  const isNegotiation = params.get("mode") === "negotiation";
+  const isDigest = !isNegotiation && (params.get("mode") === "digest" || !id);
 
   const TYPE_META = {
     groups: { caseLabel: "CASE FILE", pageLabel: "ACTOR" },
@@ -381,12 +410,12 @@
     return "spotlight.html?" + p.toString();
   }
 
-  function showEmptyTarget(message) {
+  function showEmptyTarget(message, backHref, backLabel) {
     document.getElementById("stage").innerHTML = `
       <div class="empty-target">
         <div class="stamp" style="transform:rotate(-4deg)">NO TARGET<br>SELECTED</div>
         <div style="color:var(--text-dim); font-size:13px; max-width:40ch;">${escapeHtml(message)}</div>
-        <a href="attack.html" style="font-family:var(--font-mono); font-size:12px;">‹ return to ATT&amp;CK Explorer</a>
+        <a href="${escapeHtml(backHref || "attack.html")}" style="font-family:var(--font-mono); font-size:12px;">‹ ${escapeHtml(backLabel || "return to ATT&CK Explorer")}</a>
       </div>`;
   }
 
@@ -1219,7 +1248,186 @@
     goTo(0);
   }
 
+  // ---------- negotiation replay: a leaked ransom-chat transcript played
+  // back as speech bubbles instead of a slide deck. Reuses the shared
+  // pause/speed engine (manualPauseLock, speedOffset, isPaused/timerStart)
+  // so the same controls that pace the digest also pace this, but drives
+  // its own reveal loop (revealUpTo) since "advance" here means "reveal the
+  // next message", not "swipe to the next slide" — the whole transcript is
+  // fetched and rendered up front, and messages are just faded in in order. ----------
+
+  const NEGOTIATION_URL_PREFIX = "https://raw.githubusercontent.com/Casualtek/Ransomchats/";
+  let negoMessages = [];
+  let negoRevealed = 0;
+  let negoNearBottom = true;
+
+  function cleanChatContent(raw) {
+    return (raw || "").trim().replace(/^>\s?/, "");
+  }
+
+  function negoMessageDuration(content) {
+    const words = (content || "").split(/\s+/).filter(Boolean).length;
+    return Math.max(1800, Math.min(7000, 900 + words * 160));
+  }
+
+  function renderNegotiationChrome(groupName, label) {
+    document.getElementById("case-id").textContent = `SIGNAL // NEGOTIATION // ${escapeHtml(groupName).toUpperCase()} // ${label}`;
+    document.querySelector(".stamp").innerHTML = "LEAKED<br>TRANSCRIPT";
+    document.getElementById("progress-bar").innerHTML = `<div class="seg"><div class="seg-fill" id="nego-progress-fill"></div></div>`;
+    document.getElementById("stage").classList.add("negotiation-mode");
+  }
+
+  function renderNegotiationMessages() {
+    document.getElementById("slides").innerHTML = `
+      <div class="chat-scroll" id="chat-scroll">
+        ${negoMessages.map((m, i) => `
+          <div class="chat-msg ${m.party}" data-i="${i}">
+            <div class="chat-bubble">${escapeHtml(m.content)}</div>
+            <div class="chat-meta">${escapeHtml(m.partyLabel)}</div>
+          </div>
+        `).join("")}
+        <div class="chat-end" id="chat-end">— end of transcript —</div>
+      </div>`;
+  }
+
+  function setNegoProgress(pct) {
+    const fill = document.getElementById("nego-progress-fill");
+    if (fill) fill.style.width = pct + "%";
+  }
+
+  function revealUpTo(n) {
+    n = Math.min(n, negoMessages.length);
+    if (n <= negoRevealed) return;
+    const root = document.getElementById("chat-scroll");
+    for (let i = negoRevealed; i < n; i++) {
+      const el = root.querySelector(`.chat-msg[data-i="${i}"]`);
+      if (el) el.classList.add("visible");
+    }
+    negoRevealed = n;
+    setNegoProgress((negoRevealed / negoMessages.length) * 100);
+    if (negoRevealed >= negoMessages.length) {
+      document.getElementById("chat-end").classList.add("visible");
+    }
+    if (negoNearBottom) {
+      const lastEl = root.querySelector(`.chat-msg[data-i="${negoRevealed - 1}"]`);
+      if (lastEl) lastEl.scrollIntoView({ behavior: REDUCED_MOTION ? "auto" : "smooth", block: "end" });
+    }
+  }
+
+  function cancelNegoTimer() { if (timerRAF) cancelAnimationFrame(timerRAF); timerRAF = null; }
+
+  function startNegoMessageTimer() {
+    cancelNegoTimer();
+    if (negoRevealed >= negoMessages.length) return;
+    if (REDUCED_MOTION) { revealUpTo(negoMessages.length); return; }
+    timerDuration = negoMessageDuration(negoMessages[negoRevealed].content) + speedOffset();
+    timerStart = performance.now();
+    isPaused = manualPauseLock;
+    if (isPaused) pauseBegan = timerStart;
+    updateStatusUI();
+    negoTick();
+  }
+
+  function negoTick() {
+    if (negoRevealed >= negoMessages.length) { timerRAF = null; return; }
+    if (!isPaused) {
+      const elapsed = performance.now() - timerStart;
+      if (elapsed >= timerDuration) {
+        revealUpTo(negoRevealed + 1);
+        timerRAF = null;
+        startNegoMessageTimer();
+        return;
+      }
+    }
+    timerRAF = requestAnimationFrame(negoTick);
+  }
+
+  function setupNegotiationInput() {
+    document.getElementById("pause-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleManualPause(); });
+    document.getElementById("speed-btn").addEventListener("click", (e) => { e.stopPropagation(); cycleSpeed(); });
+    updateSpeedButton();
+
+    const root = document.getElementById("chat-scroll");
+    root.addEventListener("scroll", () => {
+      negoNearBottom = root.scrollHeight - root.scrollTop - root.clientHeight < 80;
+
+      // Scrolling past the reveal frontier (deliberately reading ahead) should
+      // just show those messages immediately, rather than leaving blank gaps —
+      // and playback, once resumed, continues from wherever that landed instead
+      // of replaying from the old position.
+      let revealTo = negoRevealed;
+      const scrollBottom = root.scrollTop + root.clientHeight;
+      root.querySelectorAll(".chat-msg:not(.visible)").forEach(el => {
+        if (el.offsetTop < scrollBottom + 40) {
+          revealTo = Math.max(revealTo, parseInt(el.dataset.i, 10) + 1);
+        }
+      });
+      if (revealTo > negoRevealed) {
+        const wasNearBottom = negoNearBottom;
+        negoNearBottom = false; // don't fight a manual upward/ahead scroll with an auto-scroll
+        revealUpTo(revealTo);
+        negoNearBottom = wasNearBottom;
+        if (!isPaused) startNegoMessageTimer();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") { const el = document.getElementById("exit-link"); if (el) location.href = el.href; }
+    });
+  }
+
+  async function initNegotiation() {
+    const chatUrl = params.get("chat") || "";
+    const groupName = params.get("group") || "Unknown group";
+    const label = params.get("label") === "longest" ? "LONGEST TRANSCRIPT" : "LATEST TRANSCRIPT";
+    const backHref = `leaktracker.html?group=${encodeURIComponent(groupName)}`;
+
+    setupBackLink();
+    renderNegotiationChrome(groupName, label);
+
+    // The chat URL arrives via a query param — only ever fetch it if it's
+    // actually pointing at the trusted Ransomchats archive, not wherever a
+    // tampered link might point.
+    if (!chatUrl.startsWith(NEGOTIATION_URL_PREFIX)) {
+      showEmptyTarget("This negotiation link isn't from a trusted source, so it wasn't loaded.", backHref, groupName);
+      return;
+    }
+
+    let chat;
+    try {
+      const res = await fetch(chatUrl, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      chat = await res.json();
+    } catch (err) {
+      showEmptyTarget("Couldn't load this negotiation transcript.", backHref, groupName);
+      console.error(err);
+      return;
+    }
+
+    negoMessages = (chat.messages || [])
+      .map(m => {
+        const isVictim = (m.party || "").trim().toLowerCase() === "victim";
+        return {
+          party: isVictim ? "victim" : "them",
+          partyLabel: m.party || (isVictim ? "Victim" : groupName),
+          content: cleanChatContent(m.content),
+        };
+      })
+      .filter(m => m.content);
+
+    if (negoMessages.length === 0) {
+      showEmptyTarget("This transcript has no messages.", backHref, groupName);
+      return;
+    }
+
+    renderNegotiationMessages();
+    setupNegotiationInput();
+    revealUpTo(1);
+    startNegoMessageTimer();
+  }
+
   async function init() {
+    if (isNegotiation) { await initNegotiation(); return; }
     if (isDigest) { await initDigest(); return; }
 
     let data;

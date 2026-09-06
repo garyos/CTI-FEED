@@ -2,6 +2,42 @@
   "month": "2026-09",
   "victims": [
     {
+      "id": "f3653c46bf8abb21",
+      "victim": "evergenbio.com",
+      "group": "chaos",
+      "published": "2026-09-06T13:25:24.392280+00:00",
+      "discovered": "2026-09-06T13:25:44.025363+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "evergenbio.com",
+      "description": "Evergen is a leading Contract Development and Manufacturing Organization (CDMO) specializing in biomaterial solutions for regenerative medicine. We work closely with OEM partners to deliver customized biomaterial solutions that meet specific clinical needs",
+      "post_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion/post/MU7nZVTkyUp3ngugKlwOnyVtxCATQdyB"
+    },
+    {
+      "id": "e86e334bc4610ca0",
+      "victim": "KHALED ALFAGIH ENGINEERING CONSULTANCY",
+      "group": "Panzer",
+      "published": "2026-09-06T11:46:40+00:00",
+      "discovered": "2026-09-06T12:22:23.544880+00:00",
+      "country": "SA",
+      "sector": "Professional Services",
+      "website": null,
+      "description": "Khaled Alfagih Engineering Consultancy Company is one of the most specialized engineering consultancy firms in healthcare design and planning in KSA with more than 25 years of experience. KFO providing the quality in the field of architecture and engineering design, execution supervision and projects management. KFO focused on teamwork, client relationship and knowledge transfer.",
+      "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/khaled-alfagih-engineering-consultancy"
+    },
+    {
+      "id": "f28c034c58f1e73d",
+      "victim": "myLaurel",
+      "group": "direwolf",
+      "published": "2026-09-06T11:00:55.378000+00:00",
+      "discovered": "2026-09-06T11:53:36.694741+00:00",
+      "country": "US",
+      "sector": "Not Found",
+      "website": "mylaurelhealth.com",
+      "description": "Elderly Care Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/123"
+    },
+    {
       "id": "542b8561ecfdd90d",
       "victim": "Edacentrum",
       "group": "Panzer",
@@ -1454,5 +1490,5 @@
       "post_url": "http://everestndkvzcibcje2cqxhre2hmmybl3rn2gwzwsblz7gx6uryn5rad.onion/news/rise-up"
     }
   ],
-  "updated_at": "2026-09-06T11:23:13.247825+00:00"
+  "updated_at": "2026-09-06T15:15:18.835857+00:00"
 }
