@@ -46,7 +46,8 @@
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line);
     border: 1px solid var(--line); margin-bottom: 20px;
   }
-  @media (min-width: 1000px) { .hero-grid { grid-template-columns: repeat(8, 1fr); } }
+  @media (min-width: 700px) { .hero-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1000px) { .hero-grid { grid-template-columns: repeat(9, 1fr); } }
   .stat-card {
     background: var(--ink-raised); padding: 14px 14px 12px; text-decoration: none; color: var(--text);
     display: flex; flex-direction: column; gap: 4px; transition: background 0.15s ease;
@@ -208,7 +209,7 @@
   }
 
   async function loadAll() {
-    const [threats, attack, cveIndex, cveLatest, ltGroups, ltLatest, ltIndex] = await Promise.all([
+    const [threats, attack, cveIndex, cveLatest, ltGroups, ltLatest, ltIndex, breaches] = await Promise.all([
       safeLoad("data/threats.json"),
       safeLoad("data/attack/enterprise.json"),
       safeLoad("data/cve/index.json"),
@@ -216,8 +217,9 @@
       safeLoad("data/leaktracker/groups.json"),
       safeLoad("data/leaktracker/latest.json"),
       safeLoad("data/leaktracker/index.json"),
+      safeLoad("data/breaches/breaches.json"),
     ]);
-    return { threats, attack, cveIndex, cveLatest, ltGroups, ltLatest, ltIndex };
+    return { threats, attack, cveIndex, cveLatest, ltGroups, ltLatest, ltIndex, breaches };
   }
 
   // ---------- aggregation helpers ----------
@@ -278,6 +280,7 @@
     const rGroupCount = d.ltGroups ? d.ltGroups.groups.length : null;
     const activeCount = d.ltGroups ? d.ltGroups.groups.filter(g => g.is_active).length : null;
     const victimTotal = sumMonths(d.ltIndex, "count");
+    const breachCount = d.breaches ? d.breaches.breaches.length : null;
 
     const stats = [
       { label: "Feed items", value: feedCount, href: "index.html" },
@@ -288,6 +291,7 @@
       { label: "Ransomware groups", value: rGroupCount, href: "leaktracker.html?view=groups" },
       { label: "Active leak sites", value: activeCount, href: "leaktracker.html?view=groups&active=yes" },
       { label: "Victims logged", value: victimTotal, href: "leaktracker.html" },
+      { label: "Breaches on record", value: breachCount, href: "breaches.html" },
     ];
 
     document.getElementById("hero-grid").innerHTML = stats.map(s => `
@@ -444,6 +448,30 @@
     return panel("Latest news headlines", null, body, "span-4");
   }
 
+  function renderLatestBreachesPanel(d) {
+    if (!d.breaches) return panel("Latest disclosed breaches", null, `<div class="empty-note">Breach data unavailable.</div>`, "span-4");
+    const breaches = [...d.breaches.breaches].sort((a, b) => (b.added_date || "").localeCompare(a.added_date || "")).slice(0, 8);
+    const body = breaches.map(b => `
+      <a class="list-row" href="breaches.html?id=${encodeURIComponent(b.id)}">
+        <div class="lr-meta">
+          <span>${fmt(b.pwn_count)} accounts</span>
+          <span>${escapeHtml((b.breach_date || "").slice(0, 10))}</span>
+          ${b.is_verified ? "" : `<span class="badge high">UNVERIFIED</span>`}
+        </div>
+        <div class="lr-title">${escapeHtml(b.title)}</div>
+      </a>
+    `).join("");
+    return panel("Latest disclosed breaches", "Have I Been Pwned, seeded from a recent window", body, "span-4");
+  }
+
+  function renderLargestBreachesPanel(d) {
+    if (!d.breaches) return panel("Largest breaches on file", null, `<div class="empty-note">Breach data unavailable.</div>`, "span-4");
+    const breaches = [...d.breaches.breaches].sort((a, b) => (b.pwn_count || 0) - (a.pwn_count || 0)).slice(0, 10);
+    const max = Math.max(1, ...breaches.map(b => b.pwn_count || 0));
+    const body = breaches.map(b => barRow(escapeHtml(b.title), b.pwn_count || 0, max, "teal", `breaches.html?id=${encodeURIComponent(b.id)}`)).join("");
+    return panel("Largest breaches on file", "By accounts affected", body, "span-4");
+  }
+
   function renderCountriesPanel(d) {
     const cols = [];
 
@@ -509,6 +537,8 @@
       renderTopAptGroupsPanel(d),
       renderRansomwarePanel(d),
       renderLatestVictimsPanel(d),
+      renderLatestBreachesPanel(d),
+      renderLargestBreachesPanel(d),
       renderCountriesPanel(d),
       renderNewsPanel(d),
       renderCveTrendPanel(d),

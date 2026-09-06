@@ -137,6 +137,7 @@
   .kind-tag.group { background: var(--purple); }
   .kind-tag.victim { background: var(--teal); }
   .kind-tag.negotiation-group { background: var(--green); }
+  .kind-tag.breach { background: var(--amber); }
 
   .claimed-by {
     display: flex; align-items: center; gap: 8px; border: 1px solid var(--red); background: rgba(255,92,92,0.08);
@@ -474,6 +475,12 @@
     return res.json();
   }
 
+  async function loadBreachesLatest() {
+    const res = await fetch(`data/breaches/latest.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
   function percentile(arr, p) {
     const s = [...arr].sort((a, b) => a - b);
     if (!s.length) return 0;
@@ -801,6 +808,24 @@
     };
   }
 
+  function breachTeaserSlide(b) {
+    return {
+      key: "breach", duration: 7500,
+      html: `
+        <div class="kind-tag breach">Breach</div>
+        <div class="case-number">DISCLOSURE RECORD // ${escapeHtml((b.breach_date || "").slice(0, 10))}</div>
+        <h1 class="redact">${escapeHtml(b.title)}</h1>
+        <div class="chip-row">
+          <span class="tag-chip">${(b.pwn_count || 0).toLocaleString()} accounts affected</span>
+          ${b.is_verified ? `<span class="tag-chip">Verified</span>` : `<span class="tag-chip">Unverified</span>`}
+          ${(b.data_classes || []).slice(0, 3).map(c => `<span class="tag-chip">${escapeHtml(c)}</span>`).join("")}
+        </div>
+        <p class="dossier-text">${escapeHtml(b.description) || "No description available."}</p>
+        <a class="zoom-link no-nav" href="breaches.html?id=${encodeURIComponent(b.id)}">full breach record ›</a>
+      `,
+    };
+  }
+
   // A condensed one-slide teaser for the digest's random-groups section — name,
   // origin, description only. The full multi-slide dossier (coverage, arsenal,
   // connections, etc.) is one tap away via the Focused Spotlight link instead
@@ -959,9 +984,10 @@
     return list;
   }
 
-  function buildDigestSlides(threats, cves, attackData, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames) {
+  function buildDigestSlides(threats, cves, attackData, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames, breaches) {
     const feedSlides = (threats.entries || []).slice(0, 5).map(feedItemSlide);
     const cveSlides = (cves.cves || []).slice(0, 10).map(cveDetailSlide);
+    const breachSlides = (breaches.breaches || []).slice(0, 3).map(breachTeaserSlide);
     const groupSlides = groupIds
       .map(gid => attackData.byId.groups[gid])
       .filter(Boolean)
@@ -971,7 +997,7 @@
       .map(name => (leaktrackerGroups.groups || []).find(g => g.name === name))
       .filter(Boolean)
       .map(negotiationGroupTeaserSlide);
-    return [...feedSlides, ...cveSlides, ...groupSlides, ...victimSlides, ...negotiationSlides];
+    return [...feedSlides, ...cveSlides, ...breachSlides, ...groupSlides, ...victimSlides, ...negotiationSlides];
   }
 
   // ---------- engine ----------
@@ -1256,25 +1282,27 @@
   const DIGEST_NEGOTIATION_GROUP_COUNT = 3;
 
   async function loadDigestData() {
-    const [attackR, threatsR, cveR, leaktrackerR, leaktrackerGroupsR] = await Promise.allSettled(
-      [loadDomain(), loadThreats(), loadCveLatest(), loadLeaktrackerLatest(), loadLeaktrackerGroups()]
+    const [attackR, threatsR, cveR, leaktrackerR, leaktrackerGroupsR, breachesR] = await Promise.allSettled(
+      [loadDomain(), loadThreats(), loadCveLatest(), loadLeaktrackerLatest(), loadLeaktrackerGroups(), loadBreachesLatest()]
     );
     if (attackR.status === "rejected") console.error("digest: ATT&CK data failed to load", attackR.reason);
     if (threatsR.status === "rejected") console.error("digest: feed data failed to load", threatsR.reason);
     if (cveR.status === "rejected") console.error("digest: CVE data failed to load", cveR.reason);
     if (leaktrackerR.status === "rejected") console.error("digest: leak-tracker data failed to load", leaktrackerR.reason);
     if (leaktrackerGroupsR.status === "rejected") console.error("digest: leak-tracker groups failed to load", leaktrackerGroupsR.reason);
+    if (breachesR.status === "rejected") console.error("digest: breach data failed to load", breachesR.reason);
     return {
       attackData: attackR.status === "fulfilled" ? attackR.value : null,
       threats: threatsR.status === "fulfilled" ? threatsR.value : { entries: [] },
       cves: cveR.status === "fulfilled" ? cveR.value : { cves: [] },
       leaktracker: leaktrackerR.status === "fulfilled" ? leaktrackerR.value : { victims: [] },
       leaktrackerGroups: leaktrackerGroupsR.status === "fulfilled" ? leaktrackerGroupsR.value : { groups: [] },
+      breaches: breachesR.status === "fulfilled" ? breachesR.value : { breaches: [] },
     };
   }
 
   async function initDigest() {
-    const { attackData, threats, cves, leaktracker, leaktrackerGroups } = await loadDigestData();
+    const { attackData, threats, cves, leaktracker, leaktrackerGroups, breaches } = await loadDigestData();
 
     const validGroupIds = attackData ? attackData.groups.map(g => g.id) : [];
     let groupIds = (params.get("groups") || "").split(",").map(s => s.trim()).filter(gid => validGroupIds.includes(gid));
@@ -1317,7 +1345,7 @@
       history.replaceState(null, "", `spotlight.html?${p.toString()}`);
     }
 
-    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames);
+    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames, breaches);
     if (slides.length === 0) {
       showEmptyTarget("No feed, CVE, ATT&CK, or leak-tracker data available yet — have the fetch scripts been run?");
       return;

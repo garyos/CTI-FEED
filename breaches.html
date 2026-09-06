@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SIGNAL — Breach Tracker</title>
+<style>
+  :root {
+    --ink: #0a0e14;
+    --ink-raised: #10151d;
+    --ink-input: #0d1219;
+    --line: #1e2733;
+    --text: #d7dde5;
+    --text-dim: #7d8998;
+    --amber: #ffb020;
+    --red: #ff5c5c;
+    --blue: #5ac8ff;
+    --green: #4fd58a;
+    --purple: #c792ea;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--ink); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  .frame { max-width: 920px; margin: 0 auto; padding: 24px 16px 80px; }
+
+  header.masthead {
+    border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 18px;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap;
+  }
+  .masthead h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 4px; }
+  .masthead .sub { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+  .masthead nav { display: flex; gap: 8px; flex-wrap: wrap; }
+  .masthead nav a {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); text-decoration: none;
+    border: 1px solid var(--line); padding: 6px 10px;
+  }
+  .masthead nav a:hover { color: var(--amber); border-color: var(--amber); }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  select#class-filter, select#sort-select {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line); max-width: 220px;
+  }
+  .chip {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--line);
+    background: var(--ink-raised); color: var(--text-dim); cursor: pointer; user-select: none;
+  }
+  .chip.active { color: var(--red); border-color: var(--red); }
+  .search-wrap { flex: 1; min-width: 160px; display: flex; }
+  #search-input {
+    width: 100%; font-family: var(--font-mono); font-size: 12px; padding: 7px 10px;
+    background: var(--ink-input); color: var(--text); border: 1px solid var(--line);
+  }
+  #search-input::placeholder { color: var(--text-dim); }
+  .reset-btn {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); background: none;
+    border: 1px solid var(--line); padding: 6px 10px; cursor: pointer;
+  }
+  .reset-btn:hover { color: var(--amber); border-color: var(--amber); }
+
+  .result-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 14px; }
+
+  .feed { display: flex; flex-direction: column; }
+  .entry {
+    border-left: 3px solid var(--red); padding: 14px 16px; border-bottom: 1px solid var(--line);
+    cursor: pointer; background: none; text-align: left; width: 100%; color: var(--text); font-family: var(--font-sans);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .entry:hover { background: #10151d; }
+  .entry .logo {
+    width: 40px; height: 40px; border-radius: 4px; flex: 0 0 auto; background: var(--ink-input);
+    border: 1px solid var(--line); object-fit: cover;
+  }
+  .entry .entry-body { flex: 1 1 auto; min-width: 0; }
+  .entry .meta {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-bottom: 6px;
+    display: flex; gap: 10px; text-transform: uppercase; letter-spacing: 0.04em; flex-wrap: wrap; align-items: center;
+  }
+  .entry .tag { color: var(--red); }
+  .badge {
+    font-size: 9px; padding: 1px 6px; border: 1px solid currentColor; letter-spacing: 0.05em;
+  }
+  .badge.verified { color: var(--green); }
+  .badge.sensitive { color: var(--amber); }
+  .badge.malware { color: var(--purple); }
+  .badge.stealer { color: var(--blue); }
+  .entry h2 { font-size: 15.5px; font-weight: 500; margin: 0 0 6px; line-height: 1.4; font-family: var(--font-mono); }
+  .entry p { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; margin: 0 0 8px; }
+  .class-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .class-tag {
+    font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim); border: 1px solid var(--line);
+    padding: 2px 7px;
+  }
+
+  .empty-state {
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); padding: 40px 0;
+    text-align: center; border: 1px dashed var(--line);
+  }
+
+  /* flyout */
+  .flyout-backdrop {
+    position: fixed; inset: 0; background: rgba(5,7,10,0.6); opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease; z-index: 40;
+  }
+  .flyout-backdrop.open { opacity: 1; pointer-events: auto; }
+  .flyout {
+    position: fixed; background: var(--ink-raised); border-left: 1px solid var(--line); z-index: 41;
+    display: flex; flex-direction: column; top: 0; right: 0; bottom: 0; width: min(460px, 100%);
+    transform: translateX(100%); transition: transform 0.25s ease;
+  }
+  .flyout.open { transform: translateX(0); }
+  @media (max-width: 680px) {
+    .flyout { top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 88vh; border-left: none; border-top: 1px solid var(--line); transform: translateY(100%); }
+    .flyout.open { transform: translateY(0); }
+  }
+  .flyout-head { display: flex; justify-content: flex-end; padding: 10px 14px; border-bottom: 1px solid var(--line); flex: 0 0 auto; }
+  .flyout-close { font-family: var(--font-mono); font-size: 16px; color: var(--text-dim); background: none; border: none; cursor: pointer; padding: 0 4px; }
+  .flyout-close:hover { color: var(--red); }
+  .flyout-body { padding: 16px; overflow-y: auto; flex: 1 1 auto; }
+  .flyout-body .fid { font-family: var(--font-mono); font-size: 12px; color: var(--red); display: flex; align-items: center; gap: 10px; }
+  .flyout-body .fid img { width: 28px; height: 28px; border-radius: 4px; border: 1px solid var(--line); }
+  .flyout-body h2 { font-size: 19px; margin: 10px 0 10px; font-family: var(--font-mono); }
+  .flyout-summary { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 16px; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .meta-cell { border: 1px solid var(--line); padding: 9px 11px; }
+  .meta-cell span { display: block; font-size: 9px; color: var(--text-dim); letter-spacing: 0.07em; margin-bottom: 3px; text-transform: uppercase; }
+  .meta-cell b { font-family: var(--font-mono); font-size: 13px; }
+  .section-title {
+    font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); margin: 20px 0 10px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  a.hibp-link {
+    display: inline-block; margin-top: 4px; font-size: 12px; color: var(--red); text-decoration: none;
+  }
+  a.hibp-link:hover { text-decoration: underline; }
+  a.footer-link { color: var(--text-dim); }
+  a.footer-link:hover { color: var(--amber); }
+  footer { margin-top: 32px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="masthead">
+      <div>
+        <h1>BREACH TRACKER</h1>
+        <div class="sub" id="status-line">loading…</div>
+      </div>
+      <nav>
+        <a href="leaktracker.html">‹ ransomware</a>
+        <a href="cve.html">‹ CVE</a>
+        <a href="attack.html">‹ ATT&amp;CK</a>
+        <a href="index.html">‹ feed</a>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <select id="class-filter"><option value="all">all data classes</option></select>
+      <select id="sort-select">
+        <option value="recent">sort: most recent</option>
+        <option value="largest">sort: largest (accounts affected)</option>
+      </select>
+      <span class="chip" id="verified-chip">verified only</span>
+      <span class="chip" id="malware-chip">exclude malware/stealer logs</span>
+      <div class="search-wrap"><input id="search-input" type="text" placeholder="search…" /></div>
+      <button class="reset-btn" id="reset-btn">reset</button>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
+    <div class="feed" id="feed"><div class="empty-state">Loading breach data…</div></div>
+
+    <footer>
+      Breach data from <a class="footer-link" href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">Have I Been Pwned</a>
+      by a scheduled GitHub Action · accumulates over time (seeded from a recent window, not the full historical catalog) ·
+      <a class="footer-link" href="data/breaches/latest.json">view raw data</a>
+    </footer>
+  </div>
+
+  <div class="flyout-backdrop" id="flyout-backdrop"></div>
+  <aside class="flyout" id="flyout">
+    <div class="flyout-head"><button class="flyout-close" id="flyout-close">✕</button></div>
+    <div class="flyout-body" id="flyout-body"></div>
+  </aside>
+
+<script>
+(() => {
+  let allBreaches = [];
+  let filters = { dataClass: "all", sort: "recent", verifiedOnly: false, excludeMalware: false, search: "" };
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function fmt(n) { return n == null ? "—" : n.toLocaleString(); }
+
+  async function loadJson(path) {
+    const res = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  async function init() {
+    let data;
+    try {
+      data = await loadJson("data/breaches/breaches.json");
+    } catch (err) {
+      document.getElementById("feed").innerHTML = `<div class="empty-state">Couldn't load breach data. Has scripts/fetch_breaches.py been run yet?</div>`;
+      console.error(err);
+      return;
+    }
+    allBreaches = data.breaches || [];
+    document.getElementById("status-line").textContent =
+      `${allBreaches.length} breaches on record · generated ${new Date(data.generated_at).toLocaleString()}`;
+
+    renderClassOptions();
+
+    document.getElementById("class-filter").addEventListener("change", (e) => { filters.dataClass = e.target.value; render(); });
+    document.getElementById("sort-select").addEventListener("change", (e) => { filters.sort = e.target.value; render(); });
+    document.getElementById("verified-chip").addEventListener("click", (e) => {
+      filters.verifiedOnly = !filters.verifiedOnly;
+      e.target.classList.toggle("active", filters.verifiedOnly);
+      render();
+    });
+    document.getElementById("malware-chip").addEventListener("click", (e) => {
+      filters.excludeMalware = !filters.excludeMalware;
+      e.target.classList.toggle("active", filters.excludeMalware);
+      render();
+    });
+    document.getElementById("search-input").addEventListener("input", (e) => { filters.search = e.target.value; render(); });
+    document.getElementById("reset-btn").addEventListener("click", resetFilters);
+    document.getElementById("flyout-close").addEventListener("click", closeFlyout);
+    document.getElementById("flyout-backdrop").addEventListener("click", closeFlyout);
+
+    applyUrlParams();
+    render();
+  }
+
+  function applyUrlParams() {
+    const p = new URLSearchParams(location.search);
+    const dataClass = p.get("dataClass");
+    if (dataClass) { filters.dataClass = dataClass; document.getElementById("class-filter").value = dataClass; }
+    if (p.get("sort") === "largest") { filters.sort = "largest"; document.getElementById("sort-select").value = "largest"; }
+    const id = p.get("id");
+    if (id) {
+      const match = allBreaches.find(b => b.id === id);
+      if (match) setTimeout(() => openFlyout(match), 0);
+    }
+  }
+
+  function resetFilters() {
+    filters = { dataClass: "all", sort: "recent", verifiedOnly: false, excludeMalware: false, search: "" };
+    document.getElementById("class-filter").value = "all";
+    document.getElementById("sort-select").value = "recent";
+    document.getElementById("verified-chip").classList.remove("active");
+    document.getElementById("malware-chip").classList.remove("active");
+    document.getElementById("search-input").value = "";
+    render();
+  }
+
+  function renderClassOptions() {
+    const select = document.getElementById("class-filter");
+    const counts = new Map();
+    allBreaches.forEach(b => (b.data_classes || []).forEach(c => counts.set(c, (counts.get(c) || 0) + 1)));
+    const classes = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    select.innerHTML = `<option value="all">all data classes</option>` +
+      classes.map(([c, n]) => `<option value="${escapeHtml(c)}">${escapeHtml(c)} (${n})</option>`).join("");
+  }
+
+  function render() {
+    const term = filters.search.trim().toLowerCase();
+    let filtered = allBreaches.filter(b => {
+      if (filters.dataClass !== "all" && !(b.data_classes || []).includes(filters.dataClass)) return false;
+      if (filters.verifiedOnly && !b.is_verified) return false;
+      if (filters.excludeMalware && (b.is_malware || b.is_stealer_log)) return false;
+      if (term && !`${b.title} ${b.description}`.toLowerCase().includes(term)) return false;
+      return true;
+    });
+
+    filtered = filters.sort === "largest"
+      ? [...filtered].sort((a, b) => (b.pwn_count || 0) - (a.pwn_count || 0))
+      : [...filtered].sort((a, b) => (b.added_date || "").localeCompare(a.added_date || ""));
+
+    document.getElementById("result-count").textContent = `showing ${filtered.length} of ${allBreaches.length} breaches`;
+
+    const feed = document.getElementById("feed");
+    if (filtered.length === 0) { feed.innerHTML = `<div class="empty-state">No breaches match the current filters.</div>`; return; }
+
+    feed.innerHTML = "";
+    for (const b of filtered) {
+      const el = document.createElement("button");
+      el.className = "entry";
+      el.innerHTML = `
+        <img class="logo" src="${escapeHtml(b.logo_path || "")}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="entry-body">
+          <div class="meta">
+            <span class="tag">BREACH</span>
+            <span>${fmt(b.pwn_count)} accounts</span>
+            <span>${escapeHtml((b.breach_date || "").slice(0, 10))}</span>
+            ${b.is_verified ? `<span class="badge verified">VERIFIED</span>` : `<span class="badge sensitive">UNVERIFIED</span>`}
+            ${b.is_malware ? `<span class="badge malware">MALWARE</span>` : ""}
+            ${b.is_stealer_log ? `<span class="badge stealer">STEALER LOG</span>` : ""}
+          </div>
+          <h2>${escapeHtml(b.title)}</h2>
+          <p>${escapeHtml((b.description || "").slice(0, 220))}${(b.description || "").length > 220 ? "…" : ""}</p>
+          <div class="class-row">${(b.data_classes || []).slice(0, 6).map(c => `<span class="class-tag">${escapeHtml(c)}</span>`).join("")}</div>
+        </div>
+      `;
+      el.addEventListener("click", () => openFlyout(b));
+      feed.appendChild(el);
+    }
+  }
+
+  function openFlyout(b) {
+    document.getElementById("flyout-body").innerHTML = `
+      <div class="fid">
+        ${b.logo_path ? `<img src="${escapeHtml(b.logo_path)}" alt="" onerror="this.style.visibility='hidden'">` : ""}
+        BREACH RECORD${b.domain ? ` · ${escapeHtml(b.domain)}` : ""}
+      </div>
+      <h2>${escapeHtml(b.title)}</h2>
+      <div class="badge-row">
+        ${b.is_verified ? `<span class="badge verified">VERIFIED</span>` : `<span class="badge sensitive">UNVERIFIED</span>`}
+        ${b.is_sensitive ? `<span class="badge sensitive">SENSITIVE</span>` : ""}
+        ${b.is_malware ? `<span class="badge malware">MALWARE</span>` : ""}
+        ${b.is_stealer_log ? `<span class="badge stealer">STEALER LOG</span>` : ""}
+      </div>
+      <p class="flyout-summary">${escapeHtml(b.description) || "No description available."}</p>
+      <div class="meta-grid">
+        <div class="meta-cell"><span>Accounts affected</span><b>${fmt(b.pwn_count)}</b></div>
+        <div class="meta-cell"><span>Breach date</span><b>${escapeHtml((b.breach_date || "Unknown").slice(0, 10))}</b></div>
+        <div class="meta-cell"><span>Added to HIBP</span><b>${escapeHtml((b.added_date || "Unknown").slice(0, 10))}</b></div>
+        <div class="meta-cell"><span>Last modified</span><b>${escapeHtml((b.modified_date || "Unknown").slice(0, 10))}</b></div>
+      </div>
+      <div class="section-title">Compromised data</div>
+      <div class="class-row">${(b.data_classes || []).map(c => `<span class="class-tag">${escapeHtml(c)}</span>`).join("") || `<span style="color:var(--text-dim); font-size:12px;">Not specified</span>`}</div>
+      <div class="section-title">Reference</div>
+      <a class="hibp-link" href="${b.hibp_url}" target="_blank" rel="noopener noreferrer">view on Have I Been Pwned ↗</a>
+    `;
+    document.getElementById("flyout").classList.add("open");
+    document.getElementById("flyout-backdrop").classList.add("open");
+  }
+
+  function closeFlyout() {
+    document.getElementById("flyout").classList.remove("open");
+    document.getElementById("flyout-backdrop").classList.remove("open");
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

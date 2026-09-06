@@ -17,6 +17,7 @@
     --blue: #5ac8ff;
     --green: #4fd58a;
     --purple: #c792ea;
+    --teal: #2dd4bf;
     --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
   }
@@ -112,6 +113,10 @@
   .explorer-cta.leaktracker {
     background: var(--green);
     border-color: var(--green);
+  }
+  .explorer-cta.breaches {
+    background: var(--teal);
+    border-color: var(--teal);
   }
   .explorer-cta.dashboard {
     background: var(--blue);
@@ -430,6 +435,15 @@
       <span class="cta-text">
         <span class="cta-title">Ransomware Tracker</span>
         <span class="cta-desc">Leak-site victim postings and group profiles, accumulating day by day</span>
+      </span>
+      <span class="cta-arrow">›</span>
+    </a>
+
+    <a class="explorer-cta breaches" href="breaches.html">
+      <span class="cta-icon">🔓</span>
+      <span class="cta-text">
+        <span class="cta-title">Breach Tracker</span>
+        <span class="cta-desc">Disclosed data breaches from Have I Been Pwned, seeded from a recent window</span>
       </span>
       <span class="cta-arrow">›</span>
     </a>
