@@ -207,12 +207,20 @@ def build_negotiation_lookup(chat_index: dict) -> dict:
             continue
         dated = [(parse_chat_date(c["chat_id"]), c) for c in chats]
         dated = [(d, c) for d, c in dated if d]
-        latest = max(dated, key=lambda dc: dc[0]) if dated else None
+        if dated:
+            latest = max(dated, key=lambda dc: dc[0])
+        else:
+            # None of this group's chat ids parse as a date at all (UUIDs,
+            # victim-domain filenames, etc. — Dragonforce, lockbit3, trinity
+            # are all like this) — fall back to the last entry in the index's
+            # own order rather than silently dropping "latest" entirely, just
+            # without a real date attached to it.
+            latest = (None, chats[-1])
         longest = max(chats, key=lambda c: c.get("message_count") or 0)
         lookup[chat_name] = {
             "chat_count": len(chats),
-            "latest_chat_date": latest[0] if latest else None,
-            "latest_chat_url": latest[1]["raw_url"] if latest else None,
+            "latest_chat_date": latest[0],
+            "latest_chat_url": latest[1]["raw_url"],
             "longest_chat_url": longest["raw_url"],
             "longest_chat_message_count": longest.get("message_count"),
         }

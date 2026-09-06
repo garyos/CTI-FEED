@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-06T15:16:06.640203+00:00",
+  "fetched_at": "2026-09-06T15:54:13.474028+00:00",
   "groups": [
     {
       "name": "0apt",
@@ -2147,9 +2147,9 @@
       "description": "DataKeeper is a ransomware-as-a-service operation dating back to at least 2018 that promoted an affiliate model called \"CrystalPartnership RaaS,\" offering a Windows-focused ransomware toolkit with hybrid RSA-4096 encryption, open dark web registration, and an innovative split-payment mechanism to build affiliate trust.",
       "raas": true,
       "first_seen": "2026-01-14",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 1,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 0,
       "countries": [],
       "negotiation": {
@@ -2396,7 +2396,7 @@
         "available": true,
         "chat_count": 14,
         "latest_chat_date": null,
-        "latest_chat_url": null,
+        "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/b8e14e1a-548f-4eec-bd6e-a590126e57c9.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C7CD31EAAF9DE9AC.json",
         "longest_chat_message_count": 71
       }
@@ -4006,7 +4006,7 @@
         "available": true,
         "chat_count": 42,
         "latest_chat_date": null,
-        "latest_chat_url": null,
+        "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/wcinet_com.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/samyang_com.json",
         "longest_chat_message_count": 237
       }
@@ -4277,9 +4277,9 @@
       "description": "",
       "raas": false,
       "first_seen": "2026-08-12",
-      "active_sites": 1,
+      "active_sites": 0,
       "total_sites": 4,
-      "is_active": true,
+      "is_active": false,
       "total_victims": 0,
       "countries": [],
       "negotiation": {
@@ -5787,9 +5787,9 @@
       "description": "RALord is a ransomware group identified in March 2025 operating within the NOVA RaaS platform, targeting healthcare, education, hospitality, and IT sectors across multiple continents, using a Rust-based payload with an 85/15 affiliate revenue split; it later rebranded as \"Nova.\"",
       "raas": true,
       "first_seen": "2025-03-26",
-      "active_sites": 1,
+      "active_sites": 0,
       "total_sites": 4,
-      "is_active": true,
+      "is_active": false,
       "total_victims": 19,
       "countries": [],
       "negotiation": {
@@ -7296,7 +7296,7 @@
         "available": true,
         "chat_count": 14,
         "latest_chat_date": null,
-        "latest_chat_url": null,
+        "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0014.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0003.json",
         "longest_chat_message_count": 298
       }

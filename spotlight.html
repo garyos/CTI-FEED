@@ -322,7 +322,15 @@
      Navigation here is browser scroll, not swipe, so tap-zones/hint are
      hidden for this mode via .negotiation-mode on #stage. --- */
   .negotiation-mode .tap-zone, .negotiation-mode .hint { display: none; }
-  .chat-scroll { position: absolute; inset: 0; overflow-y: auto; z-index: 10; padding: 92px 16px 116px; }
+  /* Setting overflow-y without an explicit overflow-x lets the CSS overflow
+     spec compute overflow-x as "auto" too (not "visible"), so a bubble with
+     one long unbroken token (a hash, a URL) could open up a horizontal
+     scrollbar for the whole chat — overflow-x: hidden plus word-break on the
+     bubble text closes both ends of that. CONTROL_CLEARANCE_PX in the script
+     below must stay in sync with this padding-bottom — it's how far a
+     revealed message is kept clear of the pause/speed buttons, which float
+     on top of this scroll area rather than taking up their own layout space. */
+  .chat-scroll { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; z-index: 10; padding: 92px 16px 140px; }
   .chat-msg {
     display: flex; flex-direction: column; max-width: 82%; margin-bottom: 16px;
     opacity: 0; transform: translateY(8px); transition: opacity 0.35s ease, transform 0.35s ease;
@@ -332,10 +340,11 @@
   .chat-msg.victim { align-items: flex-end; margin-left: auto; }
   .chat-bubble {
     padding: 10px 13px; font-size: 13.5px; line-height: 1.55; white-space: pre-line;
-    font-family: var(--font-sans);
+    font-family: var(--font-sans); overflow-wrap: anywhere; word-break: break-word;
+    border-radius: 16px;
   }
-  .chat-msg.them .chat-bubble { background: rgba(255,92,92,0.1); border: 1px solid var(--red); color: var(--text); }
-  .chat-msg.victim .chat-bubble { background: rgba(90,200,255,0.1); border: 1px solid var(--blue); color: var(--text); }
+  .chat-msg.them .chat-bubble { background: rgba(255,92,92,0.1); border: 1px solid var(--red); color: var(--text); border-bottom-left-radius: 4px; }
+  .chat-msg.victim .chat-bubble { background: rgba(90,200,255,0.1); border: 1px solid var(--blue); color: var(--text); border-bottom-right-radius: 4px; }
   .chat-meta {
     font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 5px;
     letter-spacing: 0.06em; text-transform: uppercase;
@@ -1257,9 +1266,24 @@
   // fetched and rendered up front, and messages are just faded in in order. ----------
 
   const NEGOTIATION_URL_PREFIX = "https://raw.githubusercontent.com/Casualtek/Ransomchats/";
+  // Must match .chat-scroll's padding-bottom in the CSS above — how far a
+  // freshly-revealed message is kept clear of the pause/speed buttons, which
+  // float on top of the scroll area rather than reserving their own space.
+  const CONTROL_CLEARANCE_PX = 140;
   let negoMessages = [];
   let negoRevealed = 0;
-  let negoNearBottom = true;
+  // Whether auto-reveal should keep scrolling the transcript to follow the
+  // newest message — true until the reader deliberately scrolls away from
+  // the current frontier to read back, and re-armed by the resume button.
+  let negoFollowing = true;
+  // A smooth scrollTo() we trigger ourselves still fires a stream of native
+  // 'scroll' events while it animates, each with a scrollTop that hasn't
+  // reached the target yet — treating those as "the reader scrolled away"
+  // would cancel following on literally every auto-scroll. This is a
+  // deadline (performance.now()-based), not a boolean, so a second
+  // auto-scroll fired before the first settles doesn't get its own window
+  // closed early by the first one's cleanup.
+  let negoProgrammaticScrollUntil = 0;
 
   function cleanChatContent(raw) {
     return (raw || "").trim().replace(/^>\s?/, "");
@@ -1295,6 +1319,31 @@
     if (fill) fill.style.width = pct + "%";
   }
 
+  // The scroll target that keeps the last REVEALED message clear of the
+  // floating controls. Deliberately not based on root.scrollHeight/clientHeight
+  // alone — every message (including ones not revealed yet) is already in the
+  // DOM with real layout height so "scroll ahead" has something to scroll
+  // into, which means scrollHeight reflects the *whole* transcript from the
+  // first render, not just what's currently visible. Anchoring on the last
+  // revealed element's own position instead keeps this correct regardless of
+  // how much still-invisible content sits below it.
+  function frontierScrollTarget() {
+    const root = document.getElementById("chat-scroll");
+    const lastEl = root.querySelector(`.chat-msg[data-i="${negoRevealed - 1}"]`);
+    if (!lastEl) return 0;
+    const raw = lastEl.offsetTop + lastEl.offsetHeight - root.clientHeight + CONTROL_CLEARANCE_PX;
+    return Math.max(0, Math.min(raw, root.scrollHeight - root.clientHeight));
+  }
+
+  function scrollToFrontier(smooth) {
+    const root = document.getElementById("chat-scroll");
+    const useSmooth = smooth && !REDUCED_MOTION;
+    // Generous window for a smooth scroll to settle — it only ever needs to
+    // cover a message or two's worth of distance, never the whole transcript.
+    negoProgrammaticScrollUntil = performance.now() + (useSmooth ? 700 : 50);
+    root.scrollTo({ top: frontierScrollTarget(), behavior: useSmooth ? "smooth" : "auto" });
+  }
+
   function revealUpTo(n) {
     n = Math.min(n, negoMessages.length);
     if (n <= negoRevealed) return;
@@ -1308,10 +1357,7 @@
     if (negoRevealed >= negoMessages.length) {
       document.getElementById("chat-end").classList.add("visible");
     }
-    if (negoNearBottom) {
-      const lastEl = root.querySelector(`.chat-msg[data-i="${negoRevealed - 1}"]`);
-      if (lastEl) lastEl.scrollIntoView({ behavior: REDUCED_MOTION ? "auto" : "smooth", block: "end" });
-    }
+    if (negoFollowing) scrollToFrontier(true);
   }
 
   function cancelNegoTimer() { if (timerRAF) cancelAnimationFrame(timerRAF); timerRAF = null; }
@@ -1343,13 +1389,32 @@
   }
 
   function setupNegotiationInput() {
-    document.getElementById("pause-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleManualPause(); });
+    document.getElementById("pause-btn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      const wasPaused = manualPauseLock;
+      toggleManualPause();
+      // Resuming re-arms auto-scroll and snaps straight back to the current
+      // frontier — a paused reader may have scrolled off anywhere to read
+      // back, and resume should pick up the reveal where it left off, in view,
+      // not silently keep revealing off-screen until they scroll down again.
+      if (wasPaused) { negoFollowing = true; scrollToFrontier(true); }
+    });
     document.getElementById("speed-btn").addEventListener("click", (e) => { e.stopPropagation(); cycleSpeed(); });
     updateSpeedButton();
 
     const root = document.getElementById("chat-scroll");
     root.addEventListener("scroll", () => {
-      negoNearBottom = root.scrollHeight - root.scrollTop - root.clientHeight < 80;
+      // Ignore scroll events fired by our own in-flight auto-scroll — a smooth
+      // scrollTo() reports intermediate scrollTop values on every frame while
+      // it animates, which would otherwise read as "the reader scrolled away"
+      // on essentially every single auto-reveal.
+      if (performance.now() < negoProgrammaticScrollUntil) return;
+
+      // "Following" means the reader is sitting at the current frontier —
+      // compare against that message's own scroll position, not against
+      // root.scrollHeight, which already includes not-yet-revealed messages'
+      // reserved (but invisible) height and would never read as "near bottom".
+      negoFollowing = Math.abs(root.scrollTop - frontierScrollTarget()) < 48;
 
       // Scrolling past the reveal frontier (deliberately reading ahead) should
       // just show those messages immediately, rather than leaving blank gaps —
@@ -1363,10 +1428,10 @@
         }
       });
       if (revealTo > negoRevealed) {
-        const wasNearBottom = negoNearBottom;
-        negoNearBottom = false; // don't fight a manual upward/ahead scroll with an auto-scroll
+        const wasFollowing = negoFollowing;
+        negoFollowing = false; // don't fight a manual upward/ahead scroll with an auto-scroll
         revealUpTo(revealTo);
-        negoNearBottom = wasNearBottom;
+        negoFollowing = wasFollowing;
         if (!isPaused) startNegoMessageTimer();
       }
     });

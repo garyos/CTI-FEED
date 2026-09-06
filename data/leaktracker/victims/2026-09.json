@@ -2,6 +2,18 @@
   "month": "2026-09",
   "victims": [
     {
+      "id": "0a879e7a14d2645e",
+      "victim": "Sancity",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-06T14:05:19+00:00",
+      "discovered": "2026-09-06T15:00:28.254541+00:00",
+      "country": "IN",
+      "sector": "Not Found",
+      "website": "sancity.in",
+      "description": "An active, unlisted public company incorporated in 2012, operating in real estate/construction and real-estate marketing & sales",
+      "post_url": null
+    },
+    {
       "id": "f3653c46bf8abb21",
       "victim": "evergenbio.com",
       "group": "chaos",
@@ -1490,5 +1502,5 @@
       "post_url": "http://everestndkvzcibcje2cqxhre2hmmybl3rn2gwzwsblz7gx6uryn5rad.onion/news/rise-up"
     }
   ],
-  "updated_at": "2026-09-06T15:15:18.835857+00:00"
+  "updated_at": "2026-09-06T15:54:14.742242+00:00"
 }

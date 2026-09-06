@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-09-06T15:16:07.914980+00:00",
+  "generated_at": "2026-09-06T15:54:14.759839+00:00",
   "victims": [
+    {
+      "id": "0a879e7a14d2645e",
+      "victim": "Sancity",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-06T14:05:19+00:00",
+      "discovered": "2026-09-06T15:00:28.254541+00:00",
+      "country": "IN",
+      "sector": "Not Found",
+      "website": "sancity.in",
+      "description": "An active, unlisted public company incorporated in 2012, operating in real estate/construction and real-estate marketing & sales",
+      "post_url": null
+    },
     {
       "id": "f3653c46bf8abb21",
       "victim": "evergenbio.com",
@@ -468,18 +480,6 @@
       "website": "www.tanner.cl",
       "description": "N/A",
       "post_url": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion/site/blog?uuid=285a4356-5f48-45b3-b1ce-a250aab638a8"
-    },
-    {
-      "id": "31dfb4fcb9e06a28",
-      "victim": "Hochschule Heilbronn Bildungscampus",
-      "group": "Panzer",
-      "published": "2026-09-04T00:38:34+00:00",
-      "discovered": "2026-09-04T00:51:09.295624+00:00",
-      "country": "DE",
-      "sector": "Education",
-      "website": null,
-      "description": "AStA Hochschule Heilbronn is the general students' committee that represents student interests both within and outside the university in Heilbronn. The organization serves as a spokesperson for the student body and provides a variety of support services, including legal and tax counseling, a grievance box, and laptop rentals. Additionally, the committee organizes numerous events and manages the university sports program. It operates as a central point of contact for students facing problems and\u2026",
-      "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/hochschule-heilbronn-bildungscampus"
     }
   ]
 }
