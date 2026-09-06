@@ -2,6 +2,18 @@
   "generated_at": "2026-09-06T16:34:56.788263+00:00",
   "victims": [
     {
+      "id": "7027cf293b497e83",
+      "victim": "WHO IS NEXT?",
+      "group": "global",
+      "published": "2026-09-06T15:54:09.879716+00:00",
+      "discovered": "2026-09-06T15:54:11.299807+00:00",
+      "country": "FR",
+      "sector": "Other",
+      "website": null,
+      "description": "No infrastructure is immune. Any corporation, network, or organization in the world can end up here. Yours could be next.",
+      "post_url": null
+    },
+    {
       "id": "0a879e7a14d2645e",
       "victim": "Sancity",
       "group": "Vexy Ransomware",
