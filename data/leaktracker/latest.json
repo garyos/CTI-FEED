@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T16:34:56.788263+00:00",
+  "generated_at": "2026-09-06T16:42:32.475023+00:00",
   "victims": [
     {
       "id": "7027cf293b497e83",
@@ -480,18 +480,6 @@
       "website": "pscindustries.com",
       "description": "For over 60 years, PSC Industries has been the number 1 supplier of nsulation, gasketing, seals, adh...",
       "post_url": "http://lockbitapt67g6rwzjbcxnww5efpg4qok6vpfeth7wx3okj52ks4wtad.onion/post/4652cbe1e838548b272effe6e93b8f2a"
-    },
-    {
-      "id": "cfdad371f28f5bdd",
-      "victim": "Blanco & Etcheverry",
-      "group": "gunra",
-      "published": "2026-09-04T06:59:18.414443+00:00",
-      "discovered": "2026-09-04T06:59:19.092117+00:00",
-      "country": "UY",
-      "sector": "Professional Services",
-      "website": "blancoetcheverry.com",
-      "description": "Sector: Law Firm | Revenue: US$ 5,000,000",
-      "post_url": null
     }
   ]
 }
