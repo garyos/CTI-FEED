@@ -125,6 +125,25 @@
     .redact::after { transform: scaleX(0); }
   }
 
+  /* --- digest slide-kind labels: the digest mixes feed items, CVEs, APT
+     group teasers and ransomware victims in one carousel, so each slide
+     needs an immediate, plain-language "what am I looking at" cue. --- */
+  .kind-tag {
+    display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); padding: 4px 9px; margin-bottom: 10px;
+  }
+  .kind-tag.feed { background: var(--blue); }
+  .kind-tag.cve { background: var(--red); }
+  .kind-tag.group { background: var(--purple); }
+  .kind-tag.victim { background: var(--teal); }
+
+  .claimed-by {
+    display: flex; align-items: center; gap: 8px; border: 1px solid var(--red); background: rgba(255,92,92,0.08);
+    color: var(--text); padding: 9px 12px; margin-bottom: 14px; font-size: 13px;
+  }
+  .claimed-by .cb-icon { color: var(--red); font-size: 15px; flex: 0 0 auto; }
+  .claimed-by b { font-family: var(--font-sans); font-weight: 700; }
+
   /* --- title slide --- */
   .case-number { font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 10px; }
   .slide-inner h1 {
@@ -372,7 +391,7 @@
   }
 
   async function loadDomain() {
-    const res = await fetch(`data/attack/${domain}.json?t=${Date.now()}`);
+    const res = await fetch(`data/attack/${domain}.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     data.byId = { techniques: {}, groups: {}, software: {}, campaigns: {}, mitigations: {}, tactics: {} };
@@ -392,19 +411,19 @@
   }
 
   async function loadThreats() {
-    const res = await fetch(`data/threats.json?t=${Date.now()}`);
+    const res = await fetch(`data/threats.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
 
   async function loadCveLatest() {
-    const res = await fetch(`data/cve/latest.json?t=${Date.now()}`);
+    const res = await fetch(`data/cve/latest.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
 
   async function loadLeaktrackerLatest() {
-    const res = await fetch(`data/leaktracker/latest.json?t=${Date.now()}`);
+    const res = await fetch(`data/leaktracker/latest.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
@@ -691,6 +710,7 @@
     return {
       key: "feed", duration: 6000,
       html: `
+        <div class="kind-tag feed">Threat Feed Item</div>
         <div class="case-number">SIGNAL FEED // ${escapeHtml(entry.source || "unknown source")} // ${escapeHtml((entry.severity || "info").toUpperCase())}</div>
         <h1 class="redact">${escapeHtml(entry.title)}</h1>
         <p class="dossier-text">${escapeHtml(entry.summary) || "No summary available."}</p>
@@ -705,6 +725,7 @@
     return {
       key: "cve", duration: 8000,
       html: `
+        <div class="kind-tag cve">CVE Advisory</div>
         <div class="case-number">CVE RECORD // ${sev} // CVSS ${score}</div>
         <h1 class="redact">${escapeHtml(cve.id)}</h1>
         <p class="dossier-text">${escapeHtml(cve.description)}</p>
@@ -743,6 +764,7 @@
     return {
       key: "group-teaser", duration: 7000,
       html: `
+        <div class="kind-tag group">APT Group</div>
         <div class="case-number">CASE FILE // ${g.id} // ${escapeHtml(domain.toUpperCase())}</div>
         <h1 class="redact">${escapeHtml(g.name)}</h1>
         <div class="chip-row">
@@ -760,8 +782,10 @@
     return {
       key: "leak-victim", duration: 7000,
       html: `
+        <div class="kind-tag victim">Ransomware Victim</div>
         <div class="case-number">LEAK-SITE POSTING // ${escapeHtml(v.group.toUpperCase())}</div>
         <h1 class="redact">${escapeHtml(v.victim)}</h1>
+        <div class="claimed-by"><span class="cb-icon">☣</span> claimed by <b>${escapeHtml(v.group)}</b></div>
         <div class="chip-row">
           ${v.sector ? `<span class="tag-chip">${escapeHtml(v.sector)}</span>` : ""}
           ${v.country ? `<span class="tag-chip">${escapeHtml(v.country)}</span>` : ""}

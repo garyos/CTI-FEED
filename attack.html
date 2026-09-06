@@ -354,7 +354,7 @@
 
   async function loadDomain(domain) {
     if (cache[domain]) return cache[domain];
-    const res = await fetch(`data/attack/${domain}.json?t=${Date.now()}`);
+    const res = await fetch(`data/attack/${domain}.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     data.byId = {};
