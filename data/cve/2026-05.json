@@ -4,7 +4,7 @@
     {
       "id": "CVE-2026-46579",
       "published": "2026-05-29T11:16:17.050",
-      "lastModified": "2026-09-05T12:16:47.823",
+      "lastModified": "2026-09-06T17:17:55.303",
       "vulnStatus": "Modified",
       "description": "A flaw was found in the OpenShift Router. When a Route has `insecureEdgeTerminationPolicy` set to Allow, the HTTP frontend does not remove `X-SSL-Client-*` headers from incoming requests. This allows an unauthenticated attacker to send plain HTTP requests with crafted `X-SSL-Client-*` headers. As a result, backends relying on these headers for mutual TLS (Transport Layer Security) authentication can be bypassed, enabling the attacker to impersonate client certificate identities.",
       "cvss": {
@@ -1437,5 +1437,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.430249+00:00"
+  "updated_at": "2026-09-06T17:39:26.184977+00:00"
 }

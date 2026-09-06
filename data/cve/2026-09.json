@@ -2,6 +2,362 @@
   "month": "2026-09",
   "cves": [
     {
+      "id": "CVE-2026-19633",
+      "published": "2026-09-06T16:16:49.583",
+      "lastModified": "2026-09-06T16:16:49.583",
+      "vulnStatus": "Received",
+      "description": "PostgreSQL Anonymizer contains a vulnerability that allows unprivileged masked users to execute arbitrary code by abusing operators, domain casts, or view subqueries that carry untrusted expressions. When these objects are evaluated in the context of the extension\u2019s masking mechanisms, the malicious code can run with elevated privileges. The issue is fixed in PostgreSQL Anonymizer 3.1.4 and later versions",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "DALIBO PostgreSQL Anonymizer"
+      ],
+      "references": [
+        "https://gitlab.com/dalibo/postgresql_anonymizer/-/issues/665"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86259",
+      "published": "2026-09-06T13:17:10.963",
+      "lastModified": "2026-09-06T13:17:10.963",
+      "vulnStatus": "Received",
+      "description": "OpenMAIC before 1.0.1 skips server-side request forgery validation in non-production builds, allowing unauthenticated attackers to reach cloud instance metadata services. Attackers can supply arbitrary provider URLs via the x-base-url header or baseUrl parameter to access sensitive cloud credentials and metadata.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        },
+        {
+          "id": "CWE-918",
+          "name": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
+      "vendors": [
+        "THU-MAIC OpenMAIC"
+      ],
+      "references": [
+        "https://github.com/THU-MAIC/OpenMAIC",
+        "https://github.com/THU-MAIC/OpenMAIC/blob/v1.0.0/app/api/generate/image/route.ts#L73-L78",
+        "https://github.com/THU-MAIC/OpenMAIC/blob/v1.0.0/middleware.ts#L60-L63",
+        "https://github.com/THU-MAIC/OpenMAIC/releases/tag/v1.0.1"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86214",
+      "published": "2026-09-06T13:17:10.667",
+      "lastModified": "2026-09-06T13:17:10.667",
+      "vulnStatus": "Received",
+      "description": "A vulnerability was determined in Mstfakts College-Management-System. Impacted is an unknown function of the file Front-end/login.php. This manipulation of the argument email causes improper authentication. It is possible to initiate the attack remotely. The exploit has been publicly disclosed and may be utilized. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The project was informed of the p",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        }
+      ],
+      "vendors": [
+        "Mstfakts College-Management-System"
+      ],
+      "references": [
+        "https://github.com/Mstfakts/College-Management-System/issues/6",
+        "https://vuldb.com/cve/CVE-2026-86214",
+        "https://vuldb.com/submit/897250",
+        "https://vuldb.com/vuln/399350"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86213",
+      "published": "2026-09-06T13:17:10.487",
+      "lastModified": "2026-09-06T13:17:10.487",
+      "vulnStatus": "Received",
+      "description": "A vulnerability was found in Mstfakts College-Management-System. This issue affects the function mysqli_query of the file Front-end/university.php of the component Search Handler. The manipulation of the argument book_name/book_author results in sql injection. The attack may be performed from remote. The exploit has been made public and could be used. This product utilizes a rolling release system for continuous delivery, and as such, version information for affected or updated releases is not d",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "Mstfakts College-Management-System"
+      ],
+      "references": [
+        "https://github.com/Mstfakts/College-Management-System/",
+        "https://github.com/Mstfakts/College-Management-System/issues/5",
+        "https://vuldb.com/cve/CVE-2026-86213",
+        "https://vuldb.com/submit/897249"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86250",
+      "published": "2026-09-06T12:17:15.767",
+      "lastModified": "2026-09-06T12:17:15.767",
+      "vulnStatus": "Received",
+      "description": "h3 versions before 2.0.1-rc.18 fail to validate the chunk count parsed from user-controlled cookie values in setChunkedCookie() and deleteChunkedCookie() functions. Attackers can send a crafted cookie header with an extremely large chunk count to trigger an O(n\u00b2) cleanup loop that hangs the server process.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-400",
+          "name": "Uncontrolled Resource Consumption"
+        }
+      ],
+      "vendors": [
+        "h3js h3"
+      ],
+      "references": [
+        "https://github.com/h3js/h3/security/advisories/GHSA-q5pr-72pq-83v3",
+        "https://www.vulncheck.com/advisories/h3-before-2.0.1-rc.18-denial-of-service-via-unbounded-chunked-cookie"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86242",
+      "published": "2026-09-06T12:17:15.583",
+      "lastModified": "2026-09-06T12:17:15.583",
+      "vulnStatus": "Received",
+      "description": "Bifrost HTTP transport before 2.0.0 accepts an enabled custom plugin whose path is an HTTP URL through unauthenticated POST /api/plugins when management authentication is disabled (the default, governance.auth_config.is_enabled=false). The shared-object loader treats an http-prefixed path as a download URL, writes the body to a temporary .so, and passes it to Go's plugin.Open. After a successful open, optional Init runs immediately with the supplied config as the Bifrost process user. On documen",
+      "cvss": {
+        "score": 8.1,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-94",
+          "name": "Code Injection"
+        },
+        {
+          "id": "CWE-284",
+          "name": "Improper Access Control"
+        },
+        {
+          "id": "CWE-306",
+          "name": "Missing Authentication for Critical Function"
+        }
+      ],
+      "vendors": [
+        "maximhq Bifrost"
+      ],
+      "references": [
+        "https://github.com/maximhq/bifrost",
+        "https://github.com/maximhq/bifrost/commit/e0057ff355f831c251eabe9d0e44f3a3748532c6",
+        "https://github.com/maximhq/bifrost/pull/5763",
+        "https://github.com/maximhq/bifrost/releases/tag/transports/v2.0.0"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2022-51009",
+      "published": "2026-09-06T12:17:15.073",
+      "lastModified": "2026-09-06T13:17:10.307",
+      "vulnStatus": "Received",
+      "description": "PocketMine-MP before 4.7.2 fails to properly handle exceptions from the adhocore/json-comment library when parsing skin geometry data. Attackers can send login or skin packets with invalid geometry JSON to trigger an unhandled RuntimeException, causing server crash.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-248",
+          "name": "CWE-248"
+        }
+      ],
+      "vendors": [
+        "pmmp PocketMine-MP"
+      ],
+      "references": [
+        "https://github.com/pmmp/PocketMine-MP/commit/c9626c610b8f6810c8c987559c9197b2a291f0bb",
+        "https://github.com/pmmp/PocketMine-MP/security/advisories/GHSA-8cwq-4cmf-px73",
+        "https://www.vulncheck.com/advisories/pocketmine-mp-before-4.7.2-denial-of-service-via-skin-geometry"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86211",
+      "published": "2026-09-06T11:18:06.427",
+      "lastModified": "2026-09-06T11:18:06.427",
+      "vulnStatus": "Received",
+      "description": "A flaw has been found in rabindralamsal inventory-management-system 1.0.0. This affects an unknown part of the file index.php of the component Login. Executing a manipulation of the argument username/password can lead to sql injection. The attack can be executed remotely. The exploit has been published and may be used.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "rabindralamsal inventory-management-system"
+      ],
+      "references": [
+        "https://github.com/yingxiujie/cve/issues/8",
+        "https://vuldb.com/cve/CVE-2026-86211",
+        "https://vuldb.com/submit/897074",
+        "https://vuldb.com/vuln/399347"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86210",
+      "published": "2026-09-06T10:17:15.330",
+      "lastModified": "2026-09-06T10:17:15.330",
+      "vulnStatus": "Received",
+      "description": "A security vulnerability has been detected in SourceCodester Class and Exam Timetabling System 1.0. Affected by this vulnerability is an unknown functionality of the file /delete_user_account.php. Such manipulation of the argument ID leads to sql injection. The attack may be launched remotely. The exploit has been disclosed publicly and may be used.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "SourceCodester Class and Exam Timetabling System"
+      ],
+      "references": [
+        "https://github.com/justconter/cve/issues/8",
+        "https://vuldb.com/cve/CVE-2026-86210",
+        "https://vuldb.com/submit/896590",
+        "https://vuldb.com/vuln/399345"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86209",
+      "published": "2026-09-06T10:17:15.163",
+      "lastModified": "2026-09-06T10:17:15.163",
+      "vulnStatus": "Received",
+      "description": "A weakness has been identified in SourceCodester Class and Exam Timetabling System 1.0. Affected is an unknown function of the file /delete_user.php. This manipulation of the argument ID causes sql injection. The attack may be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "SourceCodester Class and Exam Timetabling System"
+      ],
+      "references": [
+        "https://github.com/justconter/cve/issues/9",
+        "https://vuldb.com/cve/CVE-2026-86209",
+        "https://vuldb.com/submit/896589",
+        "https://vuldb.com/vuln/399344"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86208",
+      "published": "2026-09-06T10:17:14.933",
+      "lastModified": "2026-09-06T10:17:14.933",
+      "vulnStatus": "Received",
+      "description": "A security flaw has been discovered in SourceCodester Class and Exam Timetabling System 1.0. This impacts an unknown function of the file /delete_teacher.php. The manipulation of the argument ID results in sql injection. The attack can be launched remotely. The exploit has been released to the public and may be used for attacks.",
+      "cvss": {
+        "score": 7.3,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-74",
+          "name": "CWE-74"
+        },
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "SourceCodester Class and Exam Timetabling System"
+      ],
+      "references": [
+        "https://github.com/justconter/cve/issues/10",
+        "https://vuldb.com/cve/CVE-2026-86208",
+        "https://vuldb.com/submit/896588",
+        "https://vuldb.com/vuln/399343"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
       "id": "CVE-2026-86180",
       "published": "2026-09-06T08:16:41.910",
       "lastModified": "2026-09-06T08:16:41.910",
@@ -30,6 +386,60 @@
         "https://github.com/ahmadmarz10-hub/CVEsMarz/blob/main/Task%20Management%20System%20in%20PHP%20%E2%80%93%20SQL%20Injection%20in%20%60email%60%20Parameter.md",
         "https://vuldb.com/cve/CVE-2026-86180",
         "https://vuldb.com/submit/896122"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-84219",
+      "published": "2026-09-06T07:16:43.427",
+      "lastModified": "2026-09-06T11:18:03.950",
+      "vulnStatus": "Received",
+      "description": "The Kirki WordPress plugin before 6.3.0 does not hold back every spelling of the HTML entities it decodes when rendering, allowing unauthenticated users to store JavaScript in a comment which then runs in the session of anyone viewing a page that displays it, including an administrator, and on every page of the site when its header or footer is built to show comments.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-79",
+          "name": "Cross-Site Scripting (XSS)"
+        }
+      ],
+      "vendors": [
+        "Unknown Kirki"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/e95bd1e3-6f61-423f-add6-519e1ca7bf66/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-18480",
+      "published": "2026-09-06T07:16:43.097",
+      "lastModified": "2026-09-06T11:18:00.657",
+      "vulnStatus": "Received",
+      "description": "The SureCart WordPress plugin before 4.6.3 does not ensure that the account affected by a customer update is the same account its permission check authorised, allowing users with a subscriber-level account to change another user's email address, including an administrator's, and take over that account via a password reset. It further allows an attacker-controlled customer record to be associated with an arbitrary user, and discloses customer identifiers and email addresses to any authenticated u",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Unknown SureCart"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/88839ada-9c59-44cb-96e6-3548e5a59b9f/"
       ],
       "kev": {
         "in_kev": false
@@ -1131,6 +1541,114 @@
       }
     },
     {
+      "id": "CVE-2026-84935",
+      "published": "2026-09-05T07:17:14.783",
+      "lastModified": "2026-09-06T11:18:05.827",
+      "vulnStatus": "Received",
+      "description": "The HT Menu WordPress plugin before 1.2.7 does not perform any capability or object-ownership check when saving navigation menu-item settings, and does not escape those stored settings when the menu is rendered, allowing users with minimal permissions such as Subscribers to store JavaScript that executes in the browser of any visitor, administrators included, who views the affected menu.",
+      "cvss": {
+        "score": 8.0,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-79",
+          "name": "Cross-Site Scripting (XSS)"
+        }
+      ],
+      "vendors": [
+        "Unknown HT Menu"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/10aeb456-764d-4f4d-a2c9-e357474d59c7/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-84934",
+      "published": "2026-09-05T07:17:14.690",
+      "lastModified": "2026-09-06T11:18:05.680",
+      "vulnStatus": "Received",
+      "description": "The JCH Optimize WordPress plugin before 6.0.1 does not perform a capability check on one of its authenticated AJAX actions and lets the request choose which internal action runs, allowing any authenticated users such as Subscribers to import arbitrary JCH Optimize WordPress plugin before 6.0.1 settings and store a script that executes in the browser of any visitor or administrator viewing the site.",
+      "cvss": {
+        "score": 8.0,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-79",
+          "name": "Cross-Site Scripting (XSS)"
+        }
+      ],
+      "vendors": [
+        "Unknown JCH Optimize"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/d808ad17-d20e-4ee5-94f3-935c10cde772/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-82304",
+      "published": "2026-09-05T07:17:13.090",
+      "lastModified": "2026-09-06T11:18:02.880",
+      "vulnStatus": "Received",
+      "description": "The Music Store WordPress plugin before 1.4.5 does not sanitise and escape user input before using it in a SQL statement, leading to a SQL injection exploitable by unauthenticated users.",
+      "cvss": {
+        "score": 8.6,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-89",
+          "name": "SQL Injection"
+        }
+      ],
+      "vendors": [
+        "Unknown Music Store"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/0a4d2ffc-a437-430e-a760-d8d7fb388f0c/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-81404",
+      "published": "2026-09-05T07:17:12.810",
+      "lastModified": "2026-09-06T11:18:02.430",
+      "vulnStatus": "Received",
+      "description": "The IPGP Visitors Origin WordPress plugin before 1.6 does not sanitise or escape user input before reflecting it back in the HTTP response, allowing unauthenticated attackers to perform Reflected Cross-Site Scripting attacks against users who are tricked into submitting a crafted request.",
+      "cvss": {
+        "score": 7.1,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-79",
+          "name": "Cross-Site Scripting (XSS)"
+        }
+      ],
+      "vendors": [
+        "Unknown IPGP Visitors Origin"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/8fbfb296-78d8-4f3b-ab21-7a5a4e0ea421/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
       "id": "CVE-2026-78438",
       "published": "2026-09-05T07:17:12.580",
       "lastModified": "2026-09-05T07:17:12.580",
@@ -1155,6 +1673,33 @@
         "https://plugins.trac.wordpress.org/browser/w3-total-cache/tags/2.10.5/UserExperience_LazyLoad_Mutator.php#L293",
         "https://plugins.trac.wordpress.org/browser/w3-total-cache/tags/2.10.5/UserExperience_LazyLoad_Mutator.php#L91",
         "https://plugins.trac.wordpress.org/browser/w3-total-cache/tags/2.10.5/UserExperience_LazyLoad_Plugin.php#L87"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-78362",
+      "published": "2026-09-05T07:17:12.487",
+      "lastModified": "2026-09-06T11:18:01.910",
+      "vulnStatus": "Received",
+      "description": "The SEO Flow by LupsOnline WordPress plugin before 3.0.3 does not correctly validate the credential supplied with its API requests, allowing unauthenticated users to be served as the administrator who configured the SEO Flow by LupsOnline WordPress plugin before 3.0.3 and take over the site. Exploitation requires the SEO Flow by LupsOnline WordPress plugin before 3.0.3 to have been configured, which is its normal operating state.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Unknown SEO Flow by LupsOnline"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/0833424b-1231-4a48-be90-13fe4edc60c9/"
       ],
       "kev": {
         "in_kev": false
@@ -1191,6 +1736,33 @@
       }
     },
     {
+      "id": "CVE-2026-77826",
+      "published": "2026-09-05T07:17:12.063",
+      "lastModified": "2026-09-06T11:18:01.470",
+      "vulnStatus": "Received",
+      "description": "The RegistrationMagic WordPress plugin before 6.0.9.9 does not verify which application a Facebook access token was issued to before accepting it as proof of identity, allowing unauthenticated attackers to log in as an existing user whose token they can obtain, or to create and log into a new account even when user registration is disabled.",
+      "cvss": {
+        "score": 8.8,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        }
+      ],
+      "vendors": [
+        "Unknown RegistrationMagic"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/b79a83e8-d7b0-4aa8-b2ba-37a7eecd437b/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
       "id": "CVE-2026-19887",
       "published": "2026-09-05T07:17:11.657",
       "lastModified": "2026-09-05T07:17:11.657",
@@ -1215,6 +1787,33 @@
         "https://plugins.trac.wordpress.org/browser/usc-e-shop/trunk/classes/orderData.class.php#L41",
         "https://plugins.trac.wordpress.org/browser/usc-e-shop/trunk/functions/function.php#L218",
         "https://plugins.trac.wordpress.org/browser/usc-e-shop/trunk/functions/hoock_func.php#L517"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-19858",
+      "published": "2026-09-05T07:17:11.467",
+      "lastModified": "2026-09-06T11:18:00.793",
+      "vulnStatus": "Received",
+      "description": "The JetFormBuilder \u2014 Dynamic Blocks Form Builder WordPress plugin before 3.6.5.2 does not perform authorisation checks when resolving request-derived data during page rendering, allowing unauthenticated users to read arbitrary user, post and term properties and metadata, including password hashes, private and draft content, and secrets other JetFormBuilder \u2014 Dynamic Blocks Form Builder WordPress plugin before 3.6.5.2 store in metadata.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-200",
+          "name": "Exposure of Sensitive Information"
+        }
+      ],
+      "vendors": [
+        "Unknown JetFormBuilder \u2014 Dynamic Blocks Form Builder"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/a9d091f3-6887-4f26-a736-ba26a81d2b32/"
       ],
       "kev": {
         "in_kev": false
@@ -16732,5 +17331,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-06T09:37:01.980398+00:00"
+  "updated_at": "2026-09-06T17:39:26.194351+00:00"
 }

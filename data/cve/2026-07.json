@@ -324,7 +324,7 @@
     {
       "id": "CVE-2026-49332",
       "published": "2026-07-28T13:18:46.067",
-      "lastModified": "2026-09-05T12:16:48.540",
+      "lastModified": "2026-09-06T17:17:55.667",
       "vulnStatus": "Awaiting Analysis",
       "description": "A flaw was found in openshift/oauth-proxy. The proxy sets authenticated identity headers using only dash-variant keys (X-Forwarded-User) but does not strip underscore-variant keys (X_Forwarded_User) from incoming requests. WSGI and PHP frameworks normalize both variants to the same variable, allowing an authenticated low-privilege user to smuggle a forged identity that may override the legitimate authenticated identity in the upstream application.",
       "cvss": {
@@ -3643,7 +3643,7 @@
     {
       "id": "CVE-2026-16242",
       "published": "2026-07-20T08:16:29.833",
-      "lastModified": "2026-09-05T15:17:28.160",
+      "lastModified": "2026-09-06T17:17:53.880",
       "vulnStatus": "Awaiting Analysis",
       "description": "A flaw was found in the Konnectivity proxy-server configuration for hosted control planes. The agent-facing listener was started without --cluster-ca-cert (and without token-based agent authentication), so client certificates were not validated. A remote attacker who can reach the Konnectivity cluster endpoint could connect as an unauthenticated agent, join the routing pool, and potentially proxy, inspect, modify, or drop control-plane-to-node traffic.",
       "cvss": {
@@ -4978,5 +4978,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.432828+00:00"
+  "updated_at": "2026-09-06T17:39:26.187379+00:00"
 }

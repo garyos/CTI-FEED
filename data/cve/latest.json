@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T09:37:02.000780+00:00",
+  "generated_at": "2026-09-06T17:39:26.215564+00:00",
   "cves": [
     {
       "id": "CVE-2026-83548",
@@ -603,6 +603,33 @@
       }
     },
     {
+      "id": "CVE-2026-78362",
+      "published": "2026-09-05T07:17:12.487",
+      "lastModified": "2026-09-06T11:18:01.910",
+      "vulnStatus": "Received",
+      "description": "The SEO Flow by LupsOnline WordPress plugin before 3.0.3 does not correctly validate the credential supplied with its API requests, allowing unauthenticated users to be served as the administrator who configured the SEO Flow by LupsOnline WordPress plugin before 3.0.3 and take over the site. Exploitation requires the SEO Flow by LupsOnline WordPress plugin before 3.0.3 to have been configured, which is its normal operating state.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Unknown SEO Flow by LupsOnline"
+      ],
+      "references": [
+        "https://wpscan.com/vulnerability/0833424b-1231-4a48-be90-13fe4edc60c9/"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
       "id": "CVE-2026-83627",
       "published": "2026-09-05T06:17:10.080",
       "lastModified": "2026-09-05T06:17:10.080",
@@ -1172,36 +1199,6 @@
         "https://github.com/TeamWiseFlow/xiaobei/blob/v5.5.2/awada/awada-server/src/routes/webhook-worktool.ts",
         "https://github.com/TeamWiseFlow/xiaobei/issues/440",
         "https://www.vulncheck.com/advisories/xiaobei-through-5.5.2-unauthenticated-webhook-message-injection"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-85663",
-      "published": "2026-09-04T15:17:43.947",
-      "lastModified": "2026-09-04T16:18:21.027",
-      "vulnStatus": "Received",
-      "description": "Aim 3.29.1 remote tracking server fails to authenticate requests and dispatches arbitrary methods through getattr without allowlist validation. Unauthenticated attackers can register clients, instantiate Repo resources, and invoke arbitrary methods to read experiments or delete runs.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-306",
-          "name": "Missing Authentication for Critical Function"
-        }
-      ],
-      "vendors": [
-        "aimhubio aim"
-      ],
-      "references": [
-        "https://github.com/aimhubio/aim",
-        "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/server.py",
-        "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/tracking.py",
-        "https://github.com/aimhubio/aim/issues/3412"
       ],
       "kev": {
         "in_kev": false
