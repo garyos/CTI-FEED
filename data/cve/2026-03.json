@@ -413,6 +413,40 @@
       }
     },
     {
+      "id": "CVE-2026-2100",
+      "published": "2026-03-26T21:17:04.247",
+      "lastModified": "2026-09-06T04:18:29.577",
+      "vulnStatus": "Modified",
+      "description": "A flaw was found in p11-kit. A remote attacker could exploit this vulnerability by calling the C_DeriveKey function on a remote token with specific IBM kyber or IBM btc derive mechanism parameters set to NULL. This could lead to the RPC-client attempting to return an uninitialized value, potentially resulting in a NULL dereference or undefined behavior. This issue may cause an application level denial of service or other unpredictable system states.",
+      "cvss": {
+        "score": 7.5,
+        "version": "3.1",
+        "severity": "HIGH"
+      },
+      "cwes": [
+        {
+          "id": "CWE-824",
+          "name": "CWE-824"
+        }
+      ],
+      "vendors": [
+        "p11-glue p11-kit",
+        "Red Hat Red Hat Enterprise Linux 10",
+        "Red Hat Red Hat Enterprise Linux 9",
+        "Red Hat Cost Management 4",
+        "Red Hat Red Hat Hardened Images"
+      ],
+      "references": [
+        "https://access.redhat.com/errata/RHSA-2026:18143",
+        "https://access.redhat.com/errata/RHSA-2026:18599",
+        "https://access.redhat.com/errata/RHSA-2026:21275",
+        "https://access.redhat.com/errata/RHSA-2026:22634"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
       "id": "CVE-2026-32285",
       "published": "2026-03-26T20:16:12.197",
       "lastModified": "2026-09-04T13:18:47.933",
@@ -1137,5 +1171,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.428365+00:00"
+  "updated_at": "2026-09-06T09:37:01.964982+00:00"
 }

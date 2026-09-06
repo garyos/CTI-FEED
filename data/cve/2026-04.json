@@ -376,7 +376,7 @@
     {
       "id": "CVE-2026-4878",
       "published": "2026-04-09T16:16:31.987",
-      "lastModified": "2026-09-05T17:17:20.720",
+      "lastModified": "2026-09-06T02:17:18.407",
       "vulnStatus": "Modified",
       "description": "A flaw was found in libcap. A local unprivileged user can exploit a Time-of-check-to-time-of-use (TOCTOU) race condition in the `cap_set_file()` function. This allows an attacker with write access to a parent directory to redirect file capability updates to an attacker-controlled file. By doing so, capabilities can be injected into or stripped from unintended executables, leading to privilege escalation.",
       "cvss": {
@@ -780,5 +780,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.429461+00:00"
+  "updated_at": "2026-09-06T09:37:01.966249+00:00"
 }

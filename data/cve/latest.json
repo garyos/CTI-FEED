@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T18:05:49.592881+00:00",
+  "generated_at": "2026-09-06T09:37:02.000780+00:00",
   "cves": [
     {
       "id": "CVE-2026-83548",
@@ -39,8 +39,8 @@
     {
       "id": "CVE-2026-85046",
       "published": "2026-09-03T20:17:24.210",
-      "lastModified": "2026-09-05T04:18:05.170",
-      "vulnStatus": "Analyzed",
+      "lastModified": "2026-09-06T02:17:19.167",
+      "vulnStatus": "Modified",
       "description": "Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss": {
         "score": 8.8,
@@ -59,7 +59,8 @@
       "references": [
         "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_01882797386.html",
         "https://issues.chromium.org/issues/542403045",
-        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-85046"
+        "https://github.com/Serotav/Writeups/blob/77556c57999805fa7815a114da51d91cf24fbea9/v8/When_Sorting_Leads_To_Confusion.md",
+        "https://github.com/v8/v8/commit/e0562d87ad9c17042b581582c99237d798572e67"
       ],
       "kev": {
         "in_kev": true,
@@ -97,6 +98,302 @@
         "date_added": "2026-09-02",
         "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
         "known_ransomware": "Unknown"
+      }
+    },
+    {
+      "id": "CVE-2026-86167",
+      "published": "2026-09-06T05:16:50.477",
+      "lastModified": "2026-09-06T05:16:50.477",
+      "vulnStatus": "Received",
+      "description": "A vulnerability was identified in Tenda HG10 300001138. Impacted is the function formgponConf of the file /boaform/admin/formgponConf of the component Boa. The manipulation of the argument fmgpon_loid leads to os command injection. Remote exploitation of the attack is possible. The exploit is publicly available and might be used.",
+      "cvss": {
+        "score": 9.9,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Tenda HG10"
+      ],
+      "references": [
+        "https://github.com/SunnyYANGyaya/cuicuishark-sheep-fishIOT/blob/main/Tenda/HG10/command-formgponConf-fmgpon_loid.md",
+        "https://vuldb.com/cve/CVE-2026-86167",
+        "https://vuldb.com/submit/895596",
+        "https://vuldb.com/vuln/399306"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86165",
+      "published": "2026-09-06T04:18:32.523",
+      "lastModified": "2026-09-06T04:18:32.523",
+      "vulnStatus": "Received",
+      "description": "A vulnerability was found in Tenda HG10 300001138. This vulnerability affects the function formURL of the file /boaform/admin/formURL. Performing a manipulation of the argument Keywd/urlFQDN results in buffer overflow. The attack may be initiated remotely. The exploit has been made public and could be used.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-119",
+          "name": "Memory Buffer Boundary Violation"
+        },
+        {
+          "id": "CWE-120",
+          "name": "Buffer Overflow"
+        }
+      ],
+      "vendors": [
+        "Tenda HG10"
+      ],
+      "references": [
+        "https://github.com/SunnyYANGyaya/cuicuishark-sheep-fishIOT/blob/main/Tenda/HG10/bof-formURL-keywd.md",
+        "https://vuldb.com/cve/CVE-2026-86165",
+        "https://vuldb.com/submit/895583",
+        "https://vuldb.com/submit/895594"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-75816",
+      "published": "2026-09-06T03:17:16.607",
+      "lastModified": "2026-09-06T03:17:16.607",
+      "vulnStatus": "Received",
+      "description": "The Frontend Admin by DynamiApps plugin for WordPress is vulnerable to Authentication Bypass to Account Takeover in all versions up to, and including, 3.29.12. This is due to the pre_update_value function lacking any capability or ownership check, and ActionPost::conditions_logic() short-circuiting its current_user_can('edit_post') authorization gate whenever the post ID is non-numeric \u2014 such as the string user_1 \u2014 allowing unauthenticated form submissions to be routed to arbitrary user records ",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-287",
+          "name": "Improper Authentication"
+        }
+      ],
+      "vendors": [
+        "shabti Frontend Admin by DynamiApps"
+      ],
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/acf-frontend-form-element/tags/3.29.10/main/frontend/fields/user/class-user-email.php#L127",
+        "https://plugins.trac.wordpress.org/browser/acf-frontend-form-element/tags/3.29.10/main/frontend/forms/actions/post.php#L1001",
+        "https://plugins.trac.wordpress.org/browser/acf-frontend-form-element/tags/3.29.10/main/frontend/forms/actions/post.php#L1224",
+        "https://plugins.trac.wordpress.org/browser/acf-frontend-form-element/tags/3.29.10/main/frontend/forms/classes/display.php#L26"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-16310",
+      "published": "2026-09-06T03:17:15.540",
+      "lastModified": "2026-09-06T03:17:15.540",
+      "vulnStatus": "Received",
+      "description": "The MemberDash plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 1.8.5 via the 'id' parameter due to missing validation on a user controlled key. This makes it possible for unauthenticated attackers to change the password of any WordPress user, including administrators, by supplying an arbitrary user ID during registration, and take over their account without any notification sent to the victim.",
+      "cvss": {
+        "score": 9.8,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-639",
+          "name": "CWE-639"
+        }
+      ],
+      "vendors": [
+        "LearnDash MemberDash"
+      ],
+      "references": [
+        "https://www.memberdashwp.com",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/222e0f27-f269-4751-9544-1a6cb03ab3a7?source=cve"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86153",
+      "published": "2026-09-06T02:17:19.770",
+      "lastModified": "2026-09-06T02:17:19.770",
+      "vulnStatus": "Received",
+      "description": "A vulnerability has been found in Tenda CP3 27.5.57.101. This affects the function CRedirServer::SetRedirectEnable of the file Functions/Redirect.cpp. The manipulation leads to improper privilege management. Remote exploitation of the attack is possible.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-266",
+          "name": "CWE-266"
+        },
+        {
+          "id": "CWE-269",
+          "name": "Improper Privilege Management"
+        }
+      ],
+      "vendors": [
+        "Tenda CP3"
+      ],
+      "references": [
+        "https://vuldb.com/cve/CVE-2026-86153",
+        "https://vuldb.com/submit/895354",
+        "https://vuldb.com/vuln/399276",
+        "https://vuldb.com/vuln/399276/cti"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86152",
+      "published": "2026-09-06T02:17:19.370",
+      "lastModified": "2026-09-06T02:17:19.370",
+      "vulnStatus": "Received",
+      "description": "A flaw has been found in Tenda CP3 27.5.57.101. The impacted element is the function CAutoAddWifi::ThreadProc of the file Functions/AutoAddWifi.cpp of the component Kylin. Executing a manipulation can lead to os command injection. The attack may be launched remotely.",
+      "cvss": {
+        "score": 10.0,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Tenda CP3"
+      ],
+      "references": [
+        "https://vuldb.com/cve/CVE-2026-86152",
+        "https://vuldb.com/submit/895353",
+        "https://vuldb.com/vuln/399275",
+        "https://vuldb.com/vuln/399275/cti"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86151",
+      "published": "2026-09-06T00:16:55.773",
+      "lastModified": "2026-09-06T00:16:55.773",
+      "vulnStatus": "Received",
+      "description": "A vulnerability was detected in Tenda CP3 27.5.57.101. The affected element is the function sub_2F77E8 of the file Apis/system.c of the component Network Configuration Management. Performing a manipulation results in os command injection. The attack may be initiated remotely.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Tenda CP3"
+      ],
+      "references": [
+        "https://vuldb.com/cve/CVE-2026-86151",
+        "https://vuldb.com/submit/895352",
+        "https://vuldb.com/vuln/399274",
+        "https://vuldb.com/vuln/399274/cti"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86149",
+      "published": "2026-09-05T22:17:18.943",
+      "lastModified": "2026-09-05T22:17:18.943",
+      "vulnStatus": "Received",
+      "description": "A weakness has been identified in Tenda CP3 27.5.57.101. This issue affects some unknown processing of the file Net/NetCheckPing.cpp. This manipulation of the argument interface_name/host causes os command injection. The attack can be initiated remotely.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Tenda CP3"
+      ],
+      "references": [
+        "https://vuldb.com/cve/CVE-2026-86149",
+        "https://vuldb.com/submit/895350",
+        "https://vuldb.com/vuln/399272",
+        "https://vuldb.com/vuln/399272/cti"
+      ],
+      "kev": {
+        "in_kev": false
+      }
+    },
+    {
+      "id": "CVE-2026-86148",
+      "published": "2026-09-05T22:17:18.743",
+      "lastModified": "2026-09-05T22:17:18.743",
+      "vulnStatus": "Received",
+      "description": "A security flaw has been discovered in Tenda CP3 27.5.57.101. This vulnerability affects the function SystemAsh of the file Apis/system.c of the component Kylin. The manipulation of the argument AlarmVoiceURL results in os command injection. It is possible to launch the attack remotely.",
+      "cvss": {
+        "score": 9.1,
+        "version": "3.1",
+        "severity": "CRITICAL"
+      },
+      "cwes": [
+        {
+          "id": "CWE-77",
+          "name": "Command Injection"
+        },
+        {
+          "id": "CWE-78",
+          "name": "OS Command Injection"
+        }
+      ],
+      "vendors": [
+        "Tenda CP3"
+      ],
+      "references": [
+        "https://vuldb.com/cve/CVE-2026-86148",
+        "https://vuldb.com/submit/895348",
+        "https://vuldb.com/vuln/399271",
+        "https://vuldb.com/vuln/399271/cti"
+      ],
+      "kev": {
+        "in_kev": false
       }
     },
     {
@@ -913,259 +1210,6 @@
         "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/server.py",
         "https://github.com/aimhubio/aim/blob/v3.29.1/aim/ext/transport/tracking.py",
         "https://github.com/aimhubio/aim/issues/3412"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-85661",
-      "published": "2026-09-04T15:17:43.643",
-      "lastModified": "2026-09-04T15:17:43.643",
-      "vulnStatus": "Received",
-      "description": "excel-mcp-server 0.1.8 fails to enforce path confinement in stdio mode when EXCEL_FILES_PATH is unset, allowing attackers to read and write arbitrary files. Attackers can supply unchecked file paths to read and write tools to access any file accessible to the process.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-22",
-          "name": "Path Traversal"
-        }
-      ],
-      "vendors": [
-        "haris-musa excel-mcp-server"
-      ],
-      "references": [
-        "https://github.com/haris-musa/excel-mcp-server",
-        "https://github.com/haris-musa/excel-mcp-server/blob/v0.1.8/src/excel_mcp/server.py",
-        "https://github.com/haris-musa/excel-mcp-server/blob/v0.1.8/src/excel_mcp/validation.py",
-        "https://github.com/haris-musa/excel-mcp-server/issues/149"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-85184",
-      "published": "2026-09-04T10:17:13.900",
-      "lastModified": "2026-09-04T20:17:31.670",
-      "vulnStatus": "Received",
-      "description": "@fastify/middie versions >= 9.1.0 and before 9.3.4 decide whether to run path-scoped middleware by matching against the raw request target, while the Fastify router resolves an absolute-form request target to its path before dispatching. Because the two layers evaluate different strings, a request using an absolute-form target reaches the route handler while the path-scoped middleware, such as authentication or authorization, is skipped. An unauthenticated network attacker can use this to bypass",
-      "cvss": {
-        "score": 9.1,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-436",
-          "name": "CWE-436"
-        }
-      ],
-      "vendors": [
-        "@fastify/middie @fastify/middie"
-      ],
-      "references": [
-        "https://cna.openjsf.org/security-advisories.html",
-        "https://github.com/fastify/middie/security/advisories/GHSA-hx87-8wv7-pjv8"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-82923",
-      "published": "2026-09-04T10:17:13.340",
-      "lastModified": "2026-09-04T19:17:29.473",
-      "vulnStatus": "Received",
-      "description": "The AI Website Builder WordPress plugin (GitHub build) 1.0.0 does not perform any authorisation or nonce check on its REST API routes, allowing unauthenticated attackers to install and activate plugins and themes, import content from a URL under their control, write a file of their choosing into the uploads directory, and delete site content and media. On a host that serves PHP from the uploads directory, that file write is remote code execution.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-862",
-          "name": "Missing Authorization"
-        }
-      ],
-      "vendors": [
-        "Unknown AI Website Builder (GitHub build)"
-      ],
-      "references": [
-        "https://wpscan.com/vulnerability/663e7004-1cca-4c0f-8d54-7298d40fe179/"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-85085",
-      "published": "2026-09-04T07:17:11.133",
-      "lastModified": "2026-09-04T19:17:30.750",
-      "vulnStatus": "Received",
-      "description": "The Canva Android App before 2.376.0 allowed an external origin to be loaded in a privileged WebView. A threat actor who controls the page loaded by the user is able to communicate with Canva using the user\u2019s session.",
-      "cvss": {
-        "score": 9.6,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-940",
-          "name": "CWE-940"
-        }
-      ],
-      "vendors": [
-        "Canva Canva"
-      ],
-      "references": [
-        "https://trust.canva.com/?tcuUid=be2ebc32-7053-4885-bf71-68771aa4589a"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-70403",
-      "published": "2026-09-04T07:17:09.467",
-      "lastModified": "2026-09-04T20:17:25.930",
-      "vulnStatus": "Received",
-      "description": "XING CPTrans-ME-X contains a Use of Hard-coded Password (CWE-259). Anyone with the knowledge of the credential may log in to the affected device.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.0",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-259",
-          "name": "CWE-259"
-        }
-      ],
-      "vendors": [
-        "Xing Inc. XING CPTrans-ME-X"
-      ],
-      "references": [
-        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
-        "https://jvn.jp/en/jp/JVN32505330/"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-69657",
-      "published": "2026-09-04T07:17:09.340",
-      "lastModified": "2026-09-04T20:17:25.423",
-      "vulnStatus": "Received",
-      "description": "XING CPTrans-ME-X contains a Use of Default Password (CWE-1393). Anyone with the knowledge of the credential may log in to the affected device.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.0",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-1393",
-          "name": "CWE-1393"
-        }
-      ],
-      "vendors": [
-        "Xing Inc. XING CPTrans-ME-X"
-      ],
-      "references": [
-        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
-        "https://jvn.jp/en/jp/JVN32505330/"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-62928",
-      "published": "2026-09-04T07:17:09.057",
-      "lastModified": "2026-09-04T20:17:24.617",
-      "vulnStatus": "Received",
-      "description": "XING CPTrans-ME-X contains an OS Command Injection (CWE-78). Unauthenticated OS command may be injected.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.0",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-78",
-          "name": "OS Command Injection"
-        }
-      ],
-      "vendors": [
-        "Xing Inc. XING CPTrans-ME-X"
-      ],
-      "references": [
-        "https://joysound.biz/product/other/rack_accessories/cptrans-me-x",
-        "https://jvn.jp/en/jp/JVN32505330/"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-15354",
-      "published": "2026-09-04T07:17:08.487",
-      "lastModified": "2026-09-04T19:17:22.257",
-      "vulnStatus": "Deferred",
-      "description": "The ACPT (Premium) plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 2.0.66. This is due to missing authorization in the `submit()` function, which allows unauthenticated form submissions to control the target user ID before calling `wp_update_user()`. This makes it possible for unauthenticated attackers to overwrite any WordPress user's email address and password, including an administrator's, and take over the account. Successful exploitation requ",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-269",
-          "name": "Improper Privilege Management"
-        }
-      ],
-      "vendors": [
-        "Mauro Cassani ACPT (Premium)"
-      ],
-      "references": [
-        "https://acpt.io/changelog/",
-        "https://www.wordfence.com/threat-intel/vulnerabilities/id/abc138f5-0bb7-4ce3-a504-89580021bedb?source=cve"
-      ],
-      "kev": {
-        "in_kev": false
-      }
-    },
-    {
-      "id": "CVE-2026-85509",
-      "published": "2026-09-04T05:17:16.723",
-      "lastModified": "2026-09-04T19:17:32.893",
-      "vulnStatus": "Received",
-      "description": "FreeIPMI before 1.6.19 has a stack-based buffer overflow in _read_fru_data in libfreeipmi/fru/ipmi-fru.c when a BMC returns more bytes than requested.",
-      "cvss": {
-        "score": 9.8,
-        "version": "3.1",
-        "severity": "CRITICAL"
-      },
-      "cwes": [
-        {
-          "id": "CWE-121",
-          "name": "CWE-121"
-        }
-      ],
-      "vendors": [
-        "FreeIPMI FreeIPMI"
-      ],
-      "references": [
-        "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz",
-        "https://www.gnu.org/software/freeipmi/",
-        "https://www.openwall.com/lists/oss-security/2026/08/28/5"
       ],
       "kev": {
         "in_kev": false

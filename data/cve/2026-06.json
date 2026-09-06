@@ -1233,7 +1233,7 @@
     {
       "id": "CVE-2026-10840",
       "published": "2026-06-04T12:16:24.813",
-      "lastModified": "2026-09-04T15:17:29.817",
+      "lastModified": "2026-09-06T02:17:18.100",
       "vulnStatus": "Awaiting Analysis",
       "description": "A flaw was found in the OpenShift Pipelines operator. The tekton-scheduler-rolebinding ClusterRoleBinding grants the system:authenticated group write access to Kueue and cert-manager custom resources via the tekton-scheduler-role ClusterRole. When Kueue or cert-manager CRDs are present on the cluster, any authenticated user can disrupt workload scheduling, tamper with scheduling priorities, delete other tenants' Workload objects, or induce cert-manager to overwrite TLS Secrets including the defa",
       "cvss": {
@@ -1248,11 +1248,9 @@
         }
       ],
       "vendors": [
-        "Red Hat Red Hat OpenShift Builds 1.7.4",
-        "Red Hat Red Hat OpenShift Builds 1.8.0",
-        "Red Hat OpenShift Pipelines",
         "Red Hat Red Hat OpenShift Builds 1.7.3",
-        "Red Hat Red Hat OpenShift Builds 1.8.1"
+        "Red Hat Red Hat OpenShift Builds 1.8.1",
+        "Red Hat OpenShift Pipelines"
       ],
       "references": [
         "https://access.redhat.com/errata/RHSA-2026:36648",
@@ -1371,5 +1369,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.431537+00:00"
+  "updated_at": "2026-09-06T09:37:01.967259+00:00"
 }

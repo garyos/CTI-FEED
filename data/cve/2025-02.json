@@ -4,7 +4,7 @@
     {
       "id": "CVE-2025-1244",
       "published": "2025-02-12T15:15:18.430",
-      "lastModified": "2026-09-04T15:17:28.810",
+      "lastModified": "2026-09-06T02:17:16.397",
       "vulnStatus": "Deferred",
       "description": "A command injection flaw was found in the text editor Emacs. It could allow a remote, unauthenticated attacker to execute arbitrary shell commands on a vulnerable system. Exploitation is possible by tricking users into visiting a specially crafted website or an HTTP URL with a redirect.",
       "cvss": {
@@ -36,5 +36,5 @@
       }
     }
   ],
-  "updated_at": "2026-09-05T17:53:51.425614+00:00"
+  "updated_at": "2026-09-06T09:37:01.963794+00:00"
 }
