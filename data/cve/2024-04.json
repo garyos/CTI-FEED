@@ -19,7 +19,6 @@
         }
       ],
       "vendors": [
-        "n/a n/a",
         "aws amplify_cli"
       ],
       "references": [

@@ -19,7 +19,7 @@
         }
       ],
       "vendors": [
-        "n/a Dokploy"
+        "Dokploy"
       ],
       "references": [
         "https://vuldb.com/cve/CVE-2026-82954",
@@ -370,9 +370,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -400,9 +398,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -810,9 +806,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/20260416_T6_vuln_report.pdf",
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/20260424_T6_confirm.pdf",
@@ -869,9 +863,7 @@
           "name": "CWE-639"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/grpc-ecosystem/grpc-gateway",
         "https://github.com/grpc-ecosystem/grpc-gateway/commit/72123cd4f32545f6e1376873f412dcdcbcf29acc",
@@ -1094,9 +1086,7 @@
           "name": "SQL Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/TKar0/TKar0-CvePoc/tree/main/2026-CVE-POC/CVE-2026-75417",
         "https://github.com/yzmcms/yzmcms",
@@ -1265,9 +1255,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://veno.com",
         "https://github.com/jfs-jfs/CVE-2026-37072"
@@ -1293,9 +1281,7 @@
           "name": "Improper Privilege Management"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://veno.com",
         "https://github.com/jfs-jfs/CVE-2026-37071"
@@ -1321,9 +1307,7 @@
           "name": "Path Traversal"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://veno.com",
         "https://github.com/jfs-jfs/CVE-2026-37068"
@@ -1349,9 +1333,7 @@
           "name": "CWE-552"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://veno.com",
         "https://github.com/jfs-jfs/CVE-2026-37065"
@@ -1691,9 +1673,7 @@
           "name": "CWE-639"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/Y4y17/CVE/blob/main/AntFlow/Identity%20verification%20mechanism.md"
       ],
@@ -1718,9 +1698,7 @@
           "name": "Code Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/Y4y17/CVE/blob/main/AntFlow/Front%20desk%20command%20execution.md"
       ],
@@ -1799,9 +1777,7 @@
           "name": "Unrestricted Dangerous File Upload"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://cohere.com",
         "http://north.com",
@@ -1828,9 +1804,7 @@
           "name": "Exposure of Sensitive Information"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://cohere.com/north",
         "https://github.com/bdadoa/Cohere---North-AI-1.1.5---Vulnerabilities/blob/main/CVE-2025-61164.md"
@@ -1856,9 +1830,7 @@
           "name": "CWE-942"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://cohere.com/north",
         "https://github.com/bdadoa/Cohere---North-AI-1.1.5---Vulnerabilities/blob/main/CVE-2025-61163.md"
@@ -1884,9 +1856,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://cohere.com/north",
         "https://github.com/bdadoa/Cohere---North-AI-1.1.5---Vulnerabilities/blob/main/CVE-2025-61162.md"
@@ -1993,9 +1963,7 @@
           "name": "SQL Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://community.librenms.org/c/announcements",
         "https://github.com/librenms/librenms/compare/1.65...1.65.1",
@@ -2023,9 +1991,7 @@
           "name": "SQL Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://community.librenms.org/c/announcements",
         "https://github.com/librenms/librenms/compare/1.65...1.65.1",
@@ -2053,9 +2019,7 @@
           "name": "Command Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://community.librenms.org/c/announcements",
         "https://github.com/librenms/librenms/compare/1.65...1.65.1",
@@ -3188,9 +3152,7 @@
           "name": "Exposure of Sensitive Information"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/itsmohitnarayan/e456399f083130962bab6c710f208437",
         "https://github.com/code100x/cms"
@@ -5640,9 +5602,7 @@
           "name": "CWE-1333"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/Zykis1024/9f2d68fa3fd4e3a0ab83063bbe61a8e2",
         "https://github.com/crmne/ruby_llm",
@@ -9013,9 +8973,7 @@
           "name": "Uncontrolled Resource Consumption"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/open62541/open62541/issues/8140",
         "https://raw.githubusercontent.com/open62541/open62541/v1.5.5/examples/custom_datatype/client_types_custom.c",
@@ -9042,9 +9000,7 @@
           "name": "Buffer Overflow"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/open62541/open62541/blob/master/examples/discovery/server_lds.c",
         "https://github.com/open62541/open62541/blob/master/src/server/ua_discovery_mdns.c",
@@ -9072,9 +9028,7 @@
           "name": "Code Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/jiejiaodedengdai/ff5d34a523167e09b7d8330cc9f5d4e5#file-vim-os_vms-cves-md",
         "https://github.com/vim/vim",
@@ -9101,9 +9055,7 @@
           "name": "Memory Leak"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/jiejiaodedengdai/ff5d34a523167e09b7d8330cc9f5d4e5#file-vim-os_vms-cves-md"
       ],

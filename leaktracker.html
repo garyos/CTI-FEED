@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIGNAL — Ransomware Tracker</title>
+<title>THE SIGNAL — Ransomware Tracker</title>
 <style>
   :root {
     --ink: #0a0e14;
@@ -310,8 +310,33 @@
     // Deep-link support: leaktracker.html?group=<name> (used by the Spotlight
     // digest's "focus in on the ransomware group" link) jumps straight to that
     // group's profile in the Groups view instead of the default victim feed.
-    const requestedGroup = new URLSearchParams(location.search).get("group");
-    if (requestedGroup) applyGroupFocus(requestedGroup);
+    const urlParams = new URLSearchParams(location.search);
+    const requestedGroup = urlParams.get("group");
+    if (requestedGroup) {
+      applyGroupFocus(requestedGroup);
+    } else if (urlParams.get("view") === "groups") {
+      // Broader deep-links (used by dashboard.html's click-through cards) —
+      // land on the Groups view with one or more filters pre-applied, without
+      // pinning to a single group.
+      switchView("groups");
+      const country = urlParams.get("country");
+      const raas = urlParams.get("raas");
+      const active = urlParams.get("active");
+      const negotiation = urlParams.get("negotiations");
+      const sort = urlParams.get("sort");
+      if (country) { filters.country = country; document.getElementById("country-filter").value = country; }
+      if (raas) { filters.raas = raas; document.getElementById("raas-filter").value = raas; }
+      if (active) { filters.active = active; document.getElementById("active-filter").value = active; }
+      if (negotiation) { filters.negotiation = negotiation; document.getElementById("negotiation-filter").value = negotiation; }
+      if (sort) { filters.sort = sort; document.getElementById("sort-select").value = sort; }
+      render();
+    } else if (urlParams.get("country")) {
+      // Plain ?country=<code> (no view=groups) — filter the default Victims
+      // view by target/victim country instead.
+      filters.country = urlParams.get("country");
+      document.getElementById("country-filter").value = filters.country;
+      render();
+    }
   }
 
   function applyGroupFocus(name) {

@@ -46,7 +46,7 @@
         }
       ],
       "vendors": [
-        "n/a Reactor Netty",
+        "Reactor Netty",
         "reactor_netty reactor_netty"
       ],
       "references": [

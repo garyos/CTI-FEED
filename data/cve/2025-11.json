@@ -23,7 +23,7 @@
         }
       ],
       "vendors": [
-        "n/a Qualitor"
+        "Qualitor"
       ],
       "references": [
         "https://vuldb.com/?ctiid.333796",
@@ -57,7 +57,7 @@
         }
       ],
       "vendors": [
-        "n/a Scada-LTS"
+        "Scada-LTS"
       ],
       "references": [
         "https://github.com/Xzzz111/exps/blob/main/archives/Scada-LTS-CSRF-1/report.md",
@@ -125,7 +125,7 @@
         }
       ],
       "vendors": [
-        "n/a ZenTao"
+        "ZenTao"
       ],
       "references": [
         "https://github.com/ez-lbz/ez-lbz.github.io/issues/1",

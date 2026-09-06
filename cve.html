@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIGNAL — CVE Explorer</title>
+<title>THE SIGNAL — CVE Explorer</title>
 <style>
   :root {
     --ink: #0a0e14;
@@ -248,7 +248,25 @@
     return res.json();
   }
 
+  // Deep-link support (used by dashboard.html's click-through cards):
+  // ?severity=CRITICAL, ?kev=1, ?category=<CWE name>, ?vendor=<name> (or
+  // ?search=<term>). Present params override whatever was persisted in
+  // localStorage from a previous visit, since a deep link is a deliberate
+  // request for that specific view.
+  function applyUrlFilterParams() {
+    const p = new URLSearchParams(location.search);
+    const severity = p.get("severity");
+    if (severity && SEVERITIES.includes(severity.toUpperCase())) {
+      filters.severities = new Set([severity.toUpperCase()]);
+    }
+    if (p.get("kev")) filters.kevOnly = true;
+    if (p.get("category")) filters.category = p.get("category");
+    const search = p.get("vendor") || p.get("search");
+    if (search) filters.search = search;
+  }
+
   async function init() {
+    applyUrlFilterParams();
     try {
       indexData = await loadJson("data/cve/index.json");
     } catch (err) {
@@ -349,7 +367,7 @@
       if (filters.kevOnly && !c.kev.in_kev) return false;
       if (filters.category !== "all" && !(c.cwes || []).some(w => w.name === filters.category)) return false;
       if (term) {
-        const hay = `${c.id} ${c.description}`.toLowerCase();
+        const hay = `${c.id} ${c.description} ${(c.vendors || []).join(" ")}`.toLowerCase();
         if (!hay.includes(term)) return false;
       }
       return true;

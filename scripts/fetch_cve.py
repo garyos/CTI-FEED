@@ -186,10 +186,19 @@ def extract_cwes(weaknesses: list) -> list[dict]:
 
 
 def extract_vendors(affected: list, limit: int = 5) -> list[str]:
+    """NVD records with no real vendor/product data on file often carry the
+    literal string "n/a" in one or both fields rather than omitting them —
+    naively joining vendor+product then produced a visible "n/a n/a" entry."""
     seen = []
     for a in affected or []:
         for ad in a.get("affectedData", []):
-            label = f"{ad.get('vendor', '')} {ad.get('product', '')}".strip()
+            vendor = ad.get("vendor", "").strip()
+            product = ad.get("product", "").strip()
+            if vendor.lower() == "n/a":
+                vendor = ""
+            if product.lower() == "n/a":
+                product = ""
+            label = f"{vendor} {product}".strip()
             if label and label not in seen:
                 seen.append(label)
             if len(seen) >= limit:

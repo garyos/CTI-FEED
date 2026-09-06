@@ -336,7 +336,7 @@
         }
       ],
       "vendors": [
-        "n/a MediaCrush"
+        "MediaCrush"
       ],
       "references": [
         "https://github.com/lakshayyverma/CVE-Discovery/blob/main/mediacrush.md",

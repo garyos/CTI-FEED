@@ -18,9 +18,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/if-forget/CVE-2026-52134-libiec61850",
         "https://github.com/mz-automation/libiec61850",
@@ -47,9 +45,7 @@
           "name": "CWE-613"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/altamish1994/CVE_Published/blob/main/FeehiCMS/CVE-2026-51953.MD",
         "https://github.com/liufee/cms"

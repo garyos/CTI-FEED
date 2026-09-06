@@ -822,9 +822,7 @@
           "name": "Missing Authentication for Critical Function"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/unpredictable21/fcb62d394db30525412c4b5b1efd0233",
         "https://github.com/PowerJob/PowerJob",
@@ -852,9 +850,7 @@
           "name": "Code Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://arc53.com",
         "https://github.com/PhDg1410/CVE/tree/main/CVE-2026-31020"
@@ -880,9 +876,7 @@
           "name": "CWE-321"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/unpredictable21/39e6ce22e4bc45b0e553d0fa6a6e4d1c",
         "https://github.com/PowerJob/PowerJob/blob/master/docker-compose.yml",
@@ -910,9 +904,7 @@
           "name": "Improper Privilege Management"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://en.mbs-solutions.de/mbs",
         "https://en.mbs-solutions.de/xserie",

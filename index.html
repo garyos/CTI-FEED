@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIGNAL — Threat Feed Console</title>
+<title>THE SIGNAL — Threat Feed Console</title>
 <style>
   :root {
     --ink: #0a0e14;
@@ -60,6 +60,14 @@
     margin: 0 0 4px;
   }
 
+  .masthead .tagline {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 0 0 8px;
+    letter-spacing: 0.01em;
+  }
+
   .masthead .sub {
     font-family: var(--font-mono);
     font-size: 12.5px;
@@ -104,6 +112,10 @@
   .explorer-cta.leaktracker {
     background: var(--green);
     border-color: var(--green);
+  }
+  .explorer-cta.dashboard {
+    background: var(--blue);
+    border-color: var(--blue);
     margin-bottom: 26px;
   }
   .explorer-cta:hover, .explorer-cta:focus-visible { filter: brightness(1.08); }
@@ -376,7 +388,8 @@
   <div class="frame">
     <header class="masthead">
       <div>
-        <h1>SIGNAL</h1>
+        <h1>THE SIGNAL</h1>
+        <div class="tagline">Global threat intelligence, cut from the noise.</div>
         <div class="sub" id="source-line">sources: —</div>
       </div>
       <div class="status">
@@ -417,6 +430,15 @@
       <span class="cta-text">
         <span class="cta-title">Ransomware Tracker</span>
         <span class="cta-desc">Leak-site victim postings and group profiles, accumulating day by day</span>
+      </span>
+      <span class="cta-arrow">›</span>
+    </a>
+
+    <a class="explorer-cta dashboard" href="dashboard.html">
+      <span class="cta-icon">▤</span>
+      <span class="cta-text">
+        <span class="cta-title">Dashboard</span>
+        <span class="cta-desc">Cross-dataset stats, charts, and countries covered — click through to drill in anywhere</span>
       </span>
       <span class="cta-arrow">›</span>
     </a>

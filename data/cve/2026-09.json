@@ -2696,9 +2696,7 @@
           "name": "Uncontrolled Resource Consumption"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/gubertoli/cve/tree/main/CVE-2021-44320",
         "https://www.researchgate.net/publication/257681090_ARDrone_corruption",
@@ -2781,9 +2779,7 @@
           "name": "Missing Authentication for Critical Function"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/unpredictable21/fcb62d394db30525412c4b5b1efd0233",
         "https://github.com/PowerJob/PowerJob",
@@ -2811,9 +2807,7 @@
           "name": "Code Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://arc53.com",
         "https://github.com/PhDg1410/CVE/tree/main/CVE-2026-31020"
@@ -2974,9 +2968,7 @@
           "name": "CWE-321"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://gist.github.com/unpredictable21/39e6ce22e4bc45b0e553d0fa6a6e4d1c",
         "https://github.com/PowerJob/PowerJob/blob/master/docker-compose.yml",
@@ -3004,9 +2996,7 @@
           "name": "Improper Privilege Management"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://en.mbs-solutions.de/mbs",
         "https://en.mbs-solutions.de/xserie",
@@ -3332,9 +3322,7 @@
           "name": "Cross-Site Scripting (XSS)"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://tm4web.com",
         "http://trimble.com",
@@ -9321,7 +9309,7 @@
         }
       ],
       "vendors": [
-        "n/a SeaCMS"
+        "SeaCMS"
       ],
       "references": [
         "https://github.com/T-Chachamaru/seacms-13.6-security-advisories/blob/a084a3e573240d54860153321df271280daec262/d-003-weixin-xml-entity-sqli.md",
@@ -9355,7 +9343,7 @@
         }
       ],
       "vendors": [
-        "n/a SeaCMS"
+        "SeaCMS"
       ],
       "references": [
         "https://github.com/T-Chachamaru/seacms-13.6-security-advisories/blob/a084a3e573240d54860153321df271280daec262/d-001-locoy-default-password-template-rce.md",
@@ -13497,7 +13485,7 @@
         }
       ],
       "vendors": [
-        "n/a Piwigo"
+        "Piwigo"
       ],
       "references": [
         "https://github.com/Leousum/VulnPoC/blob/main/Piwigo%2016.3.0/unauthenticated_derivative_path_traversal.md",
@@ -14009,7 +13997,7 @@
         }
       ],
       "vendors": [
-        "n/a Casdoor"
+        "Casdoor"
       ],
       "references": [
         "https://github.com/casdoor/casdoor/",
@@ -15230,9 +15218,7 @@
           "name": "CWE-674"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://blog.ph4nt0m.xyz/ko/cves/cve-2026-52132/",
         "https://github.com/ggml-org/llama.cpp"
@@ -15258,9 +15244,7 @@
           "name": "CWE-617"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://blog.ph4nt0m.xyz/ko/cves/cve-2026-52130/",
         "https://github.com/ggml-org/llama.cpp"
@@ -15286,9 +15270,7 @@
           "name": "CWE-674"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://blog.ph4nt0m.xyz/ko/cves/cve-2026-52130/",
         "https://github.com/ggml-org/llama.cpp"
@@ -15314,9 +15296,7 @@
           "name": "Uncontrolled Resource Consumption"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/kamailio/kamailio/commit/91c5ca751799db4f25a28a495350cc97f7c2f390",
         "https://github.com/kamailio/kamailio/issues/4670"
@@ -15342,9 +15322,7 @@
           "name": "Code Injection"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/lllyasviel/Fooocus/blob/main/modules/meta_parser.py#L89",
         "https://github.com/lllyasviel/Fooocus/issues/4115",
@@ -15487,9 +15465,7 @@
           "name": "Uncontrolled Resource Consumption"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "http://cleverangeauth.com",
         "https://github.com/aykhan32/CVE-2026-51788",
@@ -15546,9 +15522,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15576,9 +15550,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15606,9 +15578,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15800,9 +15770,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15830,9 +15798,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15860,9 +15826,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15890,9 +15854,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15920,9 +15882,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15950,9 +15910,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -15980,9 +15938,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://www.totolink.net/",
@@ -16009,9 +15965,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -16039,9 +15993,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -16539,9 +16491,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -16569,9 +16519,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
@@ -16599,9 +16547,7 @@
           "name": "Improper Access Control"
         }
       ],
-      "vendors": [
-        "n/a n/a"
-      ],
+      "vendors": [],
       "references": [
         "https://github.com/DarkBoulder/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",
         "https://github.com/ShengWu00/CVE-Vendor-Coordination/blob/main/TOTOLINK/README.md",

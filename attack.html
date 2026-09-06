@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIGNAL — ATT&amp;CK Explorer</title>
+<title>THE SIGNAL — ATT&amp;CK Explorer</title>
 <style>
   :root {
     --ink: #0a0e14;
@@ -329,9 +329,12 @@
   const TYPE_LABEL = { groups: "Groups", techniques: "Techniques", tactics: "Tactics", software: "Software", campaigns: "Campaigns", mitigations: "Mitigations" };
   const DOMAIN_KEY = "signal-attack-domain-v2";
   const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const urlParams = new URLSearchParams(location.search);
 
   const cache = {};
-  let currentDomain = localStorage.getItem(DOMAIN_KEY) || "enterprise";
+  // A domain named in the URL (e.g. a dashboard deep link) wins over the
+  // last-used domain remembered in localStorage.
+  let currentDomain = urlParams.get("domain") || localStorage.getItem(DOMAIN_KEY) || "enterprise";
   if (!DOMAINS.includes(currentDomain)) currentDomain = "enterprise";
   let currentType = "groups";
   let groupView = "grid";
@@ -831,8 +834,36 @@
     window.scrollTo({ top: 0, behavior: REDUCED_MOTION ? "auto" : "smooth" });
   });
 
+  // Deep-link support (used by dashboard.html's click-through cards):
+  // ?domain=enterprise&type=groups&id=G0035 opens that entity's flyout directly;
+  // ?domain=enterprise&country=RU&countryName=Russia applies the country filter.
+  // Runs once, after the initial domain data has finished loading.
+  function applyUrlParams() {
+    const type = urlParams.get("type");
+    const id = urlParams.get("id");
+    const country = urlParams.get("country");
+    if (type && id && TYPES.includes(type)) {
+      currentType = type;
+      groupView = "grid";
+      syncTabsActive();
+      render();
+      openFlyout(type, id, { reset: true });
+    } else if (type && TYPES.includes(type)) {
+      currentType = type;
+      groupView = "grid";
+      syncTabsActive();
+      render();
+    } else if (country) {
+      currentType = "groups";
+      groupView = "grid";
+      countryFilter = { code: country, name: urlParams.get("countryName") || country };
+      syncTabsActive();
+      render();
+    }
+  }
+
   renderTabs();
-  switchDomain(currentDomain);
+  switchDomain(currentDomain).then(applyUrlParams);
 })();
 </script>
 </body>

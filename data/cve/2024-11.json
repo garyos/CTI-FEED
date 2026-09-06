@@ -23,7 +23,7 @@
         }
       ],
       "vendors": [
-        "n/a DataGear"
+        "DataGear"
       ],
       "references": [
         "https://github.com/datageartech/datagear/issues/29",
