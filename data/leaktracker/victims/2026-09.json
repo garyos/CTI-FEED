@@ -62,6 +62,42 @@
       "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/edacentrum"
     },
     {
+      "id": "d02dc3396573ce98",
+      "victim": "WHO IS NEXT?",
+      "group": "global",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T15:54:11.299807+00:00",
+      "country": null,
+      "sector": "Other",
+      "website": null,
+      "description": "No infrastructure is immune. Any corporation, network, or organization in the world can end up here. Yours could be next.",
+      "post_url": null
+    },
+    {
+      "id": "a1c7e8ea0981bceb",
+      "victim": "Sancity",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T15:00:28.254541+00:00",
+      "country": "IN",
+      "sector": "Other",
+      "website": "sancity.in",
+      "description": "An active, unlisted public company incorporated in 2012, operating in real estate/construction and real-estate marketing & sales",
+      "post_url": null
+    },
+    {
+      "id": "f08390803fa13ef3",
+      "victim": "myLaurel",
+      "group": "direwolf",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T11:53:36.694741+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "mylaurelhealth.com",
+      "description": "Elderly Care Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/123"
+    },
+    {
       "id": "3d680b9965648712",
       "victim": "Mission Pet Health",
       "group": "direwolf",
@@ -539,6 +575,18 @@
       "sector": "Not Found",
       "website": null,
       "description": "Worrell Corporation is a family-owned business based in Indianapolis that specializes in promot ional products, marketing, and print services. They assist clients in finding impactful promoti onal items while offering tailored marketing strategies and webstore solutions. We will upload 45gb of corporate data soon. Employee and client information, contacts and agree ments, financials, projects and so on.",
+      "post_url": null
+    },
+    {
+      "id": "0b86deb3f45c322a",
+      "victim": "Sancity Soft Touch",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-04T00:00:00+00:00",
+      "discovered": "2026-09-04T16:23:12.456390+00:00",
+      "country": "US",
+      "sector": "Technology",
+      "website": "softtouch4u.com",
+      "description": "IT services company providing web design & development, software/application development, payment gateway services, digital marketing, mobile applications, software testing and cloud-related services.",
       "post_url": null
     },
     {
@@ -1502,5 +1550,5 @@
       "post_url": "http://everestndkvzcibcje2cqxhre2hmmybl3rn2gwzwsblz7gx6uryn5rad.onion/news/rise-up"
     }
   ],
-  "updated_at": "2026-09-06T15:54:14.742242+00:00"
+  "updated_at": "2026-09-06T16:34:56.772134+00:00"
 }

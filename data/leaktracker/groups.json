@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-06T15:54:13.474028+00:00",
+  "fetched_at": "2026-09-06T16:34:55.428042+00:00",
   "groups": [
     {
       "name": "0apt",
@@ -18,7 +18,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -38,7 +39,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -58,7 +60,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -78,7 +81,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -98,7 +102,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -118,7 +123,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -138,7 +144,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -158,7 +165,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -178,7 +186,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -198,7 +207,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -218,7 +228,384 @@
         "latest_chat_date": "2026-03-20",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260320.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240509.json",
-        "longest_chat_message_count": 170
+        "longest_chat_message_count": 170,
+        "chats": [
+          {
+            "date": "2026-03-20",
+            "message_count": 12,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260320.json"
+          },
+          {
+            "date": "2026-03-15",
+            "message_count": 38,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260315.json"
+          },
+          {
+            "date": "2026-02-24",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260224.json"
+          },
+          {
+            "date": "2026-02-16",
+            "message_count": 77,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260216.json"
+          },
+          {
+            "date": "2026-02-12",
+            "message_count": 26,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260212.json"
+          },
+          {
+            "date": "2026-01-25",
+            "message_count": 52,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260125.json"
+          },
+          {
+            "date": "2026-01-06",
+            "message_count": 47,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20260106.json"
+          },
+          {
+            "date": "2025-09-09",
+            "message_count": 56,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250909.json"
+          },
+          {
+            "date": "2025-08-15",
+            "message_count": 65,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250815.json"
+          },
+          {
+            "date": "2025-05-24",
+            "message_count": 41,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250524.json"
+          },
+          {
+            "date": "2025-05-11",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250511.json"
+          },
+          {
+            "date": "2025-04-28",
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250428.json"
+          },
+          {
+            "date": "2025-04-25",
+            "message_count": 83,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250425.json"
+          },
+          {
+            "date": "2025-04-25",
+            "message_count": 15,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250425b.json"
+          },
+          {
+            "date": "2025-04-24",
+            "message_count": 12,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250424.json"
+          },
+          {
+            "date": "2025-04-23",
+            "message_count": 65,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250423.json"
+          },
+          {
+            "date": "2025-04-21",
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250421.json"
+          },
+          {
+            "date": "2025-04-17",
+            "message_count": 59,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250417.json"
+          },
+          {
+            "date": "2025-04-08",
+            "message_count": 12,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250408.json"
+          },
+          {
+            "date": "2025-03-31",
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250331.json"
+          },
+          {
+            "date": "2025-03-30",
+            "message_count": 15,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250330.json"
+          },
+          {
+            "date": "2025-03-29",
+            "message_count": 24,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250329.json"
+          },
+          {
+            "date": "2025-03-28",
+            "message_count": 39,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250328.json"
+          },
+          {
+            "date": "2025-03-26",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250326.json"
+          },
+          {
+            "date": "2025-03-21",
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250321.json"
+          },
+          {
+            "date": "2025-03-13",
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250313.json"
+          },
+          {
+            "date": "2025-03-12",
+            "message_count": 20,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250312.json"
+          },
+          {
+            "date": "2025-03-10",
+            "message_count": 24,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250310.json"
+          },
+          {
+            "date": "2025-03-06",
+            "message_count": 9,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250306.json"
+          },
+          {
+            "date": "2025-02-27",
+            "message_count": 56,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250227.json"
+          },
+          {
+            "date": "2025-02-22",
+            "message_count": 72,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250222.json"
+          },
+          {
+            "date": "2025-02-17",
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250217.json"
+          },
+          {
+            "date": "2025-02-16",
+            "message_count": 14,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250216.json"
+          },
+          {
+            "date": "2025-01-25",
+            "message_count": 9,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250125.json"
+          },
+          {
+            "date": "2025-01-21",
+            "message_count": 26,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250121.json"
+          },
+          {
+            "date": "2025-01-20",
+            "message_count": 7,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250120.json"
+          },
+          {
+            "date": "2025-01-17",
+            "message_count": 70,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250117.json"
+          },
+          {
+            "date": "2025-01-12",
+            "message_count": 44,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250112.json"
+          },
+          {
+            "date": "2025-01-10",
+            "message_count": 7,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250110.json"
+          },
+          {
+            "date": "2025-01-08",
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250108.json"
+          },
+          {
+            "date": "2025-01-04",
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20250104.json"
+          },
+          {
+            "date": "2024-08-03",
+            "message_count": 34,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240803.json"
+          },
+          {
+            "date": "2024-07-23",
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240723.json"
+          },
+          {
+            "date": "2024-07-19",
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240719.json"
+          },
+          {
+            "date": "2024-07-18",
+            "message_count": 105,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240718.json"
+          },
+          {
+            "date": "2024-06-20",
+            "message_count": 7,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240620.json"
+          },
+          {
+            "date": "2024-06-18",
+            "message_count": 53,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240618.json"
+          },
+          {
+            "date": "2024-06-11",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240611.json"
+          },
+          {
+            "date": "2024-05-31",
+            "message_count": 55,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240531.json"
+          },
+          {
+            "date": "2024-05-09",
+            "message_count": 170,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240509.json"
+          },
+          {
+            "date": "2024-04-24",
+            "message_count": 70,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240424.json"
+          },
+          {
+            "date": "2024-04-10",
+            "message_count": 16,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240410.json"
+          },
+          {
+            "date": "2024-03-29",
+            "message_count": 65,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240329.json"
+          },
+          {
+            "date": "2024-03-17",
+            "message_count": 8,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240317.json"
+          },
+          {
+            "date": "2024-03-01",
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240301.json"
+          },
+          {
+            "date": "2024-02-01",
+            "message_count": 40,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240201.json"
+          },
+          {
+            "date": "2024-01-31",
+            "message_count": 75,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240131.json"
+          },
+          {
+            "date": "2024-01-29",
+            "message_count": 70,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240129.json"
+          },
+          {
+            "date": "2024-01-27",
+            "message_count": 41,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20240127.json"
+          },
+          {
+            "date": "2023-12-27",
+            "message_count": 74,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20231227.json"
+          },
+          {
+            "date": "2023-12-17",
+            "message_count": 67,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20231217.json"
+          },
+          {
+            "date": "2023-12-09",
+            "message_count": 112,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20231209.json"
+          },
+          {
+            "date": "2023-11-15",
+            "message_count": 81,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20231115.json"
+          },
+          {
+            "date": "2023-11-12",
+            "message_count": 58,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20231112.json"
+          },
+          {
+            "date": "2023-09-29",
+            "message_count": 58,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230929.json"
+          },
+          {
+            "date": "2023-08-15",
+            "message_count": 84,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230815.json"
+          },
+          {
+            "date": "2023-07-28",
+            "message_count": 5,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230728.json"
+          },
+          {
+            "date": "2023-07-27",
+            "message_count": 72,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230727.json"
+          },
+          {
+            "date": "2023-07-22",
+            "message_count": 9,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230722.json"
+          },
+          {
+            "date": "2023-07-19",
+            "message_count": 4,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230719.json"
+          },
+          {
+            "date": "2023-07-07",
+            "message_count": 37,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230707.json"
+          },
+          {
+            "date": "2023-06-28",
+            "message_count": 5,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230628.json"
+          },
+          {
+            "date": "2023-06-16",
+            "message_count": 80,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230616.json"
+          },
+          {
+            "date": "2023-06-06",
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230606.json"
+          },
+          {
+            "date": "2023-05-29",
+            "message_count": 7,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Akira/20230529.json"
+          }
+        ]
       }
     },
     {
@@ -238,7 +625,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -258,7 +646,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -267,9 +656,9 @@
       "description": "AlphaLocker is a low-cost ransomware operation built on the EDA2 open-source project that sells affiliates an admin panel, ransomware executable, and decryption key generator, lowering the barrier for entry-level cybercriminals using double-extortion tactics.",
       "raas": true,
       "first_seen": "2024-01-24",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 1,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 31,
       "countries": [],
       "negotiation": {
@@ -278,7 +667,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -298,7 +688,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -318,7 +709,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -338,7 +730,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -358,7 +751,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -378,7 +772,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -398,7 +793,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -418,7 +814,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -438,7 +835,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -458,7 +856,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -483,7 +882,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -503,7 +903,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -523,7 +924,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -543,7 +945,44 @@
         "latest_chat_date": "2021-05-18",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210518.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210430.json",
-        "longest_chat_message_count": 103
+        "longest_chat_message_count": 103,
+        "chats": [
+          {
+            "date": "2021-05-18",
+            "message_count": 103,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210518_3.json"
+          },
+          {
+            "date": "2021-05-18",
+            "message_count": 24,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210518_2.json"
+          },
+          {
+            "date": "2021-05-18",
+            "message_count": 17,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210518.json"
+          },
+          {
+            "date": "2021-05-12",
+            "message_count": 35,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210512.json"
+          },
+          {
+            "date": "2021-04-30",
+            "message_count": 103,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210430.json"
+          },
+          {
+            "date": "2021-03-24",
+            "message_count": 73,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210324.json"
+          },
+          {
+            "date": "2021-01-12",
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avaddon/20210112.json"
+          }
+        ]
       }
     },
     {
@@ -563,7 +1002,14 @@
         "latest_chat_date": "2021-09-03",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json",
-        "longest_chat_message_count": 86
+        "longest_chat_message_count": 86,
+        "chats": [
+          {
+            "date": "2021-09-03",
+            "message_count": 86,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json"
+          }
+        ]
       }
     },
     {
@@ -583,7 +1029,14 @@
         "latest_chat_date": "2021-09-03",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json",
-        "longest_chat_message_count": 86
+        "longest_chat_message_count": 86,
+        "chats": [
+          {
+            "date": "2021-09-03",
+            "message_count": 86,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Avos/20210903.json"
+          }
+        ]
       }
     },
     {
@@ -603,7 +1056,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -623,7 +1077,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -643,7 +1098,19 @@
         "latest_chat_date": "2021-04-28",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210428.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210203.json",
-        "longest_chat_message_count": 106
+        "longest_chat_message_count": 106,
+        "chats": [
+          {
+            "date": "2021-04-28",
+            "message_count": 44,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210428.json"
+          },
+          {
+            "date": "2021-02-03",
+            "message_count": 106,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210203.json"
+          }
+        ]
       }
     },
     {
@@ -663,7 +1130,19 @@
         "latest_chat_date": "2021-04-28",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210428.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210203.json",
-        "longest_chat_message_count": 106
+        "longest_chat_message_count": 106,
+        "chats": [
+          {
+            "date": "2021-04-28",
+            "message_count": 44,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210428.json"
+          },
+          {
+            "date": "2021-02-03",
+            "message_count": 106,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Babuk/20210203.json"
+          }
+        ]
       }
     },
     {
@@ -683,7 +1162,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -703,7 +1183,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -723,7 +1204,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -743,7 +1225,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -763,7 +1246,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -783,7 +1267,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -803,7 +1288,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -823,7 +1309,34 @@
         "latest_chat_date": "2024-08-14",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20240814.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20230410.json",
-        "longest_chat_message_count": 57
+        "longest_chat_message_count": 57,
+        "chats": [
+          {
+            "date": "2024-08-14",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20240814.json"
+          },
+          {
+            "date": "2023-05-01",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20230501.json"
+          },
+          {
+            "date": "2023-04-10",
+            "message_count": 57,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20230410.json"
+          },
+          {
+            "date": "2022-12-29",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20221229.json"
+          },
+          {
+            "date": "2022-10-11",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackBasta/20221011.json"
+          }
+        ]
       }
     },
     {
@@ -843,7 +1356,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -863,7 +1377,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -883,7 +1398,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -903,7 +1419,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -923,7 +1440,19 @@
         "latest_chat_date": "2021-09-07",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackMatter/20210907.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackMatter/20210907.json",
-        "longest_chat_message_count": 77
+        "longest_chat_message_count": 77,
+        "chats": [
+          {
+            "date": "2021-09-07",
+            "message_count": 77,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackMatter/20210907.json"
+          },
+          {
+            "date": "2021-08-29",
+            "message_count": 44,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/BlackMatter/20210829.json"
+          }
+        ]
       }
     },
     {
@@ -943,7 +1472,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -963,7 +1493,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -983,7 +1514,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1003,7 +1535,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1023,7 +1556,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1043,7 +1577,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1063,7 +1598,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1083,7 +1619,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1103,7 +1640,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1128,7 +1666,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1148,7 +1687,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1168,7 +1708,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1188,7 +1729,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1197,7 +1739,7 @@
       "description": "Booba",
       "raas": false,
       "first_seen": "2026-07-06",
-      "active_sites": 2,
+      "active_sites": 3,
       "total_sites": 3,
       "is_active": true,
       "total_victims": 0,
@@ -1208,7 +1750,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1228,7 +1771,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1248,7 +1792,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1257,7 +1802,7 @@
       "description": "BravoX is a selective ransomware-as-a-service operation that surfaced publicly in January 2026 after advertising on the RAMP underground forum, targeting primarily US-based organizations in healthcare and retail while applying strict affiliate vetting requirements including proof of access or a financial deposit.",
       "raas": true,
       "first_seen": "2026-02-11",
-      "active_sites": 2,
+      "active_sites": 1,
       "total_sites": 2,
       "is_active": true,
       "total_victims": 9,
@@ -1268,7 +1813,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1288,7 +1834,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1308,7 +1855,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1328,7 +1876,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1348,7 +1897,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1368,7 +1918,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1388,7 +1939,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1408,7 +1960,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1428,7 +1981,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1448,7 +2002,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1468,7 +2023,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1477,9 +2033,9 @@
       "description": "Cloak is a ransomware-as-a-service operation active since late 2022, primarily targeting small-to-medium enterprises in Europe \u2014 especially Germany \u2014 across manufacturing, healthcare, education, and government sectors, with expansion into North American and Asian targets by 2025.",
       "raas": true,
       "first_seen": "2023-08-24",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 1,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 162,
       "countries": [],
       "negotiation": {
@@ -1488,7 +2044,19 @@
         "latest_chat_date": "2023-08-02",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Cloak/20230802-2.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Cloak/20230802-2.json",
-        "longest_chat_message_count": 66
+        "longest_chat_message_count": 66,
+        "chats": [
+          {
+            "date": "2023-08-02",
+            "message_count": 66,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Cloak/20230802-2.json"
+          },
+          {
+            "date": "2023-08-02",
+            "message_count": 54,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Cloak/20230802.json"
+          }
+        ]
       }
     },
     {
@@ -1508,7 +2076,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1528,7 +2097,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1548,7 +2118,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1568,7 +2139,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1593,7 +2165,169 @@
         "latest_chat_date": "2021-12-17",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20211217.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201109.json",
-        "longest_chat_message_count": 255
+        "longest_chat_message_count": 255,
+        "chats": [
+          {
+            "date": "2021-12-17",
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20211217.json"
+          },
+          {
+            "date": "2021-12-05",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20211205.json"
+          },
+          {
+            "date": "2021-11-12",
+            "message_count": 32,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20211112.json"
+          },
+          {
+            "date": "2021-11-08",
+            "message_count": 32,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20211108.json"
+          },
+          {
+            "date": "2021-09-23",
+            "message_count": 14,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210923.json"
+          },
+          {
+            "date": "2021-09-04",
+            "message_count": 17,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210904.json"
+          },
+          {
+            "date": "2021-09-02",
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210902.json"
+          },
+          {
+            "date": "2021-08-20",
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210820.json"
+          },
+          {
+            "date": "2021-08-12",
+            "message_count": 46,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210812.json"
+          },
+          {
+            "date": "2021-08-05",
+            "message_count": 47,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210805.json"
+          },
+          {
+            "date": "2021-07-15",
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210715.json"
+          },
+          {
+            "date": "2021-07-08",
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210708.json"
+          },
+          {
+            "date": "2021-06-28",
+            "message_count": 34,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210628.json"
+          },
+          {
+            "date": "2021-06-11",
+            "message_count": 48,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210611.json"
+          },
+          {
+            "date": "2021-06-02",
+            "message_count": 81,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210602.json"
+          },
+          {
+            "date": "2021-05-20",
+            "message_count": 101,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210520.json"
+          },
+          {
+            "date": "2021-05-17",
+            "message_count": 69,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210517_b.json"
+          },
+          {
+            "date": "2021-05-17",
+            "message_count": 56,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210517.json"
+          },
+          {
+            "date": "2021-05-13",
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210513.json"
+          },
+          {
+            "date": "2021-04-28",
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210428.json"
+          },
+          {
+            "date": "2021-04-26",
+            "message_count": 12,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210426.json"
+          },
+          {
+            "date": "2021-03-16",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210316.json"
+          },
+          {
+            "date": "2021-03-15",
+            "message_count": 49,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210315.json"
+          },
+          {
+            "date": "2021-03-05",
+            "message_count": 45,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210305.json"
+          },
+          {
+            "date": "2021-02-19",
+            "message_count": 12,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210219.json"
+          },
+          {
+            "date": "2021-01-26",
+            "message_count": 9,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210126.json"
+          },
+          {
+            "date": "2021-01-07",
+            "message_count": 139,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20210107.json"
+          },
+          {
+            "date": "2020-12-30",
+            "message_count": 146,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201230.json"
+          },
+          {
+            "date": "2020-11-21",
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201121.json"
+          },
+          {
+            "date": "2020-11-09",
+            "message_count": 255,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201109.json"
+          },
+          {
+            "date": "2020-10-19",
+            "message_count": 9,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201019.json"
+          },
+          {
+            "date": "2020-10-17",
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Conti/20201017.json"
+          }
+        ]
       }
     },
     {
@@ -1613,7 +2347,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1633,7 +2368,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1653,7 +2389,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1673,7 +2410,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1693,7 +2431,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1713,7 +2452,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1733,7 +2473,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1753,7 +2494,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1773,7 +2515,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1793,7 +2536,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1813,7 +2557,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1833,7 +2578,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1853,7 +2599,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1873,7 +2620,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1893,7 +2641,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1913,7 +2662,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1933,7 +2683,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1953,7 +2704,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1973,7 +2725,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -1998,7 +2751,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2018,7 +2772,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2038,7 +2793,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2058,7 +2814,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2078,7 +2835,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2098,7 +2856,34 @@
         "latest_chat_date": "2021-04-18",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20210418.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20201115.json",
-        "longest_chat_message_count": 243
+        "longest_chat_message_count": 243,
+        "chats": [
+          {
+            "date": "2021-04-18",
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20210418.json"
+          },
+          {
+            "date": "2021-04-13",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20210413.json"
+          },
+          {
+            "date": "2021-02-15",
+            "message_count": 24,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20210215.json"
+          },
+          {
+            "date": "2020-11-15",
+            "message_count": 243,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20201115.json"
+          },
+          {
+            "date": "2020-08-11",
+            "message_count": 85,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Darkside/20200811.json"
+          }
+        ]
       }
     },
     {
@@ -2118,7 +2903,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2138,7 +2924,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2158,7 +2945,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2178,7 +2966,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2198,7 +2987,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2218,7 +3008,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2238,7 +3029,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2258,7 +3050,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2278,7 +3071,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2298,7 +3092,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2318,7 +3113,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2338,7 +3134,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2358,7 +3155,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2378,7 +3176,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2398,7 +3197,79 @@
         "latest_chat_date": null,
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/b8e14e1a-548f-4eec-bd6e-a590126e57c9.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C7CD31EAAF9DE9AC.json",
-        "longest_chat_message_count": 71
+        "longest_chat_message_count": 71,
+        "chats": [
+          {
+            "date": null,
+            "message_count": 71,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C7CD31EAAF9DE9AC.json"
+          },
+          {
+            "date": null,
+            "message_count": 66,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C2A3C7249797F5ED.json"
+          },
+          {
+            "date": null,
+            "message_count": 32,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/7A313D13EB6B4E58.json"
+          },
+          {
+            "date": null,
+            "message_count": 30,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C42CDF65B97D0E92.json"
+          },
+          {
+            "date": null,
+            "message_count": 29,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/05f724f8-906e-4739-8177-815852cc2c3f.json"
+          },
+          {
+            "date": null,
+            "message_count": 28,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/AB0404E049514B50.json"
+          },
+          {
+            "date": null,
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/BD004D632D87DBA0.json"
+          },
+          {
+            "date": null,
+            "message_count": 23,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/89716D29D2CEE36F.json"
+          },
+          {
+            "date": null,
+            "message_count": 19,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/058f4b92-ae99-45c7-bf35-5d2d6754b3de.json"
+          },
+          {
+            "date": null,
+            "message_count": 14,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/D6DDD9B26D7D41DB.json"
+          },
+          {
+            "date": null,
+            "message_count": 14,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/b8e14e1a-548f-4eec-bd6e-a590126e57c9.json"
+          },
+          {
+            "date": null,
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/29BBE03074FDBB8D.json"
+          },
+          {
+            "date": null,
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/FDA8141B6DD392E3.json"
+          },
+          {
+            "date": null,
+            "message_count": 4,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Dragonforce/C8479B30418B331E.json"
+          }
+        ]
       }
     },
     {
@@ -2418,7 +3289,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2438,7 +3310,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2458,7 +3331,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2478,7 +3352,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2498,7 +3373,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2518,7 +3394,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2538,7 +3415,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2558,7 +3436,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2578,7 +3457,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2598,7 +3478,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2618,7 +3499,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2638,7 +3520,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2658,7 +3541,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2678,7 +3562,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2698,7 +3583,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2718,7 +3604,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2738,7 +3625,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2758,7 +3646,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2778,7 +3667,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2798,7 +3688,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2818,7 +3709,39 @@
         "latest_chat_date": "2024-11-19",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20241119.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240729.json",
-        "longest_chat_message_count": 144
+        "longest_chat_message_count": 144,
+        "chats": [
+          {
+            "date": "2024-11-19",
+            "message_count": 3,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20241119.json"
+          },
+          {
+            "date": "2024-09-27",
+            "message_count": 60,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240927.json"
+          },
+          {
+            "date": "2024-09-10",
+            "message_count": 26,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240910.json"
+          },
+          {
+            "date": "2024-08-30",
+            "message_count": 73,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240830.json"
+          },
+          {
+            "date": "2024-07-29",
+            "message_count": 144,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240729.json"
+          },
+          {
+            "date": "2024-05-17",
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/fog/20240517.json"
+          }
+        ]
       }
     },
     {
@@ -2838,7 +3761,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2863,7 +3787,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2883,7 +3808,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2903,7 +3829,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2923,7 +3850,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2943,7 +3871,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2963,7 +3892,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -2983,7 +3913,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3008,7 +3939,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3028,7 +3960,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3048,7 +3981,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3068,7 +4002,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3088,7 +4023,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3108,7 +4044,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3128,7 +4065,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3148,7 +4086,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3168,7 +4107,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3188,7 +4128,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3208,7 +4149,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3228,7 +4170,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3248,7 +4191,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3268,7 +4212,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3288,7 +4233,49 @@
         "latest_chat_date": "2021-12-20",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211220.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211113.json",
-        "longest_chat_message_count": 136
+        "longest_chat_message_count": 136,
+        "chats": [
+          {
+            "date": "2021-12-20",
+            "message_count": 24,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211220.json"
+          },
+          {
+            "date": "2021-12-13",
+            "message_count": 15,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211213.json"
+          },
+          {
+            "date": "2021-11-26",
+            "message_count": 4,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211126.json"
+          },
+          {
+            "date": "2021-11-13",
+            "message_count": 136,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211113.json"
+          },
+          {
+            "date": "2021-11-02",
+            "message_count": 58,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211102.json"
+          },
+          {
+            "date": "2021-10-26",
+            "message_count": 46,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211026.json"
+          },
+          {
+            "date": "2021-10-05",
+            "message_count": 19,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211005.json"
+          },
+          {
+            "date": "2021-10-04",
+            "message_count": 70,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hive/20211004.json"
+          }
+        ]
       }
     },
     {
@@ -3308,7 +4295,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3328,7 +4316,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3348,7 +4337,14 @@
         "latest_chat_date": "2024-05-10",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hunters International/20240510.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hunters International/20240510.json",
-        "longest_chat_message_count": 29
+        "longest_chat_message_count": 29,
+        "chats": [
+          {
+            "date": "2024-05-10",
+            "message_count": 29,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Hunters International/20240510.json"
+          }
+        ]
       }
     },
     {
@@ -3368,7 +4364,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3388,7 +4385,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3408,7 +4406,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3428,7 +4427,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3448,7 +4448,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3468,7 +4469,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3488,7 +4490,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3508,7 +4511,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3528,7 +4532,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3548,7 +4553,14 @@
         "latest_chat_date": "2025-05-19",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/kairos/20250519.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/kairos/20250519.json",
-        "longest_chat_message_count": 41
+        "longest_chat_message_count": 41,
+        "chats": [
+          {
+            "date": "2025-05-19",
+            "message_count": 41,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/kairos/20250519.json"
+          }
+        ]
       }
     },
     {
@@ -3568,7 +4580,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3588,7 +4601,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3608,7 +4622,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3628,7 +4643,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3648,7 +4664,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3668,7 +4685,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3688,7 +4706,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3708,7 +4727,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3728,7 +4748,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3748,7 +4769,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3768,7 +4790,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3788,7 +4811,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3808,7 +4832,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3828,7 +4853,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3848,7 +4874,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3868,7 +4895,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3888,7 +4916,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3908,7 +4937,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3928,7 +4958,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3948,7 +4979,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3968,7 +5000,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -3988,7 +5021,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4008,7 +5042,219 @@
         "latest_chat_date": null,
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/wcinet_com.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/samyang_com.json",
-        "longest_chat_message_count": 237
+        "longest_chat_message_count": 237,
+        "chats": [
+          {
+            "date": null,
+            "message_count": 237,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/samyang_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 215,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/tapcocu_org.json"
+          },
+          {
+            "date": null,
+            "message_count": 137,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/Leaked2025-ClientID-154.json"
+          },
+          {
+            "date": null,
+            "message_count": 106,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/datair_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 103,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/royalmailgroup_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 99,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/myerspower_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 94,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/kaycan_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 93,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/lapostemobile_fr.json"
+          },
+          {
+            "date": null,
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/sirva_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 73,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/vitalityhp_net.json"
+          },
+          {
+            "date": null,
+            "message_count": 70,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/newbridge_org.json"
+          },
+          {
+            "date": null,
+            "message_count": 66,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/omscomponents_it.json"
+          },
+          {
+            "date": null,
+            "message_count": 56,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/okcu_edu.json"
+          },
+          {
+            "date": null,
+            "message_count": 55,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/Leaked2025-ClientID-124.json"
+          },
+          {
+            "date": null,
+            "message_count": 55,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/Leaked2025-ClientID-36.json"
+          },
+          {
+            "date": null,
+            "message_count": 52,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/gocontec_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/millennia_pro.json"
+          },
+          {
+            "date": null,
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/nicklaus_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 42,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/chsf_fr.json"
+          },
+          {
+            "date": null,
+            "message_count": 39,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/wabteccorp_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 37,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/continental_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 34,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/genusplc_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 34,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/wcinet_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 30,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/software-line_it.json"
+          },
+          {
+            "date": null,
+            "message_count": 29,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/entrust_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 29,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/scohil_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 28,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/plasticproductsco_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/bakkerheftrucks_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/bankbsi_co_id.json"
+          },
+          {
+            "date": null,
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/guardiananalytics_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/colonialgeneral_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 25,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/psenergy_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 21,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/vsainc_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 20,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/qsi-q3_de.json"
+          },
+          {
+            "date": null,
+            "message_count": 17,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/**************************149576.json"
+          },
+          {
+            "date": null,
+            "message_count": 17,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/preflooring_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 8,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/emunworks_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 8,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/hgc_com_hk.json"
+          },
+          {
+            "date": null,
+            "message_count": 8,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/porcelanosa-usa_com.json"
+          },
+          {
+            "date": null,
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/gavresorts_com_br.json"
+          },
+          {
+            "date": null,
+            "message_count": 4,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/Leaked2025-ClientID-206.json"
+          },
+          {
+            "date": null,
+            "message_count": 3,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/lockbit3.0/aguasdoporto_pt.json"
+          }
+        ]
       }
     },
     {
@@ -4028,7 +5274,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4037,7 +5284,7 @@
       "description": "LockBit 5.0 (\"ChuongDong\") emerged in September 2025 as the group's resurgence following the February 2024 law enforcement takedown, introducing cross-platform payloads targeting Windows, Linux, and VMware ESXi with enhanced evasion capabilities and continuing the RaaS affiliate model of its predecessors.",
       "raas": true,
       "first_seen": "2025-12-04",
-      "active_sites": 20,
+      "active_sites": 19,
       "total_sites": 23,
       "is_active": true,
       "total_victims": 157,
@@ -4048,7 +5295,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4068,7 +5316,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4088,7 +5337,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4108,7 +5358,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4128,7 +5379,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4148,7 +5400,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4168,7 +5421,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4188,7 +5442,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4208,7 +5463,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4228,7 +5484,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4248,7 +5505,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4268,7 +5526,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4277,9 +5536,9 @@
       "description": "",
       "raas": false,
       "first_seen": "2026-08-12",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 4,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 0,
       "countries": [],
       "negotiation": {
@@ -4288,7 +5547,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4308,7 +5568,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4333,7 +5594,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4353,7 +5615,24 @@
         "latest_chat_date": "2023-05-30",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Mallox/20230530.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Mallox/20230427.json",
-        "longest_chat_message_count": 62
+        "longest_chat_message_count": 62,
+        "chats": [
+          {
+            "date": "2023-05-30",
+            "message_count": 17,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Mallox/20230530.json"
+          },
+          {
+            "date": "2023-05-29",
+            "message_count": 29,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Mallox/20230529.json"
+          },
+          {
+            "date": "2023-04-27",
+            "message_count": 62,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Mallox/20230427.json"
+          }
+        ]
       }
     },
     {
@@ -4373,7 +5652,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4393,7 +5673,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4413,7 +5694,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4433,7 +5715,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4453,7 +5736,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4473,7 +5757,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4493,7 +5778,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4513,7 +5799,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4533,7 +5820,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4553,7 +5841,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4573,7 +5862,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4593,7 +5883,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4613,7 +5904,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4633,7 +5925,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4642,9 +5935,9 @@
       "description": "Money Message emerged in March 2023 targeting Windows and Linux systems across banking, transportation, and professional services sectors, demanding ransoms in the millions and publishing stolen data on their blog if unpaid, with most known victims based in the US.",
       "raas": false,
       "first_seen": "2023-03-29",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 1,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 29,
       "countries": [],
       "negotiation": {
@@ -4653,7 +5946,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4673,7 +5967,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4693,7 +5988,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4713,7 +6009,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4733,7 +6030,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4753,7 +6051,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4773,7 +6072,14 @@
         "latest_chat_date": "2020-10-16",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/mount-locker/20201016.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/mount-locker/20201016.json",
-        "longest_chat_message_count": 60
+        "longest_chat_message_count": 60,
+        "chats": [
+          {
+            "date": "2020-10-16",
+            "message_count": 60,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/mount-locker/20201016.json"
+          }
+        ]
       }
     },
     {
@@ -4793,7 +6099,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4813,7 +6120,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4833,7 +6141,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4858,7 +6167,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4878,7 +6188,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4898,7 +6209,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4918,7 +6230,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4938,7 +6251,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4958,7 +6272,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4978,7 +6293,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -4998,7 +6314,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5018,7 +6335,44 @@
         "latest_chat_date": "2026-02-25",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20260225.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20251218.json",
-        "longest_chat_message_count": 84
+        "longest_chat_message_count": 84,
+        "chats": [
+          {
+            "date": "2026-02-25",
+            "message_count": 48,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20260225.json"
+          },
+          {
+            "date": "2026-02-17",
+            "message_count": 31,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20260217.json"
+          },
+          {
+            "date": "2026-02-03",
+            "message_count": 45,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20260203.json"
+          },
+          {
+            "date": "2026-01-27",
+            "message_count": 62,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20260127.json"
+          },
+          {
+            "date": "2025-12-18",
+            "message_count": 84,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20251218.json"
+          },
+          {
+            "date": "2025-04-28",
+            "message_count": 59,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20250428.json"
+          },
+          {
+            "date": "2025-04-18",
+            "message_count": 38,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Nightspire/20250418.json"
+          }
+        ]
       }
     },
     {
@@ -5038,7 +6392,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5058,7 +6413,19 @@
         "latest_chat_date": "2023-09-12",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/NoEscape/20230912.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/NoEscape/20230911.json",
-        "longest_chat_message_count": 6
+        "longest_chat_message_count": 6,
+        "chats": [
+          {
+            "date": "2023-09-12",
+            "message_count": 4,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/NoEscape/20230912.json"
+          },
+          {
+            "date": "2023-09-11",
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/NoEscape/20230911.json"
+          }
+        ]
       }
     },
     {
@@ -5078,7 +6445,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5098,7 +6466,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5118,7 +6487,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5138,7 +6508,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5158,7 +6529,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5178,7 +6550,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5198,7 +6571,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5218,7 +6592,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5238,7 +6613,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5258,7 +6634,14 @@
         "latest_chat_date": "2026-08-24",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/orova/20260824 - from @RakeshKrish12.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/orova/20260824 - from @RakeshKrish12.json",
-        "longest_chat_message_count": 3
+        "longest_chat_message_count": 3,
+        "chats": [
+          {
+            "date": "2026-08-24",
+            "message_count": 3,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/orova/20260824 - from @RakeshKrish12.json"
+          }
+        ]
       }
     },
     {
@@ -5278,7 +6661,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5298,7 +6682,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5318,7 +6703,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5338,7 +6724,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5358,7 +6745,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5378,7 +6766,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5398,7 +6787,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5418,7 +6808,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5438,7 +6829,14 @@
         "latest_chat_date": "2025-07-20",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Pear/20250720.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Pear/20250720.json",
-        "longest_chat_message_count": 42
+        "longest_chat_message_count": 42,
+        "chats": [
+          {
+            "date": "2025-07-20",
+            "message_count": 42,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Pear/20250720.json"
+          }
+        ]
       }
     },
     {
@@ -5458,7 +6856,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5478,7 +6877,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5498,7 +6898,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5518,7 +6919,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5538,7 +6940,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5558,7 +6961,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5578,7 +6982,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5598,7 +7003,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5618,7 +7024,19 @@
         "latest_chat_date": "2025-02-03",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Qilin/20250203 - from @RakeshKrish12.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Qilin/20250203 - from @RakeshKrish12.json",
-        "longest_chat_message_count": 36
+        "longest_chat_message_count": 36,
+        "chats": [
+          {
+            "date": "2025-02-03",
+            "message_count": 36,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Qilin/20250203 - from @RakeshKrish12.json"
+          },
+          {
+            "date": "2024-04-29",
+            "message_count": 3,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Qilin/20240429.json"
+          }
+        ]
       }
     },
     {
@@ -5638,7 +7056,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5658,7 +7077,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5678,7 +7098,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5698,7 +7119,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5718,7 +7140,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5738,7 +7161,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5758,7 +7182,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5778,7 +7203,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5798,7 +7224,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5818,7 +7245,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5838,7 +7266,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5858,7 +7287,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5878,7 +7308,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5898,7 +7329,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5918,7 +7350,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5938,7 +7371,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5958,7 +7392,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5978,7 +7413,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -5998,7 +7434,14 @@
         "latest_chat_date": "2024-08-10",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RansomHub/20240810.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RansomHub/20240810.json",
-        "longest_chat_message_count": 1
+        "longest_chat_message_count": 1,
+        "chats": [
+          {
+            "date": "2024-08-10",
+            "message_count": 1,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RansomHub/20240810.json"
+          }
+        ]
       }
     },
     {
@@ -6018,7 +7461,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6038,7 +7482,19 @@
         "latest_chat_date": "2021-02-23",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Ranzy/20210223.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Ranzy/20201015.json",
-        "longest_chat_message_count": 36
+        "longest_chat_message_count": 36,
+        "chats": [
+          {
+            "date": "2021-02-23",
+            "message_count": 20,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Ranzy/20210223.json"
+          },
+          {
+            "date": "2020-10-15",
+            "message_count": 36,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/Ranzy/20201015.json"
+          }
+        ]
       }
     },
     {
@@ -6058,7 +7514,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6078,7 +7535,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6098,7 +7556,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6118,7 +7577,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6138,7 +7598,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6158,7 +7619,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6178,7 +7640,109 @@
         "latest_chat_date": "2021-07-09",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210709.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210413.json",
-        "longest_chat_message_count": 156
+        "longest_chat_message_count": 156,
+        "chats": [
+          {
+            "date": "2021-07-09",
+            "message_count": 1,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210709.json"
+          },
+          {
+            "date": "2021-07-08",
+            "message_count": 28,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210708.json"
+          },
+          {
+            "date": "2021-06-30",
+            "message_count": 42,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210630.json"
+          },
+          {
+            "date": "2021-06-28",
+            "message_count": 39,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210628.json"
+          },
+          {
+            "date": "2021-06-22",
+            "message_count": 52,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210622.json"
+          },
+          {
+            "date": "2021-06-17",
+            "message_count": 67,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210617.json"
+          },
+          {
+            "date": "2021-06-16",
+            "message_count": 31,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210616.json"
+          },
+          {
+            "date": "2021-06-13",
+            "message_count": 132,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210613.json"
+          },
+          {
+            "date": "2021-06-09",
+            "message_count": 58,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210609.json"
+          },
+          {
+            "date": "2021-06-04",
+            "message_count": 10,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210604.json"
+          },
+          {
+            "date": "2021-06-03",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210603.json"
+          },
+          {
+            "date": "2021-04-13",
+            "message_count": 156,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210413.json"
+          },
+          {
+            "date": "2021-04-07",
+            "message_count": 15,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210407.json"
+          },
+          {
+            "date": "2021-04-01",
+            "message_count": 78,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210401.json"
+          },
+          {
+            "date": "2021-03-31",
+            "message_count": 23,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210331.json"
+          },
+          {
+            "date": "2021-03-29",
+            "message_count": 43,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210329.json"
+          },
+          {
+            "date": "2021-03-20",
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20210320.json"
+          },
+          {
+            "date": "2020-11-26",
+            "message_count": 79,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20201126.json"
+          },
+          {
+            "date": "2020-11-04",
+            "message_count": 63,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20201104.json"
+          },
+          {
+            "date": "2020-10-14",
+            "message_count": 72,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/REvil/20201014.json"
+          }
+        ]
       }
     },
     {
@@ -6198,7 +7762,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6207,7 +7772,7 @@
       "description": "Rhysida is a ransomware-as-a-service (RAAS) group that emerged in May 2023. The group utilizes a namesake ransomware through phishing attacks and Cobalt Strike to breach the targets' networks and deploy their payloads. The group threatens to publicly distribute exfiltrated data if the ransom is not paid, and it's worth mentioning that Rhysida is still in the early stages of development. The ransomware leaves PDF notes in the affected folders, instructing victims to contact the group through its\u2026",
       "raas": false,
       "first_seen": "2023-06-05",
-      "active_sites": 2,
+      "active_sites": 1,
       "total_sites": 2,
       "is_active": true,
       "total_victims": 268,
@@ -6218,7 +7783,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6238,7 +7804,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6258,7 +7825,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6278,7 +7846,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6298,7 +7867,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6318,7 +7888,14 @@
         "latest_chat_date": "2025-04-11",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RunSomeWares/20250411.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RunSomeWares/20250411.json",
-        "longest_chat_message_count": 27
+        "longest_chat_message_count": 27,
+        "chats": [
+          {
+            "date": "2025-04-11",
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/RunSomeWares/20250411.json"
+          }
+        ]
       }
     },
     {
@@ -6338,7 +7915,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6358,7 +7936,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6378,7 +7957,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6398,7 +7978,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6418,7 +7999,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6438,7 +8020,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6458,7 +8041,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6478,7 +8062,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6498,7 +8083,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6518,7 +8104,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6538,7 +8125,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6547,9 +8135,9 @@
       "description": "ShadowByt3$ is a ransomware-as-a-service group first observed in October 2025, using multi-method extortion and communicating via Telegram and Tox, with a very small confirmed victim list suggesting it remains in early-stage operation.",
       "raas": true,
       "first_seen": "2026-02-25",
-      "active_sites": 1,
+      "active_sites": 0,
       "total_sites": 6,
-      "is_active": true,
+      "is_active": false,
       "total_victims": 1,
       "countries": [],
       "negotiation": {
@@ -6558,7 +8146,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6578,7 +8167,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6598,7 +8188,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6618,7 +8209,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6638,7 +8230,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6658,7 +8251,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6678,7 +8272,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6698,7 +8293,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6707,9 +8303,9 @@
       "description": "a former Conti team",
       "raas": false,
       "first_seen": "2025-05-06",
-      "active_sites": 0,
+      "active_sites": 1,
       "total_sites": 1,
-      "is_active": false,
+      "is_active": true,
       "total_victims": 91,
       "countries": [],
       "negotiation": {
@@ -6718,7 +8314,19 @@
         "latest_chat_date": "2026-03-18",
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/SilentRansomGroup/20260318.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/SilentRansomGroup/20260219.json",
-        "longest_chat_message_count": 58
+        "longest_chat_message_count": 58,
+        "chats": [
+          {
+            "date": "2026-03-18",
+            "message_count": 27,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/SilentRansomGroup/20260318.json"
+          },
+          {
+            "date": "2026-02-19",
+            "message_count": 58,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/SilentRansomGroup/20260219.json"
+          }
+        ]
       }
     },
     {
@@ -6738,7 +8346,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6758,7 +8367,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6778,7 +8388,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6798,7 +8409,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6818,7 +8430,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6838,7 +8451,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6858,7 +8472,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6878,7 +8493,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6898,7 +8514,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6918,7 +8535,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6938,7 +8556,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6958,7 +8577,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6978,7 +8598,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -6998,7 +8619,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7018,7 +8640,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7038,7 +8661,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7058,7 +8682,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7078,7 +8703,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7098,7 +8724,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7118,7 +8745,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7138,7 +8766,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7158,7 +8787,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7178,7 +8808,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7198,7 +8829,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7218,7 +8850,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7238,7 +8871,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7258,7 +8892,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7278,7 +8913,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7298,7 +8934,79 @@
         "latest_chat_date": null,
         "latest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0014.json",
         "longest_chat_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0003.json",
-        "longest_chat_message_count": 298
+        "longest_chat_message_count": 298,
+        "chats": [
+          {
+            "date": null,
+            "message_count": 298,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0003.json"
+          },
+          {
+            "date": null,
+            "message_count": 170,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0004.json"
+          },
+          {
+            "date": null,
+            "message_count": 52,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0002.json"
+          },
+          {
+            "date": null,
+            "message_count": 50,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0011.json"
+          },
+          {
+            "date": null,
+            "message_count": 36,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0007.json"
+          },
+          {
+            "date": null,
+            "message_count": 32,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0013.json"
+          },
+          {
+            "date": null,
+            "message_count": 15,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0012.json"
+          },
+          {
+            "date": null,
+            "message_count": 14,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0005.json"
+          },
+          {
+            "date": null,
+            "message_count": 13,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0008.json"
+          },
+          {
+            "date": null,
+            "message_count": 11,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0006.json"
+          },
+          {
+            "date": null,
+            "message_count": 8,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0010.json"
+          },
+          {
+            "date": null,
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0009.json"
+          },
+          {
+            "date": null,
+            "message_count": 6,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0014.json"
+          },
+          {
+            "date": null,
+            "message_count": 2,
+            "raw_url": "https://raw.githubusercontent.com/Casualtek/Ransomchats/main/trinity/0001.json"
+          }
+        ]
       }
     },
     {
@@ -7318,7 +9026,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7338,7 +9047,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7358,7 +9068,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7378,7 +9089,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7403,7 +9115,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7423,7 +9136,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7443,7 +9157,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7463,7 +9178,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7483,7 +9199,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7503,7 +9220,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7523,7 +9241,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7543,7 +9262,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7563,7 +9283,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7583,7 +9304,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7603,7 +9325,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7623,7 +9346,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7643,7 +9367,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7663,7 +9388,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7688,7 +9414,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7708,7 +9435,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7728,7 +9456,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7748,7 +9477,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7768,7 +9498,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7788,7 +9519,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7808,7 +9540,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7828,7 +9561,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7848,7 +9582,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7868,7 +9603,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7888,7 +9624,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7908,7 +9645,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7928,7 +9666,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7948,7 +9687,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     },
     {
@@ -7968,7 +9708,8 @@
         "latest_chat_date": null,
         "latest_chat_url": null,
         "longest_chat_url": null,
-        "longest_chat_message_count": null
+        "longest_chat_message_count": null,
+        "chats": []
       }
     }
   ]

@@ -217,12 +217,21 @@ def build_negotiation_lookup(chat_index: dict) -> dict:
             # without a real date attached to it.
             latest = (None, chats[-1])
         longest = max(chats, key=lambda c: c.get("message_count") or 0)
+
+        # Full archive, ordered most-recent-date first (undated chats last,
+        # sorted among themselves by message count since there's no date to
+        # order them by).
+        archive = [{"date": parse_chat_date(c["chat_id"]), "message_count": c.get("message_count") or 0, "raw_url": c["raw_url"]} for c in chats]
+        dated_archive = sorted((c for c in archive if c["date"]), key=lambda c: (c["date"], c["message_count"]), reverse=True)
+        undated_archive = sorted((c for c in archive if not c["date"]), key=lambda c: c["message_count"], reverse=True)
+
         lookup[chat_name] = {
             "chat_count": len(chats),
             "latest_chat_date": latest[0],
             "latest_chat_url": latest[1]["raw_url"],
             "longest_chat_url": longest["raw_url"],
             "longest_chat_message_count": longest.get("message_count"),
+            "chats": dated_archive + undated_archive,
         }
     return lookup
 
@@ -230,6 +239,7 @@ def build_negotiation_lookup(chat_index: dict) -> dict:
 EMPTY_NEGOTIATION = {
     "available": False, "chat_count": None, "latest_chat_date": None,
     "latest_chat_url": None, "longest_chat_url": None, "longest_chat_message_count": None,
+    "chats": [],
 }
 
 

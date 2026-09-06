@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T15:54:14.759839+00:00",
+  "generated_at": "2026-09-06T16:34:56.788263+00:00",
   "victims": [
     {
       "id": "0a879e7a14d2645e",
@@ -60,6 +60,42 @@
       "website": null,
       "description": "The edacentrum is the network for electronics, design and applications in business and science. As an independent authority, the edacentrum designs research & development for a consistent design methodology along the entire value chain. In this role, the edacentrum is a recognized innovation accelerator for the microelectronics industry and its user industries",
       "post_url": "http://pnzruro7syvwvefx5mpo2fhzi4jftgquynsqf3vy5x3no57yp2iz4nyd.onion/company/edacentrum"
+    },
+    {
+      "id": "d02dc3396573ce98",
+      "victim": "WHO IS NEXT?",
+      "group": "global",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T15:54:11.299807+00:00",
+      "country": null,
+      "sector": "Other",
+      "website": null,
+      "description": "No infrastructure is immune. Any corporation, network, or organization in the world can end up here. Yours could be next.",
+      "post_url": null
+    },
+    {
+      "id": "a1c7e8ea0981bceb",
+      "victim": "Sancity",
+      "group": "Vexy Ransomware",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T15:00:28.254541+00:00",
+      "country": "IN",
+      "sector": "Other",
+      "website": "sancity.in",
+      "description": "An active, unlisted public company incorporated in 2012, operating in real estate/construction and real-estate marketing & sales",
+      "post_url": null
+    },
+    {
+      "id": "f08390803fa13ef3",
+      "victim": "myLaurel",
+      "group": "direwolf",
+      "published": "2026-09-06T00:00:00+00:00",
+      "discovered": "2026-09-06T11:53:36.694741+00:00",
+      "country": "US",
+      "sector": "Healthcare",
+      "website": "mylaurelhealth.com",
+      "description": "Elderly Care Services",
+      "post_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion/api/public/articles/123"
     },
     {
       "id": "3d680b9965648712",
@@ -444,42 +480,6 @@
       "website": "blancoetcheverry.com",
       "description": "Sector: Law Firm | Revenue: US$ 5,000,000",
       "post_url": null
-    },
-    {
-      "id": "be93a5d7fc516f1d",
-      "victim": "Occidental",
-      "group": "gunra",
-      "published": "2026-09-04T06:58:58.669209+00:00",
-      "discovered": "2026-09-04T06:58:59.451329+00:00",
-      "country": "VE",
-      "sector": "Energy & Utilities",
-      "website": "laoccidental.com",
-      "description": "Sector: Insurance | Revenue: US$ 157,000,000",
-      "post_url": null
-    },
-    {
-      "id": "b0d27e9aa7701bd4",
-      "victim": "Complete Packaging Solutions",
-      "group": "qilin",
-      "published": "2026-09-04T01:31:02.923761+00:00",
-      "discovered": "2026-09-04T01:31:29.000633+00:00",
-      "country": null,
-      "sector": "Manufacturing",
-      "website": "www.completepackaginggroup.com",
-      "description": "N/A",
-      "post_url": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion/site/blog?uuid=adec1c55-2d8f-4001-b107-5bc6e3433690"
-    },
-    {
-      "id": "4a66e3db16ec61c9",
-      "victim": "Tanner",
-      "group": "qilin",
-      "published": "2026-09-04T01:30:07.372000+00:00",
-      "discovered": "2026-09-04T01:30:43.737853+00:00",
-      "country": "CL",
-      "sector": "Other",
-      "website": "www.tanner.cl",
-      "description": "N/A",
-      "post_url": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion/site/blog?uuid=285a4356-5f48-45b3-b1ce-a250aab638a8"
     }
   ]
 }

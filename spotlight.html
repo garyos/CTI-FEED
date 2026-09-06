@@ -136,6 +136,7 @@
   .kind-tag.cve { background: var(--red); }
   .kind-tag.group { background: var(--purple); }
   .kind-tag.victim { background: var(--teal); }
+  .kind-tag.negotiation-group { background: var(--green); }
 
   .claimed-by {
     display: flex; align-items: center; gap: 8px; border: 1px solid var(--red); background: rgba(255,92,92,0.08);
@@ -224,6 +225,7 @@
     letter-spacing: 0.04em;
   }
   .zoom-link:hover { text-decoration: underline; }
+  .zoom-link.stacked { display: block; }
 
   /* --- campaigns / timeline slide --- */
   .timeline { position: relative; padding-left: 18px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; }
@@ -462,6 +464,12 @@
 
   async function loadLeaktrackerLatest() {
     const res = await fetch(`data/leaktracker/latest.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  async function loadLeaktrackerGroups() {
+    const res = await fetch(`data/leaktracker/groups.json?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
@@ -835,6 +843,43 @@
     };
   }
 
+  // Same URL shape as leaktracker.html's negotiationHref — a same-app link
+  // into spotlight.html's negotiation-replay mode, not the external transcript
+  // itself. Launched from the digest, so "back" returns to this same digest
+  // (mirroring zoomHref's from/fromName pattern) rather than leaktracker.html.
+  function negotiationSpotlightHref(g, chatUrl, label) {
+    const p = new URLSearchParams();
+    p.set("mode", "negotiation");
+    p.set("group", g.name);
+    p.set("chat", chatUrl);
+    p.set("label", label);
+    p.set("from", location.pathname + location.search);
+    p.set("fromName", "Digest");
+    return "spotlight.html?" + p.toString();
+  }
+
+  function negotiationGroupTeaserSlide(g) {
+    const n = g.negotiation || {};
+    return {
+      key: "negotiation-group", duration: 8000,
+      html: `
+        <div class="kind-tag negotiation-group">Ransomware Group</div>
+        <div class="case-number">LEAK-SITE PROFILE // ${escapeHtml(g.name.toUpperCase())}</div>
+        <h1 class="redact">${escapeHtml(g.name)}</h1>
+        <div class="chip-row">
+          ${(g.countries || []).length
+            ? g.countries.map(c => `<span class="tag-chip flag-chip">${flagEmoji(c.code)} ${escapeHtml(c.name)}</span>`).join("")
+            : `<span class="tag-chip">Origin unattributed</span>`}
+          ${g.raas ? `<span class="tag-chip">RaaS</span>` : ""}
+          <span class="tag-chip">${n.chat_count} negotiation chat${n.chat_count === 1 ? "" : "s"} on file</span>
+        </div>
+        <p class="dossier-text">${escapeHtml(g.description) || "No description on file."}</p>
+        ${n.latest_chat_url ? `<a class="zoom-link stacked no-nav" href="${negotiationSpotlightHref(g, n.latest_chat_url, "latest")}">▶ play latest negotiation${n.latest_chat_date ? ` · ${escapeHtml(n.latest_chat_date)}` : ""}</a>` : ""}
+        ${n.longest_chat_url ? `<a class="zoom-link stacked no-nav" href="${negotiationSpotlightHref(g, n.longest_chat_url, "longest")}">▶ play longest negotiation · ${n.longest_chat_message_count} messages</a>` : ""}
+      `,
+    };
+  }
+
   // ---------- per-type title/profile slides ----------
 
   function techniqueTitleSlide(t, data) {
@@ -914,7 +959,7 @@
     return list;
   }
 
-  function buildDigestSlides(threats, cves, attackData, groupIds, leaktracker) {
+  function buildDigestSlides(threats, cves, attackData, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames) {
     const feedSlides = (threats.entries || []).slice(0, 5).map(feedItemSlide);
     const cveSlides = (cves.cves || []).slice(0, 10).map(cveDetailSlide);
     const groupSlides = groupIds
@@ -922,7 +967,11 @@
       .filter(Boolean)
       .map(groupTeaserSlide);
     const victimSlides = (leaktracker.victims || []).slice(0, 5).map(victimTeaserSlide);
-    return [...feedSlides, ...cveSlides, ...groupSlides, ...victimSlides];
+    const negotiationSlides = negotiationGroupNames
+      .map(name => (leaktrackerGroups.groups || []).find(g => g.name === name))
+      .filter(Boolean)
+      .map(negotiationGroupTeaserSlide);
+    return [...feedSlides, ...cveSlides, ...groupSlides, ...victimSlides, ...negotiationSlides];
   }
 
   // ---------- engine ----------
@@ -1204,47 +1253,71 @@
   }
 
   const DIGEST_GROUP_COUNT = 3;
+  const DIGEST_NEGOTIATION_GROUP_COUNT = 3;
 
   async function loadDigestData() {
-    const [attackR, threatsR, cveR, leaktrackerR] = await Promise.allSettled(
-      [loadDomain(), loadThreats(), loadCveLatest(), loadLeaktrackerLatest()]
+    const [attackR, threatsR, cveR, leaktrackerR, leaktrackerGroupsR] = await Promise.allSettled(
+      [loadDomain(), loadThreats(), loadCveLatest(), loadLeaktrackerLatest(), loadLeaktrackerGroups()]
     );
     if (attackR.status === "rejected") console.error("digest: ATT&CK data failed to load", attackR.reason);
     if (threatsR.status === "rejected") console.error("digest: feed data failed to load", threatsR.reason);
     if (cveR.status === "rejected") console.error("digest: CVE data failed to load", cveR.reason);
     if (leaktrackerR.status === "rejected") console.error("digest: leak-tracker data failed to load", leaktrackerR.reason);
+    if (leaktrackerGroupsR.status === "rejected") console.error("digest: leak-tracker groups failed to load", leaktrackerGroupsR.reason);
     return {
       attackData: attackR.status === "fulfilled" ? attackR.value : null,
       threats: threatsR.status === "fulfilled" ? threatsR.value : { entries: [] },
       cves: cveR.status === "fulfilled" ? cveR.value : { cves: [] },
       leaktracker: leaktrackerR.status === "fulfilled" ? leaktrackerR.value : { victims: [] },
+      leaktrackerGroups: leaktrackerGroupsR.status === "fulfilled" ? leaktrackerGroupsR.value : { groups: [] },
     };
   }
 
   async function initDigest() {
-    const { attackData, threats, cves, leaktracker } = await loadDigestData();
+    const { attackData, threats, cves, leaktracker, leaktrackerGroups } = await loadDigestData();
 
     const validGroupIds = attackData ? attackData.groups.map(g => g.id) : [];
     let groupIds = (params.get("groups") || "").split(",").map(s => s.trim()).filter(gid => validGroupIds.includes(gid));
+
+    const validNegotiationNames = (leaktrackerGroups.groups || []).filter(g => g.negotiation && g.negotiation.available).map(g => g.name);
+    let negotiationGroupNames = (params.get("negoGroups") || "").split(",").map(s => s.trim()).filter(n => validNegotiationNames.includes(n));
 
     // No (valid) group set pinned in the URL yet — pick DIGEST_GROUP_COUNT at
     // random and bake them into the URL via replaceState, so reloading or
     // backing out of a zoomed-in sub-entity returns to this *same* set rather
     // than a fresh roll.
+    let pinUrl = false;
     if (groupIds.length < DIGEST_GROUP_COUNT && validGroupIds.length >= DIGEST_GROUP_COUNT) {
       const pool = [...validGroupIds];
       groupIds = [];
       while (groupIds.length < DIGEST_GROUP_COUNT && pool.length) {
         groupIds.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
       }
+      pinUrl = true;
+    }
+    if (negotiationGroupNames.length < DIGEST_NEGOTIATION_GROUP_COUNT && validNegotiationNames.length >= DIGEST_NEGOTIATION_GROUP_COUNT) {
+      const pool = [...validNegotiationNames];
+      negotiationGroupNames = [];
+      while (negotiationGroupNames.length < DIGEST_NEGOTIATION_GROUP_COUNT && pool.length) {
+        negotiationGroupNames.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+      }
+      pinUrl = true;
+    } else if (negotiationGroupNames.length === 0 && validNegotiationNames.length) {
+      // Fewer matched groups than DIGEST_NEGOTIATION_GROUP_COUNT overall —
+      // still show whatever's available rather than nothing.
+      negotiationGroupNames = validNegotiationNames;
+      pinUrl = true;
+    }
+    if (pinUrl) {
       const p = new URLSearchParams(location.search);
       p.set("mode", "digest");
       p.set("domain", domain);
       p.set("groups", groupIds.join(","));
+      p.set("negoGroups", negotiationGroupNames.join(","));
       history.replaceState(null, "", `spotlight.html?${p.toString()}`);
     }
 
-    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds, leaktracker);
+    slides = buildDigestSlides(threats, cves, attackData || { byId: { groups: {} } }, groupIds, leaktracker, leaktrackerGroups, negotiationGroupNames);
     if (slides.length === 0) {
       showEmptyTarget("No feed, CVE, ATT&CK, or leak-tracker data available yet — have the fetch scripts been run?");
       return;
@@ -1444,7 +1517,10 @@
   async function initNegotiation() {
     const chatUrl = params.get("chat") || "";
     const groupName = params.get("group") || "Unknown group";
-    const label = params.get("label") === "longest" ? "LONGEST TRANSCRIPT" : "LATEST TRANSCRIPT";
+    const rawLabel = params.get("label") || "latest";
+    const label = rawLabel === "longest" ? "LONGEST TRANSCRIPT"
+      : rawLabel === "latest" ? "LATEST TRANSCRIPT"
+      : `TRANSCRIPT · ${rawLabel.toUpperCase()}`;
     const backHref = `leaktracker.html?group=${encodeURIComponent(groupName)}`;
 
     setupBackLink();

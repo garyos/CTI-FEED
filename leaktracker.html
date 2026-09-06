@@ -153,6 +153,20 @@
   .nego-link:last-child { border-bottom: none; }
   .nego-link:hover { text-decoration: underline; }
   .nego-link .nl-sub { display: block; font-size: 10.5px; color: var(--text-dim); margin-top: 2px; }
+  .nego-archive-list {
+    display: flex; flex-direction: column; max-height: 280px; overflow-y: auto;
+    border: 1px solid var(--line); margin-top: 10px;
+  }
+  .nego-archive-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: 7px 10px; font-family: var(--font-mono); font-size: 11px; color: var(--text);
+    text-decoration: none; border-bottom: 1px solid var(--line); background: none; cursor: pointer;
+  }
+  .nego-archive-row:last-child { border-bottom: none; }
+  .nego-archive-row:hover { background: rgba(199,146,234,0.08); color: var(--purple); }
+  .nego-archive-row .nar-date { color: var(--text-dim); }
+  .nego-archive-row:hover .nar-date { color: var(--purple); }
+  .nego-archive-row .nar-count { flex: 0 0 auto; }
   a.footer-link { color: var(--text-dim); }
   a.footer-link:hover { color: var(--amber); }
   footer { margin-top: 32px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
@@ -544,6 +558,19 @@
             ▶ play longest negotiation
             <span class="nl-sub">${negotiation.longest_chat_message_count} messages</span>
           </a>` : ""}
+        ${(negotiation.chats || []).length ? `
+          <div style="font-size:10.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.06em; margin-top:14px; margin-bottom:2px;">
+            Full archive · most recent first
+          </div>
+          <div class="nego-archive-list">
+            ${negotiation.chats.map(c => `
+              <a class="nego-archive-row" href="${negotiationHref(g, c.raw_url, c.date || "archive")}">
+                <span class="nar-date">${escapeHtml(c.date || "date unknown")}</span>
+                <span class="nar-count">${c.message_count} msg${c.message_count === 1 ? "" : "s"} ▶</span>
+              </a>
+            `).join("")}
+          </div>
+        ` : ""}
       ` : `<span style="color:var(--text-dim); font-size:12px;">none on file</span>`}
     `;
     openFlyout();
