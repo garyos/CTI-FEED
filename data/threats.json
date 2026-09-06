@@ -7,8 +7,25 @@
     "SecurityWeek"
   ],
   "failed_sources": [],
-  "fetched_at": "2026-09-06T14:16:45.049438+00:00",
+  "fetched_at": "2026-09-06T15:29:28.895924+00:00",
   "entries": [
+    {
+      "id": "091e6b105793",
+      "source": "BleepingComputer",
+      "title": "Attackers conceal phishing lures using invisible Unicode characters",
+      "summary": "Threat actors have adopted the ASCII smuggling technique in phishing campaigns, using invisible Unicode characters to evade email security filters. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/attackers-conceal-phishing-lures-using-invisible-unicode-characters/",
+      "published": "Sun, 06 Sep 2026 10:23:46 -0400",
+      "published_sort": [
+        2026,
+        9,
+        6,
+        14,
+        23,
+        46
+      ],
+      "severity": "info"
+    },
     {
       "id": "d49a120f4499",
       "source": "The Hacker News",
@@ -822,23 +839,6 @@
         15,
         13,
         29
-      ],
-      "severity": "info"
-    },
-    {
-      "id": "bb28fb72da33",
-      "source": "BleepingComputer",
-      "title": "Anthropic confirms Claude is down, multiple models affected",
-      "summary": "Claude is experiencing an outage, with users encountering elevated errors when sending requests to multiple Anthropic AI models. [...]",
-      "link": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-multiple-models-affected/",
-      "published": "Thu, 03 Sep 2026 11:02:52 -0400",
-      "published_sort": [
-        2026,
-        9,
-        3,
-        15,
-        2,
-        52
       ],
       "severity": "info"
     },
